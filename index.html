@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Altozano · Tablero de Control | Metta</title>
+<meta name="description" content="Tablero de control del proyecto Altozano — 6 viviendas en Hermosillo, Sonora. Metta Arquitectura y Construcción.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- CACHE-BUSTING: sube ?v=YYYYMMDD cuando cambies styles.css o shell.js -->
+<link rel="stylesheet" href="css/styles.css?v=20260514">
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-logo">
+      <!-- Coloca el archivo de logo en assets/logo-altozano.png — si no existe, se muestra el texto -->
+      <img src="assets/logo-altozano.png" alt="Altozano" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+      <span class="fallback" style="display:none">ALTOZANO</span>
+      <img src="assets/logo-metta.png" alt="Metta" onerror="this.style.display='none'">
+    </a>
+    <span class="topbar-tag">Tablero de Control · Metta</span>
+  </div>
+</nav>
+
+<!-- ============ HERO PRINCIPAL ============ -->
+<section class="home-hero">
+  <div class="home-hero-inner">
+    <div class="eyebrow fade-up">Gerencia de Proyecto · Metta Arquitectura y Construcción</div>
+    <h1 class="fade-up delay-1"><span id="hero-nombre">Altozano</span><br>Tablero de control</h1>
+    <p class="lead fade-up delay-2" id="hero-descripcion">
+      Seguimiento integral del proyecto residencial en Hermosillo, Sonora. Avance físico-financiero,
+      programa de obra, reportes semanales, bitácora y control de calidad — todo en un solo lugar.
+    </p>
+    <div class="home-meta fade-up delay-3">
+      <div class="home-meta-item">
+        <div class="lbl">Ubicación</div>
+        <div class="val" id="meta-ubicacion">Hermosillo, Sonora</div>
+      </div>
+      <div class="home-meta-item">
+        <div class="lbl">Viviendas</div>
+        <div class="val" id="meta-viviendas">6</div>
+      </div>
+      <div class="home-meta-item">
+        <div class="lbl">Inicio</div>
+        <div class="val" id="meta-inicio">—</div>
+      </div>
+      <div class="home-meta-item">
+        <div class="lbl">Término</div>
+        <div class="val" id="meta-fin">—</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BANDA DE INDICADORES RÁPIDOS ============ -->
+<section class="quickstats">
+  <div class="quickstats-grid">
+    <div class="quickstat fade-up">
+      <div class="lbl">Avance real</div>
+      <div class="val accent" id="qs-real">—</div>
+      <div class="sub" id="qs-real-sub">Último reporte</div>
+    </div>
+    <div class="quickstat fade-up delay-1">
+      <div class="lbl">Avance programado</div>
+      <div class="val" id="qs-prog">—</div>
+      <div class="sub">A la fecha de corte</div>
+    </div>
+    <div class="quickstat fade-up delay-2">
+      <div class="lbl">Variación</div>
+      <div class="val" id="qs-var">—</div>
+      <div class="sub" id="qs-var-sub">Real vs. programado</div>
+    </div>
+    <div class="quickstat fade-up delay-3">
+      <div class="lbl">Días restantes</div>
+      <div class="val gold" id="qs-dias">—</div>
+      <div class="sub" id="qs-dias-sub">Para el término de obra</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GRID DE MÓDULOS ============ -->
+<section class="modules">
+  <div class="modules-header">
+    <h2>Módulos del tablero</h2>
+    <span class="count">6 módulos</span>
+  </div>
+  <div class="modules-grid">
+
+    <a href="resumen.html" class="module-card fade-up">
+      <div class="module-card-top">
+        <div class="module-icon">📊</div>
+        <div class="module-num">01</div>
+      </div>
+      <h3>Resumen general global</h3>
+      <p>Avance global del proyecto, monto ejercido, por ejercer y curva financiera. Se actualiza con el último reporte semanal.</p>
+      <div class="module-arrow">Ver resumen <span class="dot">→</span></div>
+    </a>
+
+    <a href="programa.html" class="module-card fade-up delay-1">
+      <div class="module-card-top">
+        <div class="module-icon">📅</div>
+        <div class="module-num">02</div>
+      </div>
+      <h3>Programa de obra</h3>
+      <p>Gantt interactivo exportado desde MS Project. Ruta crítica, avance por tarea y filtro Look Ahead. Actualizado semana a semana.</p>
+      <div class="module-arrow">Ver programa <span class="dot">→</span></div>
+    </a>
+
+    <a href="reportes.html" class="module-card fade-up delay-2">
+      <div class="module-card-top">
+        <div class="module-icon">📈</div>
+        <div class="module-num">03</div>
+      </div>
+      <h3>Reportes semanales</h3>
+      <p>Reporte de estatus semanal: avance físico-financiero, actividades, problemas críticos, abastecimientos y reporte fotográfico por lote.</p>
+      <div class="module-arrow">Ver reportes <span class="dot">→</span></div>
+    </a>
+
+    <a href="bitacora.html" class="module-card fade-up">
+      <div class="module-card-top">
+        <div class="module-icon">📓</div>
+        <div class="module-num">04</div>
+      </div>
+      <h3>Bitácora de obra</h3>
+      <p>Notas de bitácora digitalizadas con su número consecutivo, fecha y responsable, acompañadas de la imagen de la bitácora física.</p>
+      <div class="module-arrow">Ver bitácora <span class="dot">→</span></div>
+    </a>
+
+    <a href="checklist.html" class="module-card fade-up delay-1">
+      <div class="module-card-top">
+        <div class="module-icon">✅</div>
+        <div class="module-num">05</div>
+      </div>
+      <h3>Checklist de calidad</h3>
+      <p>Repositorio de listas de verificación de los procesos ejecutados. Los formatos de Excel se digitalizan automáticamente como tabla.</p>
+      <div class="module-arrow">Ver checklists <span class="dot">→</span></div>
+    </a>
+
+    <a href="galeria.html" class="module-card fade-up delay-2">
+      <div class="module-card-top">
+        <div class="module-icon">📷</div>
+        <div class="module-num">06</div>
+      </div>
+      <h3>Galería fotográfica</h3>
+      <p>Repositorio visual del avance de obra con filtros por fecha más reciente, por semana y por vivienda.</p>
+      <div class="module-arrow">Ver galería <span class="dot">→</span></div>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <div class="brand">Altozano <span>·</span> Tablero de Control</div>
+  <div>Metta Arquitectura y Construcción · Gerencia de Proyecto · Hermosillo, Sonora</div>
+</footer>
+
+<script src="js/shell.js?v=20260514"></script>
+</body>
+</html>

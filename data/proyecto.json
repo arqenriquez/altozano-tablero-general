@@ -1,0 +1,15 @@
+{
+  "proyecto": {
+    "nombre": "Altozano",
+    "nombre_corto": "Altozano",
+    "subtitulo": "6 Viviendas Residenciales",
+    "ubicacion": "Hermosillo, Sonora",
+    "gerencia": "Metta Arquitectura y Construcción",
+    "cliente": "",
+    "viviendas": 6,
+    "fecha_inicio": "2026-05-11",
+    "fecha_fin": "2027-01-20",
+    "valor_contrato_mxn": null,
+    "descripcion": "Tablero de control del proyecto Altozano: seguimiento integral de avance físico-financiero, programa de obra, reportes semanales, bitácora y control de calidad de 6 viviendas en Hermosillo, Sonora."
+  }
+}

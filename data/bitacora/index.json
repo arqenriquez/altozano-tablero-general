@@ -1,0 +1,9 @@
+{
+  "_INSTRUCCIONES": "Lista los números de nota publicados, en formato de 3 dígitos. Deben ser consecutivos: 001, 002, 003, ...",
+  "notas": [
+    "001",
+    "002",
+    "003",
+    "004"
+  ]
+}

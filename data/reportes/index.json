@@ -1,0 +1,14 @@
+{
+  "proyecto": {
+    "nombre": "Altozano · 6 Viviendas",
+    "nombre_corto": "Altozano",
+    "ubicacion": "Hermosillo, Sonora",
+    "gerencia": "Metta Arquitectura y Construcción",
+    "total_semanas": 36,
+    "valor_total_mxn": 13184120.92,
+    "viviendas": 6
+  },
+  "semanas_publicadas": [
+    "01"
+  ]
+}

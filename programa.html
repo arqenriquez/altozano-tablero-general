@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Altozano · Programa de Obra | Metta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    document.write('<link rel="stylesheet" href="css/gantt.css?v=' + Date.now() + '">');
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="app-header">
+    <div class="header-left">
+      <a href="index.html" class="gantt-back" title="Volver al tablero" aria-label="Volver al tablero">←</a>
+      <img src="assets/logo-altozano.png" alt="Altozano" class="logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='inline'" />
+      <span class="logo-fallback" style="display:none">ALTOZANO</span>
+      <img src="assets/logo-metta.png" alt="Metta" class="logo"
+           onerror="this.style.display='none'" />
+      <div class="header-titles">
+        <h1 class="app-title">PROGRAMA DE OBRA</h1>
+        <h2 class="project-name" id="projectName">ALTOZANO — 6 VIVIENDAS</h2>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <div class="header-meta">
+        <span class="meta-item">
+          <span class="meta-label">Inicio:</span>
+          <span class="meta-value mono" id="projectStart">—</span>
+        </span>
+        <span class="meta-sep">|</span>
+        <span class="meta-item">
+          <span class="meta-label">Fin:</span>
+          <span class="meta-value mono" id="projectFinish">—</span>
+        </span>
+        <span class="meta-sep">|</span>
+        <span class="meta-item">
+          <label class="meta-label" for="statusDate">Fecha de corte:</label>
+          <input type="date" id="statusDate" class="mono" />
+        </span>
+      </div>
+
+      <div class="header-controls">
+        <button class="btn btn-lookahead" id="btnLookAhead"
+                title="Filtra a las tareas que inician en esta semana y las 4 siguientes (S01–S05)">
+          Look Ahead
+        </button>
+        <button class="btn btn-mobile-toggle" id="btnDetailsToggle"
+                aria-label="Mostrar u ocultar columnas de detalle">
+          <span class="toggle-arrow">▶</span>
+          <span class="toggle-label">Detalles</span>
+        </button>
+        <button class="btn" id="btnExpandAll" title="Mostrar todas las tareas y sub-tareas">Desglosar</button>
+        <button class="btn" id="btnCollapseAll" title="Mostrar solo los lotes/partidas principales">Resumen</button>
+        <span class="meta-sep">|</span>
+        <span class="meta-item">
+          <span class="meta-label">Última actualización:</span>
+          <span class="meta-value mono" id="lastUpdate">—</span>
+        </span>
+        <button class="btn-header-collapse" id="btnHeaderCollapse"
+                aria-label="Contraer o expandir el encabezado" title="Contraer encabezado">
+          <span class="collapse-arrow">▲</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- LEYENDA -->
+  <div class="gantt-legend">
+    <span class="lg-item"><span class="lg-swatch lg-summary"></span> Tarea maestra</span>
+    <span class="lg-item"><span class="lg-swatch lg-progress"></span> En progreso / a tiempo</span>
+    <span class="lg-item"><span class="lg-swatch lg-completed"></span> Completada</span>
+    <span class="lg-item"><span class="lg-swatch lg-delayed"></span> Atrasada</span>
+    <span class="lg-item"><span class="lg-swatch lg-overdue"></span> Debió iniciar</span>
+    <span class="lg-item">◆ Hito &nbsp;·&nbsp; <span style="color:var(--accent-gold-2);font-weight:700">|</span> Línea de fecha de corte</span>
+  </div>
+
+  <!-- DROPZONE -->
+  <div class="dropzone" id="dropzone" hidden>
+    <div class="dropzone-inner">
+      <h3>No se pudo cargar <code>data/programa-altozano.xml</code></h3>
+      <p>Arrastra aquí el archivo XML exportado desde MS Project, o haz click para seleccionarlo.</p>
+      <input type="file" id="fileInput" accept=".xml" hidden />
+      <button class="btn btn-primary" id="btnFilePicker">Seleccionar archivo XML</button>
+      <p class="dropzone-hint">
+        Esto suele pasar al abrir <code>programa.html</code> directamente (file://).
+        Sirve un servidor local (Live Server en VS Code) o publica en GitHub Pages.
+      </p>
+    </div>
+  </div>
+
+  <!-- ERROR -->
+  <div class="error-panel" id="errorPanel" hidden>
+    <h3>Error al procesar el XML</h3>
+    <p id="errorMessage"></p>
+  </div>
+
+  <!-- VIEWER -->
+  <main class="viewer" id="viewer" hidden>
+    <section class="panel-left" id="panelLeft">
+      <div class="panel-left-header">
+        <div class="col-toggle"></div>
+        <div class="col-name">
+          <span>Nombre de tarea</span>
+          <button class="btn-col-shrink" id="btnNameShrink"
+                  aria-label="Reducir ancho de la columna de nombre"
+                  title="Reducir ancho de columna para ver más Gantt">
+            <span class="shrink-arrow">◀</span>
+          </button>
+        </div>
+        <div class="col-dur">Duración</div>
+        <div class="col-start">Comienzo</div>
+        <div class="col-finish">Fin</div>
+      </div>
+      <div class="panel-left-body" id="taskList"></div>
+    </section>
+
+    <section class="panel-right" id="panelRight">
+      <div class="timeline-header" id="timelineHeader"></div>
+      <div class="gantt-body" id="ganttBody">
+        <div class="status-line" id="statusLine" hidden></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- EMPTY -->
+  <div class="empty-state" id="emptyState" hidden>
+    <h3>No hay tareas para mostrar</h3>
+    <p>El archivo XML está vacío o no contiene tareas válidas.</p>
+  </div>
+
+  <script>
+    document.write('<script src="js/gantt.js?v=' + Date.now() + '"><\/script>');
+  </script>
+</body>
+</html>

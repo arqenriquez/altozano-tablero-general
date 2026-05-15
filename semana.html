@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cargando reporte... | Altozano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=20260514">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-logo">
+      <img src="assets/logo-altozano.png" alt="Altozano" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+      <span class="fallback" style="display:none">ALTOZANO</span>
+      <img src="assets/logo-metta.png" alt="Metta" onerror="this.style.display='none'">
+    </a>
+    <a href="reportes.html" class="back-link">← Índice de reportes</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="report-hero">
+  <div class="fade-up">
+    <div class="report-hero-banner">Reporte de Estatus Semanal</div>
+    <div class="report-hero-info">
+      <div class="report-hero-data">
+        <div class="key">Proyecto</div><div class="val" id="hero-proyecto">—</div>
+        <div class="key">Ubicación</div><div class="val" id="hero-ubicacion">—</div>
+        <div class="key">Gerencia</div><div class="val" id="hero-gerencia">—</div>
+        <div class="key">Periodo</div><div class="val" id="hero-periodo">—</div>
+      </div>
+      <div class="report-hero-week">
+        <div class="lbl">Semana</div>
+        <div class="num" id="hero-semana-num">—</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 AVANCE GLOBAL -->
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-num">01 /</span>
+    <h2 class="section-title">Avance global de la semana</h2>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi fade-up">
+      <div class="kpi-label">Programado</div>
+      <div class="kpi-value"><span class="counter" id="kpi-programado" data-target="0" data-decimals="2">0.00</span>%</div>
+      <div class="kpi-sublabel" id="kpi-programado-money">—</div>
+    </div>
+    <div class="kpi fade-up delay-1">
+      <div class="kpi-label">Ejecutado real</div>
+      <div class="kpi-value"><span class="counter" id="kpi-real" data-target="0" data-decimals="2">0.00</span>%</div>
+      <div class="kpi-sublabel" id="kpi-real-money">—</div>
+    </div>
+    <div class="kpi fade-up delay-2">
+      <div class="kpi-label">Variación</div>
+      <div class="kpi-value"><span id="kpi-variacion-sign">+</span><span class="counter" id="kpi-variacion" data-target="0" data-decimals="2">0.00</span>%</div>
+      <div class="kpi-sublabel" id="kpi-variacion-money">—</div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 ACTIVIDADES -->
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-num">02 /</span>
+    <h2 class="section-title">Actividades</h2>
+  </div>
+  <div class="split-grid">
+    <div class="activity-card fade-up">
+      <h3>Realizadas</h3>
+      <div class="sub" id="act-realizadas-sub">Semana XX</div>
+      <ul class="activity-list" id="act-realizadas-list"></ul>
+    </div>
+    <div class="activity-card fade-up delay-1">
+      <h3>Programadas</h3>
+      <div class="sub" id="act-programadas-sub">Semana XX</div>
+      <ul class="activity-list" id="act-programadas-list"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- 03 PROBLEMAS CRÍTICOS -->
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-num">03 /</span>
+    <h2 class="section-title">Problemas que pueden volverse críticos</h2>
+  </div>
+  <div class="fade-up delay-1">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th style="width:50%">Descripción</th>
+          <th style="width:15%">Estatus</th>
+          <th style="width:15%">Fecha límite</th>
+          <th style="width:20%">Responsable</th>
+        </tr>
+      </thead>
+      <tbody id="problemas-tbody"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 04 AVANCE POR LOTE -->
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-num">04 /</span>
+    <h2 class="section-title">Avance por lote</h2>
+  </div>
+  <div id="lotes-list"></div>
+</section>
+
+<!-- 05 PROGRAMA FÍSICO-FINANCIERO -->
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-num">05 /</span>
+    <h2 class="section-title">Programa físico-financiero</h2>
+  </div>
+  <div class="financial-grid">
+    <div class="chart-card fade-up">
+      <h3>Curva S del proyecto</h3>
+      <div class="sub" id="curvaS-sub">—</div>
+      <div class="chart-container-s"><canvas id="curvaS"></canvas></div>
+    </div>
+    <div class="chart-card fade-up delay-1">
+      <h3>Acumulado</h3>
+      <div class="sub" id="dona-sub">—</div>
+      <div class="chart-container-dona"><canvas id="donaChart"></canvas></div>
+      <div class="dona-stats">
+        <div class="stat-block"><span class="label">Programado</span><span class="value" id="dona-programado">—</span></div>
+        <div class="stat-block"><span class="label">Real</span><span class="value accent" id="dona-real">—</span></div>
+        <div class="stat-block"><span class="label">Variación</span><span class="value green" id="dona-adelanto">—</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 ABASTECIMIENTOS -->
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-num">06 /</span>
+    <h2 class="section-title">Abastecimientos</h2>
+  </div>
+  <div class="fade-up delay-1">
+    <table class="data-table">
+      <tbody id="abast-tbody"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 07 DETALLE POR LOTE -->
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-num">07 /</span>
+    <h2 class="section-title">Detalle por lote</h2>
+  </div>
+  <div class="lotes-grid-btns" id="lotes-grid-btns"></div>
+</section>
+
+<footer>
+  <div class="brand">Altozano <span>·</span> Reporte Semanal</div>
+  <div id="footer-info">—</div>
+</footer>
+
+<!-- OVERLAY + PANEL LATERAL -->
+<div class="overlay" id="overlay"></div>
+<aside class="panel" id="panel">
+  <div class="panel-header">
+    <div class="panel-title-wrap">
+      <div class="eyebrow" id="panel-eyebrow">Lote · Mza</div>
+      <h2 id="panel-title">Lote</h2>
+    </div>
+    <button class="panel-close" id="panel-close" aria-label="Cerrar">✕</button>
+  </div>
+  <div class="panel-body" id="panel-body"></div>
+</aside>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">✕</button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Anterior">‹</button>
+  <div class="lightbox-img-wrap"><img id="lightbox-img" src="" alt=""></div>
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Siguiente">›</button>
+  <div class="lightbox-counter" id="lightbox-counter">1 / 4</div>
+</div>
+
+<script src="js/reporte.js?v=20260514"></script>
+</body>
+</html>

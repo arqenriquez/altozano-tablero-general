@@ -1,0 +1,55 @@
+{
+  "_INSTRUCCIONES": "Copia este archivo y renómbralo a semana-02.json, semana-03.json, etc. Llena los datos y agrega el número de semana al arreglo 'semanas_publicadas' de index.json.",
+  "proyecto": {
+    "nombre": "Altozano · 6 Viviendas",
+    "nombre_corto": "Altozano",
+    "ubicacion": "Hermosillo, Sonora",
+    "gerencia": "Metta Arquitectura y Construcción"
+  },
+  "semana": {
+    "numero": "00",
+    "periodo": "DD al DD de MES, AAAA",
+    "fecha_generacion": "DD mes AAAA"
+  },
+  "avance_global": {
+    "programado_pct": 0.00,
+    "real_pct": 0.00,
+    "variacion_pct": 0.00,
+    "programado_mxn": 0,
+    "real_mxn": 0
+  },
+  "actividades": {
+    "realizadas": ["Actividad realizada 1"],
+    "programadas": ["Actividad programada para la siguiente semana 1"]
+  },
+  "problemas": [
+    {
+      "descripcion": "Descripción del problema",
+      "estatus": "Observado",
+      "fecha_limite": "",
+      "responsable": "Responsable"
+    }
+  ],
+  "orden_lotes": ["1", "2", "3", "4", "5", "6"],
+  "lotes": {
+    "1": { "modelo": "Modelo A", "mza": "1", "programado": 0.00, "real": 0.00, "variacion": 0.00, "actividades": [] },
+    "2": { "modelo": "Modelo A", "mza": "1", "programado": 0.00, "real": 0.00, "variacion": 0.00, "actividades": [] },
+    "3": { "modelo": "Modelo B", "mza": "1", "programado": 0.00, "real": 0.00, "variacion": 0.00, "actividades": [] },
+    "4": { "modelo": "Modelo B", "mza": "1", "programado": 0.00, "real": 0.00, "variacion": 0.00, "actividades": [] },
+    "5": { "modelo": "Modelo A", "mza": "1", "programado": 0.00, "real": 0.00, "variacion": 0.00, "actividades": [] },
+    "6": { "modelo": "Modelo B", "mza": "1", "programado": 0.00, "real": 0.00, "variacion": 0.00, "actividades": [] }
+  },
+  "curva_financiera": {
+    "valor_total_mxn": 0,
+    "programado": [0, 1.2, 3.0, 5.5],
+    "real": [0, 0.95, 2.6]
+  },
+  "abastecimientos": {
+    "entregados": [
+      { "concepto": "", "fecha_requerida": "", "estatus": "Suministrado", "importancia": "Media" }
+    ],
+    "programados": [
+      { "concepto": "", "fecha_requerida": "", "estatus": "Solicitado", "importancia": "Alta" }
+    ]
+  }
+}

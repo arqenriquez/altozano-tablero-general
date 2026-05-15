@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Altozano · Resumen General Global | Metta</title>
+<meta name="description" content="Resumen general de avance global del proyecto Altozano.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=20260514">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-logo">
+      <img src="assets/logo-altozano.png" alt="Altozano" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+      <span class="fallback" style="display:none">ALTOZANO</span>
+      <img src="assets/logo-metta.png" alt="Metta" onerror="this.style.display='none'">
+    </a>
+    <a href="index.html" class="back-link">← Volver al tablero</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="eyebrow fade-up">Módulo 01 · Visión global</div>
+  <h1 class="fade-up delay-1">Resumen general global</h1>
+  <p class="lead fade-up delay-2" id="resumen-lead">
+    Estado general del proyecto a la fecha. Los indicadores se calculan automáticamente con el
+    último reporte semanal publicado.
+  </p>
+</section>
+
+<!-- 01 AVANCE GLOBAL -->
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-num">01 /</span>
+    <h2 class="section-title">Avance global del proyecto</h2>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi fade-up">
+      <div class="kpi-label">Avance programado</div>
+      <div class="kpi-value" id="k-prog">—</div>
+      <div class="kpi-sublabel">A la fecha de corte</div>
+    </div>
+    <div class="kpi fade-up delay-1">
+      <div class="kpi-label">Avance real ejecutado</div>
+      <div class="kpi-value accent" id="k-real">—</div>
+      <div class="kpi-sublabel" id="k-real-sub">—</div>
+    </div>
+    <div class="kpi fade-up delay-2">
+      <div class="kpi-label">Variación</div>
+      <div class="kpi-value" id="k-var">—</div>
+      <div class="kpi-sublabel" id="k-var-sub">Real vs. programado</div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 FINANCIERO -->
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-num">02 /</span>
+    <h2 class="section-title">Estado financiero</h2>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi fade-up">
+      <div class="kpi-label">Valor del contrato</div>
+      <div class="kpi-value" id="k-total">—</div>
+      <div class="kpi-sublabel">Monto total del proyecto</div>
+    </div>
+    <div class="kpi fade-up delay-1">
+      <div class="kpi-label">Monto ejercido</div>
+      <div class="kpi-value accent" id="k-ejercido">—</div>
+      <div class="kpi-sublabel" id="k-ejercido-sub">Avance real acumulado</div>
+    </div>
+    <div class="kpi fade-up delay-2">
+      <div class="kpi-label">Por ejercer</div>
+      <div class="kpi-value gold" id="k-porejercer">—</div>
+      <div class="kpi-sublabel">Saldo pendiente del contrato</div>
+    </div>
+  </div>
+  <p id="financiero-nota" style="margin-top:1rem;font-size:0.85rem;color:var(--ink-mute);display:none">
+    El valor del contrato aún no se ha capturado. Edita <code>data/proyecto.json</code> →
+    <code>valor_contrato_mxn</code> para activar el cálculo de montos.
+  </p>
+</section>
+
+<!-- 03 CURVA S -->
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-num">03 /</span>
+    <h2 class="section-title">Curva S del proyecto</h2>
+  </div>
+  <div class="chart-card fade-up">
+    <h3>Avance acumulado · Programado vs. Real</h3>
+    <div class="sub" id="curva-sub">—</div>
+    <div class="chart-container-s"><canvas id="curvaS"></canvas></div>
+  </div>
+</section>
+
+<!-- 04 AVANCE POR LOTE -->
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-num">04 /</span>
+    <h2 class="section-title">Avance por lote</h2>
+  </div>
+  <div id="lotes-list"></div>
+</section>
+
+<footer>
+  <div class="brand">Altozano <span>·</span> Resumen General</div>
+  <div id="footer-info">—</div>
+</footer>
+
+<script src="js/resumen.js?v=20260514"></script>
+</body>
+</html>

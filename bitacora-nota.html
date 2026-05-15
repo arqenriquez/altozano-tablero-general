@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cargando nota... | Altozano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=20260514">
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-logo">
+      <img src="assets/logo-altozano.png" alt="Altozano" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+      <span class="fallback" style="display:none">ALTOZANO</span>
+      <img src="assets/logo-metta.png" alt="Metta" onerror="this.style.display='none'">
+    </a>
+    <a href="bitacora.html" class="back-link">← Índice de bitácora</a>
+  </div>
+</nav>
+
+<article class="nota-detail" id="nota-detail">
+  <div class="loading">Cargando nota...</div>
+</article>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">✕</button>
+  <div class="lightbox-img-wrap"><img id="lightbox-img" src="" alt=""></div>
+</div>
+
+<footer>
+  <div class="brand">Altozano <span>·</span> Bitácora de Obra</div>
+  <div>Metta Arquitectura y Construcción · Gerencia de Proyecto</div>
+</footer>
+
+<script src="js/bitacora.js?v=20260514"></script>
+</body>
+</html>

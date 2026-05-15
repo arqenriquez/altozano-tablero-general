@@ -1,0 +1,12 @@
+{
+  "_INSTRUCCIONES": "Sube tus formatos de Excel (.xlsx) a la carpeta data/checklist/ y registra cada uno aquí. Campos: 'archivo' (nombre exacto del .xlsx), 'nombre' (título visible), 'proceso' (categoría para el filtro), 'vivienda' (lote o área), 'fecha' (AAAA-MM-DD).",
+  "checklists": [
+    {
+      "archivo": "ejemplo-checklist-cimentacion.xlsx",
+      "nombre": "Checklist de Cimentación — Lote 1",
+      "proceso": "Cimentación",
+      "vivienda": "Lote 1",
+      "fecha": "2026-05-20"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Altozano · Galería Fotográfica | Metta</title>
+<meta name="description" content="Galería fotográfica del avance de obra del proyecto Altozano.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=20260514">
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-logo">
+      <img src="assets/logo-altozano.png" alt="Altozano" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+      <span class="fallback" style="display:none">ALTOZANO</span>
+      <img src="assets/logo-metta.png" alt="Metta" onerror="this.style.display='none'">
+    </a>
+    <a href="index.html" class="back-link">← Volver al tablero</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="eyebrow fade-up">Módulo 06 · Repositorio visual</div>
+  <h1 class="fade-up delay-1">Galería fotográfica</h1>
+  <p class="lead fade-up delay-2">
+    Registro visual del avance de obra. Filtra por fecha más reciente, por semana de reporte
+    o por vivienda.
+  </p>
+</section>
+
+<section class="cards-section">
+  <div class="galeria-toolbar">
+    <div class="galeria-filter-group">
+      <label for="f-orden">Ordenar por</label>
+      <select id="f-orden">
+        <option value="reciente">Más reciente primero</option>
+        <option value="antiguo">Más antiguo primero</option>
+      </select>
+    </div>
+    <div class="galeria-filter-group">
+      <label for="f-semana">Semana</label>
+      <select id="f-semana"><option value="todas">Todas</option></select>
+    </div>
+    <div class="galeria-filter-group">
+      <label for="f-vivienda">Vivienda</label>
+      <select id="f-vivienda"><option value="todas">Todas</option></select>
+    </div>
+    <span class="galeria-count" id="galeria-count">—</span>
+  </div>
+  <div class="galeria-grid" id="galeria-grid">
+    <div class="loading">Cargando galería...</div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">Altozano <span>·</span> Galería Fotográfica</div>
+  <div>Metta Arquitectura y Construcción · Gerencia de Proyecto</div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">✕</button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Anterior">‹</button>
+  <div class="lightbox-img-wrap"><img id="lightbox-img" src="" alt=""></div>
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Siguiente">›</button>
+  <div class="lightbox-counter" id="lightbox-counter">1 / 1</div>
+</div>
+
+<script src="js/galeria.js?v=20260514"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "_INSTRUCCIONES": "Copia este archivo y renómbralo a nota-002.json, nota-003.json, etc. (numeración consecutiva de 3 dígitos). Agrega el número al arreglo 'notas' de index.json. El campo 'foto_fisica' es opcional: si no hay foto, déjalo como cadena vacía \"\".",
+  "numero": "000",
+  "fecha": "AAAA-MM-DD",
+  "responsable": "Nombre de quien registra la nota",
+  "lote": "General",
+  "descripcion": "Texto completo de la nota de bitácora. Describe las actividades, instrucciones, observaciones, personal en obra, condiciones climáticas, etc.",
+  "foto_fisica": "fotos/bitacora/nota-000.jpg"
+}

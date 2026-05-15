@@ -1,0 +1,20 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+
+# Claude Code (permisos locales por usuario)
+.claude/settings.local.json
+
+# Temporales
+*.tmp
+*.bak
+~$*
+*.log
+
+# NOTA: las carpetas data/ y fotos/ SÍ se versionan —
+# son el contenido del tablero. No las ignores.
