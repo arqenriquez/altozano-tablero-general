@@ -152,6 +152,7 @@ function renderApp() {
   if (!state.tasksFlat.length) {
     dom.viewer.hidden = true;
     dom.emptyState.hidden = false;
+    if (dom.loading) dom.loading.hidden = true;
     return;
   }
   dom.projectStart.textContent = formatDate(state.project.start);
@@ -173,6 +174,7 @@ function renderApp() {
   dom.emptyState.hidden = true;
   dom.dropzone.hidden = true;
   dom.errorPanel.hidden = true;
+  if (dom.loading) dom.loading.hidden = true;
 }
 
 function renderLeftPanel() {
@@ -533,6 +535,7 @@ async function init() {
   dom.errorPanel = $('errorPanel');
   dom.errorMessage = $('errorMessage');
   dom.emptyState = $('emptyState');
+  dom.loading = $('ganttLoading');
   dom.taskList = $('taskList');
   dom.timelineHeader = $('timelineHeader');
   dom.ganttBody = $('ganttBody');
@@ -593,6 +596,7 @@ function showDropzone() {
   dom.errorPanel.hidden = true;
   dom.emptyState.hidden = true;
   dom.dropzone.hidden = false;
+  if (dom.loading) dom.loading.hidden = true;
 }
 
 function showError(msg) {
@@ -601,6 +605,7 @@ function showError(msg) {
   dom.emptyState.hidden = true;
   dom.errorPanel.hidden = false;
   dom.errorMessage.textContent = msg;
+  if (dom.loading) dom.loading.hidden = true;
 }
 
 function setupDropzone() {
