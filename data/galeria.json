@@ -1,0 +1,26 @@
+{
+  "_INSTRUCCIONES": "Sube las imágenes a la carpeta fotos/galeria/ y registra cada una aquí. Campos: 'archivo' (ruta a la imagen), 'titulo' (descripción corta), 'fecha' (AAAA-MM-DD, define el orden), 'semana' (número de semana de reporte, p.ej. '01'), 'vivienda' (p.ej. 'Lote 1'). Los filtros de Semana y Vivienda se generan automáticamente con estos valores.",
+  "fotos": [
+    {
+      "archivo": "fotos/galeria/ejemplo-01.jpg",
+      "titulo": "Instalación de obra provisional y campamento",
+      "fecha": "2026-05-11",
+      "semana": "01",
+      "vivienda": "General"
+    },
+    {
+      "archivo": "fotos/galeria/ejemplo-02.jpg",
+      "titulo": "Trazo y nivelación del terreno",
+      "fecha": "2026-05-13",
+      "semana": "01",
+      "vivienda": "Lote 1"
+    },
+    {
+      "archivo": "fotos/galeria/ejemplo-03.jpg",
+      "titulo": "Inicio de excavación de cimentación",
+      "fecha": "2026-05-15",
+      "semana": "01",
+      "vivienda": "Lote 2"
+    }
+  ]
+}
