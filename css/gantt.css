@@ -116,6 +116,29 @@ input[type="date"]:focus { outline: none; border-color: var(--accent-blue); box-
 .btn-lookahead.active { background: var(--bar-summary); color: #fff; border-color: var(--bar-summary); font-weight: 600; }
 .btn-lookahead.active::before { content: '● '; font-size: 9px; vertical-align: middle; }
 
+/* ============================================================ LOADING */
+.gantt-loading {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 16px; min-height: calc(100vh - var(--header-h) - 80px); padding: 40px 20px;
+}
+.gantt-loading[hidden] { display: none; }
+.gantt-loading-spinner {
+  width: 48px; height: 48px;
+  border: 3px solid var(--border-strong);
+  border-top-color: var(--bar-summary);
+  border-radius: 50%;
+  animation: gantt-spin 0.9s linear infinite;
+}
+.gantt-loading-text {
+  font-family: var(--font-heading); font-weight: 500; font-size: 1.05rem;
+  color: var(--text-primary); margin: 4px 0 0; letter-spacing: 0.02em;
+}
+.gantt-loading-sub {
+  font-size: 0.85rem; color: var(--text-muted);
+  max-width: 420px; text-align: center; margin: 0; line-height: 1.5;
+}
+@keyframes gantt-spin { to { transform: rotate(360deg); } }
+
 /* ============================================================ DROPZONE / ERROR / EMPTY */
 .dropzone, .error-panel, .empty-state {
   margin: 40px auto; max-width: 600px; padding: 40px;
