@@ -100,8 +100,8 @@ function renderAvanceLotes(data) {
   orden.forEach(num => {
     const d = data.lotes[num];
     if (!d) return;
-    const varClass = d.variacion >= 0 ? 'pos' : 'neg';
-    const varSign = d.variacion >= 0 ? '+' : '';
+    const varClass = d.variacion > 0 ? 'pos' : d.variacion < 0 ? 'neg' : 'neutral';
+    const varSign = d.variacion > 0 ? '+' : '';
     const card = document.createElement('div');
     card.className = 'lote-card fade-up';
     card.innerHTML = `
@@ -266,8 +266,8 @@ let currentPhotoIdx = 0;
 function abrirPanel(num, data) {
   const d = data.lotes[num];
   if (!d) return;
-  const varSign = d.variacion >= 0 ? '+' : '';
-  const varColor = d.variacion >= 0 ? 'pos' : 'neg';
+  const varSign = d.variacion > 0 ? '+' : '';
+  const varColor = d.variacion > 0 ? 'pos' : d.variacion < 0 ? 'neg' : 'neutral';
   const semNum = data.semana.numero;
 
   $('#panel-eyebrow').textContent = `${d.modelo} · Manzana ${d.mza}`;

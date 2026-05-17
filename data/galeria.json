@@ -1,26 +1,68 @@
 {
-  "_INSTRUCCIONES": "Sube las imágenes a la carpeta fotos/galeria/ y registra cada una aquí. Campos: 'archivo' (ruta a la imagen), 'titulo' (descripción corta), 'fecha' (AAAA-MM-DD, define el orden), 'semana' (número de semana de reporte, p.ej. '01'), 'vivienda' (p.ej. 'Lote 1'). Los filtros de Semana y Vivienda se generan automáticamente con estos valores.",
+  "_INSTRUCCIONES": "Registra cada foto con su ruta exacta. El campo 'archivo' puede apuntar a fotos/galeria/ (subidas exclusivamente para la galería) o a fotos/reportes/semana-XX/lote-NN/ (reutilizando las fotos del reporte semanal). Los filtros de Semana y Vivienda se generan automáticamente con los valores aquí registrados.",
   "fotos": [
     {
-      "archivo": "fotos/galeria/ejemplo-01.jpg",
-      "titulo": "Instalación de obra provisional y campamento",
-      "fecha": "2026-05-11",
-      "semana": "01",
-      "vivienda": "General"
-    },
-    {
-      "archivo": "fotos/galeria/ejemplo-02.jpg",
-      "titulo": "Trazo y nivelación del terreno",
+      "archivo": "fotos/reportes/semana-01/lote-04/img-lote04-sem01-01.jpg",
+      "titulo": "Lote 04 — Trazo y excavaciones en cimentación",
       "fecha": "2026-05-13",
       "semana": "01",
-      "vivienda": "Lote 1"
+      "vivienda": "Lote 04 M-661"
     },
     {
-      "archivo": "fotos/galeria/ejemplo-03.jpg",
-      "titulo": "Inicio de excavación de cimentación",
+      "archivo": "fotos/reportes/semana-01/lote-04/img-lote04-sem01-02.jpg",
+      "titulo": "Lote 04 — Trazo y excavaciones en cimentación",
+      "fecha": "2026-05-14",
+      "semana": "01",
+      "vivienda": "Lote 04 M-661"
+    },
+    {
+      "archivo": "fotos/reportes/semana-01/lote-04/img-lote04-sem01-03.jpg",
+      "titulo": "Lote 04 — Trazo y excavaciones en cimentación",
       "fecha": "2026-05-15",
       "semana": "01",
-      "vivienda": "Lote 2"
+      "vivienda": "Lote 04 M-661"
+    },
+    {
+      "archivo": "fotos/reportes/semana-01/lote-04/img-lote04-sem01-04.jpg",
+      "titulo": "Lote 04 — Trazo y excavaciones en cimentación",
+      "fecha": "2026-05-15",
+      "semana": "01",
+      "vivienda": "Lote 04 M-661"
+    },
+    {
+      "archivo": "fotos/reportes/semana-01/lote-02/img-lote02-sem01-01.jpg",
+      "titulo": "Lote 02 — Trazo",
+      "fecha": "2026-05-13",
+      "semana": "01",
+      "vivienda": "Lote 02 M-661"
+    },
+    {
+      "archivo": "fotos/reportes/semana-01/lote-03/img-lote03-sem01-01.jpg",
+      "titulo": "Lote 03 — Estado de lote",
+      "fecha": "2026-05-13",
+      "semana": "01",
+      "vivienda": "Lote 03 M-661"
+    },
+    {
+      "archivo": "fotos/reportes/semana-01/lote-20/img-lote20-sem01-01.jpg",
+      "titulo": "Lote 20 — Pendiente plano para trazo",
+      "fecha": "2026-05-11",
+      "semana": "01",
+      "vivienda": "Lote 20 M-663"
+    },
+    {
+      "archivo": "fotos/reportes/semana-01/lote-21/img-lote21-sem01-01.jpg",
+      "titulo": "Lote 21 — Pendiente plano para trazo",
+      "fecha": "2026-05-11",
+      "semana": "01",
+      "vivienda": "Lote 21 M-663"
+    },
+    {
+      "archivo": "fotos/reportes/semana-01/lote-22/img-lote22-sem01-01.jpg",
+      "titulo": "Lote 22 — Pendiente plano para trazo",
+      "fecha": "2026-05-11",
+      "semana": "01",
+      "vivienda": "Lote 22 M-663"
     }
   ]
 }

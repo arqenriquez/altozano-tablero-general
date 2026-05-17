@@ -8,68 +8,68 @@
   "semana": {
     "numero": "01",
     "periodo": "11 al 15 de mayo, 2026",
-    "fecha_generacion": "15 mayo 2026"
+    "fecha_generacion": "16 mayo 2026"
   },
   "avance_global": {
     "programado_pct": 0.06,
-    "real_pct": 0.07,
-    "variacion_pct": 0.01,
+    "real_pct": 0.14,
+    "variacion_pct": 0.08,
     "programado_mxn": 8273.26,
-    "real_mxn": 9478.42
+    "real_mxn": 18548.62
   },
   "actividades": {
     "realizadas": [
       "Apertura formal de bitácora de obra — contrato 0200-C08-ANT-HER-JP-ESPINOSA Casa Zorro (Grupo Altozano · Metta)",
       "Inicio de trazos en Lotes 20, 21 y 22 (MZA 663)",
-      "Detección de irregularidad geométrica en Lotes 20, 21 y 22 — solicitud de despiece a supervisión",
-      "Inicio de trazos en Lotes 02, 03 y 04 (MZA 661) por instrucción de supervisión Altozano",
-      "Revisión de escuadra en Lotes 02, 03 y 04 (MZA 661)",
-      "Solicitud de colocación de tapial de protección por supervisión Altozano"
+      "Detección de irregularidad geométrica en Lotes 20, 21 y 22",
+      "Se solicita desplante o plano detallado de los Lotes 20, 21 y 22",
+      "Inicio de trazos en Lotes 02 y 04 (MZA 661) por instrucción de supervisión",
+      "Supervisión solicita la colocación de tapial de protección (se hará O.T.)"
     ],
     "programadas": [
       "Recepción del despiece de Lotes 20, 21 y 22 (MZA 663) para continuar trazos",
       "Continuar trazo y nivelación pendiente en Lotes MZA 663",
       "Iniciar excavación de cimentación en Lotes con trazo concluido",
       "Habilitado de acero para cimbra perimetral (Lote 20)",
-      "Gestionar orden de trabajo para tapial de protección"
+      "Gestionar orden de trabajo para tapial perimetral de malla"
     ]
   },
-  "problemas": [
-    {
-      "descripcion": "Lotes 20, 21 y 22 (MZA 663) con geometría irregular — pendiente recibir despiece para realizar trazo correcto.",
-      "estatus": "Abierto",
-      "fecha_limite": "",
-      "responsable": "Supervisión Altozano / Metta"
-    },
-    {
-      "descripcion": "Supervisión Altozano solicitó colocación de tapial de protección perimetral con generación de orden de trabajo para cobro — pendiente formalizar.",
-      "estatus": "Observado",
-      "fecha_limite": "",
-      "responsable": "Supervisión Altozano / Metta"
-    }
-  ],
+  "problemas": [],
   "orden_lotes": ["02", "03", "04", "20", "21", "22"],
   "lotes": {
-    "02": { "modelo": "Corsac B", "mza": "661", "programado": 0.00, "real": 0.00, "variacion": 0.00,
-      "actividades": ["Trazo y revisión de escuadra"] },
+    "02": { "modelo": "Corsac B", "mza": "661", "programado": 0.00, "real": 0.37, "variacion": 0.37,
+      "actividades": ["Trazo iniciado por instrucción de supervisión", "Avance físico-financiero registrado"] },
     "03": { "modelo": "Corsac A", "mza": "661", "programado": 0.00, "real": 0.00, "variacion": 0.00,
-      "actividades": ["Trazo y revisión de escuadra"] },
+      "actividades": ["Sin actividad esta semana"] },
     "04": { "modelo": "Ártico A", "mza": "661", "programado": 0.00, "real": 0.55, "variacion": 0.55,
-      "actividades": ["Trazo y revisión de escuadra", "Avance físico-financiero registrado: $9,478.42"] },
+      "actividades": ["Trazo iniciado por instrucción de supervisión", "Inicio de excavaciones en cimentación", "Avance físico-financiero registrado"] },
     "20": { "modelo": "Ártico A", "mza": "663", "programado": 0.48, "real": 0.00, "variacion": -0.48,
-      "actividades": ["Trazo iniciado — pendiente despiece por irregularidad"] },
+      "actividades": ["Trazo iniciado — pendiente plano para continuar"] },
     "21": { "modelo": "Corsac A", "mza": "663", "programado": 0.00, "real": 0.00, "variacion": 0.00,
-      "actividades": ["Trazo iniciado — pendiente despiece por irregularidad"] },
+      "actividades": ["Trazo iniciado — pendiente plano para continuar"] },
     "22": { "modelo": "Corsac B", "mza": "663", "programado": 0.00, "real": 0.00, "variacion": 0.00,
-      "actividades": ["Trazo iniciado — pendiente despiece por irregularidad"] }
+      "actividades": ["Trazo iniciado — pendiente plano para continuar"] }
   },
   "curva_financiera": {
     "valor_total_mxn": 13184120.92,
     "programado": [0.0, 0.0626, 0.4918, 1.535, 3.7076, 6.9393, 10.2235, 13.2522, 15.434, 18.411, 22.0673, 25.6185, 29.3418, 32.2476, 35.0551, 37.0925, 39.172, 40.7418, 42.4334, 44.4514, 48.2913, 53.8782, 60.1479, 65.4775, 70.4296, 76.9004, 83.0947, 87.6436, 91.5662, 94.91, 96.9923, 98.1773, 99.055, 99.6113, 99.8989, 99.98, 100.0],
-    "real": [0.0, 0.0719]
+    "real": [0.0, 0.1407]
   },
   "abastecimientos": {
     "entregados": [],
-    "programados": []
+    "programados": [
+      {
+        "concepto": "Acero para cimentación Lote 04 Mza 661",
+        "fecha_requerida": "19-may",
+        "estatus": "Solicitado",
+        "importancia": "Alta"
+      },
+      {
+        "concepto": "Acero para cimentación Lote 20 Mza 663",
+        "fecha_requerida": "19-may",
+        "estatus": "Solicitado",
+        "importancia": "Alta"
+      }
+    ]
   }
 }

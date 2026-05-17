@@ -394,7 +394,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
 .bar-row { display: flex; align-items: center; gap: 0.8rem; }
 .bar-tag {
   font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.1em;
-  color: var(--ink-mute); font-weight: 500; width: 72px; flex-shrink: 0;
+  color: var(--ink-mute); font-weight: 500; width: 92px; flex-shrink: 0;
 }
 .bar-container {
   flex: 1; height: 18px; background: var(--bg-soft-2);
@@ -417,6 +417,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
 }
 .variation-pill .val.pos { color: var(--green); }
 .variation-pill .val.neg { color: var(--red); }
+.variation-pill .val.neutral { color: var(--ink-mute); }
 
 /* ============================================================
    CURVA S + DONA (gráficas)
@@ -539,6 +540,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
 .panel-stat .val.accent { color: var(--accent); }
 .panel-stat .val.pos { color: var(--green); }
 .panel-stat .val.neg { color: var(--red); }
+.panel-stat .val.neutral { color: var(--ink-mute); }
 .panel-section-title {
   font-size: 0.74rem; letter-spacing: 0.15em; text-transform: uppercase;
   color: var(--ink-mute); font-weight: 500; margin: 2rem 0 1rem;
