@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Project xmlns="http://schemas.microsoft.com/project">
 	<SaveVersion>14</SaveVersion>
-	<BuildNumber>16.0.19929.20136</BuildNumber>
+	<BuildNumber>16.0.19929.20172</BuildNumber>
 	<Name>programa-altozano.xml</Name>
 	<GUID>E87A45CF-7737-F111-A197-E02E0B843491</GUID>
 	<Title>01. Programa de Obra - 6 Casas - Altozano</Title>
 	<CreationDate>2026-04-13T08:00:00</CreationDate>
-	<LastSaved>2026-05-15T11:32:00</LastSaved>
+	<LastSaved>2026-05-20T11:11:00</LastSaved>
 	<ScheduleFromStart>1</ScheduleFromStart>
 	<StartDate>2026-05-11T08:00:00</StartDate>
 	<FinishDate>2027-01-20T12:00:00</FinishDate>
@@ -47,8 +47,8 @@
 	<MoveCompletedEndsForward>0</MoveCompletedEndsForward>
 	<BaselineForEarnedValue>0</BaselineForEarnedValue>
 	<AutoAddNewResourcesAndTasks>1</AutoAddNewResourcesAndTasks>
-	<StatusDate>2026-05-15T18:00:00</StatusDate>
-	<CurrentDate>2026-05-15T08:00:00</CurrentDate>
+	<StatusDate>2026-05-20T18:00:00</StatusDate>
+	<CurrentDate>2026-05-20T08:00:00</CurrentDate>
 	<MicrosoftProjectServerURL>1</MicrosoftProjectServerURL>
 	<Autolink>0</Autolink>
 	<NewTaskStartDate>0</NewTaskStartDate>
@@ -90,6 +90,10 @@
 		</View>
 		<View>
 			<Name>&amp;Uso de recursos</Name>
+			<IsCustomized>true</IsCustomized>
+		</View>
+		<View>
+			<Name>Hoja de tareas</Name>
 			<IsCustomized>true</IsCustomized>
 		</View>
 	</Views>
@@ -4280,7 +4284,7 @@
 			<Name>Para calend. de línea base de Microsoft Project 98</Name>
 			<IsBaseCalendar>1</IsBaseCalendar>
 			<IsBaselineCalendar>1</IsBaselineCalendar>
-			<BaseCalendarUID>0</BaseCalendarUID>
+			<BaseCalendarUID>-1</BaseCalendarUID>
 			<WeekDays>
 				<WeekDay>
 					<DayType>1</DayType>
@@ -4504,18 +4508,18 @@
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
 			<ActualStart>2026-05-11T08:00:00</ActualStart>
-			<ActualDuration>PT1H53M24S</ActualDuration>
-			<ActualCost>557390</ActualCost>
+			<ActualDuration>PT4H21M18S</ActualDuration>
+			<ActualCost>2828477.41</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
 			<ActualWork>PT0H0M0S</ActualWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RegularWork>PT0H0M0S</RegularWork>
-			<RemainingDuration>PT1590H6M36S</RemainingDuration>
-			<RemainingCost>418022046</RemainingCost>
+			<RemainingDuration>PT1587H38M42S</RemainingDuration>
+			<RemainingCost>415750958.59</RemainingCost>
 			<RemainingWork>PT0H0M0S</RemainingWork>
 			<RemainingOvertimeCost>0</RemainingOvertimeCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<ACWP>557390.00</ACWP>
+			<ACWP>2828477.41</ACWP>
 			<CV>0.00</CV>
 			<ConstraintType>0</ConstraintType>
 			<CalendarUID>-1</CalendarUID>
@@ -4526,8 +4530,8 @@
 			<IgnoreResourceCalendar>0</IgnoreResourceCalendar>
 			<HideBar>0</HideBar>
 			<Rollup>0</Rollup>
-			<BCWS>557390.00</BCWS>
-			<BCWP>557390.00</BCWP>
+			<BCWS>2828477.41</BCWS>
+			<BCWP>2828477.41</BCWP>
 			<PhysicalPercentComplete>0</PhysicalPercentComplete>
 			<EarnedValueMethod>0</EarnedValueMethod>
 			<IsPublished>0</IsPublished>
@@ -6396,18 +6400,18 @@
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
 			<ActualStart>2026-05-11T08:00:00</ActualStart>
-			<ActualDuration>PT1H53M24S</ActualDuration>
-			<ActualCost>557390</ActualCost>
+			<ActualDuration>PT4H21M18S</ActualDuration>
+			<ActualCost>2828477.41</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
 			<ActualWork>PT0H0M0S</ActualWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RegularWork>PT0H0M0S</RegularWork>
-			<RemainingDuration>PT1590H6M36S</RemainingDuration>
-			<RemainingCost>418022046</RemainingCost>
+			<RemainingDuration>PT1587H38M42S</RemainingDuration>
+			<RemainingCost>415750958.59</RemainingCost>
 			<RemainingWork>PT0H0M0S</RemainingWork>
 			<RemainingOvertimeCost>0</RemainingOvertimeCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<ACWP>557390.00</ACWP>
+			<ACWP>2828477.41</ACWP>
 			<CV>0.00</CV>
 			<ConstraintType>0</ConstraintType>
 			<CalendarUID>-1</CalendarUID>
@@ -6418,8 +6422,8 @@
 			<IgnoreResourceCalendar>0</IgnoreResourceCalendar>
 			<HideBar>0</HideBar>
 			<Rollup>1</Rollup>
-			<BCWS>557390.00</BCWS>
-			<BCWP>557390.00</BCWP>
+			<BCWS>2828477.41</BCWS>
+			<BCWP>2828477.41</BCWP>
 			<PhysicalPercentComplete>0</PhysicalPercentComplete>
 			<EarnedValueMethod>0</EarnedValueMethod>
 			<IsPublished>0</IsPublished>
@@ -8265,21 +8269,21 @@
 			<Milestone>0</Milestone>
 			<Summary>1</Summary>
 			<DisplayAsSummary>0</DisplayAsSummary>
-			<Critical>0</Critical>
+			<Critical>1</Critical>
 			<IsSubproject>0</IsSubproject>
 			<IsSubprojectReadOnly>0</IsSubprojectReadOnly>
 			<ExternalTask>0</ExternalTask>
 			<EarlyStart>2026-05-11T08:00:00</EarlyStart>
 			<EarlyFinish>2026-05-27T15:00:00</EarlyFinish>
 			<LateStart>2026-05-11T08:00:00</LateStart>
-			<LateFinish>2026-06-05T09:00:00</LateFinish>
+			<LateFinish>2026-05-27T15:00:00</LateFinish>
 			<StartVariance>0</StartVariance>
 			<FinishVariance>0</FinishVariance>
 			<WorkVariance>0.00</WorkVariance>
-			<FreeSlack>33600</FreeSlack>
-			<TotalSlack>33600</TotalSlack>
+			<FreeSlack>0</FreeSlack>
+			<TotalSlack>0</TotalSlack>
 			<StartSlack>0</StartSlack>
-			<FinishSlack>33600</FinishSlack>
+			<FinishSlack>0</FinishSlack>
 			<FixedCost>0</FixedCost>
 			<FixedCostAccrual>3</FixedCostAccrual>
 			<PercentComplete>0</PercentComplete>
@@ -8551,6 +8555,8 @@
 			<DurationFormat>7</DurationFormat>
 			<FreeformDurationFormat>7</FreeformDurationFormat>
 			<Work>PT0H0M0S</Work>
+			<Stop>2026-05-20T11:00:00</Stop>
+			<Resume>2026-05-20T11:00:00</Resume>
 			<ResumeValid>0</ResumeValid>
 			<EffortDriven>0</EffortDriven>
 			<Recurring>0</Recurring>
@@ -8565,22 +8571,24 @@
 			<ExternalTask>0</ExternalTask>
 			<EarlyStart>2026-05-20T11:00:00</EarlyStart>
 			<EarlyFinish>2026-05-20T11:00:00</EarlyFinish>
-			<LateStart>2026-06-05T09:00:00</LateStart>
-			<LateFinish>2026-06-05T09:00:00</LateFinish>
+			<LateStart>2026-05-20T11:00:00</LateStart>
+			<LateFinish>2026-05-20T11:00:00</LateFinish>
 			<StartVariance>0</StartVariance>
 			<FinishVariance>0</FinishVariance>
 			<WorkVariance>0.00</WorkVariance>
 			<FreeSlack>0</FreeSlack>
-			<TotalSlack>62400</TotalSlack>
-			<StartSlack>62400</StartSlack>
-			<FinishSlack>62400</FinishSlack>
+			<TotalSlack>0</TotalSlack>
+			<StartSlack>0</StartSlack>
+			<FinishSlack>0</FinishSlack>
 			<FixedCost>0</FixedCost>
 			<FixedCostAccrual>3</FixedCostAccrual>
-			<PercentComplete>0</PercentComplete>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentComplete>100</PercentComplete>
+			<PercentWorkComplete>100</PercentWorkComplete>
 			<Cost>0</Cost>
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
+			<ActualFinish>2026-05-20T11:00:00</ActualFinish>
 			<ActualDuration>PT0H0M0S</ActualDuration>
 			<ActualCost>0</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
@@ -8593,7 +8601,7 @@
 			<RemainingOvertimeCost>0</RemainingOvertimeCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
 			<ACWP>0.00</ACWP>
-			<CV>-0.00</CV>
+			<CV>0.00</CV>
 			<ConstraintType>0</ConstraintType>
 			<CalendarUID>-1</CalendarUID>
 			<LevelAssignments>1</LevelAssignments>
@@ -8604,7 +8612,7 @@
 			<HideBar>0</HideBar>
 			<Rollup>0</Rollup>
 			<BCWS>0.00</BCWS>
-			<BCWP>-0.00</BCWP>
+			<BCWP>0.00</BCWP>
 			<PhysicalPercentComplete>0</PhysicalPercentComplete>
 			<EarnedValueMethod>0</EarnedValueMethod>
 			<PredecessorLink>
@@ -8621,6 +8629,14 @@
 				<Start>2026-05-20T11:00:00</Start>
 				<Finish>2026-05-20T11:00:00</Finish>
 			</Baseline>
+			<TimephasedData>
+				<Type>11</Type>
+				<UID>44</UID>
+				<Start>2026-05-20T11:00:00</Start>
+				<Finish>2026-05-20T11:01:00</Finish>
+				<Unit>0</Unit>
+				<Value>100</Value>
+			</TimephasedData>
 		</Task>
 		<Task>
 			<UID>268</UID>
@@ -8751,6 +8767,8 @@
 			<DurationFormat>7</DurationFormat>
 			<FreeformDurationFormat>7</FreeformDurationFormat>
 			<Work>PT0H0M0S</Work>
+			<Stop>2026-05-20T11:00:00</Stop>
+			<Resume>2026-05-20T11:00:00</Resume>
 			<ResumeValid>0</ResumeValid>
 			<EffortDriven>0</EffortDriven>
 			<Recurring>0</Recurring>
@@ -8765,22 +8783,24 @@
 			<ExternalTask>0</ExternalTask>
 			<EarlyStart>2026-05-20T11:00:00</EarlyStart>
 			<EarlyFinish>2026-05-20T11:00:00</EarlyFinish>
-			<LateStart>2026-06-05T09:00:00</LateStart>
-			<LateFinish>2026-06-05T09:00:00</LateFinish>
+			<LateStart>2026-05-20T11:00:00</LateStart>
+			<LateFinish>2026-05-20T11:00:00</LateFinish>
 			<StartVariance>0</StartVariance>
 			<FinishVariance>0</FinishVariance>
 			<WorkVariance>0.00</WorkVariance>
 			<FreeSlack>0</FreeSlack>
-			<TotalSlack>62400</TotalSlack>
-			<StartSlack>62400</StartSlack>
-			<FinishSlack>62400</FinishSlack>
+			<TotalSlack>0</TotalSlack>
+			<StartSlack>0</StartSlack>
+			<FinishSlack>0</FinishSlack>
 			<FixedCost>0</FixedCost>
 			<FixedCostAccrual>3</FixedCostAccrual>
-			<PercentComplete>0</PercentComplete>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentComplete>100</PercentComplete>
+			<PercentWorkComplete>100</PercentWorkComplete>
 			<Cost>0</Cost>
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
+			<ActualFinish>2026-05-20T11:00:00</ActualFinish>
 			<ActualDuration>PT0H0M0S</ActualDuration>
 			<ActualCost>0</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
@@ -8793,7 +8813,7 @@
 			<RemainingOvertimeCost>0</RemainingOvertimeCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
 			<ACWP>0.00</ACWP>
-			<CV>-0.00</CV>
+			<CV>0.00</CV>
 			<ConstraintType>0</ConstraintType>
 			<CalendarUID>-1</CalendarUID>
 			<LevelAssignments>1</LevelAssignments>
@@ -8804,7 +8824,7 @@
 			<HideBar>0</HideBar>
 			<Rollup>0</Rollup>
 			<BCWS>0.00</BCWS>
-			<BCWP>-0.00</BCWP>
+			<BCWP>0.00</BCWP>
 			<PhysicalPercentComplete>0</PhysicalPercentComplete>
 			<EarnedValueMethod>0</EarnedValueMethod>
 			<PredecessorLink>
@@ -8821,6 +8841,14 @@
 				<Start>2026-05-20T11:00:00</Start>
 				<Finish>2026-05-20T11:00:00</Finish>
 			</Baseline>
+			<TimephasedData>
+				<Type>11</Type>
+				<UID>269</UID>
+				<Start>2026-05-20T11:00:00</Start>
+				<Finish>2026-05-20T11:01:00</Finish>
+				<Unit>0</Unit>
+				<Value>100</Value>
+			</TimephasedData>
 		</Task>
 		<Task>
 			<UID>267</UID>
@@ -9072,24 +9100,24 @@
 			<FinishSlack>115200</FinishSlack>
 			<FixedCost>0</FixedCost>
 			<FixedCostAccrual>3</FixedCostAccrual>
-			<PercentComplete>1</PercentComplete>
+			<PercentComplete>2</PercentComplete>
 			<PercentWorkComplete>0</PercentWorkComplete>
 			<Cost>172090322</Cost>
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
 			<ActualStart>2026-05-11T08:00:00</ActualStart>
-			<ActualDuration>PT11H35M0S</ActualDuration>
-			<ActualCost>557390</ActualCost>
+			<ActualDuration>PT24H37M0S</ActualDuration>
+			<ActualCost>2261589.91</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
 			<ActualWork>PT0H0M0S</ActualWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RegularWork>PT0H0M0S</RegularWork>
-			<RemainingDuration>PT1388H25M0S</RemainingDuration>
-			<RemainingCost>171532932</RemainingCost>
+			<RemainingDuration>PT1375H23M0S</RemainingDuration>
+			<RemainingCost>169828732.09</RemainingCost>
 			<RemainingWork>PT0H0M0S</RemainingWork>
 			<RemainingOvertimeCost>0</RemainingOvertimeCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<ACWP>557390.00</ACWP>
+			<ACWP>2261589.91</ACWP>
 			<CV>0.00</CV>
 			<ConstraintType>0</ConstraintType>
 			<CalendarUID>-1</CalendarUID>
@@ -9100,8 +9128,8 @@
 			<IgnoreResourceCalendar>0</IgnoreResourceCalendar>
 			<HideBar>0</HideBar>
 			<Rollup>1</Rollup>
-			<BCWS>557390.00</BCWS>
-			<BCWP>557390.00</BCWP>
+			<BCWS>2261589.91</BCWS>
+			<BCWP>2261589.91</BCWP>
 			<PhysicalPercentComplete>0</PhysicalPercentComplete>
 			<EarnedValueMethod>0</EarnedValueMethod>
 			<IsPublished>0</IsPublished>
@@ -11409,6 +11437,8 @@
 			<DurationFormat>21</DurationFormat>
 			<FreeformDurationFormat>21</FreeformDurationFormat>
 			<Work>PT0H0M0S</Work>
+			<Stop>2026-05-20T11:00:00</Stop>
+			<Resume>2026-05-20T11:00:00</Resume>
 			<ResumeValid>0</ResumeValid>
 			<EffortDriven>0</EffortDriven>
 			<Recurring>0</Recurring>
@@ -11423,34 +11453,35 @@
 			<ExternalTask>0</ExternalTask>
 			<EarlyStart>2026-05-16T08:00:00</EarlyStart>
 			<EarlyFinish>2026-06-02T09:00:00</EarlyFinish>
-			<LateStart>2026-06-15T16:00:00</LateStart>
+			<LateStart>2026-05-16T08:00:00</LateStart>
 			<LateFinish>2027-01-20T12:00:00</LateFinish>
 			<StartVariance>0</StartVariance>
 			<FinishVariance>0</FinishVariance>
 			<WorkVariance>0.00</WorkVariance>
-			<FreeSlack>115200</FreeSlack>
-			<TotalSlack>115200</TotalSlack>
-			<StartSlack>115200</StartSlack>
+			<FreeSlack>868800</FreeSlack>
+			<TotalSlack>868800</TotalSlack>
+			<StartSlack>0</StartSlack>
 			<FinishSlack>868800</FinishSlack>
 			<FixedCost>0</FixedCost>
 			<FixedCostAccrual>3</FixedCostAccrual>
-			<PercentComplete>0</PercentComplete>
+			<PercentComplete>15</PercentComplete>
 			<PercentWorkComplete>0</PercentWorkComplete>
 			<Cost>11435779</Cost>
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
-			<ActualDuration>PT0H0M0S</ActualDuration>
-			<ActualCost>0</ActualCost>
+			<ActualStart>2026-05-16T08:00:00</ActualStart>
+			<ActualDuration>PT16H3M30S</ActualDuration>
+			<ActualCost>1704199.91</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
 			<ActualWork>PT0H0M0S</ActualWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RegularWork>PT0H0M0S</RegularWork>
-			<RemainingDuration>PT104H0M0S</RemainingDuration>
-			<RemainingCost>11435779</RemainingCost>
+			<RemainingDuration>PT87H56M30S</RemainingDuration>
+			<RemainingCost>9731579.09</RemainingCost>
 			<RemainingWork>PT0H0M0S</RemainingWork>
 			<RemainingOvertimeCost>0</RemainingOvertimeCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<ACWP>0.00</ACWP>
+			<ACWP>1704199.91</ACWP>
 			<CV>0.00</CV>
 			<ConstraintType>0</ConstraintType>
 			<CalendarUID>-1</CalendarUID>
@@ -11461,8 +11492,8 @@
 			<IgnoreResourceCalendar>0</IgnoreResourceCalendar>
 			<HideBar>0</HideBar>
 			<Rollup>1</Rollup>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>1704199.91</BCWS>
+			<BCWP>1704199.91</BCWP>
 			<PhysicalPercentComplete>0</PhysicalPercentComplete>
 			<EarnedValueMethod>0</EarnedValueMethod>
 			<IsPublished>0</IsPublished>
@@ -11586,6 +11617,8 @@
 			<DurationFormat>7</DurationFormat>
 			<FreeformDurationFormat>7</FreeformDurationFormat>
 			<Work>PT0H0M0S</Work>
+			<Stop>2026-05-20T11:00:00</Stop>
+			<Resume>2026-05-20T11:00:00</Resume>
 			<ResumeValid>0</ResumeValid>
 			<EffortDriven>0</EffortDriven>
 			<Recurring>0</Recurring>
@@ -11600,34 +11633,36 @@
 			<ExternalTask>0</ExternalTask>
 			<EarlyStart>2026-05-16T08:00:00</EarlyStart>
 			<EarlyFinish>2026-05-20T11:00:00</EarlyFinish>
-			<LateStart>2026-06-15T16:00:00</LateStart>
-			<LateFinish>2026-06-18T16:00:00</LateFinish>
+			<LateStart>2026-05-16T08:00:00</LateStart>
+			<LateFinish>2026-05-20T11:00:00</LateFinish>
 			<StartVariance>0</StartVariance>
 			<FinishVariance>0</FinishVariance>
 			<WorkVariance>0.00</WorkVariance>
 			<FreeSlack>0</FreeSlack>
-			<TotalSlack>115200</TotalSlack>
-			<StartSlack>115200</StartSlack>
-			<FinishSlack>115200</FinishSlack>
+			<TotalSlack>0</TotalSlack>
+			<StartSlack>0</StartSlack>
+			<FinishSlack>0</FinishSlack>
 			<FixedCost>0</FixedCost>
 			<FixedCostAccrual>3</FixedCostAccrual>
-			<PercentComplete>0</PercentComplete>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentComplete>100</PercentComplete>
+			<PercentWorkComplete>100</PercentWorkComplete>
 			<Cost>780903</Cost>
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
-			<ActualDuration>PT0H0M0S</ActualDuration>
-			<ActualCost>0</ActualCost>
+			<ActualStart>2026-05-16T08:00:00</ActualStart>
+			<ActualFinish>2026-05-20T11:00:00</ActualFinish>
+			<ActualDuration>PT24H0M0S</ActualDuration>
+			<ActualCost>780903</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
 			<ActualWork>PT0H0M0S</ActualWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RegularWork>PT0H0M0S</RegularWork>
-			<RemainingDuration>PT24H0M0S</RemainingDuration>
-			<RemainingCost>780903</RemainingCost>
+			<RemainingDuration>PT0H0M0S</RemainingDuration>
+			<RemainingCost>0</RemainingCost>
 			<RemainingWork>PT0H0M0S</RemainingWork>
 			<RemainingOvertimeCost>0</RemainingOvertimeCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<ACWP>0.00</ACWP>
+			<ACWP>780903.00</ACWP>
 			<CV>0.00</CV>
 			<ConstraintType>0</ConstraintType>
 			<CalendarUID>-1</CalendarUID>
@@ -11638,8 +11673,8 @@
 			<IgnoreResourceCalendar>0</IgnoreResourceCalendar>
 			<HideBar>0</HideBar>
 			<Rollup>0</Rollup>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>780903.00</BCWS>
+			<BCWP>780903.00</BCWP>
 			<PhysicalPercentComplete>0</PhysicalPercentComplete>
 			<EarnedValueMethod>0</EarnedValueMethod>
 			<PredecessorLink>
@@ -11665,6 +11700,46 @@
 				<Duration>PT24H0M0S</Duration>
 				<Cost>780903</Cost>
 			</Baseline>
+			<TimephasedData>
+				<Type>11</Type>
+				<UID>18</UID>
+				<Start>2026-05-16T08:00:00</Start>
+				<Finish>2026-05-17T08:00:00</Finish>
+				<Unit>2</Unit>
+				<Value>20.83</Value>
+			</TimephasedData>
+			<TimephasedData>
+				<Type>11</Type>
+				<UID>18</UID>
+				<Start>2026-05-17T08:00:00</Start>
+				<Finish>2026-05-18T08:00:00</Finish>
+				<Unit>2</Unit>
+				<Value>32768</Value>
+			</TimephasedData>
+			<TimephasedData>
+				<Type>11</Type>
+				<UID>18</UID>
+				<Start>2026-05-18T08:00:00</Start>
+				<Finish>2026-05-19T08:00:00</Finish>
+				<Unit>2</Unit>
+				<Value>33.33</Value>
+			</TimephasedData>
+			<TimephasedData>
+				<Type>11</Type>
+				<UID>18</UID>
+				<Start>2026-05-19T08:00:00</Start>
+				<Finish>2026-05-20T08:00:00</Finish>
+				<Unit>2</Unit>
+				<Value>33.33</Value>
+			</TimephasedData>
+			<TimephasedData>
+				<Type>11</Type>
+				<UID>18</UID>
+				<Start>2026-05-20T08:00:00</Start>
+				<Finish>2026-05-20T11:00:00</Finish>
+				<Unit>2</Unit>
+				<Value>12.5</Value>
+			</TimephasedData>
 			<TimephasedData>
 				<Type>10</Type>
 				<UID>18</UID>
@@ -11697,6 +11772,8 @@
 			<DurationFormat>7</DurationFormat>
 			<FreeformDurationFormat>7</FreeformDurationFormat>
 			<Work>PT0H0M0S</Work>
+			<Stop>2026-05-20T11:00:00</Stop>
+			<Resume>2026-05-20T11:00:00</Resume>
 			<ResumeValid>0</ResumeValid>
 			<EffortDriven>0</EffortDriven>
 			<Recurring>0</Recurring>
@@ -11711,34 +11788,36 @@
 			<ExternalTask>0</ExternalTask>
 			<EarlyStart>2026-05-16T08:00:00</EarlyStart>
 			<EarlyFinish>2026-05-20T11:00:00</EarlyFinish>
-			<LateStart>2026-06-16T16:00:00</LateStart>
-			<LateFinish>2026-06-19T16:00:00</LateFinish>
+			<LateStart>2026-05-16T08:00:00</LateStart>
+			<LateFinish>2026-05-20T11:00:00</LateFinish>
 			<StartVariance>0</StartVariance>
 			<FinishVariance>0</FinishVariance>
 			<WorkVariance>0.00</WorkVariance>
 			<FreeSlack>0</FreeSlack>
-			<TotalSlack>120000</TotalSlack>
-			<StartSlack>120000</StartSlack>
-			<FinishSlack>120000</FinishSlack>
+			<TotalSlack>0</TotalSlack>
+			<StartSlack>0</StartSlack>
+			<FinishSlack>0</FinishSlack>
 			<FixedCost>0</FixedCost>
 			<FixedCostAccrual>3</FixedCostAccrual>
-			<PercentComplete>0</PercentComplete>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentComplete>100</PercentComplete>
+			<PercentWorkComplete>100</PercentWorkComplete>
 			<Cost>504508</Cost>
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
-			<ActualDuration>PT0H0M0S</ActualDuration>
-			<ActualCost>0</ActualCost>
+			<ActualStart>2026-05-16T08:00:00</ActualStart>
+			<ActualFinish>2026-05-20T11:00:00</ActualFinish>
+			<ActualDuration>PT24H0M0S</ActualDuration>
+			<ActualCost>504508</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
 			<ActualWork>PT0H0M0S</ActualWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RegularWork>PT0H0M0S</RegularWork>
-			<RemainingDuration>PT24H0M0S</RemainingDuration>
-			<RemainingCost>504508</RemainingCost>
+			<RemainingDuration>PT0H0M0S</RemainingDuration>
+			<RemainingCost>0</RemainingCost>
 			<RemainingWork>PT0H0M0S</RemainingWork>
 			<RemainingOvertimeCost>0</RemainingOvertimeCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<ACWP>0.00</ACWP>
+			<ACWP>504508.00</ACWP>
 			<CV>0.00</CV>
 			<ConstraintType>0</ConstraintType>
 			<CalendarUID>-1</CalendarUID>
@@ -11749,8 +11828,8 @@
 			<IgnoreResourceCalendar>0</IgnoreResourceCalendar>
 			<HideBar>0</HideBar>
 			<Rollup>0</Rollup>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>504508.00</BCWS>
+			<BCWP>504508.00</BCWP>
 			<PhysicalPercentComplete>0</PhysicalPercentComplete>
 			<EarnedValueMethod>0</EarnedValueMethod>
 			<PredecessorLink>
@@ -11776,6 +11855,46 @@
 				<Duration>PT24H0M0S</Duration>
 				<Cost>504508</Cost>
 			</Baseline>
+			<TimephasedData>
+				<Type>11</Type>
+				<UID>19</UID>
+				<Start>2026-05-16T08:00:00</Start>
+				<Finish>2026-05-17T08:00:00</Finish>
+				<Unit>2</Unit>
+				<Value>20.83</Value>
+			</TimephasedData>
+			<TimephasedData>
+				<Type>11</Type>
+				<UID>19</UID>
+				<Start>2026-05-17T08:00:00</Start>
+				<Finish>2026-05-18T08:00:00</Finish>
+				<Unit>2</Unit>
+				<Value>32768</Value>
+			</TimephasedData>
+			<TimephasedData>
+				<Type>11</Type>
+				<UID>19</UID>
+				<Start>2026-05-18T08:00:00</Start>
+				<Finish>2026-05-19T08:00:00</Finish>
+				<Unit>2</Unit>
+				<Value>33.33</Value>
+			</TimephasedData>
+			<TimephasedData>
+				<Type>11</Type>
+				<UID>19</UID>
+				<Start>2026-05-19T08:00:00</Start>
+				<Finish>2026-05-20T08:00:00</Finish>
+				<Unit>2</Unit>
+				<Value>33.33</Value>
+			</TimephasedData>
+			<TimephasedData>
+				<Type>11</Type>
+				<UID>19</UID>
+				<Start>2026-05-20T08:00:00</Start>
+				<Finish>2026-05-20T11:00:00</Finish>
+				<Unit>2</Unit>
+				<Value>12.5</Value>
+			</TimephasedData>
 			<TimephasedData>
 				<Type>10</Type>
 				<UID>19</UID>
@@ -11808,6 +11927,8 @@
 			<DurationFormat>7</DurationFormat>
 			<FreeformDurationFormat>7</FreeformDurationFormat>
 			<Work>PT0H0M0S</Work>
+			<Stop>2026-05-20T17:00:00</Stop>
+			<Resume>2026-05-21T08:00:00</Resume>
 			<ResumeValid>0</ResumeValid>
 			<EffortDriven>0</EffortDriven>
 			<Recurring>0</Recurring>
@@ -11822,34 +11943,35 @@
 			<ExternalTask>0</ExternalTask>
 			<EarlyStart>2026-05-20T11:00:00</EarlyStart>
 			<EarlyFinish>2026-05-21T11:00:00</EarlyFinish>
-			<LateStart>2026-06-19T16:00:00</LateStart>
+			<LateStart>2026-05-20T11:00:00</LateStart>
 			<LateFinish>2026-06-22T10:00:00</LateFinish>
 			<StartVariance>0</StartVariance>
 			<FinishVariance>0</FinishVariance>
 			<WorkVariance>0.00</WorkVariance>
 			<FreeSlack>0</FreeSlack>
 			<TotalSlack>120000</TotalSlack>
-			<StartSlack>120000</StartSlack>
+			<StartSlack>0</StartSlack>
 			<FinishSlack>120000</FinishSlack>
 			<FixedCost>0</FixedCost>
 			<FixedCostAccrual>3</FixedCostAccrual>
-			<PercentComplete>0</PercentComplete>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentComplete>63</PercentComplete>
+			<PercentWorkComplete>63</PercentWorkComplete>
 			<Cost>214332</Cost>
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
-			<ActualDuration>PT0H0M0S</ActualDuration>
-			<ActualCost>0</ActualCost>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
+			<ActualDuration>PT5H0M0S</ActualDuration>
+			<ActualCost>133957.5</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
 			<ActualWork>PT0H0M0S</ActualWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RegularWork>PT0H0M0S</RegularWork>
-			<RemainingDuration>PT8H0M0S</RemainingDuration>
-			<RemainingCost>214332</RemainingCost>
+			<RemainingDuration>PT3H0M0S</RemainingDuration>
+			<RemainingCost>80374.5</RemainingCost>
 			<RemainingWork>PT0H0M0S</RemainingWork>
 			<RemainingOvertimeCost>0</RemainingOvertimeCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<ACWP>0.00</ACWP>
+			<ACWP>133957.50</ACWP>
 			<CV>0.00</CV>
 			<ConstraintType>0</ConstraintType>
 			<CalendarUID>-1</CalendarUID>
@@ -11860,8 +11982,8 @@
 			<IgnoreResourceCalendar>0</IgnoreResourceCalendar>
 			<HideBar>0</HideBar>
 			<Rollup>0</Rollup>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>133957.50</BCWS>
+			<BCWP>133957.50</BCWP>
 			<PhysicalPercentComplete>0</PhysicalPercentComplete>
 			<EarnedValueMethod>0</EarnedValueMethod>
 			<PredecessorLink>
@@ -11880,6 +12002,14 @@
 				<Duration>PT8H0M0S</Duration>
 				<Cost>214332</Cost>
 			</Baseline>
+			<TimephasedData>
+				<Type>11</Type>
+				<UID>20</UID>
+				<Start>2026-05-20T11:00:00</Start>
+				<Finish>2026-05-20T17:00:00</Finish>
+				<Unit>2</Unit>
+				<Value>62.5</Value>
+			</TimephasedData>
 			<TimephasedData>
 				<Type>10</Type>
 				<UID>20</UID>
@@ -13202,6 +13332,8 @@
 			<DurationFormat>7</DurationFormat>
 			<FreeformDurationFormat>7</FreeformDurationFormat>
 			<Work>PT0H0M0S</Work>
+			<Stop>2026-05-20T17:00:00</Stop>
+			<Resume>2026-05-21T08:00:00</Resume>
 			<ResumeValid>0</ResumeValid>
 			<EffortDriven>0</EffortDriven>
 			<Recurring>0</Recurring>
@@ -13216,34 +13348,35 @@
 			<ExternalTask>0</ExternalTask>
 			<EarlyStart>2026-05-20T11:00:00</EarlyStart>
 			<EarlyFinish>2026-05-25T15:00:00</EarlyFinish>
-			<LateStart>2026-06-18T16:00:00</LateStart>
+			<LateStart>2026-05-20T11:00:00</LateStart>
 			<LateFinish>2026-06-24T10:00:00</LateFinish>
 			<StartVariance>0</StartVariance>
 			<FinishVariance>0</FinishVariance>
 			<WorkVariance>0.00</WorkVariance>
 			<FreeSlack>0</FreeSlack>
 			<TotalSlack>115200</TotalSlack>
-			<StartSlack>115200</StartSlack>
+			<StartSlack>0</StartSlack>
 			<FinishSlack>115200</FinishSlack>
 			<FixedCost>0</FixedCost>
 			<FixedCostAccrual>3</FixedCostAccrual>
-			<PercentComplete>0</PercentComplete>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentComplete>16</PercentComplete>
+			<PercentWorkComplete>16</PercentWorkComplete>
 			<Cost>1170573</Cost>
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
-			<ActualDuration>PT0H0M0S</ActualDuration>
-			<ActualCost>0</ActualCost>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
+			<ActualDuration>PT5H0M0S</ActualDuration>
+			<ActualCost>182902.03</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
 			<ActualWork>PT0H0M0S</ActualWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RegularWork>PT0H0M0S</RegularWork>
-			<RemainingDuration>PT32H0M0S</RemainingDuration>
-			<RemainingCost>1170573</RemainingCost>
+			<RemainingDuration>PT27H0M0S</RemainingDuration>
+			<RemainingCost>987670.97</RemainingCost>
 			<RemainingWork>PT0H0M0S</RemainingWork>
 			<RemainingOvertimeCost>0</RemainingOvertimeCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<ACWP>0.00</ACWP>
+			<ACWP>182902.03</ACWP>
 			<CV>0.00</CV>
 			<ConstraintType>0</ConstraintType>
 			<CalendarUID>-1</CalendarUID>
@@ -13254,8 +13387,8 @@
 			<IgnoreResourceCalendar>0</IgnoreResourceCalendar>
 			<HideBar>0</HideBar>
 			<Rollup>0</Rollup>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>182902.03</BCWS>
+			<BCWP>182902.03</BCWP>
 			<PhysicalPercentComplete>0</PhysicalPercentComplete>
 			<EarnedValueMethod>0</EarnedValueMethod>
 			<PredecessorLink>
@@ -13274,6 +13407,14 @@
 				<Duration>PT32H0M0S</Duration>
 				<Cost>1170573</Cost>
 			</Baseline>
+			<TimephasedData>
+				<Type>11</Type>
+				<UID>33</UID>
+				<Start>2026-05-20T11:00:00</Start>
+				<Finish>2026-05-20T17:00:00</Finish>
+				<Unit>2</Unit>
+				<Value>15.63</Value>
+			</TimephasedData>
 			<TimephasedData>
 				<Type>10</Type>
 				<UID>33</UID>
@@ -13306,6 +13447,8 @@
 			<DurationFormat>7</DurationFormat>
 			<FreeformDurationFormat>7</FreeformDurationFormat>
 			<Work>PT0H0M0S</Work>
+			<Stop>2026-05-20T17:00:00</Stop>
+			<Resume>2026-05-21T08:00:00</Resume>
 			<ResumeValid>0</ResumeValid>
 			<EffortDriven>0</EffortDriven>
 			<Recurring>0</Recurring>
@@ -13320,34 +13463,35 @@
 			<ExternalTask>0</ExternalTask>
 			<EarlyStart>2026-05-20T11:00:00</EarlyStart>
 			<EarlyFinish>2026-05-25T15:00:00</EarlyFinish>
-			<LateStart>2026-06-18T16:00:00</LateStart>
+			<LateStart>2026-05-20T11:00:00</LateStart>
 			<LateFinish>2026-06-24T10:00:00</LateFinish>
 			<StartVariance>0</StartVariance>
 			<FinishVariance>0</FinishVariance>
 			<WorkVariance>0.00</WorkVariance>
 			<FreeSlack>0</FreeSlack>
 			<TotalSlack>115200</TotalSlack>
-			<StartSlack>115200</StartSlack>
+			<StartSlack>0</StartSlack>
 			<FinishSlack>115200</FinishSlack>
 			<FixedCost>0</FixedCost>
 			<FixedCostAccrual>3</FixedCostAccrual>
-			<PercentComplete>0</PercentComplete>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentComplete>16</PercentComplete>
+			<PercentWorkComplete>16</PercentWorkComplete>
 			<Cost>652348</Cost>
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
-			<ActualDuration>PT0H0M0S</ActualDuration>
-			<ActualCost>0</ActualCost>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
+			<ActualDuration>PT5H0M0S</ActualDuration>
+			<ActualCost>101929.38</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
 			<ActualWork>PT0H0M0S</ActualWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RegularWork>PT0H0M0S</RegularWork>
-			<RemainingDuration>PT32H0M0S</RemainingDuration>
-			<RemainingCost>652348</RemainingCost>
+			<RemainingDuration>PT27H0M0S</RemainingDuration>
+			<RemainingCost>550418.63</RemainingCost>
 			<RemainingWork>PT0H0M0S</RemainingWork>
 			<RemainingOvertimeCost>0</RemainingOvertimeCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<ACWP>0.00</ACWP>
+			<ACWP>101929.38</ACWP>
 			<CV>0.00</CV>
 			<ConstraintType>0</ConstraintType>
 			<CalendarUID>-1</CalendarUID>
@@ -13358,8 +13502,8 @@
 			<IgnoreResourceCalendar>0</IgnoreResourceCalendar>
 			<HideBar>0</HideBar>
 			<Rollup>0</Rollup>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>101929.38</BCWS>
+			<BCWP>101929.38</BCWP>
 			<PhysicalPercentComplete>0</PhysicalPercentComplete>
 			<EarnedValueMethod>0</EarnedValueMethod>
 			<PredecessorLink>
@@ -13378,6 +13522,14 @@
 				<Duration>PT32H0M0S</Duration>
 				<Cost>652348</Cost>
 			</Baseline>
+			<TimephasedData>
+				<Type>11</Type>
+				<UID>34</UID>
+				<Start>2026-05-20T11:00:00</Start>
+				<Finish>2026-05-20T17:00:00</Finish>
+				<Unit>2</Unit>
+				<Value>15.63</Value>
+			</TimephasedData>
 			<TimephasedData>
 				<Type>10</Type>
 				<UID>34</UID>
@@ -39903,6 +40055,8 @@
 			<DurationFormat>21</DurationFormat>
 			<FreeformDurationFormat>21</FreeformDurationFormat>
 			<Work>PT0H0M0S</Work>
+			<Stop>2026-05-20T11:00:00</Stop>
+			<Resume>2026-05-20T11:00:00</Resume>
 			<ResumeValid>0</ResumeValid>
 			<EffortDriven>0</EffortDriven>
 			<Recurring>0</Recurring>
@@ -39917,14 +40071,14 @@
 			<ExternalTask>0</ExternalTask>
 			<EarlyStart>2026-05-20T11:00:00</EarlyStart>
 			<EarlyFinish>2027-01-04T15:00:00</EarlyFinish>
-			<LateStart>2026-06-05T09:00:00</LateStart>
+			<LateStart>2026-05-20T11:00:00</LateStart>
 			<LateFinish>2027-01-20T12:00:00</LateFinish>
 			<StartVariance>0</StartVariance>
 			<FinishVariance>0</FinishVariance>
 			<WorkVariance>0.00</WorkVariance>
 			<FreeSlack>62400</FreeSlack>
 			<TotalSlack>62400</TotalSlack>
-			<StartSlack>62400</StartSlack>
+			<StartSlack>0</StartSlack>
 			<FinishSlack>62400</FinishSlack>
 			<FixedCost>0</FixedCost>
 			<FixedCostAccrual>3</FixedCostAccrual>
@@ -39933,18 +40087,19 @@
 			<Cost>243557860</Cost>
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
-			<ActualDuration>PT0H0M0S</ActualDuration>
-			<ActualCost>0</ActualCost>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
+			<ActualDuration>PT0H50M54S</ActualDuration>
+			<ActualCost>283443.75</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
 			<ActualWork>PT0H0M0S</ActualWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RegularWork>PT0H0M0S</RegularWork>
-			<RemainingDuration>PT1424H0M0S</RemainingDuration>
-			<RemainingCost>243557860</RemainingCost>
+			<RemainingDuration>PT1423H9M6S</RemainingDuration>
+			<RemainingCost>243274416.25</RemainingCost>
 			<RemainingWork>PT0H0M0S</RemainingWork>
 			<RemainingOvertimeCost>0</RemainingOvertimeCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<ACWP>0.00</ACWP>
+			<ACWP>283443.75</ACWP>
 			<CV>0.00</CV>
 			<ConstraintType>0</ConstraintType>
 			<CalendarUID>-1</CalendarUID>
@@ -39955,8 +40110,8 @@
 			<IgnoreResourceCalendar>0</IgnoreResourceCalendar>
 			<HideBar>0</HideBar>
 			<Rollup>1</Rollup>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>283443.75</BCWS>
+			<BCWP>283443.75</BCWP>
 			<PhysicalPercentComplete>0</PhysicalPercentComplete>
 			<EarnedValueMethod>0</EarnedValueMethod>
 			<IsPublished>0</IsPublished>
@@ -41168,6 +41323,8 @@
 			<DurationFormat>21</DurationFormat>
 			<FreeformDurationFormat>21</FreeformDurationFormat>
 			<Work>PT0H0M0S</Work>
+			<Stop>2026-05-20T11:00:00</Stop>
+			<Resume>2026-05-20T11:00:00</Resume>
 			<ResumeValid>0</ResumeValid>
 			<EffortDriven>0</EffortDriven>
 			<Recurring>0</Recurring>
@@ -41182,14 +41339,14 @@
 			<ExternalTask>0</ExternalTask>
 			<EarlyStart>2026-05-20T11:00:00</EarlyStart>
 			<EarlyFinish>2027-01-04T15:00:00</EarlyFinish>
-			<LateStart>2026-06-05T09:00:00</LateStart>
+			<LateStart>2026-05-20T11:00:00</LateStart>
 			<LateFinish>2027-01-20T12:00:00</LateFinish>
 			<StartVariance>0</StartVariance>
 			<FinishVariance>0</FinishVariance>
 			<WorkVariance>0.00</WorkVariance>
 			<FreeSlack>62400</FreeSlack>
 			<TotalSlack>62400</TotalSlack>
-			<StartSlack>62400</StartSlack>
+			<StartSlack>0</StartSlack>
 			<FinishSlack>62400</FinishSlack>
 			<FixedCost>0</FixedCost>
 			<FixedCostAccrual>3</FixedCostAccrual>
@@ -41198,6 +41355,7 @@
 			<Cost>0</Cost>
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
 			<ActualDuration>PT0H0M0S</ActualDuration>
 			<ActualCost>0</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
@@ -41256,6 +41414,8 @@
 			<DurationFormat>7</DurationFormat>
 			<FreeformDurationFormat>7</FreeformDurationFormat>
 			<Work>PT0H0M0S</Work>
+			<Stop>2026-05-20T11:00:00</Stop>
+			<Resume>2026-05-20T11:00:00</Resume>
 			<ResumeValid>0</ResumeValid>
 			<EffortDriven>0</EffortDriven>
 			<Recurring>0</Recurring>
@@ -41270,22 +41430,24 @@
 			<ExternalTask>0</ExternalTask>
 			<EarlyStart>2026-05-20T11:00:00</EarlyStart>
 			<EarlyFinish>2026-05-20T11:00:00</EarlyFinish>
-			<LateStart>2026-06-05T09:00:00</LateStart>
-			<LateFinish>2026-06-05T09:00:00</LateFinish>
+			<LateStart>2026-05-20T11:00:00</LateStart>
+			<LateFinish>2026-05-20T11:00:00</LateFinish>
 			<StartVariance>0</StartVariance>
 			<FinishVariance>0</FinishVariance>
 			<WorkVariance>0.00</WorkVariance>
 			<FreeSlack>0</FreeSlack>
-			<TotalSlack>62400</TotalSlack>
-			<StartSlack>62400</StartSlack>
-			<FinishSlack>62400</FinishSlack>
+			<TotalSlack>0</TotalSlack>
+			<StartSlack>0</StartSlack>
+			<FinishSlack>0</FinishSlack>
 			<FixedCost>0</FixedCost>
 			<FixedCostAccrual>3</FixedCostAccrual>
-			<PercentComplete>0</PercentComplete>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentComplete>100</PercentComplete>
+			<PercentWorkComplete>100</PercentWorkComplete>
 			<Cost>0</Cost>
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
+			<ActualFinish>2026-05-20T11:00:00</ActualFinish>
 			<ActualDuration>PT0H0M0S</ActualDuration>
 			<ActualCost>0</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
@@ -41298,7 +41460,7 @@
 			<RemainingOvertimeCost>0</RemainingOvertimeCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
 			<ACWP>0.00</ACWP>
-			<CV>-0.00</CV>
+			<CV>0.00</CV>
 			<ConstraintType>0</ConstraintType>
 			<CalendarUID>-1</CalendarUID>
 			<LevelAssignments>1</LevelAssignments>
@@ -41309,7 +41471,7 @@
 			<HideBar>0</HideBar>
 			<Rollup>0</Rollup>
 			<BCWS>0.00</BCWS>
-			<BCWP>-0.00</BCWP>
+			<BCWP>0.00</BCWP>
 			<PhysicalPercentComplete>0</PhysicalPercentComplete>
 			<EarnedValueMethod>0</EarnedValueMethod>
 			<PredecessorLink>
@@ -41326,6 +41488,14 @@
 				<Start>2026-05-20T11:00:00</Start>
 				<Finish>2026-05-20T11:00:00</Finish>
 			</Baseline>
+			<TimephasedData>
+				<Type>11</Type>
+				<UID>272</UID>
+				<Start>2026-05-20T11:00:00</Start>
+				<Finish>2026-05-20T11:01:00</Finish>
+				<Unit>0</Unit>
+				<Value>100</Value>
+			</TimephasedData>
 		</Task>
 		<Task>
 			<UID>273</UID>
@@ -41740,6 +41910,8 @@
 			<DurationFormat>21</DurationFormat>
 			<FreeformDurationFormat>21</FreeformDurationFormat>
 			<Work>PT0H0M0S</Work>
+			<Stop>2026-05-20T17:00:00</Stop>
+			<Resume>2026-05-21T08:00:00</Resume>
 			<ResumeValid>0</ResumeValid>
 			<EffortDriven>0</EffortDriven>
 			<Recurring>0</Recurring>
@@ -41754,34 +41926,35 @@
 			<ExternalTask>0</ExternalTask>
 			<EarlyStart>2026-05-20T11:00:00</EarlyStart>
 			<EarlyFinish>2026-05-22T11:00:00</EarlyFinish>
-			<LateStart>2026-06-05T09:00:00</LateStart>
+			<LateStart>2026-05-20T11:00:00</LateStart>
 			<LateFinish>2026-06-08T12:00:00</LateFinish>
 			<StartVariance>0</StartVariance>
 			<FinishVariance>0</FinishVariance>
 			<WorkVariance>0.00</WorkVariance>
 			<FreeSlack>62400</FreeSlack>
 			<TotalSlack>62400</TotalSlack>
-			<StartSlack>62400</StartSlack>
+			<StartSlack>0</StartSlack>
 			<FinishSlack>62400</FinishSlack>
 			<FixedCost>0</FixedCost>
 			<FixedCostAccrual>3</FixedCostAccrual>
-			<PercentComplete>0</PercentComplete>
+			<PercentComplete>31</PercentComplete>
 			<PercentWorkComplete>0</PercentWorkComplete>
 			<Cost>907020</Cost>
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
-			<ActualDuration>PT0H0M0S</ActualDuration>
-			<ActualCost>0</ActualCost>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
+			<ActualDuration>PT5H0M0S</ActualDuration>
+			<ActualCost>283443.75</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
 			<ActualWork>PT0H0M0S</ActualWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RegularWork>PT0H0M0S</RegularWork>
-			<RemainingDuration>PT16H0M0S</RemainingDuration>
-			<RemainingCost>907020</RemainingCost>
+			<RemainingDuration>PT11H0M0S</RemainingDuration>
+			<RemainingCost>623576.25</RemainingCost>
 			<RemainingWork>PT0H0M0S</RemainingWork>
 			<RemainingOvertimeCost>0</RemainingOvertimeCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<ACWP>0.00</ACWP>
+			<ACWP>283443.75</ACWP>
 			<CV>0.00</CV>
 			<ConstraintType>0</ConstraintType>
 			<CalendarUID>-1</CalendarUID>
@@ -41792,8 +41965,8 @@
 			<IgnoreResourceCalendar>0</IgnoreResourceCalendar>
 			<HideBar>0</HideBar>
 			<Rollup>1</Rollup>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>283443.75</BCWS>
+			<BCWP>283443.75</BCWP>
 			<PhysicalPercentComplete>0</PhysicalPercentComplete>
 			<EarnedValueMethod>0</EarnedValueMethod>
 			<IsPublished>0</IsPublished>
@@ -41837,6 +42010,8 @@
 			<DurationFormat>7</DurationFormat>
 			<FreeformDurationFormat>7</FreeformDurationFormat>
 			<Work>PT0H0M0S</Work>
+			<Stop>2026-05-20T17:00:00</Stop>
+			<Resume>2026-05-21T08:00:00</Resume>
 			<ResumeValid>0</ResumeValid>
 			<EffortDriven>0</EffortDriven>
 			<Recurring>0</Recurring>
@@ -41851,34 +42026,35 @@
 			<ExternalTask>0</ExternalTask>
 			<EarlyStart>2026-05-20T11:00:00</EarlyStart>
 			<EarlyFinish>2026-05-22T11:00:00</EarlyFinish>
-			<LateStart>2026-06-05T09:00:00</LateStart>
+			<LateStart>2026-05-20T11:00:00</LateStart>
 			<LateFinish>2026-06-08T12:00:00</LateFinish>
 			<StartVariance>0</StartVariance>
 			<FinishVariance>0</FinishVariance>
 			<WorkVariance>0.00</WorkVariance>
 			<FreeSlack>0</FreeSlack>
 			<TotalSlack>62400</TotalSlack>
-			<StartSlack>62400</StartSlack>
+			<StartSlack>0</StartSlack>
 			<FinishSlack>62400</FinishSlack>
 			<FixedCost>0</FixedCost>
 			<FixedCostAccrual>3</FixedCostAccrual>
-			<PercentComplete>0</PercentComplete>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentComplete>31</PercentComplete>
+			<PercentWorkComplete>31</PercentWorkComplete>
 			<Cost>907020</Cost>
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
-			<ActualDuration>PT0H0M0S</ActualDuration>
-			<ActualCost>0</ActualCost>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
+			<ActualDuration>PT5H0M0S</ActualDuration>
+			<ActualCost>283443.75</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
 			<ActualWork>PT0H0M0S</ActualWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RegularWork>PT0H0M0S</RegularWork>
-			<RemainingDuration>PT16H0M0S</RemainingDuration>
-			<RemainingCost>907020</RemainingCost>
+			<RemainingDuration>PT11H0M0S</RemainingDuration>
+			<RemainingCost>623576.25</RemainingCost>
 			<RemainingWork>PT0H0M0S</RemainingWork>
 			<RemainingOvertimeCost>0</RemainingOvertimeCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<ACWP>0.00</ACWP>
+			<ACWP>283443.75</ACWP>
 			<CV>0.00</CV>
 			<ConstraintType>0</ConstraintType>
 			<CalendarUID>-1</CalendarUID>
@@ -41889,8 +42065,8 @@
 			<IgnoreResourceCalendar>0</IgnoreResourceCalendar>
 			<HideBar>0</HideBar>
 			<Rollup>0</Rollup>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>283443.75</BCWS>
+			<BCWP>283443.75</BCWP>
 			<PhysicalPercentComplete>0</PhysicalPercentComplete>
 			<EarnedValueMethod>0</EarnedValueMethod>
 			<PredecessorLink>
@@ -41909,6 +42085,14 @@
 				<Duration>PT16H0M0S</Duration>
 				<Cost>907020</Cost>
 			</Baseline>
+			<TimephasedData>
+				<Type>11</Type>
+				<UID>278</UID>
+				<Start>2026-05-20T11:00:00</Start>
+				<Finish>2026-05-20T17:00:00</Finish>
+				<Unit>2</Unit>
+				<Value>31.25</Value>
+			</TimephasedData>
 			<TimephasedData>
 				<Type>10</Type>
 				<UID>278</UID>
@@ -108605,6 +108789,8 @@
 			<DurationFormat>21</DurationFormat>
 			<FreeformDurationFormat>21</FreeformDurationFormat>
 			<Work>PT0H0M0S</Work>
+			<Stop>2026-05-20T11:00:00</Stop>
+			<Resume>2026-05-20T11:00:00</Resume>
 			<ResumeValid>0</ResumeValid>
 			<EffortDriven>0</EffortDriven>
 			<Recurring>0</Recurring>
@@ -108619,14 +108805,14 @@
 			<ExternalTask>0</ExternalTask>
 			<EarlyStart>2026-05-20T11:00:00</EarlyStart>
 			<EarlyFinish>2027-01-04T15:00:00</EarlyFinish>
-			<LateStart>2026-06-05T09:00:00</LateStart>
+			<LateStart>2026-05-20T11:00:00</LateStart>
 			<LateFinish>2027-01-20T12:00:00</LateFinish>
 			<StartVariance>0</StartVariance>
 			<FinishVariance>0</FinishVariance>
 			<WorkVariance>0.00</WorkVariance>
 			<FreeSlack>62400</FreeSlack>
 			<TotalSlack>62400</TotalSlack>
-			<StartSlack>62400</StartSlack>
+			<StartSlack>0</StartSlack>
 			<FinishSlack>62400</FinishSlack>
 			<FixedCost>0</FixedCost>
 			<FixedCostAccrual>3</FixedCostAccrual>
@@ -108635,18 +108821,19 @@
 			<Cost>907020</Cost>
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
-			<ActualDuration>PT0H0M0S</ActualDuration>
-			<ActualCost>0</ActualCost>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
+			<ActualDuration>PT0H50M54S</ActualDuration>
+			<ActualCost>283443.75</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
 			<ActualWork>PT0H0M0S</ActualWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RegularWork>PT0H0M0S</RegularWork>
-			<RemainingDuration>PT1424H0M0S</RemainingDuration>
-			<RemainingCost>907020</RemainingCost>
+			<RemainingDuration>PT1423H9M6S</RemainingDuration>
+			<RemainingCost>623576.25</RemainingCost>
 			<RemainingWork>PT0H0M0S</RemainingWork>
 			<RemainingOvertimeCost>0</RemainingOvertimeCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<ACWP>0.00</ACWP>
+			<ACWP>283443.75</ACWP>
 			<CV>0.00</CV>
 			<ConstraintType>0</ConstraintType>
 			<CalendarUID>-1</CalendarUID>
@@ -108657,8 +108844,8 @@
 			<IgnoreResourceCalendar>0</IgnoreResourceCalendar>
 			<HideBar>0</HideBar>
 			<Rollup>1</Rollup>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>283443.75</BCWS>
+			<BCWP>283443.75</BCWP>
 			<PhysicalPercentComplete>0</PhysicalPercentComplete>
 			<EarnedValueMethod>0</EarnedValueMethod>
 			<IsPublished>0</IsPublished>
@@ -109870,6 +110057,8 @@
 			<DurationFormat>21</DurationFormat>
 			<FreeformDurationFormat>21</FreeformDurationFormat>
 			<Work>PT0H0M0S</Work>
+			<Stop>2026-05-20T11:00:00</Stop>
+			<Resume>2026-05-20T11:00:00</Resume>
 			<ResumeValid>0</ResumeValid>
 			<EffortDriven>0</EffortDriven>
 			<Recurring>0</Recurring>
@@ -109884,14 +110073,14 @@
 			<ExternalTask>0</ExternalTask>
 			<EarlyStart>2026-05-20T11:00:00</EarlyStart>
 			<EarlyFinish>2027-01-04T15:00:00</EarlyFinish>
-			<LateStart>2026-06-05T09:00:00</LateStart>
+			<LateStart>2026-05-20T11:00:00</LateStart>
 			<LateFinish>2027-01-20T12:00:00</LateFinish>
 			<StartVariance>0</StartVariance>
 			<FinishVariance>0</FinishVariance>
 			<WorkVariance>0.00</WorkVariance>
 			<FreeSlack>62400</FreeSlack>
 			<TotalSlack>62400</TotalSlack>
-			<StartSlack>62400</StartSlack>
+			<StartSlack>0</StartSlack>
 			<FinishSlack>62400</FinishSlack>
 			<FixedCost>0</FixedCost>
 			<FixedCostAccrual>3</FixedCostAccrual>
@@ -109900,6 +110089,7 @@
 			<Cost>0</Cost>
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
 			<ActualDuration>PT0H0M0S</ActualDuration>
 			<ActualCost>0</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
@@ -109958,6 +110148,8 @@
 			<DurationFormat>7</DurationFormat>
 			<FreeformDurationFormat>7</FreeformDurationFormat>
 			<Work>PT0H0M0S</Work>
+			<Stop>2026-05-20T11:00:00</Stop>
+			<Resume>2026-05-20T11:00:00</Resume>
 			<ResumeValid>0</ResumeValid>
 			<EffortDriven>0</EffortDriven>
 			<Recurring>0</Recurring>
@@ -109972,22 +110164,24 @@
 			<ExternalTask>0</ExternalTask>
 			<EarlyStart>2026-05-20T11:00:00</EarlyStart>
 			<EarlyFinish>2026-05-20T11:00:00</EarlyFinish>
-			<LateStart>2026-06-05T09:00:00</LateStart>
-			<LateFinish>2026-06-05T09:00:00</LateFinish>
+			<LateStart>2026-05-20T11:00:00</LateStart>
+			<LateFinish>2026-05-20T11:00:00</LateFinish>
 			<StartVariance>0</StartVariance>
 			<FinishVariance>0</FinishVariance>
 			<WorkVariance>0.00</WorkVariance>
 			<FreeSlack>0</FreeSlack>
-			<TotalSlack>62400</TotalSlack>
-			<StartSlack>62400</StartSlack>
-			<FinishSlack>62400</FinishSlack>
+			<TotalSlack>0</TotalSlack>
+			<StartSlack>0</StartSlack>
+			<FinishSlack>0</FinishSlack>
 			<FixedCost>0</FixedCost>
 			<FixedCostAccrual>3</FixedCostAccrual>
-			<PercentComplete>0</PercentComplete>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentComplete>100</PercentComplete>
+			<PercentWorkComplete>100</PercentWorkComplete>
 			<Cost>0</Cost>
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
+			<ActualFinish>2026-05-20T11:00:00</ActualFinish>
 			<ActualDuration>PT0H0M0S</ActualDuration>
 			<ActualCost>0</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
@@ -110000,7 +110194,7 @@
 			<RemainingOvertimeCost>0</RemainingOvertimeCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
 			<ACWP>0.00</ACWP>
-			<CV>-0.00</CV>
+			<CV>0.00</CV>
 			<ConstraintType>0</ConstraintType>
 			<CalendarUID>-1</CalendarUID>
 			<LevelAssignments>1</LevelAssignments>
@@ -110011,7 +110205,7 @@
 			<HideBar>0</HideBar>
 			<Rollup>0</Rollup>
 			<BCWS>0.00</BCWS>
-			<BCWP>-0.00</BCWP>
+			<BCWP>0.00</BCWP>
 			<PhysicalPercentComplete>0</PhysicalPercentComplete>
 			<EarnedValueMethod>0</EarnedValueMethod>
 			<PredecessorLink>
@@ -110028,6 +110222,14 @@
 				<Start>2026-05-20T11:00:00</Start>
 				<Finish>2026-05-20T11:00:00</Finish>
 			</Baseline>
+			<TimephasedData>
+				<Type>11</Type>
+				<UID>882</UID>
+				<Start>2026-05-20T11:00:00</Start>
+				<Finish>2026-05-20T11:01:00</Finish>
+				<Unit>0</Unit>
+				<Value>100</Value>
+			</TimephasedData>
 		</Task>
 		<Task>
 			<UID>883</UID>
@@ -110442,6 +110644,8 @@
 			<DurationFormat>21</DurationFormat>
 			<FreeformDurationFormat>21</FreeformDurationFormat>
 			<Work>PT0H0M0S</Work>
+			<Stop>2026-05-20T17:00:00</Stop>
+			<Resume>2026-05-21T08:00:00</Resume>
 			<ResumeValid>0</ResumeValid>
 			<EffortDriven>0</EffortDriven>
 			<Recurring>0</Recurring>
@@ -110456,34 +110660,35 @@
 			<ExternalTask>0</ExternalTask>
 			<EarlyStart>2026-05-20T11:00:00</EarlyStart>
 			<EarlyFinish>2026-05-22T11:00:00</EarlyFinish>
-			<LateStart>2026-06-05T09:00:00</LateStart>
+			<LateStart>2026-05-20T11:00:00</LateStart>
 			<LateFinish>2026-06-08T12:00:00</LateFinish>
 			<StartVariance>0</StartVariance>
 			<FinishVariance>0</FinishVariance>
 			<WorkVariance>0.00</WorkVariance>
 			<FreeSlack>62400</FreeSlack>
 			<TotalSlack>62400</TotalSlack>
-			<StartSlack>62400</StartSlack>
+			<StartSlack>0</StartSlack>
 			<FinishSlack>62400</FinishSlack>
 			<FixedCost>0</FixedCost>
 			<FixedCostAccrual>3</FixedCostAccrual>
-			<PercentComplete>0</PercentComplete>
+			<PercentComplete>31</PercentComplete>
 			<PercentWorkComplete>0</PercentWorkComplete>
 			<Cost>907020</Cost>
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
-			<ActualDuration>PT0H0M0S</ActualDuration>
-			<ActualCost>0</ActualCost>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
+			<ActualDuration>PT5H0M0S</ActualDuration>
+			<ActualCost>283443.75</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
 			<ActualWork>PT0H0M0S</ActualWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RegularWork>PT0H0M0S</RegularWork>
-			<RemainingDuration>PT16H0M0S</RemainingDuration>
-			<RemainingCost>907020</RemainingCost>
+			<RemainingDuration>PT11H0M0S</RemainingDuration>
+			<RemainingCost>623576.25</RemainingCost>
 			<RemainingWork>PT0H0M0S</RemainingWork>
 			<RemainingOvertimeCost>0</RemainingOvertimeCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<ACWP>0.00</ACWP>
+			<ACWP>283443.75</ACWP>
 			<CV>0.00</CV>
 			<ConstraintType>0</ConstraintType>
 			<CalendarUID>-1</CalendarUID>
@@ -110494,8 +110699,8 @@
 			<IgnoreResourceCalendar>0</IgnoreResourceCalendar>
 			<HideBar>0</HideBar>
 			<Rollup>1</Rollup>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>283443.75</BCWS>
+			<BCWP>283443.75</BCWP>
 			<PhysicalPercentComplete>0</PhysicalPercentComplete>
 			<EarnedValueMethod>0</EarnedValueMethod>
 			<IsPublished>0</IsPublished>
@@ -110539,6 +110744,8 @@
 			<DurationFormat>7</DurationFormat>
 			<FreeformDurationFormat>7</FreeformDurationFormat>
 			<Work>PT0H0M0S</Work>
+			<Stop>2026-05-20T17:00:00</Stop>
+			<Resume>2026-05-21T08:00:00</Resume>
 			<ResumeValid>0</ResumeValid>
 			<EffortDriven>0</EffortDriven>
 			<Recurring>0</Recurring>
@@ -110553,34 +110760,35 @@
 			<ExternalTask>0</ExternalTask>
 			<EarlyStart>2026-05-20T11:00:00</EarlyStart>
 			<EarlyFinish>2026-05-22T11:00:00</EarlyFinish>
-			<LateStart>2026-06-05T09:00:00</LateStart>
+			<LateStart>2026-05-20T11:00:00</LateStart>
 			<LateFinish>2026-06-08T12:00:00</LateFinish>
 			<StartVariance>0</StartVariance>
 			<FinishVariance>0</FinishVariance>
 			<WorkVariance>0.00</WorkVariance>
 			<FreeSlack>0</FreeSlack>
 			<TotalSlack>62400</TotalSlack>
-			<StartSlack>62400</StartSlack>
+			<StartSlack>0</StartSlack>
 			<FinishSlack>62400</FinishSlack>
 			<FixedCost>0</FixedCost>
 			<FixedCostAccrual>3</FixedCostAccrual>
-			<PercentComplete>0</PercentComplete>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentComplete>31</PercentComplete>
+			<PercentWorkComplete>31</PercentWorkComplete>
 			<Cost>907020</Cost>
 			<OvertimeCost>0</OvertimeCost>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
-			<ActualDuration>PT0H0M0S</ActualDuration>
-			<ActualCost>0</ActualCost>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
+			<ActualDuration>PT5H0M0S</ActualDuration>
+			<ActualCost>283443.75</ActualCost>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
 			<ActualWork>PT0H0M0S</ActualWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RegularWork>PT0H0M0S</RegularWork>
-			<RemainingDuration>PT16H0M0S</RemainingDuration>
-			<RemainingCost>907020</RemainingCost>
+			<RemainingDuration>PT11H0M0S</RemainingDuration>
+			<RemainingCost>623576.25</RemainingCost>
 			<RemainingWork>PT0H0M0S</RemainingWork>
 			<RemainingOvertimeCost>0</RemainingOvertimeCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<ACWP>0.00</ACWP>
+			<ACWP>283443.75</ACWP>
 			<CV>0.00</CV>
 			<ConstraintType>0</ConstraintType>
 			<CalendarUID>-1</CalendarUID>
@@ -110591,8 +110799,8 @@
 			<IgnoreResourceCalendar>0</IgnoreResourceCalendar>
 			<HideBar>0</HideBar>
 			<Rollup>0</Rollup>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>283443.75</BCWS>
+			<BCWP>283443.75</BCWP>
 			<PhysicalPercentComplete>0</PhysicalPercentComplete>
 			<EarnedValueMethod>0</EarnedValueMethod>
 			<PredecessorLink>
@@ -110611,6 +110819,14 @@
 				<Duration>PT16H0M0S</Duration>
 				<Cost>907020</Cost>
 			</Baseline>
+			<TimephasedData>
+				<Type>11</Type>
+				<UID>888</UID>
+				<Start>2026-05-20T11:00:00</Start>
+				<Finish>2026-05-20T17:00:00</Finish>
+				<Unit>2</Unit>
+				<Value>31.25</Value>
+			</TimephasedData>
 			<TimephasedData>
 				<Type>10</Type>
 				<UID>888</UID>
@@ -200467,8 +200683,8 @@
 			<Cost>420388</Cost>
 			<OvertimeRateFormat>2</OvertimeRateFormat>
 			<CostPerUse>0</CostPerUse>
-			<ActualCost>210194</ActualCost>
-			<RemainingCost>210194</RemainingCost>
+			<ActualCost>0</ActualCost>
+			<RemainingCost>420388</RemainingCost>
 			<WorkVariance>0.00</WorkVariance>
 			<CostVariance>0</CostVariance>
 			<SV>0.00</SV>
@@ -200563,8 +200779,8 @@
 			<Cost>347196</Cost>
 			<OvertimeRateFormat>2</OvertimeRateFormat>
 			<CostPerUse>0</CostPerUse>
-			<ActualCost>347196</ActualCost>
-			<RemainingCost>0</RemainingCost>
+			<ActualCost>0</ActualCost>
+			<RemainingCost>347196</RemainingCost>
 			<WorkVariance>0.00</WorkVariance>
 			<CostVariance>0</CostVariance>
 			<SV>0.00</SV>
@@ -200672,26 +200888,26 @@
 			<Work>PT1H0M0S</Work>
 			<RegularWork>PT1H0M0S</RegularWork>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
-			<ActualWork>PT0H0M0S</ActualWork>
-			<RemainingWork>PT1H0M0S</RemainingWork>
+			<ActualWork>PT1H0M0S</ActualWork>
+			<RemainingWork>PT0H0M0S</RemainingWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentWorkComplete>100</PercentWorkComplete>
 			<StandardRate>7809.03</StandardRate>
 			<StandardRateFormat>8</StandardRateFormat>
 			<Cost>780903</Cost>
 			<OvertimeRateFormat>2</OvertimeRateFormat>
 			<CostPerUse>0</CostPerUse>
-			<ActualCost>0</ActualCost>
-			<RemainingCost>780903</RemainingCost>
+			<ActualCost>780903</ActualCost>
+			<RemainingCost>0</RemainingCost>
 			<WorkVariance>0.00</WorkVariance>
 			<CostVariance>0</CostVariance>
 			<SV>0.00</SV>
 			<CV>0.00</CV>
-			<ACWP>0.00</ACWP>
+			<ACWP>780903.00</ACWP>
 			<CalendarUID>7</CalendarUID>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>780903.00</BCWS>
+			<BCWP>780903.00</BCWP>
 			<IsGeneric>0</IsGeneric>
 			<IsInactive>0</IsInactive>
 			<IsEnterprise>0</IsEnterprise>
@@ -200736,26 +200952,26 @@
 			<Work>PT1H0M0S</Work>
 			<RegularWork>PT1H0M0S</RegularWork>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
-			<ActualWork>PT0H0M0S</ActualWork>
-			<RemainingWork>PT1H0M0S</RemainingWork>
+			<ActualWork>PT1H0M0S</ActualWork>
+			<RemainingWork>PT0H0M0S</RemainingWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentWorkComplete>100</PercentWorkComplete>
 			<StandardRate>5045.08</StandardRate>
 			<StandardRateFormat>8</StandardRateFormat>
 			<Cost>504508</Cost>
 			<OvertimeRateFormat>2</OvertimeRateFormat>
 			<CostPerUse>0</CostPerUse>
-			<ActualCost>0</ActualCost>
-			<RemainingCost>504508</RemainingCost>
+			<ActualCost>504508</ActualCost>
+			<RemainingCost>0</RemainingCost>
 			<WorkVariance>0.00</WorkVariance>
 			<CostVariance>0</CostVariance>
 			<SV>0.00</SV>
 			<CV>0.00</CV>
-			<ACWP>0.00</ACWP>
+			<ACWP>504508.00</ACWP>
 			<CalendarUID>8</CalendarUID>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>504508.00</BCWS>
+			<BCWP>504508.00</BCWP>
 			<IsGeneric>0</IsGeneric>
 			<IsInactive>0</IsInactive>
 			<IsEnterprise>0</IsEnterprise>
@@ -200800,26 +201016,26 @@
 			<Work>PT1H0M0S</Work>
 			<RegularWork>PT1H0M0S</RegularWork>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
-			<ActualWork>PT0H0M0S</ActualWork>
-			<RemainingWork>PT1H0M0S</RemainingWork>
+			<ActualWork>PT0H37M30S</ActualWork>
+			<RemainingWork>PT0H22M30S</RemainingWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentWorkComplete>63</PercentWorkComplete>
 			<StandardRate>2143.32</StandardRate>
 			<StandardRateFormat>8</StandardRateFormat>
 			<Cost>214332</Cost>
 			<OvertimeRateFormat>2</OvertimeRateFormat>
 			<CostPerUse>0</CostPerUse>
-			<ActualCost>0</ActualCost>
-			<RemainingCost>214332</RemainingCost>
+			<ActualCost>133957.5</ActualCost>
+			<RemainingCost>80374.5</RemainingCost>
 			<WorkVariance>0.00</WorkVariance>
 			<CostVariance>0</CostVariance>
 			<SV>0.00</SV>
 			<CV>0.00</CV>
-			<ACWP>0.00</ACWP>
+			<ACWP>133957.50</ACWP>
 			<CalendarUID>9</CalendarUID>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>133957.50</BCWS>
+			<BCWP>133957.50</BCWP>
 			<IsGeneric>0</IsGeneric>
 			<IsInactive>0</IsInactive>
 			<IsEnterprise>0</IsEnterprise>
@@ -201632,26 +201848,26 @@
 			<Work>PT1H0M0S</Work>
 			<RegularWork>PT1H0M0S</RegularWork>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
-			<ActualWork>PT0H0M0S</ActualWork>
-			<RemainingWork>PT1H0M0S</RemainingWork>
+			<ActualWork>PT0H9M22.5S</ActualWork>
+			<RemainingWork>PT0H50M37.5S</RemainingWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentWorkComplete>16</PercentWorkComplete>
 			<StandardRate>11705.73</StandardRate>
 			<StandardRateFormat>8</StandardRateFormat>
 			<Cost>1170573</Cost>
 			<OvertimeRateFormat>2</OvertimeRateFormat>
 			<CostPerUse>0</CostPerUse>
-			<ActualCost>0</ActualCost>
-			<RemainingCost>1170573</RemainingCost>
+			<ActualCost>182902.03</ActualCost>
+			<RemainingCost>987670.97</RemainingCost>
 			<WorkVariance>0.00</WorkVariance>
 			<CostVariance>0</CostVariance>
 			<SV>0.00</SV>
 			<CV>0.00</CV>
-			<ACWP>0.00</ACWP>
+			<ACWP>182902.03</ACWP>
 			<CalendarUID>22</CalendarUID>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>182902.03</BCWS>
+			<BCWP>182902.03</BCWP>
 			<IsGeneric>0</IsGeneric>
 			<IsInactive>0</IsInactive>
 			<IsEnterprise>0</IsEnterprise>
@@ -201696,26 +201912,26 @@
 			<Work>PT1H0M0S</Work>
 			<RegularWork>PT1H0M0S</RegularWork>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
-			<ActualWork>PT0H0M0S</ActualWork>
-			<RemainingWork>PT1H0M0S</RemainingWork>
+			<ActualWork>PT0H9M22.5S</ActualWork>
+			<RemainingWork>PT0H50M37.5S</RemainingWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentWorkComplete>16</PercentWorkComplete>
 			<StandardRate>6523.48</StandardRate>
 			<StandardRateFormat>8</StandardRateFormat>
 			<Cost>652348</Cost>
 			<OvertimeRateFormat>2</OvertimeRateFormat>
 			<CostPerUse>0</CostPerUse>
-			<ActualCost>0</ActualCost>
-			<RemainingCost>652348</RemainingCost>
+			<ActualCost>101929.38</ActualCost>
+			<RemainingCost>550418.63</RemainingCost>
 			<WorkVariance>0.00</WorkVariance>
 			<CostVariance>0</CostVariance>
 			<SV>0.00</SV>
 			<CV>0.00</CV>
-			<ACWP>0.00</ACWP>
+			<ACWP>101929.38</ACWP>
 			<CalendarUID>23</CalendarUID>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>101929.38</BCWS>
+			<BCWP>101929.38</BCWP>
 			<IsGeneric>0</IsGeneric>
 			<IsInactive>0</IsInactive>
 			<IsEnterprise>0</IsEnterprise>
@@ -214533,26 +214749,26 @@
 			<Work>PT4H0M0S</Work>
 			<RegularWork>PT4H0M0S</RegularWork>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
-			<ActualWork>PT0H0M0S</ActualWork>
-			<RemainingWork>PT4H0M0S</RemainingWork>
+			<ActualWork>PT0H37M30S</ActualWork>
+			<RemainingWork>PT3H22M30S</RemainingWork>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentWorkComplete>16</PercentWorkComplete>
 			<StandardRate>9070.2</StandardRate>
 			<StandardRateFormat>8</StandardRateFormat>
 			<Cost>3628080</Cost>
 			<OvertimeRateFormat>2</OvertimeRateFormat>
 			<CostPerUse>0</CostPerUse>
-			<ActualCost>0</ActualCost>
-			<RemainingCost>3628080</RemainingCost>
+			<ActualCost>566887.5</ActualCost>
+			<RemainingCost>3061192.5</RemainingCost>
 			<WorkVariance>0.00</WorkVariance>
 			<CostVariance>0</CostVariance>
 			<SV>0.00</SV>
 			<CV>0.00</CV>
-			<ACWP>0.00</ACWP>
+			<ACWP>566887.50</ACWP>
 			<CalendarUID>224</CalendarUID>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>566887.50</BCWS>
+			<BCWP>566887.50</BCWP>
 			<IsGeneric>0</IsGeneric>
 			<IsInactive>0</IsInactive>
 			<IsEnterprise>0</IsEnterprise>
@@ -231793,10 +232009,12 @@
 			<GUID>5FA6512D-7D37-F111-A197-E02E0B843491</GUID>
 			<TaskUID>44</TaskUID>
 			<ResourceUID>-65535</ResourceUID>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentWorkComplete>100</PercentWorkComplete>
 			<ActualCost>0</ActualCost>
+			<ActualFinish>2026-05-20T11:00:00</ActualFinish>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
 			<ActualWork>PT0H0M0S</ActualWork>
 			<ACWP>0.00</ACWP>
 			<Confirmed>0</Confirmed>
@@ -231825,6 +232043,8 @@
 			<RemainingWork>PT0H0M0S</RemainingWork>
 			<ResponsePending>0</ResponsePending>
 			<Start>2026-05-20T11:00:00</Start>
+			<Stop>2026-05-20T11:00:00</Stop>
+			<Resume>2026-05-20T11:00:00</Resume>
 			<StartVariance>0</StartVariance>
 			<Units>1</Units>
 			<UpdateNeeded>0</UpdateNeeded>
@@ -232227,10 +232447,12 @@
 			<GUID>C3EEC51E-173D-F111-A19C-E02E0B843491</GUID>
 			<TaskUID>269</TaskUID>
 			<ResourceUID>-65535</ResourceUID>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentWorkComplete>100</PercentWorkComplete>
 			<ActualCost>0</ActualCost>
+			<ActualFinish>2026-05-20T11:00:00</ActualFinish>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
 			<ActualWork>PT0H0M0S</ActualWork>
 			<ACWP>0.00</ACWP>
 			<Confirmed>0</Confirmed>
@@ -232259,6 +232481,8 @@
 			<RemainingWork>PT0H0M0S</RemainingWork>
 			<ResponsePending>0</ResponsePending>
 			<Start>2026-05-20T11:00:00</Start>
+			<Stop>2026-05-20T11:00:00</Stop>
+			<Resume>2026-05-20T11:00:00</Resume>
 			<StartVariance>0</StartVariance>
 			<Units>1</Units>
 			<UpdateNeeded>0</UpdateNeeded>
@@ -232282,10 +232506,12 @@
 			<GUID>ACF1BC8A-173D-F111-A19C-E02E0B843491</GUID>
 			<TaskUID>272</TaskUID>
 			<ResourceUID>-65535</ResourceUID>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentWorkComplete>100</PercentWorkComplete>
 			<ActualCost>0</ActualCost>
+			<ActualFinish>2026-05-20T11:00:00</ActualFinish>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
 			<ActualWork>PT0H0M0S</ActualWork>
 			<ACWP>0.00</ACWP>
 			<Confirmed>0</Confirmed>
@@ -232314,6 +232540,8 @@
 			<RemainingWork>PT0H0M0S</RemainingWork>
 			<ResponsePending>0</ResponsePending>
 			<Start>2026-05-20T11:00:00</Start>
+			<Stop>2026-05-20T11:00:00</Stop>
+			<Resume>2026-05-20T11:00:00</Resume>
 			<StartVariance>0</StartVariance>
 			<Units>1</Units>
 			<UpdateNeeded>0</UpdateNeeded>
@@ -233244,10 +233472,12 @@
 			<GUID>0BBCD8A7-1D3D-F111-A19C-E02E0B843491</GUID>
 			<TaskUID>882</TaskUID>
 			<ResourceUID>-65535</ResourceUID>
-			<PercentWorkComplete>0</PercentWorkComplete>
+			<PercentWorkComplete>100</PercentWorkComplete>
 			<ActualCost>0</ActualCost>
+			<ActualFinish>2026-05-20T11:00:00</ActualFinish>
 			<ActualOvertimeCost>0</ActualOvertimeCost>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
 			<ActualWork>PT0H0M0S</ActualWork>
 			<ACWP>0.00</ACWP>
 			<Confirmed>0</Confirmed>
@@ -233276,6 +233506,8 @@
 			<RemainingWork>PT0H0M0S</RemainingWork>
 			<ResponsePending>0</ResponsePending>
 			<Start>2026-05-20T11:00:00</Start>
+			<Stop>2026-05-20T11:00:00</Stop>
+			<Resume>2026-05-20T11:00:00</Resume>
 			<StartVariance>0</StartVariance>
 			<Units>1</Units>
 			<UpdateNeeded>0</UpdateNeeded>
@@ -332015,11 +332247,13 @@
 			<GUID>13942FFE-D148-F111-A19E-E02E0B843491</GUID>
 			<TaskUID>18</TaskUID>
 			<ResourceUID>4</ResourceUID>
-			<PercentWorkComplete>0</PercentWorkComplete>
-			<ActualCost>0</ActualCost>
+			<PercentWorkComplete>100</PercentWorkComplete>
+			<ActualCost>780903</ActualCost>
+			<ActualFinish>2026-05-20T11:00:00</ActualFinish>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
-			<ActualWork>PT0H0M0S</ActualWork>
-			<ACWP>0.00</ACWP>
+			<ActualStart>2026-05-16T08:00:00</ActualStart>
+			<ActualWork>PT1H0M0S</ActualWork>
+			<ACWP>780903.00</ACWP>
 			<Confirmed>0</Confirmed>
 			<Cost>780903</Cost>
 			<CostRateTable>0</CostRateTable>
@@ -332039,19 +332273,21 @@
 			<Overallocated>0</Overallocated>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
 			<RegularWork>PT1H0M0S</RegularWork>
-			<RemainingCost>780903</RemainingCost>
+			<RemainingCost>0</RemainingCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<RemainingWork>PT1H0M0S</RemainingWork>
+			<RemainingWork>PT0H0M0S</RemainingWork>
 			<ResponsePending>0</ResponsePending>
 			<Start>2026-05-16T08:00:00</Start>
+			<Stop>2026-05-20T11:00:00</Stop>
+			<Resume>2026-05-20T11:00:00</Resume>
 			<StartVariance>0</StartVariance>
 			<Units>1</Units>
 			<UpdateNeeded>0</UpdateNeeded>
 			<VAC>0.00</VAC>
 			<Work>PT1H0M0S</Work>
 			<WorkContour>0</WorkContour>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>780903.00</BCWS>
+			<BCWP>780903.00</BCWP>
 			<BookingType>0</BookingType>
 			<CreationDate>2026-05-05T15:30:00</CreationDate>
 			<BudgetCost>0</BudgetCost>
@@ -332064,7 +332300,7 @@
 				<Cost>780903</Cost>
 			</Baseline>
 			<TimephasedData>
-				<Type>1</Type>
+				<Type>2</Type>
 				<UID>3304</UID>
 				<Start>2026-05-16T08:00:00</Start>
 				<Finish>2026-05-17T08:00:00</Finish>
@@ -332072,7 +332308,7 @@
 				<Value>PT0H12M30S</Value>
 			</TimephasedData>
 			<TimephasedData>
-				<Type>1</Type>
+				<Type>2</Type>
 				<UID>3304</UID>
 				<Start>2026-05-17T08:00:00</Start>
 				<Finish>2026-05-18T08:00:00</Finish>
@@ -332080,7 +332316,7 @@
 				<Value>PT0H0M0S</Value>
 			</TimephasedData>
 			<TimephasedData>
-				<Type>1</Type>
+				<Type>2</Type>
 				<UID>3304</UID>
 				<Start>2026-05-18T08:00:00</Start>
 				<Finish>2026-05-19T08:00:00</Finish>
@@ -332088,7 +332324,7 @@
 				<Value>PT0H20M0S</Value>
 			</TimephasedData>
 			<TimephasedData>
-				<Type>1</Type>
+				<Type>2</Type>
 				<UID>3304</UID>
 				<Start>2026-05-19T08:00:00</Start>
 				<Finish>2026-05-20T08:00:00</Finish>
@@ -332096,7 +332332,7 @@
 				<Value>PT0H20M0S</Value>
 			</TimephasedData>
 			<TimephasedData>
-				<Type>1</Type>
+				<Type>2</Type>
 				<UID>3304</UID>
 				<Start>2026-05-20T08:00:00</Start>
 				<Finish>2026-05-20T11:00:00</Finish>
@@ -332125,11 +332361,13 @@
 			<GUID>14942FFE-D148-F111-A19E-E02E0B843491</GUID>
 			<TaskUID>19</TaskUID>
 			<ResourceUID>5</ResourceUID>
-			<PercentWorkComplete>0</PercentWorkComplete>
-			<ActualCost>0</ActualCost>
+			<PercentWorkComplete>100</PercentWorkComplete>
+			<ActualCost>504508</ActualCost>
+			<ActualFinish>2026-05-20T11:00:00</ActualFinish>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
-			<ActualWork>PT0H0M0S</ActualWork>
-			<ACWP>0.00</ACWP>
+			<ActualStart>2026-05-16T08:00:00</ActualStart>
+			<ActualWork>PT1H0M0S</ActualWork>
+			<ACWP>504508.00</ACWP>
 			<Confirmed>0</Confirmed>
 			<Cost>504508</Cost>
 			<CostRateTable>0</CostRateTable>
@@ -332149,19 +332387,21 @@
 			<Overallocated>0</Overallocated>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
 			<RegularWork>PT1H0M0S</RegularWork>
-			<RemainingCost>504508</RemainingCost>
+			<RemainingCost>0</RemainingCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<RemainingWork>PT1H0M0S</RemainingWork>
+			<RemainingWork>PT0H0M0S</RemainingWork>
 			<ResponsePending>0</ResponsePending>
 			<Start>2026-05-16T08:00:00</Start>
+			<Stop>2026-05-20T11:00:00</Stop>
+			<Resume>2026-05-20T11:00:00</Resume>
 			<StartVariance>0</StartVariance>
 			<Units>1</Units>
 			<UpdateNeeded>0</UpdateNeeded>
 			<VAC>0.00</VAC>
 			<Work>PT1H0M0S</Work>
 			<WorkContour>0</WorkContour>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>504508.00</BCWS>
+			<BCWP>504508.00</BCWP>
 			<BookingType>0</BookingType>
 			<CreationDate>2026-05-05T15:30:00</CreationDate>
 			<BudgetCost>0</BudgetCost>
@@ -332174,7 +332414,7 @@
 				<Cost>504508</Cost>
 			</Baseline>
 			<TimephasedData>
-				<Type>1</Type>
+				<Type>2</Type>
 				<UID>3305</UID>
 				<Start>2026-05-16T08:00:00</Start>
 				<Finish>2026-05-17T08:00:00</Finish>
@@ -332182,7 +332422,7 @@
 				<Value>PT0H12M30S</Value>
 			</TimephasedData>
 			<TimephasedData>
-				<Type>1</Type>
+				<Type>2</Type>
 				<UID>3305</UID>
 				<Start>2026-05-17T08:00:00</Start>
 				<Finish>2026-05-18T08:00:00</Finish>
@@ -332190,7 +332430,7 @@
 				<Value>PT0H0M0S</Value>
 			</TimephasedData>
 			<TimephasedData>
-				<Type>1</Type>
+				<Type>2</Type>
 				<UID>3305</UID>
 				<Start>2026-05-18T08:00:00</Start>
 				<Finish>2026-05-19T08:00:00</Finish>
@@ -332198,7 +332438,7 @@
 				<Value>PT0H20M0S</Value>
 			</TimephasedData>
 			<TimephasedData>
-				<Type>1</Type>
+				<Type>2</Type>
 				<UID>3305</UID>
 				<Start>2026-05-19T08:00:00</Start>
 				<Finish>2026-05-20T08:00:00</Finish>
@@ -332206,7 +332446,7 @@
 				<Value>PT0H20M0S</Value>
 			</TimephasedData>
 			<TimephasedData>
-				<Type>1</Type>
+				<Type>2</Type>
 				<UID>3305</UID>
 				<Start>2026-05-20T08:00:00</Start>
 				<Finish>2026-05-20T11:00:00</Finish>
@@ -332235,11 +332475,12 @@
 			<GUID>15942FFE-D148-F111-A19E-E02E0B843491</GUID>
 			<TaskUID>20</TaskUID>
 			<ResourceUID>6</ResourceUID>
-			<PercentWorkComplete>0</PercentWorkComplete>
-			<ActualCost>0</ActualCost>
+			<PercentWorkComplete>63</PercentWorkComplete>
+			<ActualCost>133957.5</ActualCost>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
-			<ActualWork>PT0H0M0S</ActualWork>
-			<ACWP>0.00</ACWP>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
+			<ActualWork>PT0H37M30S</ActualWork>
+			<ACWP>133957.50</ACWP>
 			<Confirmed>0</Confirmed>
 			<Cost>214332</Cost>
 			<CostRateTable>0</CostRateTable>
@@ -332259,19 +332500,21 @@
 			<Overallocated>0</Overallocated>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
 			<RegularWork>PT1H0M0S</RegularWork>
-			<RemainingCost>214332</RemainingCost>
+			<RemainingCost>80374.5</RemainingCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<RemainingWork>PT1H0M0S</RemainingWork>
+			<RemainingWork>PT0H22M30S</RemainingWork>
 			<ResponsePending>0</ResponsePending>
 			<Start>2026-05-20T11:00:00</Start>
+			<Stop>2026-05-20T17:00:00</Stop>
+			<Resume>2026-05-21T08:00:00</Resume>
 			<StartVariance>0</StartVariance>
 			<Units>1</Units>
 			<UpdateNeeded>0</UpdateNeeded>
 			<VAC>0.00</VAC>
 			<Work>PT1H0M0S</Work>
 			<WorkContour>0</WorkContour>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>133957.50</BCWS>
+			<BCWP>133957.50</BCWP>
 			<BookingType>0</BookingType>
 			<CreationDate>2026-05-05T15:30:00</CreationDate>
 			<BudgetCost>0</BudgetCost>
@@ -332284,12 +332527,20 @@
 				<Cost>214332</Cost>
 			</Baseline>
 			<TimephasedData>
-				<Type>1</Type>
+				<Type>2</Type>
 				<UID>3306</UID>
 				<Start>2026-05-20T11:00:00</Start>
+				<Finish>2026-05-20T17:00:00</Finish>
+				<Unit>1</Unit>
+				<Value>PT0H37M30S</Value>
+			</TimephasedData>
+			<TimephasedData>
+				<Type>1</Type>
+				<UID>3306</UID>
+				<Start>2026-05-21T08:00:00</Start>
 				<Finish>2026-05-21T11:00:00</Finish>
 				<Unit>1</Unit>
-				<Value>PT1H0M0S</Value>
+				<Value>PT0H22M30S</Value>
 			</TimephasedData>
 			<TimephasedData>
 				<Type>4</Type>
@@ -333361,11 +333612,12 @@
 			<GUID>BE5FDAFE-D248-F111-A19E-E02E0B843491</GUID>
 			<TaskUID>33</TaskUID>
 			<ResourceUID>19</ResourceUID>
-			<PercentWorkComplete>0</PercentWorkComplete>
-			<ActualCost>0</ActualCost>
+			<PercentWorkComplete>16</PercentWorkComplete>
+			<ActualCost>182902.03</ActualCost>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
-			<ActualWork>PT0H0M0S</ActualWork>
-			<ACWP>0.00</ACWP>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
+			<ActualWork>PT0H9M22.5S</ActualWork>
+			<ACWP>182902.03</ACWP>
 			<Confirmed>0</Confirmed>
 			<Cost>1170573</Cost>
 			<CostRateTable>0</CostRateTable>
@@ -333385,19 +333637,21 @@
 			<Overallocated>0</Overallocated>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
 			<RegularWork>PT1H0M0S</RegularWork>
-			<RemainingCost>1170573</RemainingCost>
+			<RemainingCost>987670.97</RemainingCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<RemainingWork>PT1H0M0S</RemainingWork>
+			<RemainingWork>PT0H50M37.5S</RemainingWork>
 			<ResponsePending>0</ResponsePending>
 			<Start>2026-05-20T11:00:00</Start>
+			<Stop>2026-05-20T17:00:00</Stop>
+			<Resume>2026-05-21T08:00:00</Resume>
 			<StartVariance>0</StartVariance>
 			<Units>1</Units>
 			<UpdateNeeded>0</UpdateNeeded>
 			<VAC>0.00</VAC>
 			<Work>PT1H0M0S</Work>
 			<WorkContour>0</WorkContour>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>182902.03</BCWS>
+			<BCWP>182902.03</BCWP>
 			<BookingType>0</BookingType>
 			<CreationDate>2026-05-05T15:37:00</CreationDate>
 			<BudgetCost>0</BudgetCost>
@@ -333410,41 +333664,41 @@
 				<Cost>1170573</Cost>
 			</Baseline>
 			<TimephasedData>
-				<Type>1</Type>
+				<Type>2</Type>
 				<UID>3319</UID>
 				<Start>2026-05-20T11:00:00</Start>
-				<Finish>2026-05-21T11:00:00</Finish>
+				<Finish>2026-05-20T17:00:00</Finish>
+				<Unit>1</Unit>
+				<Value>PT0H9M22.5S</Value>
+			</TimephasedData>
+			<TimephasedData>
+				<Type>1</Type>
+				<UID>3319</UID>
+				<Start>2026-05-21T08:00:00</Start>
+				<Finish>2026-05-22T08:00:00</Finish>
 				<Unit>1</Unit>
 				<Value>PT0H15M0S</Value>
 			</TimephasedData>
 			<TimephasedData>
 				<Type>1</Type>
 				<UID>3319</UID>
-				<Start>2026-05-21T11:00:00</Start>
-				<Finish>2026-05-22T11:00:00</Finish>
+				<Start>2026-05-22T08:00:00</Start>
+				<Finish>2026-05-23T08:00:00</Finish>
 				<Unit>1</Unit>
 				<Value>PT0H15M0S</Value>
 			</TimephasedData>
 			<TimephasedData>
 				<Type>1</Type>
 				<UID>3319</UID>
-				<Start>2026-05-22T11:00:00</Start>
-				<Finish>2026-05-23T11:00:00</Finish>
+				<Start>2026-05-23T08:00:00</Start>
+				<Finish>2026-05-24T08:00:00</Finish>
 				<Unit>1</Unit>
-				<Value>PT0H15M0S</Value>
+				<Value>PT0H9M22.5S</Value>
 			</TimephasedData>
 			<TimephasedData>
 				<Type>1</Type>
 				<UID>3319</UID>
-				<Start>2026-05-23T11:00:00</Start>
-				<Finish>2026-05-24T11:00:00</Finish>
-				<Unit>1</Unit>
-				<Value>PT0H3M45S</Value>
-			</TimephasedData>
-			<TimephasedData>
-				<Type>1</Type>
-				<UID>3319</UID>
-				<Start>2026-05-24T11:00:00</Start>
+				<Start>2026-05-24T08:00:00</Start>
 				<Finish>2026-05-25T08:00:00</Finish>
 				<Unit>1</Unit>
 				<Value>PT0H0M0S</Value>
@@ -333479,11 +333733,12 @@
 			<GUID>BF5FDAFE-D248-F111-A19E-E02E0B843491</GUID>
 			<TaskUID>34</TaskUID>
 			<ResourceUID>20</ResourceUID>
-			<PercentWorkComplete>0</PercentWorkComplete>
-			<ActualCost>0</ActualCost>
+			<PercentWorkComplete>16</PercentWorkComplete>
+			<ActualCost>101929.38</ActualCost>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
-			<ActualWork>PT0H0M0S</ActualWork>
-			<ACWP>0.00</ACWP>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
+			<ActualWork>PT0H9M22.5S</ActualWork>
+			<ACWP>101929.38</ACWP>
 			<Confirmed>0</Confirmed>
 			<Cost>652348</Cost>
 			<CostRateTable>0</CostRateTable>
@@ -333503,19 +333758,21 @@
 			<Overallocated>0</Overallocated>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
 			<RegularWork>PT1H0M0S</RegularWork>
-			<RemainingCost>652348</RemainingCost>
+			<RemainingCost>550418.63</RemainingCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<RemainingWork>PT1H0M0S</RemainingWork>
+			<RemainingWork>PT0H50M37.5S</RemainingWork>
 			<ResponsePending>0</ResponsePending>
 			<Start>2026-05-20T11:00:00</Start>
+			<Stop>2026-05-20T17:00:00</Stop>
+			<Resume>2026-05-21T08:00:00</Resume>
 			<StartVariance>0</StartVariance>
 			<Units>1</Units>
 			<UpdateNeeded>0</UpdateNeeded>
 			<VAC>0.00</VAC>
 			<Work>PT1H0M0S</Work>
 			<WorkContour>0</WorkContour>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>101929.38</BCWS>
+			<BCWP>101929.38</BCWP>
 			<BookingType>0</BookingType>
 			<CreationDate>2026-05-05T15:37:00</CreationDate>
 			<BudgetCost>0</BudgetCost>
@@ -333528,41 +333785,41 @@
 				<Cost>652348</Cost>
 			</Baseline>
 			<TimephasedData>
-				<Type>1</Type>
+				<Type>2</Type>
 				<UID>3320</UID>
 				<Start>2026-05-20T11:00:00</Start>
-				<Finish>2026-05-21T11:00:00</Finish>
+				<Finish>2026-05-20T17:00:00</Finish>
+				<Unit>1</Unit>
+				<Value>PT0H9M22.5S</Value>
+			</TimephasedData>
+			<TimephasedData>
+				<Type>1</Type>
+				<UID>3320</UID>
+				<Start>2026-05-21T08:00:00</Start>
+				<Finish>2026-05-22T08:00:00</Finish>
 				<Unit>1</Unit>
 				<Value>PT0H15M0S</Value>
 			</TimephasedData>
 			<TimephasedData>
 				<Type>1</Type>
 				<UID>3320</UID>
-				<Start>2026-05-21T11:00:00</Start>
-				<Finish>2026-05-22T11:00:00</Finish>
+				<Start>2026-05-22T08:00:00</Start>
+				<Finish>2026-05-23T08:00:00</Finish>
 				<Unit>1</Unit>
 				<Value>PT0H15M0S</Value>
 			</TimephasedData>
 			<TimephasedData>
 				<Type>1</Type>
 				<UID>3320</UID>
-				<Start>2026-05-22T11:00:00</Start>
-				<Finish>2026-05-23T11:00:00</Finish>
+				<Start>2026-05-23T08:00:00</Start>
+				<Finish>2026-05-24T08:00:00</Finish>
 				<Unit>1</Unit>
-				<Value>PT0H15M0S</Value>
+				<Value>PT0H9M22.5S</Value>
 			</TimephasedData>
 			<TimephasedData>
 				<Type>1</Type>
 				<UID>3320</UID>
-				<Start>2026-05-23T11:00:00</Start>
-				<Finish>2026-05-24T11:00:00</Finish>
-				<Unit>1</Unit>
-				<Value>PT0H3M45S</Value>
-			</TimephasedData>
-			<TimephasedData>
-				<Type>1</Type>
-				<UID>3320</UID>
-				<Start>2026-05-24T11:00:00</Start>
+				<Start>2026-05-24T08:00:00</Start>
 				<Finish>2026-05-25T08:00:00</Finish>
 				<Unit>1</Unit>
 				<Value>PT0H0M0S</Value>
@@ -356082,11 +356339,12 @@
 			<GUID>1D45347D-DC48-F111-A19E-E02E0B843491</GUID>
 			<TaskUID>278</TaskUID>
 			<ResourceUID>221</ResourceUID>
-			<PercentWorkComplete>0</PercentWorkComplete>
-			<ActualCost>0</ActualCost>
+			<PercentWorkComplete>31</PercentWorkComplete>
+			<ActualCost>283443.75</ActualCost>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
-			<ActualWork>PT0H0M0S</ActualWork>
-			<ACWP>0.00</ACWP>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
+			<ActualWork>PT0H18M45S</ActualWork>
+			<ACWP>283443.75</ACWP>
 			<Confirmed>0</Confirmed>
 			<Cost>907020</Cost>
 			<CostRateTable>0</CostRateTable>
@@ -356106,19 +356364,21 @@
 			<Overallocated>0</Overallocated>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
 			<RegularWork>PT1H0M0S</RegularWork>
-			<RemainingCost>907020</RemainingCost>
+			<RemainingCost>623576.25</RemainingCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<RemainingWork>PT1H0M0S</RemainingWork>
+			<RemainingWork>PT0H41M15S</RemainingWork>
 			<ResponsePending>0</ResponsePending>
 			<Start>2026-05-20T11:00:00</Start>
+			<Stop>2026-05-20T17:00:00</Stop>
+			<Resume>2026-05-21T08:00:00</Resume>
 			<StartVariance>0</StartVariance>
 			<Units>1</Units>
 			<UpdateNeeded>0</UpdateNeeded>
 			<VAC>0.00</VAC>
 			<Work>PT1H0M0S</Work>
 			<WorkContour>0</WorkContour>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>283443.75</BCWS>
+			<BCWP>283443.75</BCWP>
 			<BookingType>0</BookingType>
 			<CreationDate>2026-05-05T16:45:00</CreationDate>
 			<BudgetCost>0</BudgetCost>
@@ -356131,20 +356391,28 @@
 				<Cost>907020</Cost>
 			</Baseline>
 			<TimephasedData>
-				<Type>1</Type>
+				<Type>2</Type>
 				<UID>3540</UID>
 				<Start>2026-05-20T11:00:00</Start>
-				<Finish>2026-05-21T11:00:00</Finish>
+				<Finish>2026-05-20T17:00:00</Finish>
+				<Unit>1</Unit>
+				<Value>PT0H18M45S</Value>
+			</TimephasedData>
+			<TimephasedData>
+				<Type>1</Type>
+				<UID>3540</UID>
+				<Start>2026-05-21T08:00:00</Start>
+				<Finish>2026-05-22T08:00:00</Finish>
 				<Unit>1</Unit>
 				<Value>PT0H30M0S</Value>
 			</TimephasedData>
 			<TimephasedData>
 				<Type>1</Type>
 				<UID>3540</UID>
-				<Start>2026-05-21T11:00:00</Start>
+				<Start>2026-05-22T08:00:00</Start>
 				<Finish>2026-05-22T11:00:00</Finish>
 				<Unit>1</Unit>
-				<Value>PT0H30M0S</Value>
+				<Value>PT0H11M15S</Value>
 			</TimephasedData>
 			<TimephasedData>
 				<Type>4</Type>
@@ -385598,11 +385866,12 @@
 			<GUID>B012B7A7-E148-F111-A19E-E02E0B843491</GUID>
 			<TaskUID>888</TaskUID>
 			<ResourceUID>221</ResourceUID>
-			<PercentWorkComplete>0</PercentWorkComplete>
-			<ActualCost>0</ActualCost>
+			<PercentWorkComplete>31</PercentWorkComplete>
+			<ActualCost>283443.75</ActualCost>
 			<ActualOvertimeWork>PT0H0M0S</ActualOvertimeWork>
-			<ActualWork>PT0H0M0S</ActualWork>
-			<ACWP>0.00</ACWP>
+			<ActualStart>2026-05-20T11:00:00</ActualStart>
+			<ActualWork>PT0H18M45S</ActualWork>
+			<ACWP>283443.75</ACWP>
 			<Confirmed>0</Confirmed>
 			<Cost>907020</Cost>
 			<CostRateTable>0</CostRateTable>
@@ -385622,19 +385891,21 @@
 			<Overallocated>0</Overallocated>
 			<OvertimeWork>PT0H0M0S</OvertimeWork>
 			<RegularWork>PT1H0M0S</RegularWork>
-			<RemainingCost>907020</RemainingCost>
+			<RemainingCost>623576.25</RemainingCost>
 			<RemainingOvertimeWork>PT0H0M0S</RemainingOvertimeWork>
-			<RemainingWork>PT1H0M0S</RemainingWork>
+			<RemainingWork>PT0H41M15S</RemainingWork>
 			<ResponsePending>0</ResponsePending>
 			<Start>2026-05-20T11:00:00</Start>
+			<Stop>2026-05-20T17:00:00</Stop>
+			<Resume>2026-05-21T08:00:00</Resume>
 			<StartVariance>0</StartVariance>
 			<Units>1</Units>
 			<UpdateNeeded>0</UpdateNeeded>
 			<VAC>0.00</VAC>
 			<Work>PT1H0M0S</Work>
 			<WorkContour>0</WorkContour>
-			<BCWS>0.00</BCWS>
-			<BCWP>0.00</BCWP>
+			<BCWS>283443.75</BCWS>
+			<BCWP>283443.75</BCWP>
 			<BookingType>0</BookingType>
 			<CreationDate>2026-05-05T17:22:00</CreationDate>
 			<BudgetCost>0</BudgetCost>
@@ -385647,20 +385918,28 @@
 				<Cost>907020</Cost>
 			</Baseline>
 			<TimephasedData>
-				<Type>1</Type>
+				<Type>2</Type>
 				<UID>3811</UID>
 				<Start>2026-05-20T11:00:00</Start>
-				<Finish>2026-05-21T11:00:00</Finish>
+				<Finish>2026-05-20T17:00:00</Finish>
+				<Unit>1</Unit>
+				<Value>PT0H18M45S</Value>
+			</TimephasedData>
+			<TimephasedData>
+				<Type>1</Type>
+				<UID>3811</UID>
+				<Start>2026-05-21T08:00:00</Start>
+				<Finish>2026-05-22T08:00:00</Finish>
 				<Unit>1</Unit>
 				<Value>PT0H30M0S</Value>
 			</TimephasedData>
 			<TimephasedData>
 				<Type>1</Type>
 				<UID>3811</UID>
-				<Start>2026-05-21T11:00:00</Start>
+				<Start>2026-05-22T08:00:00</Start>
 				<Finish>2026-05-22T11:00:00</Finish>
 				<Unit>1</Unit>
-				<Value>PT0H30M0S</Value>
+				<Value>PT0H11M15S</Value>
 			</TimephasedData>
 			<TimephasedData>
 				<Type>4</Type>
