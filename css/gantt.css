@@ -181,8 +181,14 @@ input[type="date"]:focus { outline: none; border-color: var(--accent-blue); box-
 .task-row {
   height: var(--row-h); padding: 0 6px; border-bottom: 1px solid var(--border);
   cursor: default; transition: background 80ms; color: var(--text-primary);
+  background: var(--bg-primary);
 }
-.task-row:nth-child(even) { background: var(--bg-secondary); }
+.task-row.summary.level-1 { background: #c9d3cb; }
+.task-row.summary.level-2 { background: #dde4de; }
+.task-row.summary.level-3,
+.task-row.summary.level-4,
+.task-row.summary.level-5,
+.task-row.summary.level-6 { background: #edf0ec; }
 .task-row.hover, .task-row:hover { background: var(--bg-hover); }
 .task-row.summary { font-weight: 700; color: var(--text-primary); }
 .task-row.level-1, .task-row.level-2 { font-size: 12px; }
@@ -229,7 +235,6 @@ input[type="date"]:focus { outline: none; border-color: var(--accent-blue); box-
 
 .gantt-body { position: relative; background: var(--bg-primary); }
 .gantt-row { position: relative; height: var(--row-h); border-bottom: 1px solid var(--border); }
-.gantt-row:nth-child(even) { background: var(--bg-secondary); }
 .gantt-row.hover { background: var(--bg-hover); }
 .gantt-grid-line {
   position: absolute; top: 0; bottom: 0; width: 1px;
@@ -304,21 +309,6 @@ input[type="date"]:focus { outline: none; border-color: var(--accent-blue); box-
 .panel-left-body::-webkit-scrollbar-thumb:hover, .panel-right::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
 }
-
-/* ============================================================ LEYENDA */
-.gantt-legend {
-  display: flex; flex-wrap: wrap; gap: 14px; padding: 6px 20px;
-  background: var(--bg-secondary); border-bottom: 1px solid var(--border);
-  font-size: 10px; color: var(--text-secondary);
-}
-.gantt-legend .lg-item { display: inline-flex; align-items: center; gap: 5px; }
-.gantt-legend .lg-swatch { width: 18px; height: 9px; border-radius: 1px; }
-.lg-completed  { background: var(--accent-green); }
-.lg-progress   { background: var(--bar-task); border: 1px solid var(--bar-task-edge); }
-.lg-delayed    { background: #ecb8b2; border: 1px solid var(--accent-red); }
-.lg-overdue    { background: #f3d4ab; border: 1px solid var(--accent-orange); }
-.lg-notstarted { background: var(--bar-task); border: 1px solid var(--bar-task-edge); }
-.lg-summary    { background: var(--bar-summary); height: 6px; }
 
 /* ============================================================ RESPONSIVE */
 .btn-mobile-toggle { display: none; align-items: center; gap: 6px; }
