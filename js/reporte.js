@@ -151,6 +151,56 @@ function renderGraficas(data) {
 
   const labels = ['Inicio', ...Array.from({ length: totalSemanas }, (_, i) => `S${i + 1}`)];
 
+  const lastValueLabels = {
+    id: 'lastValueLabels',
+    afterDatasetsDraw(chart) {
+      const { ctx, chartArea } = chart;
+      const placed = [];
+      chart.data.datasets.forEach((ds, di) => {
+        const meta = chart.getDatasetMeta(di);
+        let lastIdx = -1;
+        for (let j = ds.data.length - 1; j >= 0; j--) {
+          if (ds.data[j] != null && !isNaN(ds.data[j])) { lastIdx = j; break; }
+        }
+        if (lastIdx < 0) return;
+        const pt = meta.data[lastIdx];
+        if (!pt) return;
+        const text = Number(ds.data[lastIdx]).toFixed(2) + '%';
+        const color = ds.borderColor;
+        ctx.save();
+        ctx.font = '600 11px "JetBrains Mono", ui-monospace, monospace';
+        const padX = 6, boxH = 18;
+        const boxW = ctx.measureText(text).width + padX * 2;
+        let x = pt.x + 8;
+        let y = pt.y - boxH / 2;
+        if (x + boxW > chartArea.right) x = pt.x - boxW - 8;
+        for (const p of placed) {
+          if (Math.abs(p.y - y) < boxH + 2 && Math.abs(p.x - x) < Math.max(p.w, boxW) + 4) {
+            y = (y < p.y) ? p.y - boxH - 4 : p.y + boxH + 4;
+          }
+        }
+        placed.push({ x, y, w: boxW });
+        ctx.fillStyle = '#fff';
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 1.5;
+        if (ctx.roundRect) {
+          ctx.beginPath();
+          ctx.roundRect(x, y, boxW, boxH, 4);
+        } else {
+          ctx.beginPath();
+          ctx.rect(x, y, boxW, boxH);
+        }
+        ctx.fill();
+        ctx.stroke();
+        ctx.fillStyle = color;
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(text, x + padX, y + boxH / 2);
+        ctx.restore();
+      });
+    }
+  };
+
   new Chart($('#curvaS').getContext('2d'), {
     type: 'line',
     data: {
@@ -162,6 +212,7 @@ function renderGraficas(data) {
     },
     options: {
       responsive: true, maintainAspectRatio: false,
+      layout: { padding: { right: 56 } },
       interaction: { mode: 'index', intersect: false },
       plugins: {
         legend: { position: 'top', align: 'end', labels: { font: { family: 'Inter', size: 11, weight: '500' }, boxWidth: 10, boxHeight: 10, usePointStyle: true, color: '#4a4f4d' } },
@@ -172,15 +223,37 @@ function renderGraficas(data) {
         y: { beginAtZero: true, max: 100, ticks: { callback: (v) => v + '%', font: { family: 'JetBrains Mono', size: 10 }, color: '#8a8f8c' }, grid: { color: '#f0efeb' } },
         x: { ticks: { font: { family: 'JetBrains Mono', size: 9 }, color: '#8a8f8c', maxRotation: 0, autoSkip: true, maxTicksLimit: 12 }, grid: { display: false } }
       }
-    }
+    },
+    plugins: [lastValueLabels]
   });
+
+  const donutCenter = {
+    id: 'donutCenter',
+    afterDatasetsDraw(chart) {
+      const { ctx, chartArea } = chart;
+      const cx = (chartArea.left + chartArea.right) / 2;
+      const cy = (chartArea.top + chartArea.bottom) / 2;
+      const val = chart.data.datasets[0].data[0];
+      ctx.save();
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = '#2f5d54';
+      ctx.font = '700 22px "Poppins", system-ui, sans-serif';
+      ctx.fillText(Number(val).toFixed(2) + '%', cx, cy - 6);
+      ctx.fillStyle = '#8a8f8c';
+      ctx.font = '500 9px "Inter", system-ui, sans-serif';
+      ctx.fillText('REAL EJECUTADO', cx, cy + 14);
+      ctx.restore();
+    }
+  };
 
   new Chart($('#donaChart').getContext('2d'), {
     type: 'doughnut',
     data: { labels: ['Ejecutado', 'Por ejecutar'], datasets: [{ data: [g.real_pct, Math.max(0, 100 - g.real_pct)], backgroundColor: ['#2f5d54', '#e6e4df'], borderWidth: 0, cutout: '78%' }] },
     options: { responsive: true, maintainAspectRatio: false,
       plugins: { legend: { display: false },
-        tooltip: { backgroundColor: '#232726', padding: 10, cornerRadius: 8, callbacks: { label: (ctx) => ctx.label + ': ' + ctx.parsed.toFixed(2) + '%' } } } }
+        tooltip: { backgroundColor: '#232726', padding: 10, cornerRadius: 8, callbacks: { label: (ctx) => ctx.label + ': ' + ctx.parsed.toFixed(2) + '%' } } } },
+    plugins: [donutCenter]
   });
 }
 
