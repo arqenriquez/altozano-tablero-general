@@ -15,10 +15,12 @@ Sitio web **estático** (HTML + CSS + JavaScript vanilla, sin frameworks ni back
 ├── programa.html             Módulo 02 · Programa de obra (Gantt)
 ├── reportes.html             Módulo 03 · Índice de reportes semanales
 ├── semana.html               Plantilla de reporte semanal (?num=XX)
-├── bitacora.html             Módulo 04 · Índice de bitácora
+├── estimaciones.html         Módulo 04 · Índice de estimaciones
+├── estimacion-detalle.html   Detalle de una estimación (?id=XXX)
+├── bitacora.html             Módulo 05 · Índice de bitácora
 ├── bitacora-nota.html        Detalle de una nota de bitácora (?id=XXX)
-├── checklist.html            Módulo 05 · Checklist de calidad
-├── galeria.html              Módulo 06 · Galería fotográfica
+├── checklist.html            Módulo 06 · Checklist de calidad
+├── galeria.html              Módulo 07 · Galería fotográfica
 │
 ├── css/
 │   ├── styles.css            Sistema de diseño compartido (verde + dorado)
