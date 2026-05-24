@@ -320,6 +320,21 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
 .kpi-value.gold { color: var(--gold-dark); }
 .kpi-sublabel { margin-top: 0.7rem; font-size: 0.84rem; color: var(--ink-soft); font-weight: 500; }
 
+/* Variante: jerarquía invertida (MXN pequeño · % o texto grande) */
+.kpi-fisico .kpi-money-sm {
+  font-family: var(--font-mono); font-size: 1.05rem; font-weight: 600;
+  color: var(--ink-soft); letter-spacing: -0.01em; line-height: 1.2;
+  margin-bottom: 0.6rem;
+}
+.kpi-fisico .kpi-pct-big {
+  font-family: var(--font-display); font-size: 2.4rem; font-weight: 500;
+  line-height: 1; letter-spacing: -0.035em; color: var(--ink);
+}
+.kpi-fisico .kpi-pct-big.accent { color: var(--accent); }
+.kpi-fisico .kpi-pct-big.gold { color: var(--gold-dark); }
+.kpi-fisico .kpi-pct-big.positive { color: var(--green); }
+.kpi-fisico .kpi-pct-big.negative { color: var(--red); }
+
 /* ============================================================
    ACTIVIDADES / LISTAS
    ============================================================ */
@@ -781,6 +796,156 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
 }
 
 /* ============================================================
+   ESTIMACIONES — listado
+   ============================================================ */
+.estimaciones-grid { display: flex; flex-direction: column; gap: 0.85rem; }
+.estimacion-card {
+  display: grid; grid-template-columns: 100px 1fr auto; gap: 1.5rem;
+  align-items: center; background: var(--bg-soft);
+  border: 1px solid var(--line-soft); border-radius: 16px;
+  padding: 1.4rem 1.6rem; text-decoration: none; color: inherit;
+  transition: all 0.28s cubic-bezier(0.22,0.61,0.36,1); position: relative;
+}
+.estimacion-card:hover {
+  border-color: var(--accent); transform: translateX(4px);
+  box-shadow: 0 14px 36px -20px rgba(47,93,84,0.3);
+}
+.estimacion-card-num {
+  font-family: var(--font-display); font-size: 2.4rem; font-weight: 500;
+  color: var(--accent); line-height: 1; letter-spacing: -0.03em; text-align: center;
+}
+.estimacion-card-num small {
+  display: block; font-family: var(--font-body); font-size: 0.56rem;
+  font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-mute); margin-top: 0.3rem;
+}
+.estimacion-card-body { display: flex; flex-direction: column; gap: 0.25rem; min-width: 0; }
+.estimacion-card-period {
+  font-family: var(--font-mono); font-size: 0.76rem; color: var(--gold-dark);
+  font-weight: 600;
+}
+.estimacion-card-monto {
+  font-family: var(--font-display); font-size: 1.55rem; font-weight: 500;
+  color: var(--ink); letter-spacing: -0.02em; line-height: 1.1;
+}
+.estimacion-card-sub { font-size: 0.82rem; color: var(--ink-mute); margin-top: 0.1rem; }
+.estimacion-card-sub strong { color: var(--ink-soft); font-weight: 600; }
+.estimacion-card-side {
+  display: flex; flex-direction: column; align-items: flex-end; gap: 0.55rem;
+  white-space: nowrap;
+}
+.estimacion-card-arrow {
+  font-size: 0.78rem; font-weight: 600; color: var(--accent);
+}
+
+/* Badges de estado */
+.est-badge {
+  display: inline-block; padding: 0.32rem 0.78rem; font-size: 0.68rem;
+  text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;
+  border-radius: 20px; border: 1px solid transparent;
+}
+.est-revision  { background: #fbf0db; color: #8a6a00; border-color: #f1e0b5; }
+.est-ingresada { background: var(--accent-soft); color: var(--accent-dark); border-color: #cfdfdb; }
+.est-facturada { background: #e3eaf6; color: #2a4d8a; border-color: #c8d4e8; }
+.est-pagada    { background: #e3f4e8; color: var(--green); border-color: #b8e0c2; }
+
+/* ----- Detalle de estimación ----- */
+.estimacion-detail { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem 5rem; }
+.estimacion-detail-head {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem;
+  align-items: start;
+  padding-bottom: 1.5rem; border-bottom: 1px solid var(--line); margin-bottom: 2rem;
+}
+.estimacion-detail-num {
+  font-family: var(--font-display); font-size: 3.5rem; font-weight: 500;
+  color: var(--accent); line-height: 0.9; letter-spacing: -0.04em;
+}
+.estimacion-detail-num small {
+  display: block; font-family: var(--font-body); font-size: 0.62rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-mute);
+  font-weight: 500; margin-top: 0.4rem;
+}
+.estimacion-detail-meta { display: flex; flex-direction: column; gap: 0.35rem; padding-top: 0.3rem; }
+.estimacion-detail-meta .estado-line { margin-bottom: 0.25rem; }
+.estimacion-detail-meta .periodo { font-family: var(--font-mono); font-size: 0.9rem; color: var(--gold-dark); font-weight: 600; }
+.estimacion-detail-meta .resp { font-size: 0.92rem; color: var(--ink-soft); }
+.estimacion-detail-meta .resp strong { color: var(--ink); font-weight: 600; }
+.estimacion-detail-action { padding-top: 0.3rem; }
+.pdf-btn {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  background: var(--accent); color: #fff;
+  padding: 0.6rem 1.1rem; border-radius: 30px;
+  font-size: 0.82rem; font-weight: 600; text-decoration: none;
+  border: 1px solid var(--accent);
+  transition: all 0.2s;
+}
+.pdf-btn:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+
+.estimacion-section { margin-top: 2.5rem; }
+.estimacion-section-title {
+  font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-mute); font-weight: 500; margin-bottom: 1rem;
+}
+
+/* Carátula en dos columnas */
+.caratula-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+}
+.caratula-col {
+  background: var(--bg-soft); border: 1px solid var(--line-soft);
+  border-radius: 14px; padding: 1.1rem 1.25rem;
+  display: flex; flex-direction: column; gap: 0.45rem;
+}
+.caratula-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 1rem; font-size: 0.9rem; color: var(--ink-soft);
+  padding: 0.35rem 0; border-bottom: 1px dashed var(--line-soft);
+}
+.caratula-row:last-child { border-bottom: none; }
+.caratula-row .k { color: var(--ink-mute); font-weight: 500; }
+.caratula-row .v { font-family: var(--font-mono); color: var(--ink); font-weight: 600; }
+.caratula-row.strong .v { font-size: 1rem; color: var(--ink); }
+.caratula-row.accent .v { color: var(--accent); font-size: 1.05rem; }
+.caratula-row.gold .v { color: var(--gold-dark); }
+
+/* Tabla partidas × lotes */
+.partidas-table-wrap {
+  border: 1px solid var(--line); border-radius: 14px; overflow: auto;
+  background: #fff;
+}
+.partidas-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+.partidas-table th {
+  text-align: left; padding: 0.8rem 1rem;
+  font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--ink-mute); font-weight: 600;
+  background: var(--bg-soft); border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+.partidas-table .th-concepto { min-width: 220px; }
+.partidas-table .th-total { text-align: right; }
+.partidas-table .lote-th { display: flex; flex-direction: column; gap: 0.15rem; align-items: flex-start; }
+.partidas-table .lote-th small {
+  font-size: 0.62rem; font-weight: 500; color: var(--gold-dark);
+  text-transform: none; letter-spacing: 0;
+}
+.partidas-table td {
+  padding: 0.7rem 1rem; border-bottom: 1px solid var(--line-soft);
+  color: var(--ink-soft);
+}
+.partidas-table .td-num { text-align: right; font-family: var(--font-mono); white-space: nowrap; }
+.partidas-table .td-total { color: var(--ink); font-weight: 600; }
+.partidas-table .td-sub { padding-left: 2.2rem; color: var(--ink-mute); font-size: 0.82rem; }
+.partidas-table .row-partida td { background: var(--bg-soft); color: var(--ink); }
+.partidas-table .row-partida.row-vacia td { color: var(--ink-mute); font-style: italic; }
+.partidas-table .row-sub td { background: #fff; }
+.partidas-table .row-total td {
+  background: var(--accent-soft); color: var(--accent-dark);
+  border-top: 1px solid var(--accent); border-bottom: none;
+  font-family: var(--font-mono);
+}
+.partidas-table .row-total .td-concepto { font-family: var(--font-body); }
+
+/* ============================================================
    CHECKLIST DE CALIDAD
    ============================================================ */
 .checklist-toolbar {
@@ -960,6 +1125,13 @@ footer .brand span { color: var(--accent); }
   .bitacora-card { grid-template-columns: 64px 1fr; }
   .bitacora-card-side { grid-column: 1 / -1; flex-direction: row; }
   .nota-detail-head { flex-direction: column; gap: 0.75rem; }
+  .estimacion-card { grid-template-columns: 64px 1fr; }
+  .estimacion-card-side { grid-column: 1 / -1; flex-direction: row; justify-content: space-between; align-items: center; }
+  .estimacion-detail-head { grid-template-columns: 1fr; gap: 0.75rem; }
+  .estimacion-detail { padding: 2rem 1.25rem 4rem; }
+  .caratula-grid { grid-template-columns: 1fr; }
+  .partidas-table { font-size: 0.78rem; }
+  .partidas-table th, .partidas-table td { padding: 0.55rem 0.7rem; }
   .galeria-toolbar { gap: 1rem; }
   .galeria-count { margin-left: 0; width: 100%; }
   .lightbox-nav { width: 42px; height: 42px; }

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=20260514">
+<link rel="stylesheet" href="css/styles.css?v=20260523">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
@@ -58,26 +58,29 @@
   </div>
 </section>
 
-<!-- 02 FINANCIERO -->
+<!-- 02 AVANCE FÍSICO -->
 <section class="section">
   <div class="section-header fade-up">
     <span class="section-num">02 /</span>
-    <h2 class="section-title">Estado financiero</h2>
+    <h2 class="section-title">Avance físico</h2>
   </div>
   <div class="kpi-grid">
-    <div class="kpi fade-up">
+    <div class="kpi kpi-fisico fade-up">
       <div class="kpi-label">Valor del contrato</div>
-      <div class="kpi-value" id="k-total">—</div>
+      <div class="kpi-money-sm" id="k-total">—</div>
+      <div class="kpi-pct-big">100%</div>
       <div class="kpi-sublabel">Monto total del proyecto</div>
     </div>
-    <div class="kpi fade-up delay-1">
-      <div class="kpi-label">Monto ejercido</div>
-      <div class="kpi-value accent" id="k-ejercido">—</div>
-      <div class="kpi-sublabel" id="k-ejercido-sub">Avance real acumulado</div>
+    <div class="kpi kpi-fisico fade-up delay-1">
+      <div class="kpi-label">Avance físico ejercido</div>
+      <div class="kpi-money-sm" id="k-ejercido">—</div>
+      <div class="kpi-pct-big accent" id="k-pct-ejercido">—</div>
+      <div class="kpi-sublabel">Equivalente del avance real</div>
     </div>
-    <div class="kpi fade-up delay-2">
-      <div class="kpi-label">Por ejercer</div>
-      <div class="kpi-value gold" id="k-porejercer">—</div>
+    <div class="kpi kpi-fisico fade-up delay-2">
+      <div class="kpi-label">Por ejercer físicamente</div>
+      <div class="kpi-money-sm" id="k-porejercer">—</div>
+      <div class="kpi-pct-big gold" id="k-pct-porejercer">—</div>
       <div class="kpi-sublabel">Saldo pendiente del contrato</div>
     </div>
   </div>
@@ -85,12 +88,42 @@
     El valor del contrato aún no se ha capturado. Edita <code>data/proyecto.json</code> →
     <code>valor_contrato_mxn</code> para activar el cálculo de montos.
   </p>
+  <p id="fisico-ref" style="margin-top:1rem;font-size:0.85rem;color:var(--ink-mute)">—</p>
 </section>
 
-<!-- 03 CURVA S -->
+<!-- 03 ESTADO FINANCIERO (estimaciones) -->
 <section class="section">
   <div class="section-header fade-up">
     <span class="section-num">03 /</span>
+    <h2 class="section-title">Estado financiero</h2>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi kpi-fisico fade-up">
+      <div class="kpi-label">Estimado acumulado</div>
+      <div class="kpi-money-sm" id="kf-estimado">—</div>
+      <div class="kpi-pct-big accent" id="kf-estimado-pct">—</div>
+      <div class="kpi-sublabel">del valor del contrato</div>
+    </div>
+    <div class="kpi kpi-fisico fade-up delay-1">
+      <div class="kpi-label">% Avance financiero</div>
+      <div class="kpi-money-sm">&nbsp;</div>
+      <div class="kpi-pct-big accent" id="kf-avance">—</div>
+      <div class="kpi-sublabel">Estimado / Contrato</div>
+    </div>
+    <div class="kpi kpi-fisico fade-up delay-2">
+      <div class="kpi-label">Saldo por ejercer</div>
+      <div class="kpi-money-sm" id="kf-saldo">—</div>
+      <div class="kpi-pct-big gold" id="kf-saldo-pct">—</div>
+      <div class="kpi-sublabel">Pendiente del contrato</div>
+    </div>
+  </div>
+  <p id="estimaciones-ref" style="margin-top:1rem;font-size:0.85rem;color:var(--ink-mute)">—</p>
+</section>
+
+<!-- 04 CURVA S -->
+<section class="section">
+  <div class="section-header fade-up">
+    <span class="section-num">04 /</span>
     <h2 class="section-title">Curva S del proyecto</h2>
   </div>
   <div class="chart-card fade-up">
@@ -100,10 +133,10 @@
   </div>
 </section>
 
-<!-- 04 AVANCE POR LOTE -->
+<!-- 05 AVANCE POR LOTE -->
 <section class="section">
   <div class="section-header fade-up">
-    <span class="section-num">04 /</span>
+    <span class="section-num">05 /</span>
     <h2 class="section-title">Avance por lote</h2>
   </div>
   <div id="lotes-list"></div>
@@ -114,6 +147,6 @@
   <div id="footer-info">—</div>
 </footer>
 
-<script src="js/resumen.js?v=20260514"></script>
+<script src="js/resumen.js?v=20260523b"></script>
 </body>
 </html>

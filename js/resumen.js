@@ -1,14 +1,31 @@
 /* ============================================================
    ALTOZANO · TABLERO · Resumen general global
    Calcula el estado del proyecto leyendo:
-     - data/proyecto.json          (datos base y valor de contrato)
-     - data/reportes/index.json    (semanas publicadas)
-     - data/reportes/semana-XX.json (el reporte MÁS RECIENTE)
+     - data/proyecto.json              (datos base y valor de contrato)
+     - data/reportes/index.json        (semanas publicadas)
+     - data/reportes/semana-XX.json    (reporte MÁS RECIENTE → avance físico)
+     - data/estimaciones/index.json    (estimaciones publicadas)
+     - data/estimaciones/estimacion-XXX.json (estimación MÁS RECIENTE → estado financiero)
    ============================================================ */
 
 const $ = (sel) => document.querySelector(sel);
 const fmt = (n, d = 2) => Number(n).toFixed(d);
 const fmtMoney = (n) => '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' MXN';
+
+const MESES_RES = ['enero','febrero','marzo','abril','mayo','junio',
+                   'julio','agosto','septiembre','octubre','noviembre','diciembre'];
+function fechaCortaRes(iso) {
+  if (!iso) return '—';
+  const [y, m, d] = iso.split('-').map(Number);
+  if (!y || !m || !d) return iso;
+  return `${d} de ${MESES_RES[m - 1]}`;
+}
+const ESTADOS_ETIQ = {
+  revision:  'En revisión',
+  ingresada: 'Ingresada',
+  facturada: 'Facturada',
+  pagada:    'Pagada'
+};
 
 async function cargarJSON(ruta) {
   try {
@@ -60,6 +77,51 @@ function renderAvanceLotes(data) {
     `;
     lista.appendChild(card);
   });
+}
+
+async function renderEstadoFinanciero(valorContrato) {
+  const refEl = $('#estimaciones-ref');
+  const indice = await cargarJSON('data/estimaciones/index.json');
+
+  if (!indice || !indice.estimaciones || !indice.estimaciones.length) {
+    $('#kf-estimado').textContent = '—';
+    $('#kf-estimado-pct').textContent = '—';
+    $('#kf-avance').textContent = '—';
+    $('#kf-saldo').textContent = '—';
+    $('#kf-saldo-pct').textContent = '—';
+    refEl.innerHTML = 'Aún no hay estimaciones publicadas. Los montos se activarán al registrar la primera en <a href="estimaciones.html" style="color:var(--accent);font-weight:600">Estimaciones</a>.';
+    return;
+  }
+
+  // Última estimación (mayor número)
+  const ultima = [...indice.estimaciones].sort((a, b) => parseInt(b) - parseInt(a))[0];
+  const est = await cargarJSON(`data/estimaciones/estimacion-${ultima}.json`);
+  if (!est) {
+    refEl.textContent = `No se pudo cargar la estimación ${ultima}.`;
+    return;
+  }
+
+  const c = est.caratula || {};
+  const total = c.total_estimado_mxn || 0;
+  const saldo = c.saldo_por_ejercer_mxn || 0;
+  const contrato = c.nuevo_valor_contrato_mxn || valorContrato || 0;
+  const pctEstimado = contrato > 0 ? (total / contrato) * 100 : 0;
+  const pctSaldo    = contrato > 0 ? (saldo / contrato) * 100 : 0;
+
+  $('#kf-estimado').textContent = fmtMoney(total);
+  $('#kf-estimado-pct').textContent = contrato > 0 ? fmt(pctEstimado) + '%' : '—';
+
+  $('#kf-avance').textContent = contrato > 0 ? fmt(pctEstimado) + '%' : '—';
+
+  $('#kf-saldo').textContent = fmtMoney(saldo);
+  $('#kf-saldo-pct').textContent = contrato > 0 ? fmt(pctSaldo) + '%' : '—';
+
+  const estadoEtiq = ESTADOS_ETIQ[est.estado] || est.estado || '—';
+  const periodoTxt = est.periodo
+    ? `${fechaCortaRes(est.periodo.del)} al ${fechaCortaRes(est.periodo.al)}`
+    : '';
+  refEl.innerHTML =
+    `Datos al cierre de la <a href="estimacion-detalle.html?id=${ultima}" style="color:var(--accent);font-weight:600">estimación #${est.numero}</a> · ${estadoEtiq}${periodoTxt ? ' · ' + periodoTxt : ''}.`;
 }
 
 function renderCurva(data) {
@@ -141,7 +203,7 @@ async function init() {
   varEl.classList.add(g.variacion_pct >= 0 ? 'positive' : 'negative');
   $('#k-var-sub').textContent = g.variacion_pct >= 0 ? 'El proyecto va adelantado' : 'El proyecto va atrasado';
 
-  // ---- 02 Financiero ----
+  // ---- 02 Avance físico (jerarquía: MXN pequeño · % grande) ----
   const valorContrato = proy?.proyecto?.valor_contrato_mxn
     || (indice.proyecto && indice.proyecto.valor_total_mxn)
     || (data.curva_financiera && data.curva_financiera.valor_total_mxn)
@@ -150,22 +212,34 @@ async function init() {
   if (valorContrato > 0) {
     const ejercido = valorContrato * (g.real_pct / 100);
     const porEjercer = valorContrato - ejercido;
+    const pctPorEjercer = Math.max(0, 100 - g.real_pct);
     $('#k-total').textContent = fmtMoney(valorContrato);
     $('#k-ejercido').textContent = fmtMoney(ejercido);
-    $('#k-ejercido-sub').textContent = `${fmt(g.real_pct)}% del contrato`;
+    $('#k-pct-ejercido').textContent = fmt(g.real_pct) + '%';
     $('#k-porejercer').textContent = fmtMoney(porEjercer);
+    $('#k-pct-porejercer').textContent = fmt(pctPorEjercer) + '%';
   } else {
     $('#k-total').textContent = 'Pendiente';
-    $('#k-ejercido').textContent = fmt(g.real_pct) + '%';
-    $('#k-ejercido-sub').textContent = 'Avance físico (sin monto)';
-    $('#k-porejercer').textContent = fmt(Math.max(0, 100 - g.real_pct)) + '%';
+    $('#k-ejercido').textContent = '—';
+    $('#k-pct-ejercido').textContent = fmt(g.real_pct) + '%';
+    $('#k-porejercer').textContent = '—';
+    $('#k-pct-porejercer').textContent = fmt(Math.max(0, 100 - g.real_pct)) + '%';
     $('#financiero-nota').style.display = 'block';
   }
 
-  // ---- 03 Curva S ----
+  // Leyenda al pie de la sección 02
+  const fechaRep = data.semana?.fecha_generacion ? ` con fecha ${data.semana.fecha_generacion}` : '';
+  const periodoRep = data.semana?.periodo ? ` · ${data.semana.periodo}` : '';
+  $('#fisico-ref').innerHTML =
+    `Datos al cierre del <a href="semana.html?num=${ultima}" style="color:var(--accent);font-weight:600">Reporte Semanal ${ultima}</a>${fechaRep}${periodoRep}.`;
+
+  // ---- 03 Estado financiero (última estimación) ----
+  await renderEstadoFinanciero(valorContrato);
+
+  // ---- 04 Curva S ----
   renderCurva(data);
 
-  // ---- 04 Avance por lote ----
+  // ---- 05 Avance por lote ----
   renderAvanceLotes(data);
 
   $('#footer-info').textContent = `Resumen al cierre de Semana ${ultima} · ${data.proyecto.nombre_corto} · ${data.semana.fecha_generacion || ''}`;
