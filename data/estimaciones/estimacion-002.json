@@ -1,0 +1,58 @@
+{
+  "numero": "002",
+  "estado": "revision",
+  "contrato": "0200-COB-ANT-HER-JP ESPINOZA",
+  "proveedor": "JUAN PABLO ESPINOZA OLGUIN",
+  "periodo": {
+    "del": "2026-05-20",
+    "al": "2026-05-27",
+    "fecha_estimacion": "2026-05-28"
+  },
+  "fuente_pdf": "data/estimaciones/Estimacion 02 - JPEO - 26-05-26.pdf",
+  "caratula": {
+    "contrato_original_mxn": 13184120.54,
+    "conceptos_adicionales_mxn": 0,
+    "conceptos_restantes_mxn": 0,
+    "nuevo_valor_contrato_mxn": 13184120.54,
+    "anticipo_mxn": 0,
+    "amortizacion_acumulada_mxn": 0,
+    "amortizacion_esta_estimacion_mxn": 0,
+    "estimado_acumulado_anterior_mxn": 37605.37,
+    "importe_esta_estimacion_mxn": 60962.17,
+    "total_estimado_mxn": 98567.54,
+    "saldo_por_ejercer_mxn": 13085553.00,
+    "avance_fisico_pct": 0.46,
+    "retencion_esta_estimacion_mxn": 3048.11,
+    "retencion_total_acumulada_mxn": 4928.38,
+    "bueno_por_mxn": 57914.06,
+    "subtotal_mxn": 60962.17,
+    "iva_mxn": 0,
+    "ret_isr_mxn": 0,
+    "ret_iva_mxn": 0,
+    "importe_liquido_total_mxn": 60962.17,
+    "resico": true
+  },
+  "lotes": [
+    { "lote": "L02 · MZA 661", "modelo": "Corsac B", "contratado_mxn": 2435578.53, "estimado_esta_mxn": 923.03 },
+    { "lote": "L03 · MZA 661", "modelo": "Corsac A", "contratado_mxn": 2435578.53, "estimado_esta_mxn": 1847.67 },
+    { "lote": "L04 · MZA 661", "modelo": "Ártico A", "contratado_mxn": 1720903.21, "estimado_esta_mxn": 55221.19 },
+    { "lote": "L20 · MZA 663", "modelo": "Ártico A", "contratado_mxn": 1720903.21, "estimado_esta_mxn": 2970.28 },
+    { "lote": "L21 · MZA 663", "modelo": "Corsac A", "contratado_mxn": 2435578.53, "estimado_esta_mxn": 0 },
+    { "lote": "L22 · MZA 663", "modelo": "Corsac B", "contratado_mxn": 2435578.53, "estimado_esta_mxn": 0 }
+  ],
+  "partidas": [
+    {
+      "nombre": "Cimentación",
+      "subconceptos": [
+        { "nombre": "Trabajos preliminares", "por_lote": [0,      0,       0,        2970.28, 0, 0] },
+        { "nombre": "Excavaciones",          "por_lote": [923.03, 1847.67, 3224.86,  0,       0, 0] },
+        { "nombre": "Cimentación",            "por_lote": [0,      0,       51996.33, 0,       0, 0] }
+      ]
+    },
+    { "nombre": "Estructura",    "subconceptos": [] },
+    { "nombre": "Acabados",      "subconceptos": [] },
+    { "nombre": "Instalaciones", "subconceptos": [] },
+    { "nombre": "Cancelería",    "subconceptos": [] },
+    { "nombre": "Carpintería",   "subconceptos": [] }
+  ]
+}

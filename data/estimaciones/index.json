@@ -1,6 +1,7 @@
 {
   "_INSTRUCCIONES": "Lista los números de estimación publicados, en formato de 3 dígitos (001, 002, 003, ...). Deben ser consecutivos.",
   "estimaciones": [
-    "001"
+    "001",
+    "002"
   ]
 }
