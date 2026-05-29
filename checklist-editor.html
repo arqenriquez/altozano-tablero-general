@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editor de catálogo · Checklist | Altozano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=20260529">
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-logo">
+      <img src="assets/logo-altozano.png" alt="Altozano" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+      <span class="fallback" style="display:none">ALTOZANO</span>
+      <img src="assets/logo-metta.png" alt="Metta" onerror="this.style.display='none'">
+    </a>
+    <a href="checklist.html" class="back-link">← Índice de checklists</a>
+  </div>
+</nav>
+
+<article id="editor-root">
+  <div class="loading" style="padding:5rem 2rem;text-align:center">Cargando catálogo...</div>
+</article>
+
+<!-- Barra fija de acciones (aparece cuando hay cambios) -->
+<div class="editor-toolbar" id="editor-toolbar" hidden>
+  <div class="editor-toolbar-inner">
+    <div class="editor-toolbar-status" id="editor-status">Sin cambios</div>
+    <div class="editor-toolbar-actions">
+      <button class="chk-btn-secondary" id="btn-descartar">Descartar cambios</button>
+      <button class="chk-btn-primary" id="btn-descargar">⬇ Descargar JSON</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de instrucciones tras descarga -->
+<div class="chk-modal-overlay" id="post-download-modal" hidden>
+  <div class="chk-modal" role="dialog" aria-labelledby="pd-title">
+    <header class="chk-modal-header">
+      <h3 id="pd-title">JSON descargado</h3>
+      <button class="chk-modal-close" id="pd-close" aria-label="Cerrar">✕</button>
+    </header>
+    <div class="chk-modal-body">
+      <p class="chk-modal-intro">Tu archivo se descargó. Para aplicar los cambios al tablero:</p>
+      <ol class="editor-steps">
+        <li>Abre la carpeta <code id="pd-path">data/checklist/procesos/</code></li>
+        <li>Reemplaza el archivo <code id="pd-file">colado-losa-cimentacion.json</code> con el que acabas de descargar.</li>
+        <li>Recarga el checklist en el navegador (Ctrl+F5) para ver los cambios.</li>
+        <li>Si trabajas con git, commitea el archivo actualizado.</li>
+      </ol>
+      <p class="chk-modal-help">El catálogo solo se actualiza al sustituir el archivo en el repo. Las redacciones, ayudas y críticos editados quedarán como nueva versión del catálogo.</p>
+    </div>
+    <footer class="chk-modal-footer">
+      <button class="chk-btn-primary" id="pd-ok">Entendido</button>
+    </footer>
+  </div>
+</div>
+
+<footer>
+  <div class="brand">Altozano <span>·</span> Editor de catálogo</div>
+  <div>Metta Arquitectura y Construcción · Gerencia de Proyecto</div>
+</footer>
+
+<script src="js/checklist-editor.js?v=20260529"></script>
+</body>
+</html>

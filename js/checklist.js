@@ -1,23 +1,17 @@
 /* ============================================================
-   ALTOZANO · TABLERO · Checklist de calidad
-   Lee data/checklist/index.json y muestra cada checklist como
-   tarjeta. Al abrir uno, descarga el .xlsx y lo digitaliza como
-   tabla estilo Notion usando SheetJS (librería XLSX global).
+   ALTOZANO · TABLERO · Checklist de calidad (pantalla principal)
+   Muestra la matriz Lote x Proceso. Cada lote tiene su lista de
+   procesos con estado (no iniciado / en progreso / acta generada).
+   El click navega a checklist-detalle.html?lote=X&proceso=Y
    ============================================================ */
 
 const $ = (sel) => document.querySelector(sel);
 
-let CHECKLISTS = [];
-let filtroActivo = 'todos';
+const LS_PROGRESO = (loteId, procesoId) => `chk:${loteId}:${procesoId}`;
+const LS_ACTA     = (loteId, procesoId) => `chk-acta:${loteId}:${procesoId}`;
 
-const MESES = ['enero','febrero','marzo','abril','mayo','junio',
-               'julio','agosto','septiembre','octubre','noviembre','diciembre'];
-function fechaLarga(iso) {
-  if (!iso) return '';
-  const [y, m, d] = iso.split('-').map(Number);
-  if (!y || !m || !d) return iso;
-  return `${d} de ${MESES[m - 1]}, ${y}`;
-}
+let CATALOGO = null;
+let filtroProceso = 'todos';
 
 async function cargarJSON(ruta) {
   try {
@@ -25,157 +19,254 @@ async function cargarJSON(ruta) {
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     return await resp.json();
   } catch (e) {
+    console.error('Error cargando', ruta, e);
     return null;
   }
 }
 
 function escapeHtml(str) {
   return String(str == null ? '' : str)
-    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-/* ---- Filtros por proceso ---- */
-function renderToolbar() {
-  const procesos = [...new Set(CHECKLISTS.map(c => c.proceso).filter(Boolean))].sort();
-  const toolbar = $('#chk-toolbar');
-  toolbar.innerHTML = '';
-  const chips = [['todos', 'Todos'], ...procesos.map(p => [p, p])];
-  chips.forEach(([val, label]) => {
+/* ---------- Estado por celda Lote x Proceso ----------
+   Se calcula a partir de:
+   - localStorage[chk:<lote>:<proceso>]      → progreso en vivo
+   - localStorage[chk-acta:<lote>:<proceso>] → snapshot del acta
+*/
+function estadoCelda(loteId, procesoId, totalItems) {
+  const acta = localStorage.getItem(LS_ACTA(loteId, procesoId));
+  if (acta) {
+    try {
+      const data = JSON.parse(acta);
+      return {
+        tipo: data.veredicto === 'APTO' ? 'apto' : 'no-apto',
+        avance: 100,
+        verificados: data.stats?.verificados || 0,
+        total: data.stats?.total || totalItems
+      };
+    } catch (_) { /* fall through */ }
+  }
+  const raw = localStorage.getItem(LS_PROGRESO(loteId, procesoId));
+  if (!raw) return { tipo: 'no-iniciado', avance: 0, verificados: 0, total: totalItems };
+  try {
+    const data = JSON.parse(raw);
+    const items = data.items || {};
+    const verif       = Object.values(items).filter(v => v.estado === 'si').length;
+    const naCount     = Object.values(items).filter(v => v.estado === 'na').length;
+    const respondidos = Object.values(items).filter(v => v.estado).length;
+    if (respondidos === 0) return { tipo: 'no-iniciado', avance: 0, verificados: 0, total: totalItems };
+    const denom = Math.max(totalItems - naCount, 1);
+    const avance = Math.round((verif / denom) * 100);
+    return { tipo: 'en-progreso', avance, verificados: verif, total: totalItems };
+  } catch (_) {
+    return { tipo: 'no-iniciado', avance: 0, verificados: 0, total: totalItems };
+  }
+}
+
+/* ---------- Chips de procesos (filtro) ---------- */
+function renderChips() {
+  const wrap = $('#proceso-chips');
+  wrap.innerHTML = '';
+  const chips = [{ id: 'todos', nombre: 'Todos los procesos', icono: '📋' }, ...CATALOGO.procesos];
+  chips.forEach(p => {
     const btn = document.createElement('button');
-    btn.className = 'chk-filter' + (val === filtroActivo ? ' active' : '');
-    btn.textContent = label;
+    btn.className = 'proceso-chip' + (p.id === filtroProceso ? ' active' : '');
+    btn.innerHTML = `<span class="ico">${escapeHtml(p.icono || '📋')}</span><span>${escapeHtml(p.nombre)}</span>`;
     btn.addEventListener('click', () => {
-      filtroActivo = val;
-      renderToolbar();
-      renderGrid();
+      filtroProceso = p.id;
+      renderChips();
+      renderLotes();
     });
-    toolbar.appendChild(btn);
+    wrap.appendChild(btn);
   });
 }
 
-/* ---- Grid de tarjetas ---- */
-function renderGrid() {
-  const grid = $('#checklist-grid');
-  const lista = filtroActivo === 'todos'
-    ? CHECKLISTS
-    : CHECKLISTS.filter(c => c.proceso === filtroActivo);
-
-  if (!lista.length) {
-    grid.innerHTML = '<div class="empty-state"><div class="icon">✅</div><h3>Sin checklists en este filtro</h3><p>Selecciona otro proceso.</p></div>';
-    return;
-  }
-
+/* ---------- Grid de lotes ---------- */
+function renderLotes() {
+  const grid = $('#lotes-grid');
   grid.innerHTML = '';
-  lista.forEach((c, i) => {
-    const card = document.createElement('button');
-    card.className = `checklist-card fade-up delay-${i % 3}`;
-    card.innerHTML = `
-      <div class="checklist-card-icon">📋</div>
-      <h3>${escapeHtml(c.nombre)}</h3>
-      <div class="meta">
-        ${c.proceso ? `<span class="tag">${escapeHtml(c.proceso)}</span>` : ''}
-        ${c.vivienda ? `<span class="tag">${escapeHtml(c.vivienda)}</span>` : ''}
-      </div>
-      <div class="meta">
-        ${c.fecha ? `<span>📅 ${fechaLarga(c.fecha)}</span>` : ''}
-        <span class="mono" style="font-size:0.7rem">${escapeHtml(c.archivo)}</span>
-      </div>
+  const procesos = filtroProceso === 'todos'
+    ? CATALOGO.procesos
+    : CATALOGO.procesos.filter(p => p.id === filtroProceso);
+
+  CATALOGO.lotes.forEach((lote, idx) => {
+    const card = document.createElement('div');
+    card.className = `chk-lote-card fade-up delay-${idx % 3}`;
+    let html = `
+      <header class="chk-lote-header">
+        <div>
+          <div class="chk-lote-mza">${escapeHtml(lote.manzana)}</div>
+          <div class="chk-lote-nombre">${escapeHtml(lote.nombre)}</div>
+        </div>
+        <div class="chk-lote-modelo">${escapeHtml(lote.modelo)}</div>
+      </header>
+      <div class="chk-lote-procesos">
     `;
-    card.addEventListener('click', () => abrirChecklist(c));
+
+    procesos.forEach(p => {
+      const total = CATALOGO._totales[p.id] || 0;
+      const est = estadoCelda(lote.id, p.id, total);
+      const url = `checklist-detalle.html?lote=${encodeURIComponent(lote.id)}&proceso=${encodeURIComponent(p.id)}`;
+
+      let estadoLbl, estadoCls, accionTxt;
+      switch (est.tipo) {
+        case 'apto':       estadoLbl = 'APTO';        estadoCls = 'apto';    accionTxt = 'Ver acta';      break;
+        case 'no-apto':    estadoLbl = 'NO APTO';     estadoCls = 'no-apto'; accionTxt = 'Ver acta';      break;
+        case 'en-progreso':estadoLbl = `${est.avance}%`; estadoCls = 'progreso'; accionTxt = 'Continuar';  break;
+        default:           estadoLbl = 'Sin iniciar'; estadoCls = 'pendiente'; accionTxt = 'Iniciar';     break;
+      }
+
+      html += `
+        <a class="chk-proceso-row" href="${url}">
+          <div class="chk-proceso-ico">${escapeHtml(p.icono || '📋')}</div>
+          <div class="chk-proceso-info">
+            <div class="chk-proceso-nombre">${escapeHtml(p.nombre)}</div>
+            <div class="chk-proceso-sub">${escapeHtml(p.etapa || '')} · ${total} ítems</div>
+          </div>
+          <div class="chk-proceso-estado">
+            <span class="chk-estado-badge ${estadoCls}">${estadoLbl}</span>
+            <span class="chk-proceso-cta">${accionTxt} →</span>
+          </div>
+        </a>
+      `;
+    });
+
+    html += `</div>`;
+    card.innerHTML = html;
     grid.appendChild(card);
   });
 
+  // Animacion fade-up
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
 }
 
-/* ---- Abre el panel y digitaliza el .xlsx ---- */
-async function abrirChecklist(c) {
-  $('#panel-eyebrow').textContent = [c.proceso, c.vivienda].filter(Boolean).join(' · ') || 'Checklist';
-  $('#panel-title').textContent = c.nombre;
-  $('#panel-body').innerHTML = '<div class="loading">Digitalizando archivo de Excel...</div>';
-  $('#panel').classList.add('open');
-  $('#overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
+/* ---------- KPIs ---------- */
+function renderKPIs() {
+  const totalLotes = CATALOGO.lotes.length;
+  const totalProcesos = CATALOGO.procesos.length;
+  const totalCeldas = totalLotes * totalProcesos;
 
-  try {
-    const resp = await fetch(`data/checklist/${c.archivo}?t=${Date.now()}`, { cache: 'no-cache' });
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    const buf = await resp.arrayBuffer();
-    const wb = XLSX.read(buf, { type: 'array' });
-
-    let html = '';
-    if (c.fecha) html += `<div class="panel-section-title">Registrado el ${fechaLarga(c.fecha)}</div>`;
-
-    // Renderiza cada hoja del libro
-    wb.SheetNames.forEach((nombreHoja) => {
-      const hoja = wb.Sheets[nombreHoja];
-      const filas = XLSX.utils.sheet_to_json(hoja, { header: 1, blankrows: false, defval: '' });
-      if (!filas.length) return;
-      if (wb.SheetNames.length > 1) {
-        html += `<div class="panel-section-title">Hoja: ${escapeHtml(nombreHoja)}</div>`;
-      }
-      html += '<div class="xlsx-table-wrap"><table class="xlsx-table"><tbody>';
-      filas.forEach((fila) => {
-        html += '<tr>';
-        fila.forEach((celda) => {
-          html += `<td>${escapeHtml(celda)}</td>`;
-        });
-        html += '</tr>';
-      });
-      html += '</tbody></table></div>';
+  let progreso = 0, actas = 0;
+  CATALOGO.lotes.forEach(l => {
+    CATALOGO.procesos.forEach(p => {
+      const est = estadoCelda(l.id, p.id, CATALOGO._totales[p.id] || 0);
+      if (est.tipo === 'apto' || est.tipo === 'no-apto') actas++;
+      else if (est.tipo === 'en-progreso') progreso++;
     });
+  });
 
-    html += `<div style="margin-top:1.5rem">
-      <a href="data/checklist/${encodeURIComponent(c.archivo)}" download
-         style="color:var(--accent);font-weight:600;text-decoration:none;font-size:0.88rem">
-        ↓ Descargar archivo original (${escapeHtml(c.archivo)})
-      </a></div>`;
+  $('#kpi-total').textContent = totalCeldas;
+  $('#kpi-progreso').textContent = progreso;
+  $('#kpi-actas').textContent = actas;
+  $('#kpi-procesos').textContent = totalProcesos;
+}
 
-    $('#panel-body').innerHTML = html || '<div class="empty-state"><p>El archivo no contiene datos legibles.</p></div>';
-  } catch (e) {
-    $('#panel-body').innerHTML = `
-      <div class="empty-state">
-        <div class="icon">⚠️</div>
-        <h3>No se pudo leer el archivo</h3>
-        <p>Verifica que exista <code>data/checklist/${escapeHtml(c.archivo)}</code> y sea un .xlsx válido.</p>
-        <p style="font-size:0.8rem;margin-top:0.5rem">${escapeHtml(e.message)}</p>
-      </div>`;
+/* ---------- Carga totales de items por proceso ----------
+   Para mostrar "65 ítems" en cada card sin pedir varias veces el catalogo.
+*/
+async function precargarTotales() {
+  CATALOGO._totales = {};
+  for (const p of CATALOGO.procesos) {
+    const cat = await cargarJSON(`data/checklist/${p.archivo}`);
+    if (!cat) { CATALOGO._totales[p.id] = 0; continue; }
+    let total = 0;
+    (cat.secciones || []).forEach(s => total += (s.items || []).length);
+    CATALOGO._totales[p.id] = total;
   }
 }
 
-function cerrarPanel() {
-  $('#panel').classList.remove('open');
-  $('#overlay').classList.remove('open');
+/* ---------- Borrar todas las actas generadas ---------- */
+function contarActas() {
+  let n = 0;
+  for (let i = 0; i < localStorage.length; i++) {
+    if (localStorage.key(i).startsWith('chk-acta:')) n++;
+  }
+  return n;
+}
+
+function borrarTodasLasActas() {
+  const keys = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (k.startsWith('chk-acta:')) keys.push(k);
+  }
+  keys.forEach(k => localStorage.removeItem(k));
+  return keys.length;
+}
+
+function abrirModalBorrarActas() {
+  const n = contarActas();
+  const body = n === 0
+    ? `<p class="chk-modal-intro">No hay actas guardadas. No hay nada que borrar.</p>`
+    : `
+      <p class="chk-modal-intro">Estás a punto de borrar <strong>${n}</strong> acta(s) generada(s).</p>
+      <div class="chk-modal-warn">Esto eliminará todas las actas almacenadas en este navegador. Los checklists con su avance en curso <strong>no</strong> se borran (solo las actas finales).</div>
+      <p class="chk-modal-help">Útil para limpiar actas de prueba antes de empezar a registrar actas reales. Esta acción no se puede deshacer.</p>
+    `;
+  $('#borrar-actas-body').innerHTML = body;
+  $('#borrar-actas-confirm').disabled = n === 0;
+  $('#borrar-actas-confirm').textContent = n === 0 ? 'No hay actas' : `Sí, borrar ${n} acta${n === 1 ? '' : 's'}`;
+  $('#borrar-actas-modal').hidden = false;
+  document.body.style.overflow = 'hidden';
+}
+
+function cerrarModalBorrarActas() {
+  $('#borrar-actas-modal').hidden = true;
   document.body.style.overflow = '';
 }
 
+function confirmarBorrarActas() {
+  borrarTodasLasActas();
+  cerrarModalBorrarActas();
+  renderLotes();
+  renderKPIs();
+}
+
+function bindEventosGlobales() {
+  $('#btn-borrar-actas')?.addEventListener('click', abrirModalBorrarActas);
+  $('#borrar-actas-close')?.addEventListener('click', cerrarModalBorrarActas);
+  $('#borrar-actas-cancel')?.addEventListener('click', cerrarModalBorrarActas);
+  $('#borrar-actas-modal')?.addEventListener('click', (e) => {
+    if (e.target.id === 'borrar-actas-modal') cerrarModalBorrarActas();
+  });
+  $('#borrar-actas-confirm')?.addEventListener('click', confirmarBorrarActas);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !$('#borrar-actas-modal').hidden) cerrarModalBorrarActas();
+  });
+}
+
 async function init() {
-  const indice = await cargarJSON('data/checklist/index.json');
-  const grid = $('#checklist-grid');
-
-  if (!indice || !indice.checklists) {
-    grid.innerHTML = '<div class="empty-state"><div class="icon">⚠️</div><h3>No se pudo cargar el repositorio</h3><p>Verifica que exista <code>data/checklist/index.json</code></p></div>';
-    $('#chk-count').textContent = '—';
+  CATALOGO = await cargarJSON('data/checklist/index.json');
+  if (!CATALOGO || !CATALOGO.lotes || !CATALOGO.procesos) {
+    $('#lotes-grid').innerHTML = `
+      <div class="empty-state">
+        <div class="icon">⚠️</div>
+        <h3>No se pudo cargar el catálogo</h3>
+        <p>Verifica que exista <code>data/checklist/index.json</code> con <code>lotes</code> y <code>procesos</code>.</p>
+      </div>`;
     return;
   }
 
-  CHECKLISTS = indice.checklists;
-  $('#chk-count').textContent = `${CHECKLISTS.length} ${CHECKLISTS.length === 1 ? 'checklist' : 'checklists'}`;
-
-  if (!CHECKLISTS.length) {
-    grid.innerHTML = '<div class="empty-state"><div class="icon">✅</div><h3>Aún no hay checklists</h3><p>Sube tus formatos .xlsx a <code>data/checklist/</code> y regístralos en <code>index.json</code>.</p></div>';
-    return;
-  }
-
-  renderToolbar();
-  renderGrid();
-
-  $('#panel-close').addEventListener('click', cerrarPanel);
-  $('#overlay').addEventListener('click', cerrarPanel);
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') cerrarPanel(); });
+  await precargarTotales();
+  renderChips();
+  renderLotes();
+  renderKPIs();
+  bindEventosGlobales();
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
+// Fix bfcache: al volver con la flecha "atrás", el navegador puede servir
+// la página desde cache sin re-ejecutar init. Re-renderizamos para reflejar
+// cambios hechos en otras pantallas (reset / generar acta / borrar actas).
+window.addEventListener('pageshow', (e) => {
+  if (e.persisted && CATALOGO) {
+    renderLotes();
+    renderKPIs();
+  }
+});

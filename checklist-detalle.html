@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cargando checklist... | Altozano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=20260529">
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-logo">
+      <img src="assets/logo-altozano.png" alt="Altozano" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+      <span class="fallback" style="display:none">ALTOZANO</span>
+      <img src="assets/logo-metta.png" alt="Metta" onerror="this.style.display='none'">
+    </a>
+    <a href="checklist.html" class="back-link">← Índice de checklists</a>
+  </div>
+</nav>
+
+<article id="chk-root">
+  <div class="loading" style="padding:5rem 2rem;text-align:center">Cargando checklist...</div>
+</article>
+
+<footer>
+  <div class="brand">Altozano <span>·</span> Checklist de Calidad</div>
+  <div>Metta Arquitectura y Construcción · Gerencia de Proyecto</div>
+</footer>
+
+<!-- Modal de confirmacion para generar acta -->
+<div class="chk-modal-overlay" id="acta-modal" hidden>
+  <div class="chk-modal" role="dialog" aria-labelledby="acta-modal-title">
+    <header class="chk-modal-header">
+      <h3 id="acta-modal-title">Generar acta de calidad</h3>
+      <button class="chk-modal-close" id="acta-modal-close" aria-label="Cerrar">✕</button>
+    </header>
+    <div class="chk-modal-body" id="acta-modal-body"></div>
+    <footer class="chk-modal-footer">
+      <button class="chk-btn-secondary" id="acta-modal-cancel">Cancelar</button>
+      <button class="chk-btn-primary" id="acta-modal-confirm">Confirmar y generar acta</button>
+    </footer>
+  </div>
+</div>
+
+<!-- Modal de confirmacion para reiniciar checklist -->
+<div class="chk-modal-overlay" id="reset-modal" hidden>
+  <div class="chk-modal" role="dialog" aria-labelledby="reset-modal-title">
+    <header class="chk-modal-header">
+      <h3 id="reset-modal-title">Reiniciar checklist</h3>
+      <button class="chk-modal-close" id="reset-modal-close" aria-label="Cerrar">✕</button>
+    </header>
+    <div class="chk-modal-body" id="reset-modal-body"></div>
+    <footer class="chk-modal-footer">
+      <button class="chk-btn-secondary" id="reset-modal-cancel">Cancelar</button>
+      <button class="chk-btn-danger" id="reset-modal-confirm">Sí, reiniciar</button>
+    </footer>
+  </div>
+</div>
+
+<script src="js/checklist-detalle.js?v=20260529"></script>
+</body>
+</html>
