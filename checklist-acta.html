@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acta de calidad | Altozano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=20260529">
+</head>
+<body class="acta-body">
+
+<nav class="topbar acta-no-print">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-logo">
+      <img src="assets/logo-altozano.png" alt="Altozano" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+      <span class="fallback" style="display:none">ALTOZANO</span>
+      <img src="assets/logo-metta.png" alt="Metta" onerror="this.style.display='none'">
+    </a>
+    <a href="javascript:history.back()" class="back-link">← Volver al checklist</a>
+  </div>
+</nav>
+
+<div class="acta-toolbar acta-no-print" id="acta-toolbar">
+  <button class="acta-btn-primary" id="btn-imprimir">🖨 Imprimir / Guardar PDF</button>
+  <a href="checklist.html" class="acta-btn-secondary">Cerrar acta</a>
+</div>
+
+<article id="acta-root" class="acta-page">
+  <div class="loading" style="padding:5rem 2rem;text-align:center">Generando acta...</div>
+</article>
+
+<script src="js/checklist-acta.js?v=20260529"></script>
+</body>
+</html>

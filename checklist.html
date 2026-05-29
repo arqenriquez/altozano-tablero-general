@@ -4,13 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Altozano · Checklist de Calidad | Metta</title>
-<meta name="description" content="Repositorio de checklists de calidad del proyecto Altozano.">
+<meta name="description" content="Checklist interactivo de calidad por lote y proceso constructivo del proyecto Altozano.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=20260523">
-<!-- SheetJS: lee los archivos .xlsx y los digitaliza como tabla -->
-<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<link rel="stylesheet" href="css/styles.css?v=20260529">
 </head>
 <body>
 
@@ -29,19 +27,62 @@
   <div class="eyebrow fade-up">Módulo 06 · Control de calidad</div>
   <h1 class="fade-up delay-1">Checklist de calidad</h1>
   <p class="lead fade-up delay-2">
-    Repositorio de listas de verificación de los procesos ejecutados en obra. Los formatos de Excel
-    se digitalizan automáticamente y se muestran como tabla.
+    Verificación de procesos constructivos por lote. Cada lote tiene su propio checklist
+    por proceso, con seguimiento del avance y generación de acta al finalizar.
   </p>
 </section>
 
-<section class="cards-section">
-  <div class="cards-header">
-    <h2>Checklists registrados</h2>
-    <span class="count" id="chk-count">Cargando...</span>
+<!-- Resumen rapido -->
+<section class="quickstats" style="margin-top:0">
+  <div class="quickstats-grid" id="chk-kpis">
+    <div class="quickstat fade-up">
+      <div class="lbl">Procesos × Lotes</div>
+      <div class="val" id="kpi-total">—</div>
+      <div class="sub">Checklists posibles</div>
+    </div>
+    <div class="quickstat fade-up delay-1">
+      <div class="lbl">En progreso</div>
+      <div class="val accent" id="kpi-progreso">—</div>
+      <div class="sub">Iniciados sin acta</div>
+    </div>
+    <div class="quickstat fade-up delay-2">
+      <div class="lbl">Actas generadas</div>
+      <div class="val gold" id="kpi-actas">—</div>
+      <div class="sub">Con verificación completa</div>
+    </div>
+    <div class="quickstat fade-up delay-3">
+      <div class="lbl">Procesos catálogo</div>
+      <div class="val" id="kpi-procesos">—</div>
+      <div class="sub">Disponibles para verificar</div>
+    </div>
   </div>
-  <div class="checklist-toolbar" id="chk-toolbar"></div>
-  <div class="checklist-grid" id="checklist-grid">
-    <div class="loading">Cargando checklists...</div>
+</section>
+
+<!-- Filtro por proceso -->
+<section class="section">
+  <div class="section-header" style="display:flex;justify-content:space-between;align-items:center;gap:1rem">
+    <div style="display:flex;align-items:baseline;gap:1.25rem">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Procesos constructivos</h2>
+    </div>
+    <div style="display:flex;gap:0.5rem">
+      <button class="chk-link-editor" id="btn-borrar-actas" title="Borrar todas las actas guardadas en este navegador">🗑 Borrar actas</button>
+      <a href="checklist-editor.html" class="chk-link-editor" title="Editar redacción y críticos del catálogo">⚙ Editar catálogo</a>
+    </div>
+  </div>
+  <div class="proceso-chips" id="proceso-chips">
+    <div class="loading">Cargando procesos...</div>
+  </div>
+</section>
+
+<!-- Grid de lotes -->
+<section class="section" style="padding-top:0">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Lotes</h2>
+  </div>
+  <div class="checklist-lotes-grid" id="lotes-grid">
+    <div class="loading">Cargando lotes...</div>
   </div>
 </section>
 
@@ -50,19 +91,21 @@
   <div>Metta Arquitectura y Construcción · Gerencia de Proyecto</div>
 </footer>
 
-<!-- PANEL LATERAL — muestra la tabla digitalizada del Excel -->
-<div class="overlay" id="overlay"></div>
-<aside class="panel" id="panel">
-  <div class="panel-header">
-    <div class="panel-title-wrap">
-      <div class="eyebrow" id="panel-eyebrow">Checklist</div>
-      <h2 id="panel-title">—</h2>
-    </div>
-    <button class="panel-close" id="panel-close" aria-label="Cerrar">✕</button>
+<!-- Modal: borrar actas -->
+<div class="chk-modal-overlay" id="borrar-actas-modal" hidden>
+  <div class="chk-modal" role="dialog" aria-labelledby="ba-title">
+    <header class="chk-modal-header">
+      <h3 id="ba-title">Borrar actas guardadas</h3>
+      <button class="chk-modal-close" id="borrar-actas-close" aria-label="Cerrar">✕</button>
+    </header>
+    <div class="chk-modal-body" id="borrar-actas-body"></div>
+    <footer class="chk-modal-footer">
+      <button class="chk-btn-secondary" id="borrar-actas-cancel">Cancelar</button>
+      <button class="chk-btn-danger" id="borrar-actas-confirm">Sí, borrar</button>
+    </footer>
   </div>
-  <div class="panel-body" id="panel-body"></div>
-</aside>
+</div>
 
-<script src="js/checklist.js?v=20260514"></script>
+<script src="js/checklist.js?v=20260529"></script>
 </body>
 </html>

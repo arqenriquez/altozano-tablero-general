@@ -1,12 +1,22 @@
 {
-  "_INSTRUCCIONES": "Sube tus formatos de Excel (.xlsx) a la carpeta data/checklist/ y registra cada uno aquí. Campos: 'archivo' (nombre exacto del .xlsx), 'nombre' (título visible), 'proceso' (categoría para el filtro), 'vivienda' (lote o área), 'fecha' (AAAA-MM-DD).",
-  "checklists": [
+  "_INSTRUCCIONES": "Catalogo de procesos constructivos y registros del modulo 06 Checklist de Calidad. Los procesos definen los items a verificar (data/checklist/procesos/*.json). Los registros son snapshots de cada verificacion por Lote x Proceso (data/checklist/registros/*.json).",
+  "lotes": [
+    { "id": "l02-m661", "nombre": "Lote 02", "manzana": "MZA 661", "modelo": "Corsac B" },
+    { "id": "l03-m661", "nombre": "Lote 03", "manzana": "MZA 661", "modelo": "Corsac A" },
+    { "id": "l04-m661", "nombre": "Lote 04", "manzana": "MZA 661", "modelo": "Ártico A" },
+    { "id": "l20-m663", "nombre": "Lote 20", "manzana": "MZA 663", "modelo": "Ártico A" },
+    { "id": "l21-m663", "nombre": "Lote 21", "manzana": "MZA 663", "modelo": "Corsac A" },
+    { "id": "l22-m663", "nombre": "Lote 22", "manzana": "MZA 663", "modelo": "Corsac B" }
+  ],
+  "procesos": [
     {
-      "archivo": "ejemplo-checklist-cimentacion.xlsx",
-      "nombre": "Checklist de Cimentación — Lote 1",
-      "proceso": "Cimentación",
-      "vivienda": "Lote 1",
-      "fecha": "2026-05-20"
+      "id": "colado-losa-cimentacion",
+      "nombre": "Colado de Losa de Cimentación",
+      "subtitulo": "Verificación previa y durante el colado",
+      "icono": "🏗️",
+      "archivo": "procesos/colado-losa-cimentacion.json",
+      "etapa": "Cimentación"
     }
-  ]
+  ],
+  "registros": []
 }

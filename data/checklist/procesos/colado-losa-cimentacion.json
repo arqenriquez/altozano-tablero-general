@@ -1,0 +1,422 @@
+{
+  "id": "colado-losa-cimentacion",
+  "nombre": "Colado de Losa de Cimentación",
+  "subtitulo": "Verificación previa y durante el colado de la losa de cimentación",
+  "icono": "🏗️",
+  "version": "2026-05-29",
+  "secciones": [
+    {
+      "id": "trazo-nivelacion",
+      "numero": 1,
+      "titulo": "Trazo y nivelación",
+      "icono": "📐",
+      "items": [
+        {
+          "id": "ejes-principales",
+          "concepto": "Ejes principales verificados con planos estructurales",
+          "ayuda": "Verificar con cinta y nivel óptico o láser",
+          "critico": true
+        },
+        {
+          "id": "dimensiones-planos",
+          "concepto": "Dimensiones generales coinciden con planos",
+          "ayuda": "Cotejar medidas a ejes y a paños"
+        },
+        {
+          "id": "escuadras",
+          "concepto": "Escuadras verificadas",
+          "ayuda": "Método 3-4-5 o estación total"
+        },
+        {
+          "id": "niveles-desplante",
+          "concepto": "Niveles de desplante verificados",
+          "ayuda": "Cota de DESMI vs cota de proyecto ±10 mm"
+        },
+        {
+          "id": "ubicacion-registros",
+          "concepto": "Ubicación de registros y pases confirmados",
+          "ayuda": "Hidrosanitarios y eléctricos contra planos de instalaciones"
+        },
+        {
+          "id": "castillos-arranque",
+          "concepto": "Ubicación de arranques de castillos confirmada",
+          "ayuda": "Esperas verticales en la posición exacta del plano"
+        }
+      ]
+    },
+    {
+      "id": "excavaciones",
+      "numero": 2,
+      "titulo": "Excavaciones",
+      "icono": "⛏️",
+      "items": [
+        {
+          "id": "profundidad",
+          "concepto": "Profundidad de excavación conforme a proyecto",
+          "ayuda": "Medir con flexómetro en mínimo 4 puntos de cada cepa"
+        },
+        {
+          "id": "ancho-cepas",
+          "concepto": "Ancho de cepas conforme a proyecto",
+          "ayuda": "Tolerancia ±2 cm"
+        },
+        {
+          "id": "fondo-limpio",
+          "concepto": "Fondo limpio y libre de material suelto",
+          "ayuda": "Sin material orgánico, basura ni terreno alterado"
+        },
+        {
+          "id": "sin-agua",
+          "concepto": "Sin presencia de agua",
+          "ayuda": "No colar sobre fondo encharcado"
+        },
+        {
+          "id": "sin-derrumbes",
+          "concepto": "Sin derrumbes en cepas",
+          "ayuda": "Taludes estables; apuntalar si hay riesgo"
+        },
+        {
+          "id": "organico-retirado",
+          "concepto": "Material orgánico retirado",
+          "ayuda": "Capa vegetal completamente eliminada"
+        }
+      ]
+    },
+    {
+      "id": "instalaciones-hidrosanitarias",
+      "numero": 3,
+      "titulo": "Instalaciones hidrosanitarias",
+      "icono": "🚰",
+      "items": [
+        {
+          "id": "tuberias-planos",
+          "concepto": "Tuberías instaladas según planos",
+          "ayuda": "Diámetro y trayectoria contra plano hidrosanitario",
+          "critico": true
+        },
+        {
+          "id": "pendientes",
+          "concepto": "Pendientes verificadas",
+          "ayuda": "2% mínimo en sanitarias; verificar con nivel de manguera",
+          "critico": true
+        },
+        {
+          "id": "diametros-hs",
+          "concepto": "Diámetros correctos",
+          "ayuda": "Cotejar contra especificación del plano"
+        },
+        {
+          "id": "registros-hs",
+          "concepto": "Registros ubicados correctamente",
+          "ayuda": "Ubicación y nivel de tapa de registros"
+        },
+        {
+          "id": "tapones-salidas",
+          "concepto": "Tapones colocados en salidas",
+          "ayuda": "Evita ingreso de concreto a tuberías"
+        },
+        {
+          "id": "hermeticidad",
+          "concepto": "Prueba de hermeticidad realizada",
+          "ayuda": "Llenar con agua y verificar fugas antes del colado. Cotejar con supervisión",
+          "critico": true
+        },
+        {
+          "id": "tuberias-fijadas",
+          "concepto": "Tuberías protegidas para evitar desplazamientos",
+          "ayuda": "Atadas o ancladas para no moverse con el vibrado"
+        }
+      ]
+    },
+    {
+      "id": "instalaciones-electricas",
+      "numero": 4,
+      "titulo": "Instalaciones eléctricas",
+      "icono": "💡",
+      "items": [
+        {
+          "id": "canalizaciones",
+          "concepto": "Canalizaciones instaladas según proyecto",
+          "ayuda": "Trayectoria y diámetro contra plano eléctrico",
+          "critico": true
+        },
+        {
+          "id": "alimentaciones",
+          "concepto": "Ubicación de alimentaciones confirmada",
+          "ayuda": "Salidas a tablero y registros principales"
+        },
+        {
+          "id": "tubos-fijados",
+          "concepto": "Tubos protegidos y fijados",
+          "ayuda": "Sin desplazamientos durante el colado"
+        },
+        {
+          "id": "curvas",
+          "concepto": "Curvas adecuadas sin estrangulamientos",
+          "ayuda": "Radio mínimo según diámetro; no aplastar o doblar el tubo o manguera"
+        },
+        {
+          "id": "extremos-sellados",
+          "concepto": "Extremos sellados",
+          "ayuda": "Tapones o cinta para evitar ingreso de lechada"
+        },
+        {
+          "id": "salidas-identificadas",
+          "concepto": "Salidas identificadas",
+          "ayuda": "Marcar contactos, apagadores y centros de luz"
+        }
+      ]
+    },
+    {
+      "id": "acero-refuerzo",
+      "numero": 5,
+      "titulo": "Acero de refuerzo",
+      "icono": "🔩",
+      "items": [
+        {
+          "id": "acero-plano",
+          "concepto": "Acero corresponde al plano estructural",
+          "ayuda": "Diámetro, separación y disposición conforme a planos",
+          "critico": true
+        },
+        {
+          "id": "diametros-acero",
+          "concepto": "Diámetros verificados",
+          "ayuda": "Calibrar con vernier si hay duda"
+        },
+        {
+          "id": "separacion-varillas",
+          "concepto": "Separación de varillas correcta",
+          "ayuda": "Tolerancia ±1 cm"
+        },
+        {
+          "id": "traslapes",
+          "concepto": "Longitudes de traslape correctas",
+          "ayuda": "Típicamente 40 veces el diámetro de la barra"
+        },
+        {
+          "id": "amarres",
+          "concepto": "Amarres completos",
+          "ayuda": "Alambre recocido en todos los cruces o al menos 3 de cada 4"
+        },
+        {
+          "id": "sin-oxido",
+          "concepto": "Sin acero excesivamente oxidado",
+          "ayuda": "Sin óxido en escamas que comprometa adherencia"
+        },
+        {
+          "id": "arranques-castillos",
+          "concepto": "Arranques de castillos correctamente ubicados",
+          "ayuda": "Verticalidad y longitud de esperas"
+        },
+        {
+          "id": "acero-limpio",
+          "concepto": "Acero libre de aceite, lodo o pintura",
+          "ayuda": "Cualquier recubrimiento que afecte adherencia debe retirarse"
+        },
+        {
+          "id": "malla-traslapes",
+          "concepto": "Colocación de malla electrosoldada con traslapes correctos",
+          "ayuda": "Traslape mínimo de 1 cuadro completo + 5 cm"
+        },
+        {
+          "id": "calzas-separadores",
+          "concepto": "Calzas y separadores colocados",
+          "ayuda": "Galletas o silletas que garanticen recubrimiento"
+        },
+        {
+          "id": "recubrimiento",
+          "concepto": "Recubrimiento garantizado",
+          "ayuda": "Mínimo 4 cm para losa en contacto con suelo (NMX/RCDF)",
+          "critico": true
+        }
+      ]
+    },
+    {
+      "id": "cimbra-contencion",
+      "numero": 6,
+      "titulo": "Cimbra y contención perimetral",
+      "icono": "🪵",
+      "items": [
+        {
+          "id": "alineamiento",
+          "concepto": "Alineamiento correcto",
+          "ayuda": "Tolerancia ±5 mm en planta"
+        },
+        {
+          "id": "dimensiones-cimbra",
+          "concepto": "Dimensiones verificadas",
+          "ayuda": "Espesor de losa correcto medido con flexómetro"
+        },
+        {
+          "id": "nivel-superior",
+          "concepto": "Nivel superior verificado",
+          "ayuda": "Manguera o nivel láser para garantizar planeidad"
+        },
+        {
+          "id": "cimbra-firme",
+          "concepto": "Cimbra firme y sin movimiento",
+          "ayuda": "Puntales, varillas o estacas de apuntalamiento lateral"
+        },
+        {
+          "id": "juntas-cerradas",
+          "concepto": "Juntas cerradas",
+          "ayuda": "Sellar con madera o mortero si la separación >3 mm"
+        },
+        {
+          "id": "elementos-fijacion",
+          "concepto": "Elementos de fijación completos",
+          "ayuda": "Amarres y cuñas en todos los puntos"
+        },
+        {
+          "id": "desmoldante",
+          "concepto": "Desmoldante aplicado cuando aplique",
+          "ayuda": "Aplicar antes de armar acero para no contaminar"
+        }
+      ]
+    },
+    {
+      "id": "base-terreno",
+      "numero": 7,
+      "titulo": "Base y preparación del terreno",
+      "icono": "🪨",
+      "items": [
+        {
+          "id": "relleno-compactado",
+          "concepto": "Material de relleno compactado",
+          "ayuda": "Capas máx. 20 cm; densidad de proyecto"
+        },
+        {
+          "id": "compactacion-documentada",
+          "concepto": "Compactación documentada",
+          "ayuda": "Pruebas Proctor o cono de arena en expediente (cuando aplique)"
+        },
+        {
+          "id": "nivelacion-terminada",
+          "concepto": "Nivelación terminada",
+          "ayuda": "Sin baches; verificar con regla de 3 m"
+        },
+        {
+          "id": "sin-organicos",
+          "concepto": "Material libre de basura y orgánicos",
+          "ayuda": "Inspección visual completa antes de colar"
+        },
+        {
+          "id": "humedad-adecuada",
+          "concepto": "Humedad adecuada para colado",
+          "ayuda": "Terreno saturado superficialmente, sin encharcamientos"
+        }
+      ]
+    },
+    {
+      "id": "preparacion-colado",
+      "numero": 8,
+      "titulo": "Preparación para el colado",
+      "icono": "📋",
+      "items": [
+        {
+          "id": "plano-vigente",
+          "concepto": "Plano estructural vigente en obra",
+          "ayuda": "Última revisión disponible en sitio durante el colado"
+        },
+        {
+          "id": "liberacion-supervisor",
+          "concepto": "Liberación firmada por supervisor",
+          "ayuda": "Sin liberación firmada no se autoriza el colado",
+          "critico": true
+        },
+        {
+          "id": "concreto-especificacion",
+          "concepto": "Concreto solicitado conforme a especificación",
+          "ayuda": "f'c, TMA y revenimiento según proyecto",
+          "critico": true
+        },
+        {
+          "id": "laboratorio-sitio",
+          "concepto": "Laboratorio programado y en sitio",
+          "ayuda": "Personal presente antes de la primera olla",
+          "critico": true
+        },
+        {
+          "id": "moldes-cilindros",
+          "concepto": "Moldes para cilindros disponibles",
+          "ayuda": "Mínimo 2 por camión o cada 20 m³"
+        },
+        {
+          "id": "vibradores",
+          "concepto": "Vibradores funcionando",
+          "ayuda": "Probados antes de iniciar; vibrador de respaldo en sitio",
+          "critico": true
+        },
+        {
+          "id": "planta-emergencia",
+          "concepto": "Planta de emergencia disponible",
+          "ayuda": "Por si falla suministro durante el colado"
+        },
+        {
+          "id": "personal-capacitado",
+          "concepto": "Personal asignado y capacitado",
+          "ayuda": "Cuadrilla con experiencia en colado y acabado"
+        },
+        {
+          "id": "ruta-olla",
+          "concepto": "Ruta de acceso para olla verificada",
+          "ayuda": "Radio de giro, peso y rampa adecuados"
+        },
+        {
+          "id": "herramienta-acabado",
+          "concepto": "Herramienta de acabado disponible",
+          "ayuda": "Reglas, flotas, llanas y bailarinas listas en sitio"
+        },
+        {
+          "id": "agua-curado",
+          "concepto": "Agua para curado y curacreto disponible",
+          "ayuda": "Curado mínimo 7 días iniciado dentro de 1 hora del acabado"
+        }
+      ]
+    },
+    {
+      "id": "control-colado",
+      "numero": 9,
+      "titulo": "Control durante el colado",
+      "icono": "🚧",
+      "items": [
+        {
+          "id": "remision",
+          "concepto": "Remisión recibida",
+          "ayuda": "Verificar f'c, TMA y revenimiento contra lo solicitado",
+          "critico": true
+        },
+        {
+          "id": "resistencia",
+          "concepto": "Resistencia conforme a proyecto",
+          "ayuda": "f'c indicado en remisión coincide con el de proyecto",
+          "critico": true
+        },
+        {
+          "id": "hora-carga",
+          "concepto": "Hora de carga registrada",
+          "ayuda": "No exceder 90 min ni 250 revoluciones desde planta",
+          "critico": true
+        },
+        {
+          "id": "hora-llegada",
+          "concepto": "Hora de llegada registrada",
+          "ayuda": "Cotejar tiempo transcurrido contra hora de carga"
+        },
+        {
+          "id": "revenimiento",
+          "concepto": "Revenimiento realizado",
+          "ayuda": "Slump 10–15 cm típico; rechazar si fuera de rango",
+          "critico": true
+        },
+        {
+          "id": "temperatura",
+          "concepto": "Temperatura registrada",
+          "ayuda": "No exceder 35 °C en clima caluroso",
+          "critico": true
+        }
+      ]
+    }
+  ]
+}
