@@ -12,27 +12,27 @@
   },
   "avance_global": {
     "programado_pct": 1.10,
-    "real_pct": 1.27,
-    "variacion_pct": 0.17,
+    "real_pct": 1.25,
+    "variacion_pct": 0.15,
     "programado_mxn": 144676.04,
-    "real_mxn": 166667.96
+    "real_mxn": 164217.29
   },
   "actividades": {
     "realizadas": [
-      "Suministro de material de instalaciones hidrosanitarias Lotes 02 y 03 M-661",
-      "Pruebas de hermeticidad de tuberías en Lote 04 M-661",
-      "Suministro de acero para cimentación Lotes 02 y 03 M-661",
-      "Presentación de Estimación 02 a revisión",
+      "Recepción de planos para trazo de Lotes 20, 21 y 22 (MZA 663) — persisten diferencias en escuadras",
       "Colocación de hule negro en Lote 04 M-661",
       "Colocación de acero de trabes de cimentación en Lote 04 M-661",
       "Colocación de malla electrosoldada en losa de cimentación Lote 04 M-661",
-      "Habilitado de acero en losa de cimentación Lotes 02 y 03 M-661",
-      "Recepción de planos para trazo de Lotes 20, 21 y 22 (MZA 663) — persisten diferencias en escuadras"
+      "Pruebas de hermeticidad de tuberías en Lote 04 M-661",
+      "Presentación de Estimación 02 a revisión"
     ],
     "programadas": [
       "Colado de losa de cimentación Lote 04 M-661",
       "Continuar trazo y nivelación pendiente en Lotes MZA 663",
-      "Suministro de material de Gas LP en Lotes 02 y 03 M-661"
+      "Suministro de acero para cimentación Lotes 02 y 03 M-661",
+      "Suministro de material de Gas LP en Lotes 02 y 03 M-661",
+      "Suministro de material de instalaciones hidrosanitarias Lotes 02 y 03 M-661",
+      "Habilitado de acero en losa de cimentación Lotes 02 y 03 M-661"
     ]
   },
   "problemas": [
@@ -41,27 +41,33 @@
       "estatus": "En revisión",
       "fecha_limite": "",
       "responsable": "Metta / Altozano"
+    },
+    {
+      "descripcion": "No se estimó la estimación 01 en tiempo por falta de alta en sistema",
+      "estatus": "Notificado",
+      "fecha_limite": "6-jun",
+      "responsable": "Altozano"
     }
   ],
   "orden_lotes": ["02", "03", "04", "20", "21", "22"],
   "lotes": {
-    "02": { "modelo": "Corsac B", "mza": "661", "programado": 1.41, "real": 2.28, "variacion": 0.87,
+    "02": { "modelo": "Corsac B", "mza": "661", "programado": 1.41, "real": 1.92, "variacion": 0.51,
       "actividades": ["Trazo", "Excavaciones de cimentación"] },
-    "03": { "modelo": "Corsac A", "mza": "661", "programado": 0.83, "real": 0.50, "variacion": -0.32,
+    "03": { "modelo": "Corsac A", "mza": "661", "programado": 0.83, "real": 0.84, "variacion": 0.02,
       "actividades": ["Trazo", "Excavaciones de cimentación"] },
-    "04": { "modelo": "Ártico A", "mza": "661", "programado": 4.96, "real": 4.89, "variacion": -0.07,
-      "actividades": ["Cimbra perimetral", "Excavaciones para acero e instalaciones", "Habilitado de acero de trabes de cimentación"] },
-    "20": { "modelo": "Ártico A", "mza": "663", "programado": 0.05, "real": 0.32, "variacion": 0.28,
-      "actividades": ["Trazo inicial (con diferencias en escuadras pendientes de resolver)"] },
-    "21": { "modelo": "Corsac A", "mza": "663", "programado": 0.16, "real": 0.37, "variacion": 0.21,
-      "actividades": ["Trazo inicial (con diferencias en escuadras pendientes de resolver)"] },
+    "04": { "modelo": "Ártico A", "mza": "661", "programado": 4.96, "real": 5.64, "variacion": 0.67,
+      "actividades": ["Cimbra perimetral", "Excavaciones para acero e instalaciones", "Habilitado de acero de trabes de cimentación", "Colocación de malla electrosoldada y hule negro en losa"] },
+    "20": { "modelo": "Ártico A", "mza": "663", "programado": 0.05, "real": 0.00, "variacion": -0.05,
+      "actividades": ["Sin actividad — pendiente resolver escuadras del despiece antes de iniciar trazo"] },
+    "21": { "modelo": "Corsac A", "mza": "663", "programado": 0.16, "real": 0.00, "variacion": -0.16,
+      "actividades": ["Sin actividad — pendiente resolver escuadras del despiece antes de iniciar trazo"] },
     "22": { "modelo": "Corsac B", "mza": "663", "programado": 0.00, "real": 0.00, "variacion": 0.00,
       "actividades": ["Sin actividad — pendiente resolver escuadras antes de iniciar trazo"] }
   },
   "curva_financiera": {
     "valor_total_mxn": 13184120.92,
     "programado": [0.0, 0.0626, 0.4918, 1.535, 3.7076, 6.9393, 10.2235, 13.2522, 15.434, 18.411, 22.0673, 25.6185, 29.3418, 32.2476, 35.0551, 37.0925, 39.172, 40.7418, 42.4334, 44.4514, 48.2913, 53.8782, 60.1479, 65.4775, 70.4296, 76.9004, 83.0947, 87.6436, 91.5662, 94.91, 96.9923, 98.1773, 99.055, 99.6113, 99.8989, 99.98, 100.0],
-    "real": [0.0, 0.1407, 0.4216, 1.27]
+    "real": [0.0, 0.1407, 0.4216, 1.25]
   },
   "abastecimientos": {
     "entregados": [

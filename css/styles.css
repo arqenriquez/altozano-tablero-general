@@ -88,6 +88,16 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
   font-size: 0.72rem; color: var(--ink-mute);
   letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600;
 }
+.topbar-inicio {
+  font-family: var(--font-body);
+  font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--ink-soft); text-decoration: none;
+  padding: 0.45rem 0.9rem; border-radius: 8px;
+  margin-right: auto;
+  transition: all 0.18s ease;
+}
+.topbar-inicio:hover { color: var(--accent); background: var(--accent-soft); }
 .back-link {
   color: var(--ink-soft);
   text-decoration: none;
