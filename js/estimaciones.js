@@ -109,6 +109,17 @@ async function initListado() {
 
   const datos = await Promise.all(orden.map(n => cargarJSON(`data/estimaciones/estimacion-${n}.json`)));
 
+  // Resumen del encabezado: estimado acumulado de la estimación más reciente
+  const masReciente = datos.find(d => d && d.caratula);
+  if (masReciente) {
+    const acum = masReciente.caratula.total_estimado_mxn;
+    const contrato = masReciente.caratula.nuevo_valor_contrato_mxn || masReciente.caratula.contrato_original_mxn;
+    const pct = contrato ? (acum / contrato) * 100 : null;
+    $('#sum-acumulado').textContent = fmtMXN(acum);
+    $('#sum-sub').innerHTML = `Al corte de la <strong>estimación ${masReciente.numero}</strong>${pct != null ? ` · ${pct.toFixed(2)}% del contrato` : ''}`;
+    $('#estimaciones-summary').hidden = false;
+  }
+
   grid.innerHTML = '';
   orden.forEach((n, i) => {
     const d = datos[i];
