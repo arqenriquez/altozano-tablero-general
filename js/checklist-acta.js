@@ -60,7 +60,7 @@ function renderActa(snapshot, catalogoProceso) {
     <header class="acta-header">
       <div class="acta-brand">
         <div class="acta-logo">
-          <img src="assets/logo-metta.png" alt="Metta" style="height:32px">
+          <img src="assets/logo-metta.png" alt="Metta" style="height:48px">
         </div>
         <div class="acta-brand-text">
           <div class="acta-brand-empresa">Metta Arquitectura y Construcción</div>

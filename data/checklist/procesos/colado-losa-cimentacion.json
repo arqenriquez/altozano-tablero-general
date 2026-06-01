@@ -3,7 +3,7 @@
   "nombre": "Colado de Losa de Cimentación",
   "subtitulo": "Verificación previa y durante el colado de la losa de cimentación",
   "icono": "🏗️",
-  "version": "2026-05-29",
+  "version": "2026-05-30",
   "secciones": [
     {
       "id": "trazo-nivelacion",
@@ -31,16 +31,6 @@
           "id": "niveles-desplante",
           "concepto": "Niveles de desplante verificados",
           "ayuda": "Cota de DESMI vs cota de proyecto ±10 mm"
-        },
-        {
-          "id": "ubicacion-registros",
-          "concepto": "Ubicación de registros y pases confirmados",
-          "ayuda": "Hidrosanitarios y eléctricos contra planos de instalaciones"
-        },
-        {
-          "id": "castillos-arranque",
-          "concepto": "Ubicación de arranques de castillos confirmada",
-          "ayuda": "Esperas verticales en la posición exacta del plano"
         }
       ]
     },
@@ -64,11 +54,6 @@
           "id": "fondo-limpio",
           "concepto": "Fondo limpio y libre de material suelto",
           "ayuda": "Sin material orgánico, basura ni terreno alterado"
-        },
-        {
-          "id": "sin-agua",
-          "concepto": "Sin presencia de agua",
-          "ayuda": "No colar sobre fondo encharcado"
         },
         {
           "id": "sin-derrumbes",
@@ -146,11 +131,6 @@
           "ayuda": "Salidas a tablero y registros principales"
         },
         {
-          "id": "tubos-fijados",
-          "concepto": "Tubos protegidos y fijados",
-          "ayuda": "Sin desplazamientos durante el colado"
-        },
-        {
           "id": "curvas",
           "concepto": "Curvas adecuadas sin estrangulamientos",
           "ayuda": "Radio mínimo según diámetro; no aplastar o doblar el tubo o manguera"
@@ -159,11 +139,6 @@
           "id": "extremos-sellados",
           "concepto": "Extremos sellados",
           "ayuda": "Tapones o cinta para evitar ingreso de lechada"
-        },
-        {
-          "id": "salidas-identificadas",
-          "concepto": "Salidas identificadas",
-          "ayuda": "Marcar contactos, apagadores y centros de luz"
         }
       ]
     },
@@ -210,11 +185,6 @@
           "ayuda": "Verticalidad y longitud de esperas"
         },
         {
-          "id": "acero-limpio",
-          "concepto": "Acero libre de aceite, lodo o pintura",
-          "ayuda": "Cualquier recubrimiento que afecte adherencia debe retirarse"
-        },
-        {
           "id": "malla-traslapes",
           "concepto": "Colocación de malla electrosoldada con traslapes correctos",
           "ayuda": "Traslape mínimo de 1 cuadro completo + 5 cm"
@@ -244,11 +214,6 @@
           "ayuda": "Tolerancia ±5 mm en planta"
         },
         {
-          "id": "dimensiones-cimbra",
-          "concepto": "Dimensiones verificadas",
-          "ayuda": "Espesor de losa correcto medido con flexómetro"
-        },
-        {
           "id": "nivel-superior",
           "concepto": "Nivel superior verificado",
           "ayuda": "Manguera o nivel láser para garantizar planeidad"
@@ -267,11 +232,6 @@
           "id": "elementos-fijacion",
           "concepto": "Elementos de fijación completos",
           "ayuda": "Amarres y cuñas en todos los puntos"
-        },
-        {
-          "id": "desmoldante",
-          "concepto": "Desmoldante aplicado cuando aplique",
-          "ayuda": "Aplicar antes de armar acero para no contaminar"
         }
       ]
     },
@@ -290,11 +250,6 @@
           "id": "compactacion-documentada",
           "concepto": "Compactación documentada",
           "ayuda": "Pruebas Proctor o cono de arena en expediente (cuando aplique)"
-        },
-        {
-          "id": "nivelacion-terminada",
-          "concepto": "Nivelación terminada",
-          "ayuda": "Sin baches; verificar con regla de 3 m"
         },
         {
           "id": "sin-organicos",
@@ -357,11 +312,6 @@
           "id": "personal-capacitado",
           "concepto": "Personal asignado y capacitado",
           "ayuda": "Cuadrilla con experiencia en colado y acabado"
-        },
-        {
-          "id": "ruta-olla",
-          "concepto": "Ruta de acceso para olla verificada",
-          "ayuda": "Radio de giro, peso y rampa adecuados"
         },
         {
           "id": "herramienta-acabado",
