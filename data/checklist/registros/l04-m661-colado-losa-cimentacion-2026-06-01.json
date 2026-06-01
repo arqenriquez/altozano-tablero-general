@@ -1,0 +1,120 @@
+{
+  "archivo": "l04-m661-colado-losa-cimentacion-2026-06-01",
+  "lote": {
+    "id": "l04-m661",
+    "nombre": "Lote 04",
+    "manzana": "MZA 661",
+    "modelo": "Ártico A"
+  },
+  "proceso": {
+    "id": "colado-losa-cimentacion",
+    "nombre": "Colado de Losa de Cimentación",
+    "subtitulo": "Verificación previa y durante el colado",
+    "icono": "🏗️",
+    "archivo": "procesos/colado-losa-cimentacion.json",
+    "etapa": "Cimentación"
+  },
+  "fecha": "2026-06-01T19:04:48.505Z",
+  "residente": "Ing. Luis Santacruz",
+  "supervisor": "Ing. Efraín Figueroa",
+  "items": {
+    "ejes-principales": { "estado": "si" },
+    "dimensiones-planos": { "estado": "si" },
+    "escuadras": { "estado": "si" },
+    "niveles-desplante": { "estado": "si" },
+    "profundidad": { "estado": "si" },
+    "ancho-cepas": { "estado": "si" },
+    "fondo-limpio": { "estado": "si" },
+    "sin-derrumbes": { "estado": "si" },
+    "organico-retirado": { "estado": "si" },
+    "tuberias-planos": { "estado": "si" },
+    "pendientes": { "estado": "si" },
+    "diametros-hs": { "estado": "si" },
+    "registros-hs": {
+      "estado": "na",
+      "obs": "En losa de cimentación no lleva registros, sino en ramal por pasillo"
+    },
+    "tapones-salidas": { "estado": "si" },
+    "hermeticidad": { "estado": "si" },
+    "tuberias-fijadas": { "estado": "si" },
+    "canalizaciones": { "estado": "si" },
+    "alimentaciones": { "estado": "si" },
+    "curvas": { "estado": "si" },
+    "extremos-sellados": { "estado": "si" },
+    "acero-plano": { "estado": "si" },
+    "diametros-acero": { "estado": "si" },
+    "separacion-varillas": { "estado": "si" },
+    "traslapes": { "estado": "si" },
+    "amarres": { "estado": "si" },
+    "sin-oxido": { "estado": "si" },
+    "arranques-castillos": { "estado": "si" },
+    "malla-traslapes": { "estado": "si" },
+    "calzas-separadores": { "estado": "si" },
+    "recubrimiento": { "estado": "si" },
+    "alineamiento": { "estado": "si" },
+    "nivel-superior": { "estado": "si" },
+    "cimbra-firme": { "estado": "si" },
+    "juntas-cerradas": { "estado": "si" },
+    "elementos-fijacion": { "estado": "si" },
+    "relleno-compactado": { "estado": "na" },
+    "compactacion-documentada": { "estado": "na" },
+    "sin-organicos": { "estado": "si" },
+    "humedad-adecuada": { "estado": "si" },
+    "plano-vigente": { "estado": "si" },
+    "liberacion-supervisor": { "estado": "si" },
+    "concreto-especificacion": { "estado": "si" },
+    "laboratorio-sitio": { "estado": "si" },
+    "moldes-cilindros": { "estado": "si" },
+    "vibradores": { "estado": "si" },
+    "planta-emergencia": {
+      "estado": "si",
+      "obs": "Hay luz en sitio"
+    },
+    "personal-capacitado": { "estado": "si" },
+    "herramienta-acabado": { "estado": "si" },
+    "agua-curado": {
+      "estado": "si",
+      "obs": "Se colocará membrana de protección"
+    },
+    "remision": {
+      "estado": "si",
+      "obs": "Durante colado"
+    },
+    "resistencia": {
+      "estado": "si",
+      "obs": "Se corrobora durante colado"
+    },
+    "hora-carga": {
+      "estado": "si",
+      "obs": "Se revisará durante el colado"
+    },
+    "hora-llegada": {
+      "estado": "si",
+      "obs": "Se revisará durante el colado"
+    },
+    "revenimiento": {
+      "estado": "si",
+      "obs": "Se revisará durante el colado"
+    },
+    "temperatura": {
+      "estado": "si",
+      "obs": "Se revisará durante el colado"
+    }
+  },
+  "stats": {
+    "total": 55,
+    "si": 52,
+    "no": 0,
+    "na": 3,
+    "sin": 0,
+    "aplicables": 52,
+    "pendientes": 0,
+    "avance": 100,
+    "criticosTotal": 16,
+    "criticosOk": 16,
+    "criticosPend": 0,
+    "criticosNo": 0
+  },
+  "veredicto": "APTO",
+  "catalogoVersion": "2026-05-30"
+}
