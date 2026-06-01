@@ -275,6 +275,55 @@ async function init() {
   renderActa(snapshot, catalogoProceso);
 
   $('#btn-imprimir')?.addEventListener('click', () => window.print());
+
+  // El boton "Enviar al supervisor" solo aparece si el acta NO viene del repo
+  // (es decir, si fue generada en este dispositivo y aun no se ha publicado)
+  const btnEnviar = $('#btn-enviar');
+  if (btnEnviar && !archivo) {
+    btnEnviar.hidden = false;
+    btnEnviar.addEventListener('click', () => enviarAlSupervisor(snapshot));
+  }
+
+  $('#enviar-modal-close')?.addEventListener('click', cerrarModalEnviar);
+  $('#enviar-modal-ok')?.addEventListener('click', cerrarModalEnviar);
+  $('#enviar-modal')?.addEventListener('click', (e) => {
+    if (e.target.id === 'enviar-modal') cerrarModalEnviar();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !$('#enviar-modal').hidden) cerrarModalEnviar();
+  });
+}
+
+function enviarAlSupervisor(snapshot) {
+  const nombreArchivo = snapshot.archivo
+    || `${snapshot.lote.id}-${snapshot.proceso.id}-${(snapshot.fecha || '').slice(0, 10)}`;
+  const blob = new Blob([JSON.stringify(snapshot, null, 2) + '\n'], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${nombreArchivo}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+
+  $('#enviar-modal-body').innerHTML = `
+    <p class="chk-modal-intro">✅ El archivo se descargó correctamente.</p>
+    <div class="chk-modal-id">
+      <code>${escapeHtml(nombreArchivo)}.json</code>
+    </div>
+    <p style="font-size:0.95rem;color:var(--ink);margin-top:0.9rem;line-height:1.55">
+      Compártelo con tu supervisor por <strong>WhatsApp</strong> o <strong>correo</strong> para que el acta quede registrada en el tablero general.
+    </p>
+    <p class="chk-modal-help">Listo. No necesitas hacer nada más en esta pantalla.</p>
+  `;
+  $('#enviar-modal').hidden = false;
+  document.body.style.overflow = 'hidden';
+}
+
+function cerrarModalEnviar() {
+  $('#enviar-modal').hidden = true;
+  document.body.style.overflow = '';
 }
 
 document.addEventListener('DOMContentLoaded', init);

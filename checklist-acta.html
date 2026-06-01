@@ -25,6 +25,7 @@
 
 <div class="acta-toolbar acta-no-print" id="acta-toolbar">
   <button class="acta-btn-primary" id="btn-imprimir">🖨 Imprimir / Guardar PDF</button>
+  <button class="acta-btn-secondary" id="btn-enviar" hidden>📤 Enviar al supervisor</button>
   <a href="checklist.html" class="acta-btn-secondary">Cerrar acta</a>
 </div>
 
@@ -32,6 +33,20 @@
   <div class="loading" style="padding:5rem 2rem;text-align:center">Generando acta...</div>
 </article>
 
-<script src="js/checklist-acta.js?v=20260529"></script>
+<!-- Modal: confirmacion de envio al supervisor -->
+<div class="chk-modal-overlay acta-no-print" id="enviar-modal" hidden>
+  <div class="chk-modal" role="dialog" aria-labelledby="enviar-modal-title">
+    <header class="chk-modal-header">
+      <h3 id="enviar-modal-title">📤 Enviar al supervisor</h3>
+      <button class="chk-modal-close" id="enviar-modal-close" aria-label="Cerrar">✕</button>
+    </header>
+    <div class="chk-modal-body" id="enviar-modal-body"></div>
+    <footer class="chk-modal-footer">
+      <button class="chk-btn-primary" id="enviar-modal-ok">Entendido</button>
+    </footer>
+  </div>
+</div>
+
+<script src="js/checklist-acta.js?v=20260601"></script>
 </body>
 </html>

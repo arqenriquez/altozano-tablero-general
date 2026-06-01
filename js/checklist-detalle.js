@@ -291,19 +291,11 @@ function bindEventos() {
   });
   $('#reset-modal-confirm').addEventListener('click', confirmarReset);
 
-  // Modal post-acta
-  $('#post-acta-close')?.addEventListener('click', cerrarModalPostActa);
-  $('#post-acta-cerrar')?.addEventListener('click', cerrarModalPostActa);
-  $('#post-acta-modal')?.addEventListener('click', (e) => {
-    if (e.target.id === 'post-acta-modal') cerrarModalPostActa();
-  });
-
   // Esc cierra cualquier modal abierto
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
     if (!$('#acta-modal').hidden) cerrarModalActa();
     if (!$('#reset-modal').hidden) cerrarModalReset();
-    if (!$('#post-acta-modal').hidden) cerrarModalPostActa();
   });
 }
 
@@ -460,57 +452,9 @@ function confirmarYGenerarActa() {
     catalogoVersion: CATALOGO_PROCESO.version || null
   };
 
-  // Guarda en localStorage para uso local
+  // Guarda el snapshot en localStorage y redirige al acta
   localStorage.setItem(LS_ACTA(LOTE.id, PROCESO.id), JSON.stringify(snapshot));
-
-  // Descarga el JSON automáticamente para envío al supervisor
-  const blob = new Blob([JSON.stringify(snapshot, null, 2) + '\n'], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `${nombreArchivo}.json`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-
-  // Cierra el modal de confirmación y muestra el modal post-acta
-  cerrarModalActa();
-  mostrarModalPostActa(nombreArchivo, veredicto);
-}
-
-function mostrarModalPostActa(nombreArchivo, veredicto) {
-  const body = `
-    <p class="chk-modal-intro">El acta se generó correctamente.</p>
-    <div class="chk-modal-veredicto ${veredicto === 'APTO' ? 'apto' : 'no-apto'}">
-      Veredicto: <strong>${veredicto === 'APTO' ? '✅ APTO PARA COLAR' : '⛔ NO APTO'}</strong>
-    </div>
-    <div class="chk-modal-id">
-      <strong>Archivo descargado:</strong><br>
-      <code>${escapeHtml(nombreArchivo)}.json</code>
-    </div>
-    <p style="font-size:0.92rem;color:var(--ink);margin-top:0.9rem;font-weight:600">
-      Para que el acta aparezca en el tablero general:
-    </p>
-    <ol class="editor-steps" style="margin-top:0.4rem">
-      <li>Envía el archivo <code>.json</code> al supervisor (WhatsApp, correo, etc.).</li>
-      <li>El supervisor lo coloca en <code>data/checklist/registros/</code> del repositorio.</li>
-      <li>Agrega el nombre del archivo al arreglo <code>registros</code> en <code>data/checklist/index.json</code>.</li>
-      <li>Hace <code>git commit</code> y push. El tablero la mostrará en el listado.</li>
-    </ol>
-    <p class="chk-modal-help">Mientras tanto, el acta queda guardada en este navegador. Puedes verla ahora.</p>
-  `;
-  $('#post-acta-body').innerHTML = body;
-  $('#post-acta-modal').hidden = false;
-  document.body.style.overflow = 'hidden';
-  $('#post-acta-ver').onclick = () => {
-    window.location.href = `checklist-acta.html?lote=${encodeURIComponent(LOTE.id)}&proceso=${encodeURIComponent(PROCESO.id)}`;
-  };
-}
-
-function cerrarModalPostActa() {
-  $('#post-acta-modal').hidden = true;
-  document.body.style.overflow = '';
+  window.location.href = `checklist-acta.html?lote=${encodeURIComponent(LOTE.id)}&proceso=${encodeURIComponent(PROCESO.id)}`;
 }
 
 /* ---------- Init ---------- */
