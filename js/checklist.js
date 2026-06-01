@@ -12,6 +12,7 @@ const LS_ACTA     = (loteId, procesoId) => `chk-acta:${loteId}:${procesoId}`;
 
 let CATALOGO = null;
 let filtroProceso = 'todos';
+let REGISTROS_REPO = [];   // Actas commiteadas en data/checklist/registros/
 
 async function cargarJSON(ruta) {
   try {
@@ -31,11 +32,28 @@ function escapeHtml(str) {
 }
 
 /* ---------- Estado por celda Lote x Proceso ----------
-   Se calcula a partir de:
-   - localStorage[chk:<lote>:<proceso>]      → progreso en vivo
-   - localStorage[chk-acta:<lote>:<proceso>] → snapshot del acta
+   Prioridad de fuentes:
+   1. Acta commiteada en el repo (data/checklist/registros/) → mas reciente por fecha
+   2. Acta guardada en localStorage del navegador actual
+   3. Progreso en vivo en localStorage
 */
 function estadoCelda(loteId, procesoId, totalItems) {
+  // 1. Acta del repo (commiteada, visible desde cualquier dispositivo)
+  const actaRepo = REGISTROS_REPO
+    .filter(r => r?.lote?.id === loteId && r?.proceso?.id === procesoId)
+    .sort((a, b) => (b.fecha || '').localeCompare(a.fecha || ''))[0];
+  if (actaRepo) {
+    return {
+      tipo: actaRepo.veredicto === 'APTO' ? 'apto' : 'no-apto',
+      avance: 100,
+      verificados: actaRepo.stats?.si ?? actaRepo.stats?.verificados ?? 0,
+      total: actaRepo.stats?.total || totalItems,
+      fuente: 'repo',
+      archivo: actaRepo.archivo
+    };
+  }
+
+  // 2. Acta del navegador (solo visible en este dispositivo)
   const acta = localStorage.getItem(LS_ACTA(loteId, procesoId));
   if (acta) {
     try {
@@ -43,11 +61,14 @@ function estadoCelda(loteId, procesoId, totalItems) {
       return {
         tipo: data.veredicto === 'APTO' ? 'apto' : 'no-apto',
         avance: 100,
-        verificados: data.stats?.verificados || 0,
-        total: data.stats?.total || totalItems
+        verificados: data.stats?.verificados || data.stats?.si || 0,
+        total: data.stats?.total || totalItems,
+        fuente: 'local'
       };
     } catch (_) { /* fall through */ }
   }
+
+  // 3. Progreso en vivo (local)
   const raw = localStorage.getItem(LS_PROGRESO(loteId, procesoId));
   if (!raw) return { tipo: 'no-iniciado', avance: 0, verificados: 0, total: totalItems };
   try {
@@ -59,10 +80,20 @@ function estadoCelda(loteId, procesoId, totalItems) {
     if (respondidos === 0) return { tipo: 'no-iniciado', avance: 0, verificados: 0, total: totalItems };
     const denom = Math.max(totalItems - naCount, 1);
     const avance = Math.round((verif / denom) * 100);
-    return { tipo: 'en-progreso', avance, verificados: verif, total: totalItems };
+    return { tipo: 'en-progreso', avance, verificados: verif, total: totalItems, fuente: 'local' };
   } catch (_) {
     return { tipo: 'no-iniciado', avance: 0, verificados: 0, total: totalItems };
   }
+}
+
+/* ---------- Cargar registros (actas) del repo ---------- */
+async function precargarRegistrosRepo() {
+  const nombres = CATALOGO.registros || [];
+  if (!nombres.length) { REGISTROS_REPO = []; return; }
+  const cargas = await Promise.all(
+    nombres.map(n => cargarJSON(`data/checklist/registros/${n}.json`))
+  );
+  REGISTROS_REPO = cargas.filter(Boolean);
 }
 
 /* ---------- Chips de procesos (filtro) ---------- */
@@ -108,7 +139,9 @@ function renderLotes() {
     procesos.forEach(p => {
       const total = CATALOGO._totales[p.id] || 0;
       const est = estadoCelda(lote.id, p.id, total);
-      const url = `checklist-detalle.html?lote=${encodeURIComponent(lote.id)}&proceso=${encodeURIComponent(p.id)}`;
+      const url = (est.tipo === 'apto' || est.tipo === 'no-apto') && est.fuente === 'repo'
+        ? `checklist-acta.html?archivo=${encodeURIComponent(est.archivo)}`
+        : `checklist-detalle.html?lote=${encodeURIComponent(lote.id)}&proceso=${encodeURIComponent(p.id)}`;
 
       let estadoLbl, estadoCls, accionTxt;
       switch (est.tipo) {
@@ -252,7 +285,7 @@ async function init() {
     return;
   }
 
-  await precargarTotales();
+  await Promise.all([precargarTotales(), precargarRegistrosRepo()]);
   renderChips();
   renderLotes();
   renderKPIs();

@@ -1,5 +1,5 @@
 {
-  "_INSTRUCCIONES": "Catalogo de procesos constructivos y registros del modulo 06 Checklist de Calidad. Los procesos definen los items a verificar (data/checklist/procesos/*.json). Los registros son snapshots de cada verificacion por Lote x Proceso (data/checklist/registros/*.json).",
+  "_INSTRUCCIONES": "Catalogo de procesos constructivos y registros del modulo 06 Checklist de Calidad. Los procesos definen los items a verificar (data/checklist/procesos/*.json). Los registros son snapshots de cada acta generada, ubicados en data/checklist/registros/*.json. Para que una acta aparezca en el tablero general (visible desde cualquier dispositivo): 1) Recibe el archivo .json del residente, 2) Colocalo en data/checklist/registros/, 3) Agrega su nombre (sin .json) al arreglo 'registros' de abajo, 4) git commit y push.",
   "lotes": [
     { "id": "l02-m661", "nombre": "Lote 02", "manzana": "MZA 661", "modelo": "Corsac B" },
     { "id": "l03-m661", "nombre": "Lote 03", "manzana": "MZA 661", "modelo": "Corsac A" },

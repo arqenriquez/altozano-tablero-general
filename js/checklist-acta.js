@@ -217,35 +217,51 @@ function renderActa(snapshot, catalogoProceso) {
 
 async function init() {
   const params = new URLSearchParams(window.location.search);
+  const archivo = params.get('archivo');     // acta commiteada al repo
   const loteId = params.get('lote');
   const procesoId = params.get('proceso');
 
-  if (!loteId || !procesoId) {
+  let snapshot = null;
+
+  if (archivo) {
+    // Cargar acta desde el repo
+    snapshot = await cargarJSON(`data/checklist/registros/${archivo}.json`);
+    if (!snapshot) {
+      $('#acta-root').innerHTML = `
+        <div class="empty-state" style="padding:5rem 2rem;text-align:center">
+          <div class="icon">⚠️</div>
+          <h3>No se encontró el acta <code>${archivo}.json</code></h3>
+          <p>Verifica que exista en <code>data/checklist/registros/</code> y esté listada en <code>data/checklist/index.json</code>.</p>
+          <a href="checklist.html" class="back-link">← Volver al índice</a>
+        </div>`;
+      return;
+    }
+  } else if (loteId && procesoId) {
+    // Cargar acta desde localStorage
+    const raw = localStorage.getItem(LS_ACTA(loteId, procesoId));
+    if (!raw) {
+      $('#acta-root').innerHTML = `
+        <div class="empty-state" style="padding:5rem 2rem;text-align:center">
+          <div class="icon">⚠️</div>
+          <h3>No hay acta generada para este lote y proceso</h3>
+          <p>Vuelve al checklist y genera el acta.</p>
+          <a href="checklist-detalle.html?lote=${encodeURIComponent(loteId)}&proceso=${encodeURIComponent(procesoId)}" class="back-link">← Ir al checklist</a>
+        </div>`;
+      return;
+    }
+    try { snapshot = JSON.parse(raw); }
+    catch (_) {
+      $('#acta-root').innerHTML = `<div class="empty-state"><h3>Acta corrupta en localStorage</h3></div>`;
+      return;
+    }
+  } else {
     $('#acta-root').innerHTML = `<div class="empty-state"><h3>Faltan parámetros en la URL</h3></div>`;
     return;
   }
 
-  const raw = localStorage.getItem(LS_ACTA(loteId, procesoId));
-  if (!raw) {
-    $('#acta-root').innerHTML = `
-      <div class="empty-state" style="padding:5rem 2rem;text-align:center">
-        <div class="icon">⚠️</div>
-        <h3>No hay acta generada para este lote y proceso</h3>
-        <p>Vuelve al checklist y genera el acta.</p>
-        <a href="checklist-detalle.html?lote=${encodeURIComponent(loteId)}&proceso=${encodeURIComponent(procesoId)}" class="back-link">← Ir al checklist</a>
-      </div>`;
-    return;
-  }
-
-  let snapshot;
-  try { snapshot = JSON.parse(raw); }
-  catch (_) {
-    $('#acta-root').innerHTML = `<div class="empty-state"><h3>Acta corrupta en localStorage</h3></div>`;
-    return;
-  }
-
+  const procesoIdResuelto = snapshot.proceso?.id || procesoId;
   const indice = await cargarJSON('data/checklist/index.json');
-  const procInfo = indice?.procesos?.find(p => p.id === procesoId);
+  const procInfo = indice?.procesos?.find(p => p.id === procesoIdResuelto);
   if (!procInfo) {
     $('#acta-root').innerHTML = `<div class="empty-state"><h3>Proceso no encontrado en catálogo</h3></div>`;
     return;
