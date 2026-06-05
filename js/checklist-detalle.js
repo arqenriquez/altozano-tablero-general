@@ -24,6 +24,15 @@ function escapeHtml(str) {
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+/* Texto del veredicto, configurable por proceso (catalogo .veredicto).
+   Fallback al texto de colado de losa para no romper procesos antiguos. */
+function textoVeredicto(tipo) {
+  const v = CATALOGO_PROCESO?.veredicto || {};
+  if (tipo === 'apto')   return escapeHtml(v.apto   || 'APTO PARA COLAR');
+  if (tipo === 'noApto') return escapeHtml(v.noApto || 'NO APTO');
+  return escapeHtml(v.accion || 'colar');
+}
+
 async function cargarJSON(ruta) {
   try {
     const resp = await fetch(`${ruta}?t=${Date.now()}`, { cache: 'no-cache' });
@@ -32,6 +41,21 @@ async function cargarJSON(ruta) {
   } catch (e) {
     return null;
   }
+}
+
+/* Dependencia: el proceso requiere que el proceso previo tenga acta APTO
+   en este lote. Comprueba primero localStorage y luego las actas del repo. */
+async function prerequisitoCumplido(loteId, requiereId, indice) {
+  const rawLocal = localStorage.getItem(LS_ACTA(loteId, requiereId));
+  if (rawLocal) {
+    try { if (JSON.parse(rawLocal).veredicto === 'APTO') return true; } catch (_) {}
+  }
+  const nombres = indice.registros || [];
+  const cargas = await Promise.all(
+    nombres.map(n => cargarJSON(`data/checklist/registros/${n}.json`))
+  );
+  return cargas.some(a => a && a.lote?.id === loteId
+    && a.proceso?.id === requiereId && a.veredicto === 'APTO');
 }
 
 function leerEstado() {
@@ -371,7 +395,7 @@ function abrirModalActa() {
     </div>
 
     <div class="chk-modal-veredicto ${veredicto === 'APTO' ? 'apto' : 'no-apto'}">
-      Veredicto preliminar: <strong>${veredicto === 'APTO' ? '✅ APTO PARA COLAR' : '⛔ NO APTO'}</strong>
+      Veredicto preliminar: <strong>${veredicto === 'APTO' ? '✅ ' + textoVeredicto('apto') : '⛔ ' + textoVeredicto('noApto')}</strong>
     </div>
 
     ${advertencias}
@@ -489,6 +513,22 @@ async function init() {
         <div class="icon">⚠️</div>
         <h3>Lote o proceso no encontrado</h3>
         <p>Verifica los IDs en la URL.</p>
+        <a href="checklist.html" class="back-link">← Volver al índice</a>
+      </div>`;
+    return;
+  }
+
+  // Bloqueo por dependencia: no permitir llenar el checklist si el proceso
+  // previo aún no tiene acta APTO en este lote (evita saltar el bloqueo por URL).
+  if (PROCESO.requiere && !(await prerequisitoCumplido(LOTE.id, PROCESO.requiere, indice))) {
+    const prev = indice.procesos.find(p => p.id === PROCESO.requiere);
+    $('#chk-root').innerHTML = `
+      <div class="empty-state" style="padding:5rem 2rem;text-align:center">
+        <div class="icon">🔒</div>
+        <h3>${escapeHtml(PROCESO.nombre)} aún no está disponible</h3>
+        <p>Para habilitar este proceso en <strong>${escapeHtml(LOTE.nombre)} · ${escapeHtml(LOTE.manzana)}</strong>,
+        primero debe generarse el acta <strong>APTO</strong> de
+        <strong>${escapeHtml(prev?.nombre || 'el proceso anterior')}</strong>.</p>
         <a href="checklist.html" class="back-link">← Volver al índice</a>
       </div>`;
     return;

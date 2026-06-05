@@ -1,0 +1,198 @@
+{
+  "id": "muros-planta-baja",
+  "nombre": "Muros Planta Baja",
+  "subtitulo": "Verificación de calidad para muros de tabique y block en planta baja",
+  "icono": "🧱",
+  "version": "2026-06-03",
+  "veredicto": {
+    "apto": "PARTIDA APTA PARA LIBERAR",
+    "noApto": "NO APTA",
+    "accion": "liberar la partida"
+  },
+  "secciones": [
+    {
+      "id": "trazo-escuadras-plomo",
+      "numero": 1,
+      "titulo": "Trazo, escuadras y plomo",
+      "icono": "📐",
+      "items": [
+        {
+          "id": "trazo-muros",
+          "concepto": "Trazo de muros coincide con planos arquitectónicos",
+          "ayuda": "Verificar ejes con cinta sobre la losa",
+          "critico": true
+        },
+        {
+          "id": "escuadras-90",
+          "concepto": "Escuadras a 90° en esquinas y cruces de muro",
+          "ayuda": "Método 3-4-5 o escuadra metálica",
+          "critico": true
+        },
+        {
+          "id": "espesor-muro",
+          "concepto": "Espesor de muro según proyecto (14 cm tabique / block 15–20 cm)",
+          "ayuda": "Cotejar contra especificación del plano"
+        },
+        {
+          "id": "vanos-trazados",
+          "concepto": "Vanos de puertas y ventanas trazados y dimensionados",
+          "ayuda": "Cotejar holguras de marcos contra plano"
+        }
+      ]
+    },
+    {
+      "id": "asentado-piezas",
+      "numero": 2,
+      "titulo": "Asentado de piezas",
+      "icono": "🧱",
+      "items": [
+        {
+          "id": "hiladas-niveladas",
+          "concepto": "Hiladas niveladas horizontalmente",
+          "ayuda": "Hilo de nivel y nivel de burbuja por hilada",
+          "critico": true
+        },
+        {
+          "id": "muro-plomo",
+          "concepto": "Muro a plomo en toda su altura",
+          "ayuda": "Plomada o nivel; tolerancia ±5 mm por 3 m",
+          "critico": true
+        },
+        {
+          "id": "boquillas-uniformes",
+          "concepto": "Boquillas (juntas) completas y uniformes 1–1.5 cm",
+          "ayuda": "Mortero llenando juntas vertical y horizontal",
+          "critico": true
+        },
+        {
+          "id": "cuatrapeo",
+          "concepto": "Cuatrapeo correcto de piezas (sin juntas verticales alineadas)",
+          "ayuda": "Las juntas verticales no deben coincidir entre hiladas"
+        },
+        {
+          "id": "piezas-humedecidas",
+          "concepto": "Piezas humedecidas antes del asentado",
+          "ayuda": "Evita que el tabique robe agua al mortero"
+        },
+        {
+          "id": "mortero-dosificacion",
+          "concepto": "Mortero con dosificación y consistencia adecuada",
+          "ayuda": "Proporción cemento-arena según proyecto"
+        }
+      ]
+    },
+    {
+      "id": "castillos-refuerzos",
+      "numero": 3,
+      "titulo": "Castillos y refuerzos verticales",
+      "icono": "🔩",
+      "items": [
+        {
+          "id": "castillos-ubicacion",
+          "concepto": "Castillos en extremos, esquinas y a distancia máx. de proyecto",
+          "ayuda": "Generalmente cada 3 m o según cálculo",
+          "critico": true
+        },
+        {
+          "id": "armado-castillos",
+          "concepto": "Armado de castillos correcto (varillas + estribos)",
+          "ayuda": "Verificar calibre, número de varillas y separación de estribos",
+          "critico": true
+        },
+        {
+          "id": "castillos-colados",
+          "concepto": "Castillos intermedios y finales colados",
+          "ayuda": "Sin oquedades ni segregación; bien vibrado",
+          "critico": true
+        },
+        {
+          "id": "anclaje-castillos",
+          "concepto": "Anclaje de castillos a dala/cadena de desplante",
+          "ayuda": "Esperas embebidas y traslapadas con el refuerzo del desplante"
+        },
+        {
+          "id": "dentado-muro-castillo",
+          "concepto": "Dentado o conexión muro-castillo ejecutada",
+          "ayuda": "Endentar el muro o dejar conectores para ligarlo al castillo",
+          "critico": true
+        }
+      ]
+    },
+    {
+      "id": "dalas-cerramientos",
+      "numero": 4,
+      "titulo": "Dalas y cerramientos",
+      "icono": "🪟",
+      "items": [
+        {
+          "id": "dala-cerramiento",
+          "concepto": "Dala de cerramiento corrida sobre muros",
+          "ayuda": "Continua y a nivel; remate superior del muro",
+          "critico": true
+        },
+        {
+          "id": "cerramientos-vanos",
+          "concepto": "Cerramientos sobre vanos de puertas y ventanas",
+          "ayuda": "Apoyo mínimo del cerramiento sobre el muro a cada lado",
+          "critico": true
+        },
+        {
+          "id": "armado-dalas",
+          "concepto": "Armado de dalas/cerramientos según proyecto",
+          "ayuda": "Varillas y estribos verificados antes del colado"
+        },
+        {
+          "id": "dalas-coladas",
+          "concepto": "Dalas y cerramientos colados y bien vibrados",
+          "ayuda": "Sin oquedades; concreto bien compactado"
+        }
+      ]
+    },
+    {
+      "id": "preparaciones-instalaciones",
+      "numero": 5,
+      "titulo": "Preparaciones e instalaciones",
+      "icono": "🔌",
+      "items": [
+        {
+          "id": "ranuras-cajas",
+          "concepto": "Ranuras/cajas para instalaciones previstas antes de cerrar muro",
+          "ayuda": "Eléctrica e hidrosanitaria; evitar picar muro terminado"
+        },
+        {
+          "id": "pasos-registros",
+          "concepto": "Pasos y registros ubicados conforme a planos",
+          "ayuda": "Cotejar ubicaciones contra planos de instalaciones"
+        },
+        {
+          "id": "bajantes-pluviales",
+          "concepto": "Bajantes pluviales de PVC con refuerzo de acero y concreto",
+          "ayuda": "Confinar bajante embebida con armado y colado"
+        }
+      ]
+    },
+    {
+      "id": "limpieza-cierre",
+      "numero": 6,
+      "titulo": "Limpieza y cierre de partida",
+      "icono": "🧹",
+      "items": [
+        {
+          "id": "muros-limpios",
+          "concepto": "Muros limpios, sin rebabas de mortero ni manchas",
+          "ayuda": "Retirar rebabas y limpiar caras del muro"
+        },
+        {
+          "id": "sin-grietas",
+          "concepto": "Sin grietas, piezas flojas o rotas en el muro",
+          "ayuda": "Inspección visual completa; reponer piezas dañadas"
+        },
+        {
+          "id": "curado-elementos",
+          "concepto": "Curado de elementos colados (castillos y dalas)",
+          "ayuda": "Mantener húmedo; importante en clima caluroso de Sonora"
+        }
+      ]
+    }
+  ]
+}

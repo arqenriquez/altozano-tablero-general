@@ -86,6 +86,16 @@ function estadoCelda(loteId, procesoId, totalItems) {
   }
 }
 
+/* ---------- Dependencia entre procesos ----------
+   Un proceso con `requiere: "<procesoId>"` solo se habilita cuando ese
+   proceso previo tiene acta APTO en el mismo lote.
+*/
+function prerequisitoCumplido(loteId, requiereId) {
+  const totalReq = CATALOGO._totales[requiereId] || 0;
+  const estReq = estadoCelda(loteId, requiereId, totalReq);
+  return estReq.tipo === 'apto';
+}
+
 /* ---------- Cargar registros (actas) del repo ---------- */
 async function precargarRegistrosRepo() {
   const nombres = CATALOGO.registros || [];
@@ -139,6 +149,26 @@ function renderLotes() {
     procesos.forEach(p => {
       const total = CATALOGO._totales[p.id] || 0;
       const est = estadoCelda(lote.id, p.id, total);
+
+      // Bloqueo por dependencia: el proceso requiere que el proceso previo
+      // tenga acta APTO en este lote. Mientras no se cumpla, queda "no disponible aún".
+      if (p.requiere && !prerequisitoCumplido(lote.id, p.requiere)) {
+        html += `
+          <div class="chk-proceso-row bloqueado" aria-disabled="true" title="Disponible cuando el proceso anterior tenga acta APTO en este lote">
+            <div class="chk-proceso-ico">${escapeHtml(p.icono || '📋')}</div>
+            <div class="chk-proceso-info">
+              <div class="chk-proceso-nombre">${escapeHtml(p.nombre)}</div>
+              <div class="chk-proceso-sub">${escapeHtml(p.etapa || '')} · ${total} ítems</div>
+            </div>
+            <div class="chk-proceso-estado">
+              <span class="chk-estado-badge bloqueado">🔒 Bloqueado</span>
+              <span class="chk-proceso-lock-hint">No disponible aún</span>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
       const url = (est.tipo === 'apto' || est.tipo === 'no-apto') && est.fuente === 'repo'
         ? `checklist-acta.html?archivo=${encodeURIComponent(est.archivo)}`
         : `checklist-detalle.html?lote=${encodeURIComponent(lote.id)}&proceso=${encodeURIComponent(p.id)}`;

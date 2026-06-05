@@ -40,6 +40,15 @@ function renderActa(snapshot, catalogoProceso) {
 
   document.title = `Acta ${proceso.nombre} · ${lote.nombre} ${lote.manzana} | Altozano`;
 
+  // Texto del veredicto, configurable por proceso (catalogo .veredicto).
+  // Fallback al texto de colado de losa para no romper procesos antiguos.
+  const cv = catalogoProceso.veredicto || {};
+  const vTxt = {
+    apto:   escapeHtml(cv.apto   || 'APTO PARA COLAR'),
+    noApto: escapeHtml(cv.noApto || 'NO APTO'),
+    accion: escapeHtml(cv.accion || 'colar')
+  };
+
   // Lista de criticos no completos
   const criticosFallidos = [];
   catalogoProceso.secciones.forEach(sec => {
@@ -76,11 +85,11 @@ function renderActa(snapshot, catalogoProceso) {
 
     <section class="acta-veredicto ${veredicto === 'APTO' ? 'apto' : 'no-apto'}">
       <div class="acta-veredicto-label">Veredicto</div>
-      <div class="acta-veredicto-valor">${veredicto === 'APTO' ? '✅ APTO PARA COLAR' : '⛔ NO APTO'}</div>
+      <div class="acta-veredicto-valor">${veredicto === 'APTO' ? '✅ ' + vTxt.apto : '⛔ ' + vTxt.noApto}</div>
       <div class="acta-veredicto-sub">
         ${veredicto === 'APTO'
           ? `Todos los ítems críticos verificados (${stats.criticosOk}/${stats.criticosTotal}).`
-          : `${criticosFallidos.length} ítem(s) crítico(s) sin cumplir. Resolver antes de colar.`}
+          : `${criticosFallidos.length} ítem(s) crítico(s) sin cumplir. Resolver antes de ${vTxt.accion}.`}
       </div>
     </section>
 

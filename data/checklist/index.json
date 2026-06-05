@@ -16,6 +16,15 @@
       "icono": "🏗️",
       "archivo": "procesos/colado-losa-cimentacion.json",
       "etapa": "Cimentación"
+    },
+    {
+      "id": "muros-planta-baja",
+      "nombre": "Muros Planta Baja",
+      "subtitulo": "Verificación de muros de tabique y block en planta baja",
+      "icono": "🧱",
+      "archivo": "procesos/muros-planta-baja.json",
+      "etapa": "Albañilería",
+      "requiere": "colado-losa-cimentacion"
     }
   ],
   "registros": [

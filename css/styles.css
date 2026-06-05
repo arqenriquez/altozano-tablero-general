@@ -1287,6 +1287,23 @@ button.chk-link-editor#btn-borrar-actas:hover { color: var(--red); border-color:
   font-size: 0.7rem; color: var(--ink-mute); font-weight: 500;
 }
 
+/* Proceso bloqueado: depende de que el proceso previo tenga acta APTO */
+.chk-proceso-row.bloqueado {
+  background: var(--bg-soft-2);
+  border-style: dashed;
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+.chk-proceso-row.bloqueado:hover {
+  border-color: var(--line-soft); transform: none; box-shadow: none;
+}
+.chk-proceso-row.bloqueado .chk-proceso-ico { filter: grayscale(1); opacity: 0.55; }
+.chk-proceso-row.bloqueado .chk-proceso-nombre { color: var(--ink-mute); }
+.chk-estado-badge.bloqueado { background: var(--bg-soft-2); color: var(--ink-mute); }
+.chk-proceso-lock-hint {
+  font-size: 0.7rem; color: var(--ink-mute); font-weight: 500; font-style: italic;
+}
+
 /* ============================================================
    CHECKLIST DETALLE (interactivo)
    ============================================================ */
