@@ -351,9 +351,12 @@ function abrirPanel(num, data) {
     ? `<ul class="panel-activities">${actividadesLote.map(a => `<li>${a}</li>`).join('')}</ul>`
     : `<div class="panel-activities empty">Sin actividades importantes registradas esta semana</div>`;
 
-  // Fotos: fotos/reportes/semana-XX/lote-X/img-loteX-semXX-0N.jpg
-  const photos = [1, 2, 3, 4].map(i => {
-    const fn = `img-lote${num}-sem${semNum}-0${i}.jpg`;
+  // Fotos: fotos/reportes/semana-XX/lote-X/img-loteX-semXX-NN.jpg
+  // Cantidad por lote: campo opcional d.fotos en el JSON (default 4)
+  const numFotos = Number.isFinite(d.fotos) && d.fotos > 0 ? d.fotos : 4;
+  const photos = Array.from({ length: numFotos }, (_, k) => {
+    const i = String(k + 1).padStart(2, '0');
+    const fn = `img-lote${num}-sem${semNum}-${i}.jpg`;
     return { src: `fotos/reportes/semana-${semNum}/lote-${num}/${fn}`, filename: fn };
   });
 
