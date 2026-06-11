@@ -152,12 +152,12 @@ table.ppc-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min
 
 /* ====== Responsivo (celular): la tabla se vuelve tarjetas apiladas ====== */
 @media (max-width: 640px) {
-  .ppc-table-wrap { border: none; background: transparent; overflow: visible; border-radius: 0; }
-  .ppc-table { min-width: 0; width: 100%; }
+  .ppc-table-wrap { border: none; background: transparent; overflow: hidden; border-radius: 0; max-width: 100%; }
+  .ppc-table { display: block; min-width: 0; width: 100%; max-width: 100%; table-layout: fixed; }
   .ppc-table thead { display: none; }
-  .ppc-table tbody { display: block; }
+  .ppc-table tbody { display: block; width: 100%; }
   .ppc-table tr {
-    display: block; box-sizing: border-box; max-width: 100%;
+    display: block; box-sizing: border-box; width: 100%; max-width: 100%;
     background: #fff; border: 1px solid var(--line);
     border-left-width: 4px; border-radius: 14px; padding: 0.95rem 1.05rem; margin-bottom: 0.85rem;
   }
