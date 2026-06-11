@@ -150,6 +150,40 @@ table.ppc-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min
 
 .chart-container-ppc { position: relative; height: 340px; width: 100%; }
 
+/* ====== Responsivo (celular): la tabla se vuelve tarjetas apiladas ====== */
+@media (max-width: 640px) {
+  .ppc-table-wrap { border: none; background: transparent; overflow: visible; border-radius: 0; }
+  .ppc-table { min-width: 0; }
+  .ppc-table thead { display: none; }
+  .ppc-table tbody { display: block; }
+  .ppc-table tr {
+    display: block; background: #fff; border: 1px solid var(--line);
+    border-left-width: 4px; border-radius: 14px; padding: 0.95rem 1.05rem; margin-bottom: 0.85rem;
+  }
+  .ppc-table tbody tr.is-cumplida { border-left-color: var(--green); background: #fff; }
+  .ppc-table tbody tr.is-fallida { border-left-color: var(--yellow); background: #fff; }
+  .ppc-table td { display: block; border: none !important; padding: 0; width: auto; }
+  .ppc-table td.col-act .ppc-actividad { font-size: 0.95rem; }
+  .ppc-table td.ppc-resp,
+  .ppc-table td.col-lote,
+  .ppc-table td.col-check {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding-top: 0.6rem; margin-top: 0.6rem;
+    border-top: 1px solid var(--line-soft) !important; text-align: left;
+  }
+  .ppc-table td.ppc-resp::before,
+  .ppc-table td.col-lote::before,
+  .ppc-table td.col-check::before {
+    content: attr(data-label);
+    font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--ink-mute); font-weight: 700; flex-shrink: 0;
+  }
+  .ppc-resp-select { max-width: 62%; }
+  .ppc-motivo { margin-top: 0.6rem; }
+  /* La barra de cierre, cómoda al tacto */
+  .ppc-cierre-bar .ppc-btn { flex: 1 1 auto; justify-content: center; }
+}
+
 /* ====== Impresión: aislar el acta ====== */
 #ppc-print { display: none; }
 @media print {
@@ -306,6 +340,6 @@ table.acta-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; m
 <!-- Contenedor del acta para impresión (se llena al cerrar) -->
 <div id="ppc-print"></div>
 
-<script src="js/ppc.js?v=20260611"></script>
+<script src="js/ppc.js?v=20260611b"></script>
 </body>
 </html>

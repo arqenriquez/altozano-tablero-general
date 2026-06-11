@@ -210,17 +210,17 @@ function renderTabla() {
     const motivoVis = !cumplida;
     return `
     <tr class="${trClass}" data-idx="${i}">
-      <td>
+      <td class="col-act">
         <div class="ppc-actividad">${escapeHtml(m.actividad)}</div>
         <textarea class="ppc-motivo" data-idx="${i}" rows="1"
           placeholder="Motivo del incumplimiento (obligatorio)…"
           ${ro ? 'readonly' : ''} ${motivoVis ? '' : 'hidden'}>${escapeHtml(m.m || '')}</textarea>
       </td>
-      <td class="ppc-resp">${ro
+      <td class="ppc-resp" data-label="Responsable">${ro
         ? (escapeHtml(m.responsable) || '—')
         : `<select class="ppc-resp-select" data-idx="${i}">${optsResponsable(m.responsable)}</select>`}</td>
-      <td class="col-lote">${m.lote ? `<span class="ppc-lote-tag">${escapeHtml(m.lote)}</span>` : '—'}</td>
-      <td class="col-check">
+      <td class="col-lote" data-label="Lote">${m.lote ? `<span class="ppc-lote-tag">${escapeHtml(m.lote)}</span>` : '—'}</td>
+      <td class="col-check" data-label="Cumplida">
         <label class="ppc-check">
           <input type="checkbox" data-idx="${i}" ${cumplida ? 'checked' : ''} ${ro ? 'disabled' : ''}>
           <span class="slider"></span>
