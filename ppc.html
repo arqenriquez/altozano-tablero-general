@@ -150,52 +150,62 @@ table.ppc-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min
 
 .chart-container-ppc { position: relative; height: 340px; width: 100%; }
 
-/* ====== Responsivo (celular): la tabla se vuelve tarjetas apiladas ====== */
+/* ====== Responsivo (celular): la tabla se vuelve tarjetas apiladas ======
+   NOTA: se usa el prefijo `table.ppc-table` (elemento + clase) para ganar
+   especificidad sobre las reglas base (que también usan `table.ppc-table`
+   y `.ppc-table tbody td`), si no, el `min-width:720px` base seguiría activo. */
 @media (max-width: 640px) {
   .ppc-table-wrap { border: none; background: transparent; overflow: hidden; border-radius: 0; max-width: 100%; }
-  .ppc-table { display: block; min-width: 0; width: 100%; max-width: 100%; table-layout: fixed; }
-  .ppc-table thead { display: none; }
-  .ppc-table tbody { display: block; width: 100%; }
-  .ppc-table tr {
+
+  table.ppc-table { display: block; min-width: 0 !important; width: 100%; max-width: 100%; }
+  table.ppc-table thead { display: none; }
+  table.ppc-table tbody { display: block; width: 100%; }
+  table.ppc-table tbody tr {
     display: block; box-sizing: border-box; width: 100%; max-width: 100%;
     background: #fff; border: 1px solid var(--line);
     border-left-width: 4px; border-radius: 14px; padding: 0.95rem 1.05rem; margin-bottom: 0.85rem;
   }
-  .ppc-table tbody tr.is-cumplida { border-left-color: var(--green); background: #fff; }
-  .ppc-table tbody tr.is-fallida { border-left-color: var(--yellow); background: #fff; }
-  .ppc-table td { display: block; border: none !important; padding: 0; width: auto; }
+  table.ppc-table tbody tr.is-cumplida { border-left-color: var(--green); background: #fff; }
+  table.ppc-table tbody tr.is-fallida { border-left-color: var(--yellow); background: #fff; }
+  table.ppc-table tbody td {
+    display: block; width: auto !important; max-width: 100%;
+    border: none !important; padding: 0; text-align: left;
+  }
 
   /* Título de la actividad: envuelve a varias líneas, nunca se corta */
-  .ppc-table td.col-act .ppc-actividad {
+  table.ppc-table tbody td.col-act { overflow: hidden; }
+  table.ppc-table tbody td.col-act .ppc-actividad {
     font-size: 0.95rem; white-space: normal; overflow-wrap: anywhere; word-break: break-word;
   }
 
   /* Etiquetas (RESPONSABLE / LOTE / CUMPLIDA) */
-  .ppc-table td.ppc-resp::before,
-  .ppc-table td.col-lote::before,
-  .ppc-table td.col-check::before {
+  table.ppc-table tbody td.ppc-resp::before,
+  table.ppc-table tbody td.col-lote::before,
+  table.ppc-table tbody td.col-check::before {
     content: attr(data-label);
     font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase;
     color: var(--ink-mute); font-weight: 700;
   }
 
   /* Responsable: etiqueta arriba, desplegable a TODO el ancho debajo */
-  .ppc-table td.ppc-resp {
-    display: block; padding-top: 0.65rem; margin-top: 0.65rem;
+  table.ppc-table tbody td.ppc-resp {
+    padding-top: 0.65rem; margin-top: 0.65rem;
     border-top: 1px solid var(--line-soft) !important;
   }
-  .ppc-table td.ppc-resp::before { display: block; margin-bottom: 0.4rem; }
-  .ppc-resp-select { width: 100%; max-width: none; min-width: 0; }
+  table.ppc-table tbody td.ppc-resp::before { display: block; margin-bottom: 0.4rem; }
+  table.ppc-table tbody td.ppc-resp .ppc-resp-select {
+    display: block; width: 100% !important; max-width: 100% !important; min-width: 0;
+  }
 
   /* Lote y Cumplida: cortos → etiqueta a la izquierda, valor a la derecha */
-  .ppc-table td.col-lote,
-  .ppc-table td.col-check {
+  table.ppc-table tbody td.col-lote,
+  table.ppc-table tbody td.col-check {
     display: flex; align-items: center; justify-content: space-between; gap: 1rem;
     padding-top: 0.65rem; margin-top: 0.65rem;
-    border-top: 1px solid var(--line-soft) !important; text-align: left;
+    border-top: 1px solid var(--line-soft) !important;
   }
-  .ppc-table td.col-lote::before,
-  .ppc-table td.col-check::before { flex-shrink: 0; }
+  table.ppc-table tbody td.col-lote::before,
+  table.ppc-table tbody td.col-check::before { flex-shrink: 0; }
 
   .ppc-motivo { margin-top: 0.6rem; }
   /* La barra de cierre, cómoda al tacto */
