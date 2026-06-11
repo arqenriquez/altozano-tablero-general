@@ -101,6 +101,7 @@ El desplegable ignora mayúsculas/minúsculas al casar nombres; si un Excel trae
 - **PPC:** `round(cumplidas / total * 100)`.
 - **Umbrales de color:** 🟢 verde ≥ 80 · 🟡 amarillo 60–79 · 🔴 rojo < 60. Líneas de referencia en la gráfica a **60%** y **80%**.
 - **Acta PDF:** impresión aislada (`@media print`) con el logo incrustado como data URI (para que imprima sin depender de la red).
+- **Responsivo (celular):** en pantallas ≤ 640px la tabla de metas se convierte en **tarjetas apiladas** (Actividad como título que envuelve, y debajo Responsable / Lote / Cumplida con su etiqueta). El desplegable de Responsable va a todo el ancho. ⚠️ Las reglas móviles usan el prefijo `table.ppc-table …` para ganar especificidad sobre la regla base `table.ppc-table { min-width: 720px }`; si se edita el CSS, conservar ese prefijo o el layout móvil se rompe.
 
 ---
 
