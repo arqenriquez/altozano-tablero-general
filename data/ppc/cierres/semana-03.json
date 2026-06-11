@@ -1,0 +1,103 @@
+{
+  "semana": "03",
+  "periodo": "25 al 31 de mayo 2026",
+  "fecha_cierre": "2026-06-11",
+  "responsable": "Arq. Jorge Enríquez",
+  "total": 13,
+  "cumplidas": 9,
+  "no_cumplidas": 4,
+  "ppc_pct": 69,
+  "metas": [
+    {
+      "actividad": "Recepción de puntos de Lotes 20, 21 y 22",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "General",
+      "cumplida": false,
+      "motivo": "Altozano sigue sin entregar los puntos"
+    },
+    {
+      "actividad": "Continuar trazo y nivelación pendiente en Lotes MZA 663",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "General",
+      "cumplida": false,
+      "motivo": "Altozano sigue sin entregar los puntos"
+    },
+    {
+      "actividad": "Instalaciones Hidro-sanitarias Lote 04",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L04",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Instalaciones de Gas Lote 04",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L04",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Fumigación Lote 04",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L04",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Colocación de acero en Lote 04",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L04",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Liberación de inst., niveles previo a colado para Lote 04",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L04",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Suministro de acero para cimentación Lotes 02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Suministro de acero para cimentación Lotes 02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Suministro de material de Gas LP en Lotes 02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Suministro de material de Gas LP en Lotes 03",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L03",
+      "cumplida": false,
+      "motivo": "No se suministro - Tema de logistica de compras y programa de flujos"
+    },
+    {
+      "actividad": "Suministro de material de Instalaciones Hidro Sanitarias L02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Suministro de material de Instalaciones Hidro Sanitarias L03",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L03",
+      "cumplida": false,
+      "motivo": "No se suministro - Tema de logistica de compras y programa de flujos"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "semana": "04",
+  "periodo": "1 al 7 de junio 2026",
+  "fecha_cierre": "2026-06-11",
+  "responsable": "Arq. Jorge Enríquez",
+  "total": 10,
+  "cumplidas": 7,
+  "no_cumplidas": 3,
+  "ppc_pct": 70,
+  "metas": [
+    {
+      "actividad": "Colado de losa de cimentación Lote 04",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L04",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Continuar trazo y nivelación pendiente en Lotes MZA 663",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "General",
+      "cumplida": false,
+      "motivo": "Altozano proporciono nuevamente puntos - apenas se iniciara el trazo"
+    },
+    {
+      "actividad": "Suministro de acero para cimentación Lotes 02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Suministro de acero para cimentación Lotes 03",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L03",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Suministro de material de Gas LP en Lotes 02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Suministro de material de Gas LP en Lotes 03",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L03",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Suministro de material de Inst. Hidro Sanitarias L02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Suministro de material de Inst. Hidro Sanitarias L03",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L03",
+      "cumplida": false,
+      "motivo": "No se ha suministrado por logistica de compras y flujos "
+    },
+    {
+      "actividad": "Habilitado de acero en losa de cimentación Lotes 02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Habilitado de acero en losa de cimentación Lotes 03",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L03",
+      "cumplida": false,
+      "motivo": "No se esta trabajando en conjunto"
+    }
+  ]
+}

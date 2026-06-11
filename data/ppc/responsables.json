@@ -1,0 +1,9 @@
+{
+  "_INSTRUCCIONES": "Lista de responsables que aparecen en el desplegable de la columna 'Responsable' del módulo PPC. Es configurable POR PROYECTO: al implementar este módulo en otro tablero, edita esta lista con los responsables de ese proyecto. El orden aquí es el orden del desplegable.",
+  "responsables": [
+    "Ing. Luis Santacruz",
+    "Ing. Marco De la Cruz",
+    "Arq. Jorge E. Enríquez",
+    "Metta Admin."
+  ]
+}

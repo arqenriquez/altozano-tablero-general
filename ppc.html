@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Altozano · PPC · Last Planner System | Metta</title>
+<meta name="description" content="Porcentaje de Plan Completado (PPC) semanal del proyecto Altozano — metodología Last Planner System de Lean Construction.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=20260529">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<style>
+/* ============================================================
+   PPC · estilos propios del módulo (autocontenidos, no tocan styles.css)
+   ============================================================ */
+.ppc-toolbar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem;
+  margin: 1.5rem 0 0.5rem;
+}
+.ppc-week-select {
+  font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
+  color: var(--ink); background: #fff; border: 1px solid var(--line);
+  border-radius: 10px; padding: 0.6rem 0.9rem; cursor: pointer;
+}
+.ppc-badge-curso {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-soft);
+  border-radius: 999px; padding: 0.4rem 0.85rem;
+}
+.ppc-badge-curso .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: ppc-pulse 1.6s infinite; }
+.ppc-badge-cerrada { color: var(--gold-dark); background: var(--gold-soft); }
+.ppc-badge-cerrada .dot { background: var(--gold-dark); animation: none; }
+@keyframes ppc-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+/* Tabla de metas */
+.ppc-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+table.ppc-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 720px; }
+.ppc-table thead th {
+  background: var(--bg-soft-2); color: var(--ink-soft);
+  font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700;
+  text-align: left; padding: 0.85rem 1rem; border-bottom: 1px solid var(--line);
+}
+.ppc-table th.col-check, .ppc-table td.col-check { text-align: center; width: 90px; }
+.ppc-table th.col-lote, .ppc-table td.col-lote { width: 90px; }
+.ppc-table tbody td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--line-soft); vertical-align: middle; }
+.ppc-table tbody tr:last-child td { border-bottom: none; }
+.ppc-table tbody tr.is-cumplida { background: rgba(31,143,62,0.04); }
+.ppc-table tbody tr.is-fallida { background: var(--bg-soft); }
+.ppc-actividad { font-weight: 600; color: var(--ink); }
+.ppc-resp { color: var(--ink-soft); font-size: 0.85rem; }
+.ppc-resp-select {
+  font-family: var(--font-body); font-size: 0.83rem; color: var(--ink-soft);
+  background: #fff; border: 1px solid var(--line); border-radius: 8px;
+  padding: 0.45rem 0.6rem; width: 100%; max-width: 220px; cursor: pointer; transition: border-color 0.15s;
+}
+.ppc-resp-select:focus { outline: none; border-color: var(--accent); }
+.ppc-resp-select:invalid, .ppc-resp-select option[value=""] { color: var(--ink-mute); }
+.ppc-lote-tag {
+  display: inline-block; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600;
+  color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 0.2rem 0.5rem;
+}
+/* Switch de cumplida */
+.ppc-check { position: relative; display: inline-block; width: 46px; height: 26px; cursor: pointer; }
+.ppc-check input { opacity: 0; width: 0; height: 0; }
+.ppc-check .slider {
+  position: absolute; inset: 0; background: #cdd2cf; border-radius: 999px; transition: 0.2s;
+}
+.ppc-check .slider::before {
+  content: ""; position: absolute; height: 20px; width: 20px; left: 3px; top: 3px;
+  background: #fff; border-radius: 50%; transition: 0.2s; box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+.ppc-check input:checked + .slider { background: var(--green); }
+.ppc-check input:checked + .slider::before { transform: translateX(20px); }
+.ppc-check input:disabled + .slider { opacity: 0.6; cursor: default; }
+/* Motivo (discreto) */
+.ppc-motivo {
+  margin-top: 0.5rem; width: 100%; font-family: var(--font-body); font-size: 0.82rem;
+  color: var(--ink-soft); background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: 8px; padding: 0.5rem 0.7rem; resize: vertical; min-height: 36px;
+  transition: border-color 0.15s, background 0.15s;
+}
+.ppc-motivo[hidden] { display: none; }
+.ppc-motivo::placeholder { color: var(--ink-mute); opacity: 0.85; font-style: italic; }
+.ppc-motivo:focus { outline: none; border-color: var(--accent); background: #fff; }
+.ppc-motivo:read-only { border-color: var(--line-soft); background: var(--bg-soft); color: var(--ink-soft); }
+
+/* Barra de progreso en vivo */
+.ppc-progress-card {
+  background: #fff; border: 1px solid var(--line); border-radius: 16px;
+  padding: 1.1rem 1.4rem;
+}
+.ppc-progress-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.ppc-progress-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-mute); font-weight: 700; }
+.ppc-progress-pct { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; line-height: 1; }
+.ppc-progress-pct.ok { color: var(--green); }
+.ppc-progress-pct.warn { color: var(--yellow); }
+.ppc-progress-pct.bad { color: var(--red); }
+.ppc-progress-track { height: 12px; background: var(--bg-soft-2); border-radius: 999px; overflow: hidden; margin: 0.7rem 0 0.5rem; }
+.ppc-progress-fill { height: 100%; width: 0; border-radius: 999px; transition: width 0.45s cubic-bezier(.4,0,.2,1), background 0.3s; }
+.ppc-progress-fill.ok { background: linear-gradient(90deg, #2f5d54, #1f8f3e); }
+.ppc-progress-fill.warn { background: linear-gradient(90deg, #d4b53e, #c49a2a); }
+.ppc-progress-fill.bad { background: linear-gradient(90deg, #c0392b, #e0584a); }
+.ppc-progress-sub { font-size: 0.82rem; color: var(--ink-soft); }
+
+/* Toggle segmentado (vista de la gráfica) */
+.ppc-seg { display: inline-flex; background: var(--bg-soft-2); border-radius: 10px; padding: 0.25rem; gap: 0.2rem; margin-bottom: 1rem; }
+.ppc-seg-btn {
+  font-family: var(--font-body); font-size: 0.82rem; font-weight: 600; color: var(--ink-soft);
+  background: transparent; border: none; border-radius: 8px; padding: 0.5rem 1rem; cursor: pointer; transition: 0.15s;
+}
+.ppc-seg-btn.active { background: #fff; color: var(--accent); box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+
+/* Barra de cierre */
+.ppc-cierre-bar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-top: 1.5rem;
+}
+.ppc-btn {
+  font-family: var(--font-body); font-size: 0.88rem; font-weight: 600;
+  border-radius: 10px; padding: 0.75rem 1.25rem; cursor: pointer; border: 1px solid transparent;
+  display: inline-flex; align-items: center; gap: 0.5rem; transition: 0.15s;
+}
+.ppc-btn-primary { background: var(--accent); color: #fff; }
+.ppc-btn-primary:hover { background: var(--accent-dark); }
+.ppc-btn-ghost { background: #fff; color: var(--ink); border-color: var(--line); }
+.ppc-btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+.ppc-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.ppc-hint { font-size: 0.82rem; color: var(--ink-mute); margin-top: 0.6rem; }
+.ppc-hint code { font-family: var(--font-mono); font-size: 0.78rem; background: var(--bg-soft-2); padding: 0.1rem 0.35rem; border-radius: 4px; }
+
+/* KPI PPC grande */
+.ppc-kpi-ring .val.big { font-size: 2.4rem; }
+.ppc-kpi-ring .val.ok { color: var(--green); }
+.ppc-kpi-ring .val.warn { color: var(--yellow); }
+.ppc-kpi-ring .val.bad { color: var(--red); }
+
+/* Tabla histórica */
+.ppc-hist-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.ppc-hist-table th { background: var(--bg-soft-2); color: var(--ink-soft); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; padding: 0.6rem 0.8rem; text-align: center; border-bottom: 1px solid var(--line); }
+.ppc-hist-table th:first-child, .ppc-hist-table td:first-child { text-align: left; }
+.ppc-hist-table td { padding: 0.6rem 0.8rem; text-align: center; border-bottom: 1px solid var(--line-soft); font-family: var(--font-mono); }
+.ppc-hist-table td.sem { font-family: var(--font-body); font-weight: 600; color: var(--ink); }
+.ppc-hist-table tr.row-curso td { background: var(--accent-soft); }
+.ppc-pct-cell.ok { color: var(--green); font-weight: 600; }
+.ppc-pct-cell.warn { color: var(--yellow); font-weight: 600; }
+.ppc-pct-cell.bad { color: var(--red); font-weight: 600; }
+
+.chart-container-ppc { position: relative; height: 340px; width: 100%; }
+
+/* ====== Impresión: aislar el acta ====== */
+#ppc-print { display: none; }
+@media print {
+  body * { visibility: hidden !important; }
+  #ppc-print, #ppc-print * { visibility: visible !important; }
+  #ppc-print { display: block !important; position: absolute; left: 0; top: 0; width: 100%; padding: 1cm 1.2cm;
+    -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  #ppc-print .acta-logo { display: inline-block !important; }
+  @page { margin: 1cm; }
+}
+/* Acta (visible en pantalla solo dentro de #ppc-print al imprimir) */
+.acta-head { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--accent); padding-bottom: 0.8rem; margin-bottom: 1rem; }
+.acta-head-left { display: flex; align-items: center; gap: 1rem; }
+.acta-logo { height: 42px; width: auto; }
+.acta-head h2 { font-family: var(--font-display); font-size: 1.3rem; color: var(--ink); margin: 0; }
+.acta-head .sub { font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.2rem; }
+.acta-ppc { text-align: right; }
+.acta-ppc .num { font-family: var(--font-display); font-size: 2.4rem; font-weight: 800; line-height: 1; }
+.acta-ppc .lbl { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-mute); }
+.acta-meta-grid { display: flex; gap: 2rem; flex-wrap: wrap; font-size: 0.85rem; margin-bottom: 1rem; }
+.acta-meta-grid b { display: block; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-mute); font-weight: 700; margin-bottom: 0.15rem; }
+table.acta-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin-top: 0.5rem; }
+.acta-table th { background: #f3f2ee; text-align: left; padding: 0.5rem 0.6rem; border: 1px solid #ddd; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.acta-table td { padding: 0.5rem 0.6rem; border: 1px solid #e6e4df; vertical-align: top; }
+.acta-table td.c { text-align: center; font-weight: 700; }
+.acta-si { color: var(--green); }
+.acta-no { color: var(--red); }
+.acta-firmas { display: flex; justify-content: space-around; gap: 2rem; margin-top: 3rem; }
+.acta-firma { text-align: center; font-size: 0.78rem; flex: 1; }
+.acta-firma .line { border-top: 1px solid var(--ink); margin-bottom: 0.3rem; padding-top: 0.3rem; }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-logo">
+      <img src="assets/logo-altozano.png" alt="Altozano" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+      <span class="fallback" style="display:none">ALTOZANO</span>
+      <img src="assets/logo-metta.png" alt="Metta" onerror="this.style.display='none'">
+    </a>
+    <a href="index.html" class="topbar-inicio">INICIO</a>
+    <a href="index.html" class="back-link">← Volver al tablero</a>
+  </div>
+</nav>
+
+<section class="page-hero" style="padding-top:2rem;padding-bottom:1rem">
+  <div class="eyebrow fade-up">Módulo 08 · Last Planner System</div>
+  <h1 class="fade-up delay-1">Porcentaje de Plan Completado · PPC</h1>
+  <p class="lead fade-up delay-2">
+    Compromisos semanales del equipo de obra y su porcentaje de cumplimiento (PPC), según la
+    metodología Last Planner System de Lean Construction. Marca las metas cumplidas, documenta
+    el motivo de las no cumplidas y cierra la semana generando el acta en PDF.
+  </p>
+</section>
+
+<!-- Selector de semana -->
+<section class="section" style="padding-top:0.5rem;padding-bottom:0">
+  <div class="ppc-toolbar" style="margin-top:0">
+    <label for="ppc-week" style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-mute);font-weight:700">Semana</label>
+    <select id="ppc-week" class="ppc-week-select"></select>
+    <span id="ppc-week-badge"></span>
+    <span id="ppc-week-periodo" style="font-size:0.85rem;color:var(--ink-soft)"></span>
+  </div>
+
+  <!-- Barra de progreso en vivo -->
+  <div class="ppc-progress-card fade-up" style="margin-top:1.25rem">
+    <div class="ppc-progress-head">
+      <span class="ppc-progress-label">Avance del plan · en vivo</span>
+      <span class="ppc-progress-pct" id="ppc-prog-pct">—</span>
+    </div>
+    <div class="ppc-progress-track"><div class="ppc-progress-fill" id="ppc-prog-fill"></div></div>
+    <div class="ppc-progress-sub" id="ppc-prog-sub">—</div>
+  </div>
+</section>
+
+<!-- KPIs -->
+<section class="quickstats" style="margin-top:1rem">
+  <div class="quickstats-grid">
+    <div class="quickstat fade-up">
+      <div class="lbl">Metas de la semana</div>
+      <div class="val" id="kpi-total">—</div>
+      <div class="sub">Compromisos del plan</div>
+    </div>
+    <div class="quickstat fade-up delay-1">
+      <div class="lbl">Cumplidas</div>
+      <div class="val accent" id="kpi-cumplidas">—</div>
+      <div class="sub" id="kpi-cumplidas-sub">—</div>
+    </div>
+    <div class="quickstat fade-up delay-2">
+      <div class="lbl">No cumplidas</div>
+      <div class="val" id="kpi-fallidas">—</div>
+      <div class="sub">Con motivo documentado</div>
+    </div>
+    <div class="quickstat ppc-kpi-ring fade-up delay-3">
+      <div class="lbl">PPC de la semana</div>
+      <div class="val big" id="kpi-ppc">—</div>
+      <div class="sub">Cumplidas / Total</div>
+    </div>
+  </div>
+</section>
+
+<!-- Tabla de metas -->
+<section class="section" style="padding-top:1rem">
+  <div class="section-header" style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
+    <div style="display:flex;align-items:baseline;gap:1.25rem">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Metas y compromisos</h2>
+    </div>
+    <span id="ppc-modo" class="ppc-hint" style="margin:0"></span>
+  </div>
+  <div id="ppc-table-host">
+    <div class="loading">Cargando metas…</div>
+  </div>
+
+  <div class="ppc-cierre-bar ppc-no-print" id="ppc-cierre-bar" hidden>
+    <button class="ppc-btn ppc-btn-primary" id="btn-cerrar">📄 Cerrar semana y generar PDF</button>
+    <button class="ppc-btn ppc-btn-ghost" id="btn-json" title="Descarga el JSON de cierre para commitearlo">⬇ Descargar JSON de cierre</button>
+  </div>
+  <div class="ppc-hint ppc-no-print" id="ppc-cierre-hint"></div>
+</section>
+
+<!-- Gráfica histórica -->
+<section class="section" id="ppc-grafica">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">PPC semanal y acumulado</h2>
+  </div>
+  <div class="ppc-seg" id="ppc-seg" role="tablist">
+    <button class="ppc-seg-btn active" data-mode="cerradas" role="tab">Semanas cerradas</button>
+    <button class="ppc-seg-btn" data-mode="proyecto" role="tab">Proyecto completo</button>
+  </div>
+  <div class="chart-card fade-up">
+    <h3 id="ppc-chart-title">Histórico de cumplimiento</h3>
+    <div class="sub" id="ppc-chart-sub">—</div>
+    <div class="chart-container-ppc"><canvas id="ppcChart"></canvas></div>
+  </div>
+
+  <div class="ppc-table-wrap" style="margin-top:1.5rem">
+    <table class="ppc-hist-table">
+      <thead>
+        <tr><th>Semana</th><th>Cumplidas</th><th>No cumplidas</th><th>PPC</th><th>PPC Acum.</th></tr>
+      </thead>
+      <tbody id="ppc-hist-body"></tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">Altozano <span>·</span> PPC · Last Planner System</div>
+  <div id="ppc-footer">Metta Arquitectura y Construcción · Gerencia de Proyecto</div>
+</footer>
+
+<!-- Contenedor del acta para impresión (se llena al cerrar) -->
+<div id="ppc-print"></div>
+
+<script src="js/ppc.js?v=20260611"></script>
+</body>
+</html>

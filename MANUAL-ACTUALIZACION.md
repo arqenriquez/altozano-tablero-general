@@ -108,6 +108,43 @@ Los filtros de **Semana** y **Vivienda** se generan solos con los valores que es
 
 ---
 
+## 7. PPC · Last Planner System (módulo 08)
+
+El módulo de **Porcentaje de Plan Completado** sigue el mismo flujo de archivos del resto del tablero.
+
+**Cada semana, para abrir las metas de la semana entrante:**
+
+1. Copia `data/ppc/_plantilla-metas.xlsx`.
+2. Renómbralo a `data/ppc/metas/semana-NN.xlsx` (dos dígitos, el número de la semana).
+3. Llena las columnas: **Actividad**, **Responsable**, **Lote** (Lote opcional; usa `General` si no aplica). Una fila por meta/compromiso.
+4. Abre `data/ppc/index.json` y agrega la semana al arreglo `semanas`:
+   ```json
+   { "semana": "06", "periodo": "15 al 21 de junio 2026", "inicio": "2026-06-15", "metas": "metas/semana-06.xlsx", "cierre": null }
+   ```
+   - `inicio` es el **lunes** de la semana (con eso el módulo marca solo la "semana en curso").
+   - `cierre` se deja en `null` hasta que cierres la semana.
+5. Commit + push.
+
+**Durante la semana:** entras al módulo, marcas las metas cumplidas con el switch. El avance se guarda en **tu navegador** (es por dispositivo). Las no cumplidas piden un motivo (causa de no cumplimiento).
+
+**Al cerrar la semana:**
+
+1. Da clic en **"Cerrar semana y generar PDF"** → se abre el diálogo de impresión: guarda como PDF (es el acta de cierre).
+2. Da clic en **"Descargar JSON de cierre"** → se descarga `semana-NN.json`.
+3. Coloca ese archivo en `data/ppc/cierres/semana-NN.json`.
+4. En `data/ppc/index.json`, cambia el `cierre` de esa semana de `null` a `"cierres/semana-NN.json"`.
+5. Commit + push.
+
+> La **gráfica histórica** (PPC semanal + acumulado) se arma con los cierres commiteados. Una vez que subes el `cierre`, la semana queda en modo solo lectura y visible desde cualquier dispositivo.
+
+**Responsables (desplegable):** la columna *Responsable* es una lista desplegable que sale de `data/ppc/responsables.json`. Edita ese archivo para cambiar los nombres (es **por proyecto**: al usar este módulo en otro tablero, ajusta la lista ahí):
+```json
+{ "responsables": ["Ing. Luis Santacruz", "Ing. Marco De la Cruz", "Arq. Jorge E. Enríquez", "Metta Admin."] }
+```
+Si el Excel trae un responsable que no está en la lista, el módulo lo conserva igual (no se pierde).
+
+---
+
 ## Logos
 
 Coloca `logo-altozano.png` en la carpeta `assets/`. Si no existe, el sitio muestra el texto "ALTOZANO" como respaldo (ver `assets/README.txt`).

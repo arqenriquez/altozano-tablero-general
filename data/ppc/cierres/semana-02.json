@@ -1,0 +1,47 @@
+{
+  "semana": "02",
+  "periodo": "18 al 24 de mayo 2026",
+  "fecha_cierre": "2026-06-11",
+  "responsable": "Arq. Jorge Enríquez",
+  "total": 5,
+  "cumplidas": 2,
+  "no_cumplidas": 3,
+  "ppc_pct": 40,
+  "metas": [
+    {
+      "actividad": "Recepción del despiece de L 20, 21 y 22 para continuar trazos",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "General",
+      "cumplida": false,
+      "motivo": "Altozano no proporcionó los Puntos de Trazo de forma correcta"
+    },
+    {
+      "actividad": "Continuar trazo y nivelación pendiente en Lotes MZA 663",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "General",
+      "cumplida": false,
+      "motivo": "Altozano no proporcionó los Puntos de Trazo de forma correcta"
+    },
+    {
+      "actividad": "Iniciar excavación de cimentación en Lotes con trazo concluido",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "General",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Habilitado de acero para cimbra perimetral (Lote 20)",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L20",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Gestionar orden de trabajo para tapial perimertral de malla",
+      "responsable": "Ing. Marco De la Cruz",
+      "lote": "General",
+      "cumplida": false,
+      "motivo": "Había dudas en los precios "
+    }
+  ]
+}
