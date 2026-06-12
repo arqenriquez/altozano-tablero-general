@@ -340,8 +340,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
   color: var(--ink-mute); margin-bottom: 1rem; font-weight: 500;
 }
 .kpi-value {
-  font-family: var(--font-display); font-size: 3rem; font-weight: 500;
-  line-height: 1; letter-spacing: -0.035em; color: var(--ink);
+  font-family: var(--font-display); font-size: 1.9rem; font-weight: 600;
+  line-height: 1.05; letter-spacing: -0.03em; color: var(--ink);
 }
 .kpi-value.positive { color: var(--green); }
 .kpi-value.negative { color: var(--red); }
@@ -351,13 +351,13 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
 
 /* Variante: jerarquía invertida (MXN pequeño · % o texto grande) */
 .kpi-fisico .kpi-money-sm {
-  font-family: var(--font-mono); font-size: 1.05rem; font-weight: 600;
+  font-family: var(--font-mono); font-size: 0.95rem; font-weight: 600;
   color: var(--ink-soft); letter-spacing: -0.01em; line-height: 1.2;
   margin-bottom: 0.6rem;
 }
 .kpi-fisico .kpi-pct-big {
-  font-family: var(--font-display); font-size: 2.4rem; font-weight: 500;
-  line-height: 1; letter-spacing: -0.035em; color: var(--ink);
+  font-family: var(--font-display); font-size: 1.6rem; font-weight: 600;
+  line-height: 1.05; letter-spacing: -0.03em; color: var(--ink);
 }
 .kpi-fisico .kpi-pct-big.accent { color: var(--accent); }
 .kpi-fisico .kpi-pct-big.gold { color: var(--gold-dark); }
