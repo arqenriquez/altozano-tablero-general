@@ -113,16 +113,28 @@ async function cargarLogoData(ruta) {
   } catch (e) { return ''; }
 }
 
-/* ---- Detección de la semana en curso por fecha ---- */
+/* ---- Detección de la semana en curso por fecha ----
+   Si la semana que toca por fecha ya está cerrada (cierre commiteado),
+   avanza a la primera semana abierta posterior: una semana cerrada no
+   puede seguir siendo la "semana en curso". */
 function detectarSemanaCurso(index) {
   const hoy = new Date(hoyISO() + 'T12:00:00');
+  let porFecha = null;
   for (const s of index.semanas) {
     if (!s.inicio) continue;
     const ini = new Date(s.inicio + 'T00:00:00');
     const fin = new Date(ini); fin.setDate(fin.getDate() + 6); fin.setHours(23, 59, 59);
-    if (hoy >= ini && hoy <= fin) return s.semana;
+    if (hoy >= ini && hoy <= fin) { porFecha = s.semana; break; }
   }
-  return null;
+  if (!porFecha) return null;
+  const entrada = index.semanas.find((s) => s.semana === porFecha);
+  if (entrada && entrada.cierre) {
+    const abierta = index.semanas
+      .filter((s) => !s.cierre && parseInt(s.semana) > parseInt(porFecha))
+      .sort((a, b) => parseInt(a.semana) - parseInt(b.semana))[0];
+    if (abierta) return abierta.semana;
+  }
+  return porFecha;
 }
 
 /* ---- localStorage del progreso en vivo ---- */

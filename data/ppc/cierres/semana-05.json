@@ -1,0 +1,103 @@
+{
+  "semana": "05",
+  "periodo": "8 al 14 de junio 2026",
+  "fecha_cierre": "2026-06-13",
+  "responsable": "Arq. Jorge Enríquez",
+  "total": 13,
+  "cumplidas": 8,
+  "no_cumplidas": 5,
+  "ppc_pct": 62,
+  "metas": [
+    {
+      "actividad": "Terminación de Instalaciones Hidro-Sanitarias",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Terminación de sistema anti-termita",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Instalación de cimbra perimetral",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": false,
+      "motivo": "No se instaló"
+    },
+    {
+      "actividad": "Instalación de hule negro",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": false,
+      "motivo": "No se instaló"
+    },
+    {
+      "actividad": "Instalación de acero",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": false,
+      "motivo": "No se instaló"
+    },
+    {
+      "actividad": "Colado de losa de cimentación",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": false,
+      "motivo": "No se Coló"
+    },
+    {
+      "actividad": "Terminación de Instalaciones Hidro-Sanitarias",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L03",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Suministro de acero de la semana",
+      "responsable": "Metta Admin.",
+      "lote": "General",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Excavaciones en Lote 22",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L22",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Trazo Lote 21",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L21",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Excavaciones en Lote 20",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L20",
+      "cumplida": false,
+      "motivo": "No se excavó"
+    },
+    {
+      "actividad": "Limpieza y orden en obra",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "General",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Ingreso y facturación de estimación 04",
+      "responsable": "Ing. Marco De la Cruz",
+      "lote": "General",
+      "cumplida": true,
+      "motivo": ""
+    }
+  ]
+}
