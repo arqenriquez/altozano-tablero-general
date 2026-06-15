@@ -79,7 +79,8 @@
         "Colocación de tubería de gas",
         "Colocación de tubería de instalaciones hidrosanitarias",
         "Continuación de habilitado de acero para cimentación"
-      ]
+      ],
+      "fotos": 4
     },
     "03": {
       "modelo": "Corsac A",
@@ -89,7 +90,8 @@
       "variacion": -0.25,
       "actividades": [
         "Suministro de material de instalaciones hidrosanitarias"
-      ]
+      ],
+      "fotos": 4
     },
     "04": {
       "modelo": "Ártico A",
@@ -101,7 +103,8 @@
         "Inicio de pegado de ladrillo y block en muros",
         "Inicio de colado de castillos",
         "Colado de zapatas aisladas"
-      ]
+      ],
+      "fotos": 8
     },
     "20": {
       "modelo": "Ártico A",
@@ -111,7 +114,8 @@
       "variacion": -0.56,
       "actividades": [
         "Trazo del terreno"
-      ]
+      ],
+      "fotos": 2
     },
     "21": {
       "modelo": "Corsac A",
@@ -122,7 +126,8 @@
       "actividades": [
         "Trazo del terreno",
         "Inicio de excavaciones"
-      ]
+      ],
+      "fotos": 2
     },
     "22": {
       "modelo": "Corsac B",
@@ -133,7 +138,8 @@
       "actividades": [
         "Trazo del terreno",
         "Inicio de excavaciones"
-      ]
+      ],
+      "fotos": 2
     }
   },
   "curva_financiera": {
