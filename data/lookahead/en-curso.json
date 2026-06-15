@@ -1,0 +1,8 @@
+{
+  "_INSTRUCCIONES": "Avance PUBLICADO de la semana en curso del módulo 09 (Look Ahead). El botón 'Actualizar semana en curso' descarga este archivo; commitéalo para que el equipo vea las casillas marcadas a mitad de semana. 'inicio' = lunes de la semana (YYYY-MM-DD); 'tasks' = solo las tareas hoja con alguna casilla marcada. Al cerrar la semana, el snapshot pasa a cierres/ y este archivo se puede vaciar.",
+  "inicio": null,
+  "periodo": "",
+  "semana": "",
+  "actualizado": "",
+  "tasks": []
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Altozano · Look Ahead — Last Planner | Metta</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    document.write('<link rel="stylesheet" href="css/lookahead.css?v=' + Date.now() + '">');
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="app-header">
+    <div class="header-left">
+      <a href="index.html" class="gantt-back" title="Volver al tablero" aria-label="Volver al tablero">←</a>
+      <img src="assets/logo-altozano.png" alt="Altozano" class="logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='inline'" />
+      <span class="logo-fallback" style="display:none">ALTOZANO</span>
+      <img src="assets/logo-metta.png" alt="Metta" class="logo"
+           onerror="this.style.display='none'" />
+      <div class="header-titles">
+        <h1 class="app-title">LOOK AHEAD · LAST PLANNER</h1>
+        <h2 class="project-name" id="projectName">ALTOZANO — 6 VIVIENDAS</h2>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <div class="header-meta">
+        <span class="meta-item">
+          <span class="meta-label">Inicio:</span>
+          <span class="meta-value mono" id="projectStart">—</span>
+        </span>
+        <span class="meta-sep">|</span>
+        <span class="meta-item">
+          <span class="meta-label">Fin:</span>
+          <span class="meta-value mono" id="projectFinish">—</span>
+        </span>
+        <span class="meta-sep">|</span>
+        <span class="meta-item">
+          <label class="meta-label" for="statusDate">Fecha de corte:</label>
+          <input type="date" id="statusDate" class="mono" />
+        </span>
+      </div>
+
+      <div class="header-controls">
+        <span class="meta-item">
+          <span class="meta-label">Última actualización:</span>
+          <span class="meta-value mono" id="lastUpdate">—</span>
+        </span>
+        <button class="btn-header-collapse" id="btnHeaderCollapse"
+                aria-label="Contraer o expandir el encabezado" title="Contraer encabezado">
+          <span class="collapse-arrow">▲</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- LOADING -->
+  <div class="gantt-loading" id="ganttLoading">
+    <div class="gantt-loading-spinner" aria-hidden="true"></div>
+    <p class="gantt-loading-text">Cargando Look Ahead…</p>
+    <p class="gantt-loading-sub">Se lee el mismo programa de obra (aprox. 1,700 tareas) y se filtra a la ventana de 5 semanas. Puede tomar unos segundos.</p>
+  </div>
+
+  <!-- DROPZONE -->
+  <div class="dropzone" id="dropzone" hidden>
+    <div class="dropzone-inner">
+      <h3>No se pudo cargar <code>data/programa-altozano.xml</code></h3>
+      <p>Arrastra aquí el archivo XML exportado desde MS Project, o haz click para seleccionarlo.</p>
+      <input type="file" id="fileInput" accept=".xml" hidden />
+      <button class="btn btn-primary" id="btnFilePicker">Seleccionar archivo XML</button>
+      <p class="dropzone-hint">
+        Esto suele pasar al abrir <code>lookahead.html</code> directamente (file://).
+        Sirve un servidor local (Live Server en VS Code) o publica en GitHub Pages.
+      </p>
+    </div>
+  </div>
+
+  <!-- ERROR -->
+  <div class="error-panel" id="errorPanel" hidden>
+    <h3>Error al procesar el XML</h3>
+    <p id="errorMessage"></p>
+  </div>
+
+  <!-- VIEWER -->
+  <main class="viewer" id="viewer" hidden>
+    <section class="panel-left" id="panelLeft">
+      <div class="panel-left-header">
+        <div class="col-toggle"></div>
+        <div class="col-name"><span>Nombre de tarea</span></div>
+        <div class="col-start">Comienzo</div>
+        <div class="col-finish">Fin</div>
+        <div class="col-check" title="¿Materiales disponibles?">Materiales</div>
+        <div class="col-check" title="¿Mano de obra asignada?">Mano de obra</div>
+        <div class="col-check" title="¿Proyecto / ingeniería definido?">Proyecto definido</div>
+        <div class="col-check" title="¿Trabajos previos terminados?">Trabajos previos</div>
+        <div class="col-estado">Estado</div>
+      </div>
+      <div class="panel-left-body" id="taskList"></div>
+    </section>
+
+    <section class="panel-right" id="panelRight">
+      <div class="timeline-header" id="timelineHeader"></div>
+      <div class="gantt-body" id="ganttBody">
+        <div class="status-line" id="statusLine" hidden></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- BARRA DE CIERRE -->
+  <div class="la-cierre-bar" id="laCierreBar" hidden>
+    <div class="la-week-badge">
+      <span id="laWeekBadge"></span>
+      <span class="la-week-periodo" id="laWeekPeriodo"></span>
+    </div>
+    <span class="la-cierre-progress" id="laCierreProgress"></span>
+    <span class="la-cierre-spacer"></span>
+    <label class="meta-label" for="laWeekSelect">Ver semana:</label>
+    <select class="la-week-select" id="laWeekSelect"></select>
+    <button class="btn-actualizar" id="btnActualizar" title="Publica el avance actual sin cerrar la semana (el equipo lo verá al recargar)">Actualizar semana en curso</button>
+    <button class="btn-cerrar" id="btnCerrar">Cerrar semana</button>
+    <button class="btn-json" id="btnJson" disabled>Descargar JSON</button>
+    <div class="la-cierre-hint" id="laCierreHint"></div>
+  </div>
+
+  <!-- EMPTY -->
+  <div class="empty-state" id="emptyState" hidden>
+    <h3>No hay tareas para mostrar</h3>
+    <p>El archivo XML está vacío o no contiene tareas en la ventana de 5 semanas.</p>
+  </div>
+
+  <!-- ACTA IMPRIMIBLE (PDF) -->
+  <div id="la-print"></div>
+
+  <script>
+    document.write('<script src="js/lookahead.js?v=' + Date.now() + '"><\/script>');
+  </script>
+</body>
+</html>

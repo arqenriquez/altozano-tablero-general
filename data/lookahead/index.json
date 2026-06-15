@@ -1,0 +1,4 @@
+{
+  "_INSTRUCCIONES": "Registro de semanas cerradas del módulo 09 (Look Ahead · Last Planner). Al cerrar una semana, el módulo descarga 'semana-NN.json'; commitéalo en data/lookahead/cierres/ y agrega aquí una entrada con su 'inicio' (lunes de la semana, YYYY-MM-DD), 'periodo' legible y la ruta 'cierre'. La 'semana en curso' se detecta sola por la fecha de corte; las semanas listadas aquí se ven en modo solo lectura.",
+  "semanas": []
+}
