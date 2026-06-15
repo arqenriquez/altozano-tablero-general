@@ -35,6 +35,8 @@ body { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
   justify-content: center !important; text-align: center;
   font-size: 10px; color: var(--text-secondary);
 }
+/* Etiquetas abreviadas de encabezado: solo en móvil */
+.lbl-abbr { display: none; }
 
 /* Celdas de casilla dentro de cada fila */
 .la-check {
@@ -151,3 +153,40 @@ body.la-readonly .panel-left { width: 100%; }
 .acta-firmas { display: flex; justify-content: space-around; margin-top: 28px; }
 .acta-firma { text-align: center; font-size: 10px; width: 40%; }
 .acta-firma .line { border-top: 1px solid #111; margin-bottom: 4px; }
+
+/* ============================================================ MÓVIL (≤900px)
+   En celular el objetivo es marcar restricciones, no ver el Gantt. Ocultamos
+   las barras y mostramos una tabla compacta a pantalla completa con las casillas
+   visibles. (Sobrescribe las reglas responsive heredadas de gantt.css.) */
+@media (max-width: 900px) {
+  .panel-right { display: none; }
+  .panel-left { width: 100%; }
+
+  .panel-left-header,
+  .task-row { grid-template-columns: 18px 1fr 30px 30px 30px 30px 32px; }
+
+  /* Oculta Comienzo/Fin para dar espacio a las casillas */
+  .panel-left-header > .col-start, .panel-left-header > .col-finish,
+  .task-row > .task-start, .task-row > .task-finish { display: none; }
+
+  /* Encabezados: abreviado en vez de texto completo */
+  .col-check, .col-estado { font-size: 9px; padding: 0 1px; }
+  .lbl-full { display: none; }
+  .lbl-abbr { display: inline; }
+
+  .la-check { padding: 0 !important; }
+  .la-check input[type="checkbox"] { width: 18px; height: 18px; }
+
+  /* Estado como punto de color: verde = listo, gris = pendiente */
+  .la-estado-pill {
+    font-size: 0; width: 14px; height: 14px; padding: 0;
+    border-radius: 50%; border: none;
+  }
+  .la-estado-pill.listo { background: var(--accent-green); }
+  .la-estado-pill.pendiente { background: var(--accent-gray); }
+
+  /* Barra de cierre: botones a ancho completo, apilados */
+  .la-cierre-bar { padding: 10px 12px; gap: 8px; }
+  .la-cierre-spacer { display: none; }
+  .btn-actualizar, .btn-cerrar, .btn-json, .la-week-select { flex: 1 1 100%; }
+}
