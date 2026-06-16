@@ -48,6 +48,21 @@
   </div>
 </div>
 
+<!-- Modal: actualizar avance en curso (sin generar acta) -->
+<div class="chk-modal-overlay" id="actualizar-modal" hidden>
+  <div class="chk-modal" role="dialog" aria-labelledby="actualizar-modal-title">
+    <header class="chk-modal-header">
+      <h3 id="actualizar-modal-title">🔄 Actualizar checklist</h3>
+      <button class="chk-modal-close" id="actualizar-modal-close" aria-label="Cerrar">✕</button>
+    </header>
+    <div class="chk-modal-body" id="actualizar-modal-body"></div>
+    <footer class="chk-modal-footer" id="actualizar-modal-footer">
+      <button class="chk-btn-secondary" id="actualizar-modal-descargar">⬇ Descargar JSON</button>
+      <button class="chk-btn-primary" id="actualizar-modal-whatsapp">📲 Enviar por WhatsApp</button>
+    </footer>
+  </div>
+</div>
+
 <!-- Modal de confirmacion para reiniciar checklist -->
 <div class="chk-modal-overlay" id="reset-modal" hidden>
   <div class="chk-modal" role="dialog" aria-labelledby="reset-modal-title">
@@ -63,6 +78,7 @@
   </div>
 </div>
 
-<script src="js/checklist-detalle.js?v=20260529"></script>
+<script src="js/checklist-share.js?v=20260616"></script>
+<script src="js/checklist-detalle.js?v=20260616"></script>
 </body>
 </html>

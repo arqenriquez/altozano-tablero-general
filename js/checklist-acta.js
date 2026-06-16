@@ -285,12 +285,19 @@ async function init() {
 
   $('#btn-imprimir')?.addEventListener('click', () => window.print());
 
-  // El boton "Enviar al supervisor" solo aparece si el acta NO viene del repo
+  // Los botones de envío solo aparecen si el acta NO viene del repo
   // (es decir, si fue generada en este dispositivo y aun no se ha publicado)
-  const btnEnviar = $('#btn-enviar');
-  if (btnEnviar && !archivo) {
-    btnEnviar.hidden = false;
-    btnEnviar.addEventListener('click', () => enviarAlSupervisor(snapshot));
+  const btnWhatsapp = $('#btn-whatsapp');
+  const btnDescargar = $('#btn-descargar');
+  if (!archivo) {
+    if (btnWhatsapp) {
+      btnWhatsapp.hidden = false;
+      btnWhatsapp.addEventListener('click', () => enviarActaPorWhatsApp(snapshot));
+    }
+    if (btnDescargar) {
+      btnDescargar.hidden = false;
+      btnDescargar.addEventListener('click', () => descargarActa(snapshot));
+    }
   }
 
   $('#enviar-modal-close')?.addEventListener('click', cerrarModalEnviar);
@@ -303,31 +310,41 @@ async function init() {
   });
 }
 
-function enviarAlSupervisor(snapshot) {
-  const nombreArchivo = snapshot.archivo
+function nombreArchivoActa(snapshot) {
+  return snapshot.archivo
     || `${snapshot.lote.id}-${snapshot.proceso.id}-${(snapshot.fecha || '').slice(0, 10)}`;
-  const blob = new Blob([JSON.stringify(snapshot, null, 2) + '\n'], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `${nombreArchivo}.json`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
+}
 
+function mostrarModalEnvioActa(via, nombreArchivo) {
+  if (via === 'cancel') return;  // el usuario cerró el menú nativo
+  const msg = via === 'share'
+    ? 'Se abrió el menú para compartir. Elige <strong>WhatsApp</strong> y envíalo a tu supervisor u oficina.'
+    : `Se descargó <code>${escapeHtml(nombreArchivo)}.json</code>. Compártelo por <strong>WhatsApp</strong> o <strong>correo</strong> con tu supervisor u oficina.`;
   $('#enviar-modal-body').innerHTML = `
-    <p class="chk-modal-intro">✅ El archivo se descargó correctamente.</p>
+    <p class="chk-modal-intro">✅ Acta lista para enviar.</p>
     <div class="chk-modal-id">
       <code>${escapeHtml(nombreArchivo)}.json</code>
     </div>
-    <p style="font-size:0.95rem;color:var(--ink);margin-top:0.9rem;line-height:1.55">
-      Compártelo con tu supervisor por <strong>WhatsApp</strong> o <strong>correo</strong> para que el acta quede registrada en el tablero general.
-    </p>
-    <p class="chk-modal-help">Listo. No necesitas hacer nada más en esta pantalla.</p>
+    <p style="font-size:0.95rem;color:var(--ink);margin-top:0.9rem;line-height:1.55">${msg}</p>
+    <p class="chk-modal-help">En oficina lo colocan en <code>data/checklist/registros/</code> y lo registran en <code>index.json</code> para que el acta quede en el tablero general.</p>
   `;
   $('#enviar-modal').hidden = false;
   document.body.style.overflow = 'hidden';
+}
+
+async function enviarActaPorWhatsApp(snapshot) {
+  const nombreArchivo = nombreArchivoActa(snapshot);
+  const { via } = await compartirArchivoJSON(nombreArchivo, snapshot, {
+    title: `Acta ${snapshot.proceso?.nombre || ''} · ${snapshot.lote?.nombre || ''}`,
+    text: `Acta de calidad (${snapshot.veredicto || ''}) de ${snapshot.proceso?.nombre || ''} — ${snapshot.lote?.nombre || ''} ${snapshot.lote?.manzana || ''}.`
+  });
+  mostrarModalEnvioActa(via, nombreArchivo);
+}
+
+function descargarActa(snapshot) {
+  const nombreArchivo = nombreArchivoActa(snapshot);
+  descargarArchivoJSON(nombreArchivo, snapshot);
+  mostrarModalEnvioActa('fallback-descarga', nombreArchivo);
 }
 
 function cerrarModalEnviar() {

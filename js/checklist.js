@@ -38,9 +38,13 @@ function escapeHtml(str) {
    3. Progreso en vivo en localStorage
 */
 function estadoCelda(loteId, procesoId, totalItems) {
-  // 1. Acta del repo (commiteada, visible desde cualquier dispositivo)
-  const actaRepo = REGISTROS_REPO
-    .filter(r => r?.lote?.id === loteId && r?.proceso?.id === procesoId)
+  const delRepo = REGISTROS_REPO
+    .filter(r => r?.lote?.id === loteId && r?.proceso?.id === procesoId);
+
+  // 1. Acta final commiteada (APTO / NO APTO), visible desde cualquier
+  //    dispositivo. Gana siempre sobre un avance en curso. Toma la mas reciente.
+  const actaRepo = delRepo
+    .filter(r => r.tipo !== 'en-curso' && (r.veredicto === 'APTO' || r.veredicto === 'NO APTO'))
     .sort((a, b) => (b.fecha || '').localeCompare(a.fecha || ''))[0];
   if (actaRepo) {
     return {
@@ -50,6 +54,21 @@ function estadoCelda(loteId, procesoId, totalItems) {
       total: actaRepo.stats?.total || totalItems,
       fuente: 'repo',
       archivo: actaRepo.archivo
+    };
+  }
+
+  // 1b. Avance "en curso" commiteado (sin acta final aun). Hace que el tablero
+  //     muestre "En progreso · X%" para todos, no solo en el dispositivo local.
+  const enCursoRepo = delRepo
+    .filter(r => r.tipo === 'en-curso' || r.veredicto === 'EN PROGRESO')
+    .sort((a, b) => (b.fecha || '').localeCompare(a.fecha || ''))[0];
+  if (enCursoRepo) {
+    return {
+      tipo: 'en-progreso',
+      avance: enCursoRepo.stats?.avance ?? 0,
+      verificados: enCursoRepo.stats?.si ?? 0,
+      total: enCursoRepo.stats?.total || totalItems,
+      fuente: 'repo'
     };
   }
 

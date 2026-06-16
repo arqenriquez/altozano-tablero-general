@@ -173,6 +173,7 @@ function render() {
     <!-- Acciones -->
     <section class="section chk-acciones" style="padding-top:0">
       <button class="chk-btn-secondary" id="btn-reset">🔄 Reiniciar checklist</button>
+      <button class="chk-btn-secondary" id="btn-actualizar">🔄 Actualizar checklist</button>
       <button class="chk-btn-primary" id="btn-acta">📋 Generar acta de calidad</button>
     </section>
   `;
@@ -297,7 +298,16 @@ function bindEventos() {
 
   // Botones
   $('#btn-reset').addEventListener('click', abrirModalReset);
+  $('#btn-actualizar').addEventListener('click', abrirModalActualizar);
   $('#btn-acta').addEventListener('click', abrirModalActa);
+
+  // Modal actualizar (avance en curso)
+  $('#actualizar-modal-close')?.addEventListener('click', cerrarModalActualizar);
+  $('#actualizar-modal')?.addEventListener('click', (e) => {
+    if (e.target.id === 'actualizar-modal') cerrarModalActualizar();
+  });
+  $('#actualizar-modal-whatsapp')?.addEventListener('click', accionActualizarWhatsApp);
+  $('#actualizar-modal-descargar')?.addEventListener('click', accionActualizarDescargar);
 
   // Modal acta
   $('#acta-modal-close')?.addEventListener('click', cerrarModalActa);
@@ -320,6 +330,7 @@ function bindEventos() {
     if (e.key !== 'Escape') return;
     if (!$('#acta-modal').hidden) cerrarModalActa();
     if (!$('#reset-modal').hidden) cerrarModalReset();
+    if (!$('#actualizar-modal').hidden) cerrarModalActualizar();
   });
 }
 
@@ -454,6 +465,88 @@ function confirmarReset() {
   localStorage.removeItem(LS_ACTA(LOTE.id, PROCESO.id));
   cerrarModalReset();
   render();
+}
+
+/* ---------- Avance en curso (sin generar acta) ----------
+   Empaqueta el progreso actual como un snapshot "en-curso" que, una vez
+   commiteado en el repo, hace que el tablero central marque este proceso
+   como "En progreso · X%" para todos los dispositivos. NO es el acta final
+   y NO desbloquea el siguiente proceso. */
+function construirSnapshotEnCurso() {
+  const stats = calcularStats();
+  return {
+    archivo: `${LOTE.id}-${PROCESO.id}-en-curso`,
+    tipo: 'en-curso',
+    lote: LOTE,
+    proceso: PROCESO,
+    fecha: new Date().toISOString(),
+    residente: ESTADO.meta?.residente || '',
+    supervisor: ESTADO.meta?.supervisor || '',
+    items: ESTADO.items,
+    stats,
+    veredicto: 'EN PROGRESO',
+    catalogoVersion: CATALOGO_PROCESO.version || null
+  };
+}
+
+function abrirModalActualizar() {
+  const stats = calcularStats();
+  const respondidos = stats.si + stats.no + stats.na;
+
+  // Restaura la botonera por si quedó oculta tras un envío previo.
+  $('#actualizar-modal-footer').hidden = false;
+
+  $('#actualizar-modal-body').innerHTML = `
+    <p class="chk-modal-intro">Guardarás el <strong>avance en curso</strong> de:</p>
+    <div class="chk-modal-id">
+      <strong>${escapeHtml(PROCESO.nombre)}</strong><br>
+      ${escapeHtml(LOTE.nombre)} · ${escapeHtml(LOTE.manzana)} · ${escapeHtml(LOTE.modelo)}
+    </div>
+    <div class="chk-modal-resumen">
+      <div><span class="lbl">Avance</span><span class="val accent">${stats.avance}%</span></div>
+      <div><span class="lbl">Verificados</span><span class="val pos">${stats.si}</span></div>
+      <div><span class="lbl">Respondidos</span><span class="val">${respondidos}/${stats.total}</span></div>
+      <div><span class="lbl">Sin marcar</span><span class="val muted">${stats.sin}</span></div>
+    </div>
+    <div class="chk-modal-warn">Estado <strong>EN PROGRESO</strong>: esto <strong>no</strong> genera el acta final ni desbloquea el siguiente proceso.</div>
+    <p class="chk-modal-help">Envía el archivo por WhatsApp a oficina. Ahí lo colocan en <code>data/checklist/registros/</code> y lo registran en <code>index.json</code> para que el tablero muestre este proceso como “En progreso · ${stats.avance}%” en cualquier dispositivo.</p>
+  `;
+  $('#actualizar-modal').hidden = false;
+  document.body.style.overflow = 'hidden';
+}
+
+function cerrarModalActualizar() {
+  $('#actualizar-modal').hidden = true;
+  document.body.style.overflow = '';
+}
+
+function mostrarResultadoActualizar(via, snap) {
+  if (via === 'cancel') return;  // el usuario cerró el menú: deja el modal como está
+  const msg = via === 'share'
+    ? 'Se abrió el menú para compartir. Elige <strong>WhatsApp</strong> y mándalo a oficina.'
+    : `Se descargó <code>${escapeHtml(snap.archivo)}.json</code>. Compártelo por WhatsApp o correo con oficina.`;
+  $('#actualizar-modal-footer').hidden = true;
+  $('#actualizar-modal-body').innerHTML = `
+    <p class="chk-modal-intro">✅ Avance guardado como <strong>EN PROGRESO</strong> (${snap.stats.avance}%).</p>
+    <div class="chk-modal-id"><code>${escapeHtml(snap.archivo)}.json</code></div>
+    <p style="font-size:0.95rem;color:var(--ink);margin-top:0.9rem;line-height:1.55">${msg}</p>
+    <p class="chk-modal-help">En oficina lo colocan en <code>data/checklist/registros/</code> y lo registran en <code>index.json</code>. Esto no genera el acta final.</p>
+  `;
+}
+
+async function accionActualizarWhatsApp() {
+  const snap = construirSnapshotEnCurso();
+  const { via } = await compartirArchivoJSON(snap.archivo, snap, {
+    title: `Avance ${PROCESO.nombre} · ${LOTE.nombre}`,
+    text: `Avance en curso (${snap.stats.avance}%) de ${PROCESO.nombre} — ${LOTE.nombre} ${LOTE.manzana}.`
+  });
+  mostrarResultadoActualizar(via, snap);
+}
+
+function accionActualizarDescargar() {
+  const snap = construirSnapshotEnCurso();
+  descargarArchivoJSON(snap.archivo, snap);
+  mostrarResultadoActualizar('fallback-descarga', snap);
 }
 
 function confirmarYGenerarActa() {
