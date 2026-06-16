@@ -3,7 +3,7 @@
   "nombre": "Colado de Losa de Cimentación",
   "subtitulo": "Verificación previa y durante el colado de la losa de cimentación",
   "icono": "🏗️",
-  "version": "2026-05-30",
+  "version": "2026-06-16",
   "secciones": [
     {
       "id": "trazo-nivelacion",
@@ -16,11 +16,6 @@
           "concepto": "Ejes principales verificados con planos estructurales",
           "ayuda": "Verificar con cinta y nivel óptico o láser",
           "critico": true
-        },
-        {
-          "id": "dimensiones-planos",
-          "concepto": "Dimensiones generales coinciden con planos",
-          "ayuda": "Cotejar medidas a ejes y a paños"
         },
         {
           "id": "escuadras",
@@ -59,11 +54,6 @@
           "id": "sin-derrumbes",
           "concepto": "Sin derrumbes en cepas",
           "ayuda": "Taludes estables; apuntalar si hay riesgo"
-        },
-        {
-          "id": "organico-retirado",
-          "concepto": "Material orgánico retirado",
-          "ayuda": "Capa vegetal completamente eliminada"
         }
       ]
     },
@@ -89,11 +79,6 @@
           "id": "diametros-hs",
           "concepto": "Diámetros correctos",
           "ayuda": "Cotejar contra especificación del plano"
-        },
-        {
-          "id": "registros-hs",
-          "concepto": "Registros ubicados correctamente",
-          "ayuda": "Ubicación y nivel de tapa de registros"
         },
         {
           "id": "tapones-salidas",
@@ -124,11 +109,6 @@
           "concepto": "Canalizaciones instaladas según proyecto",
           "ayuda": "Trayectoria y diámetro contra plano eléctrico",
           "critico": true
-        },
-        {
-          "id": "alimentaciones",
-          "concepto": "Ubicación de alimentaciones confirmada",
-          "ayuda": "Salidas a tablero y registros principales"
         },
         {
           "id": "curvas",
@@ -205,7 +185,7 @@
     {
       "id": "cimbra-contencion",
       "numero": 6,
-      "titulo": "Cimbra y contención perimetral",
+      "titulo": "Cimbra perimetral",
       "icono": "🪵",
       "items": [
         {
@@ -227,45 +207,12 @@
           "id": "juntas-cerradas",
           "concepto": "Juntas cerradas",
           "ayuda": "Sellar con madera o mortero si la separación >3 mm"
-        },
-        {
-          "id": "elementos-fijacion",
-          "concepto": "Elementos de fijación completos",
-          "ayuda": "Amarres y cuñas en todos los puntos"
-        }
-      ]
-    },
-    {
-      "id": "base-terreno",
-      "numero": 7,
-      "titulo": "Base y preparación del terreno",
-      "icono": "🪨",
-      "items": [
-        {
-          "id": "relleno-compactado",
-          "concepto": "Material de relleno compactado",
-          "ayuda": "Capas máx. 20 cm; densidad de proyecto"
-        },
-        {
-          "id": "compactacion-documentada",
-          "concepto": "Compactación documentada",
-          "ayuda": "Pruebas Proctor o cono de arena en expediente (cuando aplique)"
-        },
-        {
-          "id": "sin-organicos",
-          "concepto": "Material libre de basura y orgánicos",
-          "ayuda": "Inspección visual completa antes de colar"
-        },
-        {
-          "id": "humedad-adecuada",
-          "concepto": "Humedad adecuada para colado",
-          "ayuda": "Terreno saturado superficialmente, sin encharcamientos"
         }
       ]
     },
     {
       "id": "preparacion-colado",
-      "numero": 8,
+      "numero": 7,
       "titulo": "Preparación para el colado",
       "icono": "📋",
       "items": [
@@ -304,16 +251,6 @@
           "critico": true
         },
         {
-          "id": "planta-emergencia",
-          "concepto": "Planta de emergencia disponible",
-          "ayuda": "Por si falla suministro durante el colado"
-        },
-        {
-          "id": "personal-capacitado",
-          "concepto": "Personal asignado y capacitado",
-          "ayuda": "Cuadrilla con experiencia en colado y acabado"
-        },
-        {
           "id": "herramienta-acabado",
           "concepto": "Herramienta de acabado disponible",
           "ayuda": "Reglas, flotas, llanas y bailarinas listas en sitio"
@@ -327,7 +264,7 @@
     },
     {
       "id": "control-colado",
-      "numero": 9,
+      "numero": 8,
       "titulo": "Control durante el colado",
       "icono": "🚧",
       "items": [
