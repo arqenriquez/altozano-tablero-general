@@ -30,6 +30,17 @@ function escapeHtml(str) {
   return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
+/* Estado de la nota. Por defecto 'generada' (recién subida, aún sin firmar);
+   'firmada' = ya firmada en la bitácora física. */
+const ESTADOS_NOTA = {
+  generada: { label: 'Generada', cls: 'bita-generada' },
+  firmada:  { label: 'Firmada',  cls: 'bita-firmada' }
+};
+function badgeEstadoNota(estado) {
+  const e = ESTADOS_NOTA[estado] || ESTADOS_NOTA.generada;
+  return `<span class="bita-badge ${e.cls}">${e.label}</span>`;
+}
+
 /* ============ LISTADO (bitacora.html) ============ */
 async function initListado() {
   const indice = await cargarJSON('data/bitacora/index.json');
@@ -89,6 +100,7 @@ async function initListado() {
         ${d.responsable ? `<div class="resp">Registró: ${escapeHtml(d.responsable)}</div>` : ''}
       </div>
       <div class="bitacora-card-side">
+        ${badgeEstadoNota(d.estado)}
         ${tieneFoto
           ? `<img class="bitacora-thumb" src="${d.foto_fisica}" alt="Bitácora física nota ${d.numero}" onerror="this.outerHTML='<div class=\\'bitacora-thumb-empty\\'>📷</div>'">`
           : `<div class="bitacora-thumb-empty" title="Sin foto física">📷</div>`}
@@ -126,6 +138,7 @@ async function initDetalle() {
     <div class="nota-detail-head">
       <div class="nota-detail-num">${d.numero}<small>Nota de bitácora</small></div>
       <div class="nota-detail-meta">
+        <div class="nota-detail-estado">${badgeEstadoNota(d.estado)}</div>
         <div class="fecha">${fechaLarga(d.fecha)}</div>
         ${d.responsable ? `<div class="resp">Registró: <strong>${escapeHtml(d.responsable)}</strong></div>` : ''}
         ${d.lote ? `<div class="resp">Lote / área: <strong>${escapeHtml(d.lote)}</strong></div>` : ''}

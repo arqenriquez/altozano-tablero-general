@@ -878,6 +878,16 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
 .est-facturada { background: #e3eaf6; color: #2a4d8a; border-color: #c8d4e8; }
 .est-pagada    { background: #e3f4e8; color: var(--green); border-color: #b8e0c2; }
 
+/* Badges de estado de bitácora */
+.bita-badge {
+  display: inline-block; padding: 0.3rem 0.7rem; font-size: 0.64rem;
+  text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;
+  border-radius: 20px; border: 1px solid transparent; white-space: nowrap;
+}
+.bita-generada { background: #fbf0db; color: #8a6a00; border-color: #f1e0b5; }
+.bita-firmada  { background: #e3f4e8; color: var(--green); border-color: #b8e0c2; }
+.nota-detail-estado { margin-bottom: 0.4rem; }
+
 /* ----- Detalle de estimación ----- */
 .estimacion-detail { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem 5rem; }
 .estimacion-detail-head {

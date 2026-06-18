@@ -1,6 +1,7 @@
 {
-  "_INSTRUCCIONES": "Copia este archivo y renómbralo a nota-002.json, nota-003.json, etc. (numeración consecutiva de 3 dígitos). Agrega el número al arreglo 'notas' de index.json. El campo 'foto_fisica' es opcional: si no hay foto, déjalo como cadena vacía \"\".",
+  "_INSTRUCCIONES": "Copia este archivo y renómbralo a nota-009.json, nota-010.json, etc. (numeración consecutiva de 3 dígitos). Agrega el número al arreglo 'notas' de index.json. El campo 'estado' es 'generada' (recién subida, aún sin firmar) o 'firmada' (ya firmada en la bitácora física); si se omite, el tablero la muestra como 'generada'. El campo 'foto_fisica' es opcional: si no hay foto, déjalo como cadena vacía \"\".",
   "numero": "000",
+  "estado": "generada",
   "fecha": "AAAA-MM-DD",
   "responsable": "Nombre de quien registra la nota",
   "lote": "General",
