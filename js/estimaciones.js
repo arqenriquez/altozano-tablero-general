@@ -139,7 +139,7 @@ async function initListado() {
         <div class="estimacion-card-monto">${fmtMXN(c.importe_esta_estimacion_mxn)}</div>
         <div class="estimacion-card-sub">
           Avance físico acumulado: <strong>${fmtPct(c.avance_fisico_pct)}</strong>
-          · Líquido: <strong>${fmtMXN(c.importe_liquido_total_mxn)}</strong>
+          · Líquido a pagar: <strong>${fmtMXN(c.bueno_por_mxn)}</strong>
         </div>
       </div>
       <div class="estimacion-card-side">
@@ -181,9 +181,9 @@ function renderResumenFinanciero(c) {
     ['IVA',                  fmtMXN(c.iva_mxn)],
     ['Retención IVA',        fmtMXN(c.ret_iva_mxn)],
     ['Retención ISR',        fmtMXN(c.ret_isr_mxn)],
-    ['Retención en garantía (5%)', fmtMXN(c.retencion_esta_estimacion_mxn)],
-    ['Importe líquido total', fmtMXN(c.importe_liquido_total_mxn), 'accent'],
-    ['Bueno por',             fmtMXN(c.bueno_por_mxn), 'strong']
+    ['Importe líquido en factura', fmtMXN(c.importe_liquido_total_mxn)],
+    ['Retención en garantía (5%)', `− ${fmtMXN(c.retencion_esta_estimacion_mxn)}`],
+    ['Bueno por (líquido a pagar)', fmtMXN(c.bueno_por_mxn), 'accent']
   ];
   return filas.map(([k, v, cls]) => `
     <div class="caratula-row${cls ? ' ' + cls : ''}">
