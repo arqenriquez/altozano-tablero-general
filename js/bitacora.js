@@ -30,6 +30,15 @@ function escapeHtml(str) {
   return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
+/* Formato ligero para el texto de las notas: primero se escapa todo (seguro),
+   luego se convierten marcadores tipo Markdown en su HTML.
+   **texto** → negrita · *texto* → cursiva */
+function formatNota(str) {
+  return escapeHtml(str)
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/(^|[^*])\*(?!\*)([^*\n]+?)\*(?!\*)/g, '$1<em>$2</em>');
+}
+
 /* Estado de la nota. Por defecto 'generada' (recién subida, aún sin firmar);
    'firmada' = ya firmada en la bitácora física. */
 const ESTADOS_NOTA = {
@@ -96,7 +105,7 @@ async function initListado() {
       <div class="bitacora-card-num">${d.numero}<small>Nota</small></div>
       <div class="bitacora-card-body">
         <div class="fecha">${fechaLarga(d.fecha)}</div>
-        <div class="desc">${escapeHtml(d.descripcion)}</div>
+        <div class="desc">${formatNota(d.descripcion)}</div>
         ${d.responsable ? `<div class="resp">Registró: ${escapeHtml(d.responsable)}</div>` : ''}
       </div>
       <div class="bitacora-card-side">
@@ -144,7 +153,7 @@ async function initDetalle() {
         ${d.lote ? `<div class="resp">Lote / área: <strong>${escapeHtml(d.lote)}</strong></div>` : ''}
       </div>
     </div>
-    <div class="nota-body">${escapeHtml(d.descripcion)}</div>
+    <div class="nota-body">${formatNota(d.descripcion)}</div>
     <div class="nota-foto-fisica">
       <h3>Bitácora física</h3>
       ${tieneFoto
