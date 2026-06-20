@@ -5,6 +5,6 @@
     { "semana": "03", "periodo": "25 al 31 de mayo 2026", "inicio": "2026-05-25", "metas": "metas/semana-03.xlsx", "cierre": "cierres/semana-03.json" },
     { "semana": "04", "periodo": "1 al 7 de junio 2026",  "inicio": "2026-06-01", "metas": "metas/semana-04.xlsx", "cierre": "cierres/semana-04.json" },
     { "semana": "05", "periodo": "8 al 14 de junio 2026", "inicio": "2026-06-08", "metas": "metas/semana-05.xlsx", "cierre": "cierres/semana-05.json" },
-    { "semana": "06", "periodo": "15 al 21 de junio 2026", "inicio": "2026-06-15", "metas": "metas/semana-06.xlsx", "cierre": null }
+    { "semana": "06", "periodo": "15 al 21 de junio 2026", "inicio": "2026-06-15", "metas": "metas/semana-06.xlsx", "cierre": "cierres/semana-06.json" }
   ]
 }

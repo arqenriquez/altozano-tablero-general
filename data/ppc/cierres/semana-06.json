@@ -1,0 +1,110 @@
+{
+  "semana": "06",
+  "periodo": "15 al 21 de junio 2026",
+  "fecha_cierre": "2026-06-20",
+  "responsable": "Arq. Jorge Enríquez",
+  "total": 14,
+  "cumplidas": 6,
+  "no_cumplidas": 8,
+  "ppc_pct": 43,
+  "metas": [
+    {
+      "actividad": "Colocar cimbra metálica perimetral para cimentación - L02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Fumigar y colocar hule negro - L02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Colocar acero de cimentación y arranque de castillos - L02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Liberación de todas las tuberías - L02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Llenar Checklist de calidad previo a colado - L02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": false,
+      "motivo": "No se ha llenado Checklist por actividades en proceso"
+    },
+    {
+      "actividad": "Colado de losa de cimentación - L02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": false,
+      "motivo": "No se coló por que aún falta terminar algunas actividdades"
+    },
+    {
+      "actividad": "Terminar instalaciones hidrosanitarias - L03",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L03",
+      "cumplida": false,
+      "motivo": "No se terminó se concetro gente en Lote 05, faltó Fuerza de trabajo"
+    },
+    {
+      "actividad": "Terminar Instalaciones de Gas - L03",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L03",
+      "cumplida": false,
+      "motivo": "No se terminó se concetro gente en Lote 05, faltó Fuerza de trabajo"
+    },
+    {
+      "actividad": "Suministrar complemento de reglas - Cimbra perimetral - L03",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L03",
+      "cumplida": false,
+      "motivo": "Se pidieron tarde"
+    },
+    {
+      "actividad": "Suministrar Armex para cadenas de cerramiento L-04",
+      "responsable": "Ing. Marco De la Cruz",
+      "lote": "L04",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Colado de cadenas de cerramiento - L04",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L04",
+      "cumplida": false,
+      "motivo": "No se han colado aún"
+    },
+    {
+      "actividad": "Suministro de cimbra y colado de columnas - L04",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L04",
+      "cumplida": false,
+      "motivo": "No se colaron"
+    },
+    {
+      "actividad": "Suministrar Material de Inst. Hidrosanitarias Lotes 21, 22",
+      "responsable": "Ing. Marco De la Cruz",
+      "lote": "General",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Suministrar Acero para cimentación Lotes 21, 22",
+      "responsable": "Ing. Marco De la Cruz",
+      "lote": "General",
+      "cumplida": false,
+      "motivo": "No se suministró "
+    }
+  ]
+}
