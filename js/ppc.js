@@ -401,7 +401,7 @@ function renderActa(cierre) {
   $('#ppc-print').innerHTML = `
     <div class="acta-head">
       <div class="acta-head-left">
-        ${S.logoData ? `<img src="${S.logoData}" class="acta-logo" alt="Metta">` : ''}
+        <img src="${S.logoData || 'assets/logo-metta.png'}" class="acta-logo" alt="Metta">
         <div>
           <h2>Acta de cierre semanal · PPC</h2>
           <div class="sub">${escapeHtml(nombreProy)} · 6 Viviendas · Last Planner System</div>

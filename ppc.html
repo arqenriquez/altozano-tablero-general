@@ -215,17 +215,21 @@ table.ppc-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min
 /* ====== Impresión: aislar el acta ====== */
 #ppc-print { display: none; }
 @media print {
-  body * { visibility: hidden !important; }
-  #ppc-print, #ppc-print * { visibility: visible !important; }
-  #ppc-print { display: block !important; position: absolute; left: 0; top: 0; width: 100%; padding: 1cm 1.2cm;
+  /* Aísla el acta ocultando lo demás SIN conservar su espacio.
+     Antes se usaba visibility:hidden, que dejaba el hueco de toda la
+     interfaz y generaba páginas en blanco subsecuentes. */
+  body > *:not(#ppc-print) { display: none !important; }
+  #ppc-print { display: block !important;
     -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
   #ppc-print .acta-logo { display: inline-block !important; }
-  @page { margin: 1cm; }
+  /* No partir filas ni firmas entre páginas: minimiza las hojas */
+  .acta-table tr, .acta-firmas { page-break-inside: avoid; }
+  @page { margin: 1.2cm 1.4cm; }
 }
 /* Acta (visible en pantalla solo dentro de #ppc-print al imprimir) */
 .acta-head { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--accent); padding-bottom: 0.8rem; margin-bottom: 1rem; }
 .acta-head-left { display: flex; align-items: center; gap: 1rem; }
-.acta-logo { height: 42px; width: auto; }
+.acta-logo { height: 58px; width: auto; }
 .acta-head h2 { font-family: var(--font-display); font-size: 1.3rem; color: var(--ink); margin: 0; }
 .acta-head .sub { font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.2rem; }
 .acta-ppc { text-align: right; }
@@ -237,8 +241,8 @@ table.acta-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; m
 .acta-table th { background: #f3f2ee; text-align: left; padding: 0.5rem 0.6rem; border: 1px solid #ddd; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; }
 .acta-table td { padding: 0.5rem 0.6rem; border: 1px solid #e6e4df; vertical-align: top; }
 .acta-table td.c { text-align: center; font-weight: 700; }
-.acta-si { color: var(--green); }
-.acta-no { color: var(--red); }
+.acta-si { color: var(--green, #1f8f3e) !important; }
+.acta-no { color: var(--red, #c0392b) !important; }
 .acta-firmas { display: flex; justify-content: space-around; gap: 2rem; margin-top: 3rem; }
 .acta-firma { text-align: center; font-size: 0.78rem; flex: 1; }
 .acta-firma .line { border-top: 1px solid var(--ink); margin-bottom: 0.3rem; padding-top: 0.3rem; }
@@ -368,6 +372,6 @@ table.acta-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; m
 <!-- Contenedor del acta para impresión (se llena al cerrar) -->
 <div id="ppc-print"></div>
 
-<script src="js/ppc.js?v=20260611b"></script>
+<script src="js/ppc.js?v=20260618"></script>
 </body>
 </html>
