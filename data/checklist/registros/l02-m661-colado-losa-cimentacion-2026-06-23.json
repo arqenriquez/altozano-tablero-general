@@ -1,0 +1,171 @@
+{
+  "archivo": "l02-m661-colado-losa-cimentacion-2026-06-23",
+  "lote": {
+    "id": "l02-m661",
+    "nombre": "Lote 02",
+    "manzana": "MZA 661",
+    "modelo": "Corsac B"
+  },
+  "proceso": {
+    "id": "colado-losa-cimentacion",
+    "nombre": "Colado de Losa de Cimentación",
+    "subtitulo": "Verificación previa y durante el colado",
+    "icono": "🏗️",
+    "archivo": "procesos/colado-losa-cimentacion.json",
+    "etapa": "Cimentación"
+  },
+  "fecha": "2026-06-23T19:08:24.347Z",
+  "residente": "Ing. Luis Santacruz",
+  "supervisor": "Ing. Efraín Figueroa",
+  "items": {
+    "ejes-principales": {
+      "estado": "si"
+    },
+    "escuadras": {
+      "estado": "si"
+    },
+    "profundidad": {
+      "estado": "si"
+    },
+    "ancho-cepas": {
+      "estado": "si"
+    },
+    "fondo-limpio": {
+      "estado": "si"
+    },
+    "sin-derrumbes": {
+      "estado": "si"
+    },
+    "tuberias-planos": {
+      "estado": "si"
+    },
+    "diametros-hs": {
+      "estado": "si"
+    },
+    "canalizaciones": {
+      "estado": "si"
+    },
+    "curvas": {
+      "estado": "si"
+    },
+    "acero-plano": {
+      "estado": "si"
+    },
+    "diametros-acero": {
+      "estado": "si"
+    },
+    "separacion-varillas": {
+      "estado": "si"
+    },
+    "traslapes": {
+      "estado": "si"
+    },
+    "alineamiento": {
+      "estado": "si"
+    },
+    "nivel-superior": {
+      "estado": "si"
+    },
+    "cimbra-firme": {
+      "estado": "si"
+    },
+    "juntas-cerradas": {
+      "estado": "si"
+    },
+    "niveles-desplante": {
+      "estado": "si"
+    },
+    "pendientes": {
+      "estado": "si"
+    },
+    "tapones-salidas": {
+      "estado": "no"
+    },
+    "hermeticidad": {
+      "estado": "si"
+    },
+    "tuberias-fijadas": {
+      "estado": "no"
+    },
+    "extremos-sellados": {
+      "estado": "no"
+    },
+    "amarres": {
+      "estado": "si"
+    },
+    "sin-oxido": {
+      "estado": "si"
+    },
+    "arranques-castillos": {
+      "estado": "si"
+    },
+    "malla-traslapes": {
+      "estado": "si"
+    },
+    "calzas-separadores": {
+      "estado": "si"
+    },
+    "recubrimiento": {
+      "estado": "si"
+    },
+    "plano-vigente": {
+      "estado": "si",
+      "obs": ""
+    },
+    "liberacion-supervisor": {
+      "estado": "si"
+    },
+    "concreto-especificacion": {
+      "estado": "si"
+    },
+    "laboratorio-sitio": {
+      "estado": "si"
+    },
+    "moldes-cilindros": {
+      "estado": "si"
+    },
+    "vibradores": {
+      "estado": "si"
+    },
+    "herramienta-acabado": {
+      "estado": "si"
+    },
+    "agua-curado": {
+      "estado": "si"
+    },
+    "remision": {
+      "estado": "si"
+    },
+    "resistencia": {
+      "estado": "si"
+    },
+    "hora-carga": {
+      "estado": "si"
+    },
+    "hora-llegada": {
+      "estado": "si"
+    },
+    "revenimiento": {
+      "estado": "si"
+    },
+    "temperatura": {
+      "estado": "si"
+    }
+  },
+  "stats": {
+    "total": 44,
+    "si": 41,
+    "no": 3,
+    "na": 0,
+    "sin": 0,
+    "aplicables": 44,
+    "pendientes": 3,
+    "avance": 93,
+    "criticosTotal": 16,
+    "criticosOk": 16,
+    "criticosPend": 0,
+    "criticosNo": 0
+  },
+  "veredicto": "APTO",
+  "catalogoVersion": "2026-06-16"
+}
