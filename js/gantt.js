@@ -263,13 +263,14 @@ function renderGantt() {
     }
   });
 
-  const baselineMode = document.body.classList.contains('baseline-mode');
   state.tasksFlat.forEach((task) => {
     const row = document.createElement('div');
     row.className = 'gantt-row';
     if (task.isHidden) row.classList.add('is-hidden');
     row.dataset.uid = task.uid;
-    if (baselineMode && task.baselineStart && task.baselineFinish) {
+    // La barra base se dibuja siempre; el CSS la oculta cuando baseline-mode está apagado
+    // (así el toggle es solo un flip de clase, sin reconstruir el panel).
+    if (task.baselineStart && task.baselineFinish) {
       row.appendChild(buildBaselineBar(task, sc));
     }
     if (task.start && task.finish) row.appendChild(buildBar(task, sc));
@@ -308,25 +309,26 @@ function buildBar(task, sc) {
     bar.appendChild(progress);
   }
 
-  const baselineMode = document.body.classList.contains('baseline-mode');
-  if (baselineMode && task.baselineStart && task.baselineFinish) {
+  // Tooltip normal (siempre presente). El de línea base se muestra vía CSS solo en baseline-mode.
+  bar.dataset.tooltip =
+    `${task.name}\n` +
+    `Inicio: ${formatDate(task.start)}\n` +
+    `Fin:    ${formatDate(task.finish)}\n` +
+    `Avance: ${task.percentComplete}%  •  ${task.durationDays}d` +
+    (task.isCritical ? '\n(Ruta crítica)' : '');
+
+  // La clase de severidad se añade siempre; el CSS solo la colorea en baseline-mode.
+  if (task.baselineStart && task.baselineFinish) {
     const sevClass = baselineSeverityClass(task.deviationDays);
     if (sevClass) bar.classList.add(sevClass);
     const dev = task.deviationDays;
     const signo = dev > 0 ? '+' : '';
-    bar.dataset.tooltip =
+    bar.dataset.tooltipBaseline =
       `${task.name}\n` +
       `Programado: ${formatDate(task.baselineStart)} → ${formatDate(task.baselineFinish)}\n` +
       `Real:       ${formatDate(task.start)} → ${formatDate(task.finish)}\n` +
       `Desviación: ${signo}${dev} días (${baselineSeverityLabel(dev)})\n` +
       `Avance:     ${task.percentComplete}%` +
-      (task.isCritical ? '\n(Ruta crítica)' : '');
-  } else {
-    bar.dataset.tooltip =
-      `${task.name}\n` +
-      `Inicio: ${formatDate(task.start)}\n` +
-      `Fin:    ${formatDate(task.finish)}\n` +
-      `Avance: ${task.percentComplete}%  •  ${task.durationDays}d` +
       (task.isCritical ? '\n(Ruta crítica)' : '');
   }
   return bar;
@@ -597,12 +599,12 @@ async function init() {
   const btnBaseline = $('btnBaseline');
   const legend = $('baselineLegend');
   function applyBaselineMode(on) {
+    // Solo conmuta clase y UI: las barras base y las clases de severidad ya están en el DOM.
+    // El CSS hace visible la línea base y el mapa de calor. Sin reconstruir el panel (evita el freeze).
     document.body.classList.toggle('baseline-mode', on);
     if (btnBaseline) btnBaseline.classList.toggle('active', on);
     if (legend) legend.hidden = !on;
     try { localStorage.setItem('altozano.baselineMode', on ? '1' : '0'); } catch (e) {}
-    renderGantt();
-    renderStatusLine();
   }
   if (btnBaseline) {
     btnBaseline.addEventListener('click', () => {

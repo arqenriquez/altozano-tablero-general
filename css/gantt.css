@@ -293,12 +293,14 @@ input[type="date"]:focus { outline: none; border-color: var(--accent-blue); box-
 /* Con el modo activado, la fila crece para alojar base (arriba) + real (abajo). */
 body.baseline-mode { --row-h: 36px; }
 
-/* Barra de línea base: fina, gris, sin relleno, encima del carril. */
+/* Barra de línea base: fina, gris, sin relleno, encima del carril.
+   Se dibuja siempre pero queda oculta (sin costo de layout) hasta activar baseline-mode. */
 .bar-baseline {
   position: absolute; top: 6px; height: 5px; border-radius: 1px;
   background: var(--baseline-gray); border: 1px solid #9aa19a;
-  min-width: 4px; z-index: 1; opacity: 0.9;
+  min-width: 4px; z-index: 1; opacity: 0.9; display: none;
 }
+body.baseline-mode .bar-baseline { display: block; }
 /* En modo base, la barra real baja para quedar debajo de la base. */
 body.baseline-mode .bar { top: 16px; height: 14px; z-index: 2; }
 body.baseline-mode .bar.summary { top: 18px; }
@@ -343,6 +345,8 @@ body.baseline-mode .bar.milestone.sev-grave    { background: var(--sev-grave); }
   font-family: var(--font-body); white-space: pre; pointer-events: none; z-index: 20;
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
+/* En modo línea base, el tooltip muestra Programado vs Real (mismo estilo, solo cambia el texto). */
+body.baseline-mode .bar[data-tooltip-baseline]:hover::after { content: attr(data-tooltip-baseline); }
 
 /* ============================================================ SCROLLBARS */
 .panel-left-body::-webkit-scrollbar, .panel-right::-webkit-scrollbar {

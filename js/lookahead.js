@@ -205,20 +205,20 @@ function buildBar(task, sc) {
     p.style.width = `${task.percentComplete}%`;
     bar.appendChild(p);
   }
-  const baselineMode = document.body.classList.contains('baseline-mode');
-  if (baselineMode && task.baselineStart && task.baselineFinish) {
+  // Tooltip normal (siempre presente). El de línea base se muestra vía CSS solo en baseline-mode.
+  bar.dataset.tooltip = `${task.name}\nInicio: ${formatDate(task.start)}\nFin: ${formatDate(task.finish)}\nAvance: ${task.percentComplete}%`;
+  // La clase de severidad se añade siempre; el CSS solo la colorea en baseline-mode.
+  if (task.baselineStart && task.baselineFinish) {
     const sevClass = baselineSeverityClass(task.deviationDays);
     if (sevClass) bar.classList.add(sevClass);
     const dev = task.deviationDays;
     const signo = dev > 0 ? '+' : '';
-    bar.dataset.tooltip =
+    bar.dataset.tooltipBaseline =
       `${task.name}\n` +
       `Programado: ${formatDate(task.baselineStart)} → ${formatDate(task.baselineFinish)}\n` +
       `Real:       ${formatDate(task.start)} → ${formatDate(task.finish)}\n` +
       `Desviación: ${signo}${dev} días (${baselineSeverityLabel(dev)})\n` +
       `Avance:     ${task.percentComplete}%`;
-  } else {
-    bar.dataset.tooltip = `${task.name}\nInicio: ${formatDate(task.start)}\nFin: ${formatDate(task.finish)}\nAvance: ${task.percentComplete}%`;
   }
   return bar;
 }
@@ -376,7 +376,8 @@ function renderGantt(rows) {
     const row = document.createElement('div');
     row.className = 'gantt-row';
     row.dataset.uid = task.uid;
-    if (document.body.classList.contains('baseline-mode') && task.baselineStart && task.baselineFinish) {
+    // La barra base se dibuja siempre; el CSS la oculta cuando baseline-mode está apagado.
+    if (task.baselineStart && task.baselineFinish) {
       row.appendChild(buildBaselineBar(task, sc));
     }
     if (task.start && task.finish) row.appendChild(buildBar(task, sc));
@@ -695,12 +696,12 @@ async function init() {
   const btnBaseline = $('btnBaseline');
   const legend = $('baselineLegend');
   function applyBaselineMode(on) {
+    // Solo conmuta clase y UI: las barras base y las clases de severidad ya están en el DOM.
+    // El CSS hace visible la línea base y el mapa de calor. Sin reconstruir el panel (evita el freeze).
     document.body.classList.toggle('baseline-mode', on);
     if (btnBaseline) btnBaseline.classList.toggle('active', on);
     if (legend) legend.hidden = !on;
     try { localStorage.setItem('altozano.baselineMode', on ? '1' : '0'); } catch (e) {}
-    renderGantt(visibleRows());
-    renderStatusLine();
   }
   if (btnBaseline) {
     btnBaseline.addEventListener('click', () => {
