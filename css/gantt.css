@@ -290,21 +290,23 @@ input[type="date"]:focus { outline: none; border-color: var(--accent-blue); box-
   --baseline-gray:#b7b9b4;  /* barra de línea base */
 }
 
-/* Con el modo activado, la fila crece para alojar base (arriba) + real (abajo). */
-body.baseline-mode { --row-h: 36px; }
+/* Altura de fila CONSTANTE (26px): base y real caben dentro del mismo carril.
+   Así activar baseline-mode NO recalcula el layout de las ~3,500 filas — solo repinta,
+   y el switch es tan rápido como el botón de Look Ahead. */
 
-/* Barra de línea base: fina, gris, sin relleno, encima del carril.
-   Se dibuja siempre pero queda oculta (sin costo de layout) hasta activar baseline-mode. */
+/* Barra de línea base: franja fina gris encima de la real.
+   Se dibuja y posiciona siempre, pero queda invisible hasta activar baseline-mode;
+   mostrarla es solo repintado (visibility), sin recálculo de layout. */
 .bar-baseline {
-  position: absolute; top: 6px; height: 5px; border-radius: 1px;
+  position: absolute; top: 2px; height: 4px; border-radius: 1px;
   background: var(--baseline-gray); border: 1px solid #9aa19a;
-  min-width: 4px; z-index: 1; opacity: 0.9; display: none;
+  min-width: 4px; z-index: 1; opacity: 0.9; visibility: hidden;
 }
-body.baseline-mode .bar-baseline { display: block; }
-/* En modo base, la barra real baja para quedar debajo de la base. */
-body.baseline-mode .bar { top: 16px; height: 14px; z-index: 2; }
-body.baseline-mode .bar.summary { top: 18px; }
-body.baseline-mode .bar.milestone { top: 16px; }
+body.baseline-mode .bar-baseline { visibility: visible; }
+/* En modo base, la barra real baja un poco para dejar la franja gris arriba (misma altura). */
+body.baseline-mode .bar { top: 8px; z-index: 2; }
+body.baseline-mode .bar.summary { top: 10px; }
+body.baseline-mode .bar.milestone { top: 9px; }
 
 /* Mapa de calor: el color de severidad manda sobre el color de estado. */
 body.baseline-mode .bar.sev-ontime   { background: var(--sev-ontime);   border-color: #1a7a35; }
@@ -321,11 +323,11 @@ body.baseline-mode .bar.milestone.sev-ontime   { background: var(--sev-ontime); 
 body.baseline-mode .bar.milestone.sev-leve     { background: var(--sev-leve); }
 body.baseline-mode .bar.milestone.sev-moderado { background: var(--sev-moderado); }
 body.baseline-mode .bar.milestone.sev-grave    { background: var(--sev-grave); }
-/* Rombo de base para hitos. */
+/* Rombo de base para hitos (franja superior, hueco gris). */
 .bar-baseline.milestone {
-  width: 9px; height: 9px; top: 4px; background: transparent;
+  width: 7px; height: 7px; top: 0; background: transparent;
   border: 1.5px solid var(--baseline-gray);
-  transform: translateX(-4px) rotate(45deg); border-radius: 1px;
+  transform: translateX(-3px) rotate(45deg); border-radius: 1px;
 }
 
 .status-line {
