@@ -281,6 +281,51 @@ input[type="date"]:focus { outline: none; border-color: var(--accent-blue); box-
 .bar.milestone .bar-progress { display: none; }
 .bar.critical { box-shadow: 0 0 0 1.5px var(--accent-red); }
 
+/* ---------- LÍNEA BASE vs REAL ---------- */
+:root {
+  --sev-ontime:   #1f8f3e;  /* verde — en tiempo o adelantada */
+  --sev-leve:     #e0b53a;  /* amarillo — atraso leve (1–7 d) */
+  --sev-moderado: #d98428;  /* naranja — atraso moderado (8–14 d) */
+  --sev-grave:    #c0392b;  /* rojo — atraso grave (>14 d) */
+  --baseline-gray:#b7b9b4;  /* barra de línea base */
+}
+
+/* Con el modo activado, la fila crece para alojar base (arriba) + real (abajo). */
+body.baseline-mode { --row-h: 36px; }
+
+/* Barra de línea base: fina, gris, sin relleno, encima del carril. */
+.bar-baseline {
+  position: absolute; top: 6px; height: 5px; border-radius: 1px;
+  background: var(--baseline-gray); border: 1px solid #9aa19a;
+  min-width: 4px; z-index: 1; opacity: 0.9;
+}
+/* En modo base, la barra real baja para quedar debajo de la base. */
+body.baseline-mode .bar { top: 16px; height: 14px; z-index: 2; }
+body.baseline-mode .bar.summary { top: 18px; }
+body.baseline-mode .bar.milestone { top: 16px; }
+
+/* Mapa de calor: el color de severidad manda sobre el color de estado. */
+body.baseline-mode .bar.sev-ontime   { background: var(--sev-ontime);   border-color: #1a7a35; }
+body.baseline-mode .bar.sev-leve     { background: var(--sev-leve);     border-color: #b9942b; }
+body.baseline-mode .bar.sev-moderado { background: var(--sev-moderado); border-color: #b86d1f; }
+body.baseline-mode .bar.sev-grave    { background: var(--sev-grave);    border-color: #9c2c20; }
+/* El relleno de avance se mantiene; oscurecerlo levemente para contraste. */
+body.baseline-mode .bar.sev-leve .bar-progress,
+body.baseline-mode .bar.sev-ontime .bar-progress,
+body.baseline-mode .bar.sev-moderado .bar-progress,
+body.baseline-mode .bar.sev-grave .bar-progress { background: rgba(0,0,0,0.22); }
+/* Hito con severidad (rombo). */
+body.baseline-mode .bar.milestone.sev-ontime   { background: var(--sev-ontime); }
+body.baseline-mode .bar.milestone.sev-leve     { background: var(--sev-leve); }
+body.baseline-mode .bar.milestone.sev-moderado { background: var(--sev-moderado); }
+body.baseline-mode .bar.milestone.sev-grave    { background: var(--sev-grave); }
+/* Rombo de base para hitos. */
+.bar-baseline.milestone {
+  width: 9px; height: 9px; top: 4px; background: transparent;
+  border: 1.5px solid var(--baseline-gray);
+  transform: translateX(-4px) rotate(45deg); border-radius: 1px;
+}
+
 .status-line {
   position: absolute; top: 0; bottom: 0; width: 2px;
   background: var(--accent-gold-2); z-index: 4; pointer-events: none;

@@ -205,8 +205,38 @@ function buildBar(task, sc) {
     p.style.width = `${task.percentComplete}%`;
     bar.appendChild(p);
   }
-  bar.dataset.tooltip = `${task.name}\nInicio: ${formatDate(task.start)}\nFin: ${formatDate(task.finish)}\nAvance: ${task.percentComplete}%`;
+  const baselineMode = document.body.classList.contains('baseline-mode');
+  if (baselineMode && task.baselineFinish) {
+    const sevClass = baselineSeverityClass(task.deviationDays);
+    if (sevClass) bar.classList.add(sevClass);
+    const dev = task.deviationDays;
+    const signo = dev > 0 ? '+' : '';
+    bar.dataset.tooltip =
+      `${task.name}\n` +
+      `Programado: ${formatDate(task.baselineStart)} → ${formatDate(task.baselineFinish)}\n` +
+      `Real:       ${formatDate(task.start)} → ${formatDate(task.finish)}\n` +
+      `Desviación: ${signo}${dev} días (${baselineSeverityLabel(dev)})\n` +
+      `Avance:     ${task.percentComplete}%`;
+  } else {
+    bar.dataset.tooltip = `${task.name}\nInicio: ${formatDate(task.start)}\nFin: ${formatDate(task.finish)}\nAvance: ${task.percentComplete}%`;
+  }
   return bar;
+}
+
+function buildBaselineBar(task, sc) {
+  const bb = document.createElement('div');
+  bb.className = 'bar-baseline';
+  if (task.isMilestone) {
+    bb.classList.add('milestone');
+    const offD = (task.baselineFinish - sc.origin) / MS_PER_DAY;
+    bb.style.left = `${offD * sc.pxPerDay}px`;
+    return bb;
+  }
+  const startOff = (task.baselineStart - sc.origin) / MS_PER_DAY;
+  const durD = Math.max(0, (task.baselineFinish - task.baselineStart) / MS_PER_DAY);
+  bb.style.left = `${startOff * sc.pxPerDay}px`;
+  bb.style.width = `${Math.max(4, durD * sc.pxPerDay)}px`;
+  return bb;
 }
 
 /* ---- 5) RENDER ---- */
@@ -343,6 +373,9 @@ function renderGantt(rows) {
     const row = document.createElement('div');
     row.className = 'gantt-row';
     row.dataset.uid = task.uid;
+    if (document.body.classList.contains('baseline-mode') && task.baselineStart && task.baselineFinish) {
+      row.appendChild(buildBaselineBar(task, sc));
+    }
     if (task.start && task.finish) row.appendChild(buildBar(task, sc));
     frag.appendChild(row);
   });
