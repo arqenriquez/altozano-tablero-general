@@ -438,3 +438,22 @@ body.header-compact .btn-header-collapse .collapse-arrow { transform: rotate(180
   body.header-compact #btnHeaderCollapse { grid-column: auto; justify-self: auto; }
   body.header-compact .header-controls .meta-item, body.header-compact .header-controls .meta-sep { display: none; }
 }
+
+/* ----------------------------------------------------------------
+   BASELINE LEGEND + BUTTON ACTIVE STATE
+   ---------------------------------------------------------------- */
+.baseline-legend {
+  display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+  padding: 6px 20px; background: var(--bg-headerbar);
+  border-bottom: 1px solid var(--border-strong);
+  font-size: 11px; color: var(--text-secondary);
+}
+.baseline-legend[hidden] { display: none; }
+.bl-item { display: inline-flex; align-items: center; gap: 6px; }
+.bl-swatch { width: 14px; height: 10px; border-radius: 2px; display: inline-block; border: 1px solid rgba(0,0,0,0.15); }
+.bl-base     { background: var(--baseline-gray); height: 5px; }
+.bl-ontime   { background: var(--sev-ontime); }
+.bl-leve     { background: var(--sev-leve); }
+.bl-moderado { background: var(--sev-moderado); }
+.bl-grave    { background: var(--sev-grave); }
+.btn-baseline.active { background: var(--bar-summary); color: #fff; border-color: var(--bar-summary); font-weight: 600; }

@@ -689,6 +689,24 @@ async function init() {
 
   const bhc = $('btnHeaderCollapse');
   if (bhc) bhc.addEventListener('click', () => document.body.classList.toggle('header-compact'));
+  const btnBaseline = $('btnBaseline');
+  const legend = $('baselineLegend');
+  function applyBaselineMode(on) {
+    document.body.classList.toggle('baseline-mode', on);
+    if (btnBaseline) btnBaseline.classList.toggle('active', on);
+    if (legend) legend.hidden = !on;
+    try { localStorage.setItem('altozano.baselineMode', on ? '1' : '0'); } catch (e) {}
+    renderGantt(visibleRows());
+    renderStatusLine();
+  }
+  if (btnBaseline) {
+    btnBaseline.addEventListener('click', () => {
+      applyBaselineMode(!document.body.classList.contains('baseline-mode'));
+    });
+  }
+  let __blInit = false;
+  try { __blInit = localStorage.getItem('altozano.baselineMode') === '1'; } catch (e) {}
+  if (__blInit) applyBaselineMode(true);
   dom.taskList.addEventListener('click', (e) => {
     const tog = e.target.closest('.task-toggle');
     if (!tog || tog.classList.contains('empty')) return;

@@ -597,6 +597,24 @@ async function init() {
   if (btnDetailsToggle) btnDetailsToggle.addEventListener('click', () => document.body.classList.toggle('details-mode'));
   const btnLookAhead = $('btnLookAhead');
   if (btnLookAhead) btnLookAhead.addEventListener('click', toggleLookAhead);
+  const btnBaseline = $('btnBaseline');
+  const legend = $('baselineLegend');
+  function applyBaselineMode(on) {
+    document.body.classList.toggle('baseline-mode', on);
+    if (btnBaseline) btnBaseline.classList.toggle('active', on);
+    if (legend) legend.hidden = !on;
+    try { localStorage.setItem('altozano.baselineMode', on ? '1' : '0'); } catch (e) {}
+    renderGantt();
+    renderStatusLine();
+  }
+  if (btnBaseline) {
+    btnBaseline.addEventListener('click', () => {
+      applyBaselineMode(!document.body.classList.contains('baseline-mode'));
+    });
+  }
+  let __blInit = false;
+  try { __blInit = localStorage.getItem('altozano.baselineMode') === '1'; } catch (e) {}
+  if (__blInit) applyBaselineMode(true);
   const btnHeaderCollapse = $('btnHeaderCollapse');
   if (btnHeaderCollapse) btnHeaderCollapse.addEventListener('click', () => document.body.classList.toggle('header-compact'));
   const btnNameShrink = $('btnNameShrink');

@@ -55,6 +55,10 @@
                 title="Filtra a las tareas que inician en esta semana y las 4 siguientes (S01–S05)">
           Look Ahead
         </button>
+        <button class="btn btn-baseline" id="btnBaseline"
+                title="Compara la línea base (programado) con el avance real; colorea por atraso">
+          Línea base
+        </button>
         <button class="btn btn-mobile-toggle" id="btnDetailsToggle"
                 aria-label="Mostrar u ocultar columnas de detalle">
           <span class="toggle-arrow">▶</span>
@@ -74,6 +78,14 @@
       </div>
     </div>
   </header>
+
+  <div class="baseline-legend" id="baselineLegend" hidden>
+    <span class="bl-item"><span class="bl-swatch bl-base"></span> Programado (línea base)</span>
+    <span class="bl-item"><span class="bl-swatch bl-ontime"></span> En tiempo</span>
+    <span class="bl-item"><span class="bl-swatch bl-leve"></span> Atraso leve (≤7d)</span>
+    <span class="bl-item"><span class="bl-swatch bl-moderado"></span> Atraso moderado (8–14d)</span>
+    <span class="bl-item"><span class="bl-swatch bl-grave"></span> Atraso grave (&gt;14d)</span>
+  </div>
 
   <!-- LOADING -->
   <div class="gantt-loading" id="ganttLoading">
