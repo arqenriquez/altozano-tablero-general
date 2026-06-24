@@ -309,12 +309,9 @@ function buildBar(task, sc) {
   }
 
   const baselineMode = document.body.classList.contains('baseline-mode');
-  if (baselineMode && task.baselineFinish) {
+  if (baselineMode && task.baselineStart && task.baselineFinish) {
     const sevClass = baselineSeverityClass(task.deviationDays);
     if (sevClass) bar.classList.add(sevClass);
-  }
-
-  if (baselineMode && task.baselineFinish) {
     const dev = task.deviationDays;
     const signo = dev > 0 ? '+' : '';
     bar.dataset.tooltip =

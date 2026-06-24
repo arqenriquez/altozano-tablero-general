@@ -206,7 +206,7 @@ function buildBar(task, sc) {
     bar.appendChild(p);
   }
   const baselineMode = document.body.classList.contains('baseline-mode');
-  if (baselineMode && task.baselineFinish) {
+  if (baselineMode && task.baselineStart && task.baselineFinish) {
     const sevClass = baselineSeverityClass(task.deviationDays);
     if (sevClass) bar.classList.add(sevClass);
     const dev = task.deviationDays;
@@ -229,13 +229,16 @@ function buildBaselineBar(task, sc) {
   if (task.isMilestone) {
     bb.classList.add('milestone');
     const offD = (task.baselineFinish - sc.origin) / MS_PER_DAY;
-    bb.style.left = `${offD * sc.pxPerDay}px`;
+    const clampedOff = Math.max(0, Math.min(sc.totalDays, offD));
+    bb.style.left = `${clampedOff * sc.pxPerDay}px`;
     return bb;
   }
   const startOff = (task.baselineStart - sc.origin) / MS_PER_DAY;
-  const durD = Math.max(0, (task.baselineFinish - task.baselineStart) / MS_PER_DAY);
-  bb.style.left = `${startOff * sc.pxPerDay}px`;
-  bb.style.width = `${Math.max(4, durD * sc.pxPerDay)}px`;
+  const endOff = (task.baselineFinish - sc.origin) / MS_PER_DAY;
+  const left = Math.max(0, startOff);
+  const right = Math.min(sc.totalDays, endOff);
+  bb.style.left = `${left * sc.pxPerDay}px`;
+  bb.style.width = `${Math.max(4, (right - left) * sc.pxPerDay)}px`;
   return bb;
 }
 
