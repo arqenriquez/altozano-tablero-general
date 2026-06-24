@@ -141,7 +141,9 @@
   <div id="la-print"></div>
 
   <script>
-    document.write('<script src="js/lookahead.js?v=' + Date.now() + '"><\/script>');
+    var __v = Date.now();
+    document.write('<script src="js/baseline.js?v=' + __v + '"><\/script>');
+    document.write('<script src="js/lookahead.js?v=' + __v + '"><\/script>');
   </script>
 </body>
 </html>

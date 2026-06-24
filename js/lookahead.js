@@ -99,8 +99,16 @@ function xmlToTasks(doc) {
       finish: parseDate(getChildText(node, 'Finish')),
       percentComplete: Math.max(0, Math.min(100, parseInt(getChildText(node, 'PercentComplete'), 10) || 0)),
       durationDays: parseDurationDays(getChildText(node, 'Duration')),
+      baselineStart: null,
+      baselineFinish: null,
+      deviationDays: null,
       children: [], parent: null, isCollapsed: false
     });
+    const __t = tasks[tasks.length - 1];
+    const __bl = getBaselineDates(node);
+    __t.baselineStart = __bl.start;
+    __t.baselineFinish = __bl.finish;
+    __t.deviationDays = baselineDeviationDays(__t.finish, __t.baselineFinish);
   }
   return tasks;
 }
