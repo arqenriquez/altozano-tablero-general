@@ -1,166 +1,54 @@
 {
-  "inicio": "2026-06-15",
-  "periodo": "15 de junio al 21 de junio 2026",
-  "semana": "06",
-  "actualizado": "2026-06-15",
+  "inicio": "2026-06-22",
+  "periodo": "22 de junio al 28 de junio 2026",
+  "semana": "07",
+  "actualizado": "2026-06-23",
   "tasks": [
     {
-      "uid": 9,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": false
-    },
-    {
-      "uid": 51,
-      "mat": true,
-      "mo": true,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 52,
-      "mat": true,
-      "mo": true,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 55,
-      "mat": false,
-      "mo": true,
-      "proy": true,
-      "prev": false
-    },
-    {
-      "uid": 56,
-      "mat": false,
-      "mo": true,
-      "proy": true,
-      "prev": false
-    },
-    {
       "uid": 57,
-      "mat": false,
+      "mat": true,
       "mo": true,
       "proy": true,
-      "prev": false
-    },
-    {
-      "uid": 61,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": false
+      "prev": true
     },
     {
       "uid": 64,
       "mat": false,
-      "mo": false,
+      "mo": true,
       "proy": true,
       "prev": false
     },
     {
       "uid": 65,
       "mat": false,
-      "mo": false,
+      "mo": true,
       "proy": true,
       "prev": false
     },
     {
       "uid": 66,
       "mat": false,
-      "mo": false,
+      "mo": true,
       "proy": true,
       "prev": false
     },
     {
       "uid": 67,
       "mat": false,
-      "mo": false,
+      "mo": true,
       "proy": true,
       "prev": false
     },
     {
       "uid": 68,
       "mat": false,
-      "mo": false,
+      "mo": true,
       "proy": true,
       "prev": false
     },
     {
       "uid": 69,
       "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": false
-    },
-    {
-      "uid": 70,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": false
-    },
-    {
-      "uid": 71,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": false
-    },
-    {
-      "uid": 72,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": false
-    },
-    {
-      "uid": 73,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": false
-    },
-    {
-      "uid": 74,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": false
-    },
-    {
-      "uid": 75,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": false
-    },
-    {
-      "uid": 76,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": false
-    },
-    {
-      "uid": 304,
-      "mat": false,
-      "mo": true,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 305,
-      "mat": false,
-      "mo": true,
-      "proy": true,
-      "prev": false
-    },
-    {
-      "uid": 310,
-      "mat": true,
       "mo": true,
       "proy": true,
       "prev": false
@@ -176,251 +64,6 @@
       "uid": 314,
       "mat": true,
       "mo": true,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 315,
-      "mat": false,
-      "mo": true,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 316,
-      "mat": false,
-      "mo": true,
-      "proy": false,
-      "prev": false
-    },
-    {
-      "uid": 318,
-      "mat": false,
-      "mo": true,
-      "proy": true,
-      "prev": false
-    },
-    {
-      "uid": 319,
-      "mat": false,
-      "mo": true,
-      "proy": true,
-      "prev": false
-    },
-    {
-      "uid": 609,
-      "mat": false,
-      "mo": true,
-      "proy": true,
-      "prev": false
-    },
-    {
-      "uid": 610,
-      "mat": false,
-      "mo": true,
-      "proy": true,
-      "prev": false
-    },
-    {
-      "uid": 615,
-      "mat": true,
-      "mo": true,
-      "proy": true,
-      "prev": false
-    },
-    {
-      "uid": 616,
-      "mat": true,
-      "mo": true,
-      "proy": true,
-      "prev": false
-    },
-    {
-      "uid": 617,
-      "mat": true,
-      "mo": true,
-      "proy": true,
-      "prev": false
-    },
-    {
-      "uid": 623,
-      "mat": false,
-      "mo": true,
-      "proy": false,
-      "prev": false
-    },
-    {
-      "uid": 624,
-      "mat": false,
-      "mo": true,
-      "proy": false,
-      "prev": false
-    },
-    {
-      "uid": 898,
-      "mat": false,
-      "mo": true,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 899,
-      "mat": false,
-      "mo": true,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 900,
-      "mat": false,
-      "mo": true,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 903,
-      "mat": false,
-      "mo": true,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 904,
-      "mat": false,
-      "mo": true,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 1203,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 1204,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 1205,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 1208,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 1209,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 1210,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 1211,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 1212,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 1503,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 1504,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 1505,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 1506,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 1507,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 1508,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 1509,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 1510,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 1511,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 1512,
-      "mat": false,
-      "mo": false,
-      "proy": true,
-      "prev": true
-    },
-    {
-      "uid": 1513,
-      "mat": false,
-      "mo": false,
       "proy": true,
       "prev": true
     }
