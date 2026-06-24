@@ -2,10 +2,24 @@
   "inicio": "2026-06-22",
   "periodo": "22 de junio al 28 de junio 2026",
   "semana": "07",
-  "actualizado": "2026-06-23",
+  "actualizado": "2026-06-24",
   "tasks": [
     {
-      "uid": 57,
+      "uid": 9,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 55,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 56,
       "mat": true,
       "mo": true,
       "proy": true,
@@ -54,6 +68,69 @@
       "prev": false
     },
     {
+      "uid": 70,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 71,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 72,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 73,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 74,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 75,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 76,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 311,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 312,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
       "uid": 313,
       "mat": true,
       "mo": true,
@@ -66,6 +143,265 @@
       "mo": true,
       "proy": true,
       "prev": true
+    },
+    {
+      "uid": 315,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 316,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 317,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 318,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 319,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 320,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 590,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 591,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 592,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 593,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 594,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 595,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 596,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 597,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 598,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 599,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 600,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 601,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 602,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 603,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 604,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 605,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 606,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 607,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 608,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 611,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 612,
+      "mat": true,
+      "mo": true,
+      "proy": true,
+      "prev": true
+    },
+    {
+      "uid": 893,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 894,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 895,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 896,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 1198,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 1199,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 1200,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 1503,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 1504,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
+    },
+    {
+      "uid": 1505,
+      "mat": false,
+      "mo": true,
+      "proy": true,
+      "prev": false
     }
   ]
 }
