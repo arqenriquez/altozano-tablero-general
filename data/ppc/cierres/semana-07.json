@@ -1,0 +1,96 @@
+{
+  "semana": "07",
+  "periodo": "22 al 28 de junio 2026",
+  "fecha_cierre": "2026-06-27",
+  "responsable": "Arq. Jorge Enríquez",
+  "total": 12,
+  "cumplidas": 9,
+  "no_cumplidas": 3,
+  "ppc_pct": 75,
+  "metas": [
+    {
+      "actividad": "Llenar Checklist de calidad previo a colado - L02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Colado de losa de cimentación - L02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Inicio de pegado de ladrillo en Muros - L02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Inicio de colado de castillos en Muros - L02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Terminar instalaciones hidrosanitarias - L03",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L03",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Terminar Instalaciones de Gas - L03",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L03",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Suministrar complemento de reglas - Cimbra perimetral - L03",
+      "responsable": "Ing. Marco De la Cruz",
+      "lote": "L03",
+      "cumplida": false,
+      "motivo": "Se suministró pero no están aún en sitio, están en taller del proveeor"
+    },
+    {
+      "actividad": "Colado de cadenas de cerramiento - L04",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L04",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Suministro de cimbra y colado de columnas - L04",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L04",
+      "cumplida": false,
+      "motivo": "Se solicitó pero no fue suministrada - Seguimiento a suministros básicos"
+    },
+    {
+      "actividad": "Suministrar Acero para cimentación Lotes 21, 22",
+      "responsable": "Ing. Marco De la Cruz",
+      "lote": "General",
+      "cumplida": false,
+      "motivo": "Se solicitó pero no fue suministrada - Seguimiento a suministros básicos"
+    },
+    {
+      "actividad": "Terminar el 100% de excavaciones en Lotes 20, 21 y 22",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "General",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Incremento en Fuerza de Trabajo General",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "General",
+      "cumplida": true,
+      "motivo": ""
+    }
+  ]
+}
