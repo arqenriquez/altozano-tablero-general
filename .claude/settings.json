@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git commit -m ' *)",
+      "Bash(python -c ' *)",
+      "Bash(cd \"c:\\\\Users\\\\Jorge Enriquez\\\\OneDrive\\\\03. EZ PROJECT MANAGEMENT\\\\06. CLAUDE CODE\\\\06. ALTOZANO - TABLERO GENERAL\" && echo \"HEAD:\" && git rev-parse --short HEAD && echo \"ramas:\" && git branch && echo \"ligeros en /tmp/ligero:\" && ls /tmp/ligero/ && echo \"status:\" && git status --short | head)",
+      "Read(//tmp/**)",
+      "Bash(git restore *)"
+    ]
+  }
+}
