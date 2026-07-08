@@ -1,0 +1,275 @@
+{
+  "proyecto": {
+    "nombre": "Altozano · 6 Viviendas",
+    "nombre_corto": "Altozano",
+    "ubicacion": "Hermosillo, Sonora",
+    "gerencia": "Metta Arquitectura y Construcción"
+  },
+  "semana": {
+    "numero": "08",
+    "periodo": "29 de junio al 4 de julio, 2026",
+    "fecha_generacion": "4 julio 2026"
+  },
+  "avance_global": {
+    "programado_pct": 8.13,
+    "real_pct": 6.14,
+    "variacion_pct": -1.99,
+    "programado_mxn": 1072211.1,
+    "real_mxn": 809695.42
+  },
+  "actividades": {
+    "realizadas": [
+      "Continuación de muros de tabique Lote 02 M-661",
+      "Terminación de instalaciones hidrosanitarias Lote 03 M-661",
+      "Fumigación Lote 03 M-661",
+      "Colocación de hule negro Lote 03 M-661",
+      "Colocación de acero de trabes de cimentación en sitio Lote 03 M-661",
+      "Continuación de habilitado de acero Lote 22 M-663",
+      "Inicio de instalaciones hidrosanitarias y gas Lote 22 M-663",
+      "Inicio de instalaciones hidrosanitarias Lote 21 M-663",
+      "Terminación de excavaciones de cimentación Lote 20 M-663"
+    ],
+    "programadas": [
+      "Continuar con muros de tabique y block Lote 02 M-661",
+      "Iniciar colados de castillos Lote 02 M-661",
+      "Colado de losa de cimentación Lote 03 M-661",
+      "Suministro de viguetas pretensadas para losa de entrepiso Lote 04 M-661",
+      "Suministro de cimbra para losa y escalera Lote 04 M-661",
+      "Terminación de instalaciones hidrosanitarias, fumigación, cimbra perimetral y acero en sitio Lote 22 M-663",
+      "Terminación de instalaciones hidrosanitarias Lote 21 M-663",
+      "Inicio de instalaciones hidrosanitarias Lote 20 M-663"
+    ]
+  },
+  "problemas": [
+    {
+      "descripcion": "El retraso de los pagos de semanas anteriores afectó el ritmo del proyecto, impactando en tiempo",
+      "estatus": "Importante",
+      "fecha_limite": "",
+      "responsable": "Altozano"
+    },
+    {
+      "descripcion": "Revisar programa y reprogramación por desfase en pagos con el cliente",
+      "estatus": "Importante",
+      "fecha_limite": "",
+      "responsable": "Metta"
+    }
+  ],
+  "orden_lotes": [
+    "04",
+    "02",
+    "03",
+    "22",
+    "21",
+    "20"
+  ],
+  "lotes": {
+    "04": {
+      "modelo": "Ártico A",
+      "mza": "661",
+      "programado": 18.03,
+      "real": 15.7,
+      "variacion": -2.34,
+      "actividades": [
+        "Pegado de muros de ladrillo y block en enrases",
+        "Colado de castillos en enrases",
+        "Colado de columnas en cochera"
+      ],
+      "fotos": 4
+    },
+    "02": {
+      "modelo": "Corsac B",
+      "mza": "661",
+      "programado": 13.61,
+      "real": 8.49,
+      "variacion": -5.11,
+      "actividades": [
+        "Continuación de muros de tabique y block",
+        "Inicio de colado de castillos",
+        "Suministro del resto de tabique térmico"
+      ],
+      "fotos": 4
+    },
+    "03": {
+      "modelo": "Corsac A",
+      "mza": "661",
+      "programado": 8.61,
+      "real": 6.11,
+      "variacion": -2.5,
+      "actividades": [
+        "Terminación de instalaciones hidrosanitarias",
+        "Fumigación y colocación de hule negro",
+        "Colocación de acero de trabes de cimentación en sitio"
+      ],
+      "fotos": 4
+    },
+    "22": {
+      "modelo": "Corsac B",
+      "mza": "663",
+      "programado": 7.99,
+      "real": 4.44,
+      "variacion": -3.55,
+      "actividades": [
+        "Continuación de habilitado de acero",
+        "Inicio de instalaciones hidrosanitarias y de gas"
+      ],
+      "fotos": 2
+    },
+    "21": {
+      "modelo": "Corsac A",
+      "mza": "663",
+      "programado": 0.66,
+      "real": 2.84,
+      "variacion": 2.18,
+      "actividades": [
+        "Inicio de instalaciones hidrosanitarias"
+      ],
+      "fotos": 2
+    },
+    "20": {
+      "modelo": "Ártico A",
+      "mza": "663",
+      "programado": 0.59,
+      "real": 0.38,
+      "variacion": -0.2,
+      "actividades": [
+        "Terminación de excavaciones de cimentación",
+        "Inicio de excavaciones para instalaciones hidrosanitarias"
+      ],
+      "fotos": 2
+    }
+  },
+  "curva_financiera": {
+    "valor_total_mxn": 13184120.92,
+    "programado": [
+      0.0,
+      0.0634,
+      0.4981,
+      1.1112,
+      1.8866,
+      3.193,
+      5.2422,
+      9.2478,
+      11.9265,
+      14.9412,
+      18.1745,
+      21.7706,
+      25.5411,
+      28.4836,
+      31.3267,
+      33.3899,
+      35.4956,
+      37.0854,
+      39.1824,
+      43.5302,
+      47.4187,
+      53.0763,
+      59.4254,
+      64.8224,
+      69.8373,
+      76.39,
+      82.6627,
+      87.2692,
+      91.2414,
+      94.6275,
+      96.7362,
+      97.9362,
+      98.825,
+      99.3884,
+      99.6796,
+      99.7617,
+      100.0
+    ],
+    "reprogramado": [
+      0.0,
+      0.0634,
+      0.4981,
+      1.1112,
+      1.8866,
+      3.193,
+      4.2194,
+      5.678,
+      7.8874,
+      10.9021,
+      14.6047,
+      18.2008,
+      21.9713,
+      24.9138,
+      27.7568,
+      29.8201,
+      32.7177,
+      35.0993,
+      39.4631,
+      43.1347,
+      47.8595,
+      53.2944,
+      59.6434,
+      65.0405,
+      70.0553,
+      76.608,
+      82.8807,
+      87.4872,
+      91.4594,
+      94.8455,
+      96.9542,
+      98.1543,
+      99.043,
+      99.6064,
+      99.8976,
+      99.9798,
+      100.0
+    ],
+    "real": [
+      0.0,
+      0.1407,
+      0.4216,
+      1.2456,
+      1.8963,
+      3.1736,
+      4.1667,
+      5.4943,
+      6.1414
+    ]
+  },
+  "abastecimientos": {
+    "entregados": [
+      {
+        "concepto": "Complemento de ladrillo y block para Lote 02",
+        "fecha_requerida": "29-jun",
+        "estatus": "Suministrado",
+        "importancia": "Alta"
+      },
+      {
+        "concepto": "Material para instalaciones hidrosanitarias Lote 21",
+        "fecha_requerida": "27-jun",
+        "estatus": "Suministrado",
+        "importancia": "Media"
+      }
+    ],
+    "programados": [
+      {
+        "concepto": "Acero para Lote 21",
+        "fecha_requerida": "7-jul",
+        "estatus": "Solicitado",
+        "importancia": "Media"
+      },
+      {
+        "concepto": "Material para instalaciones hidrosanitarias Lote 21",
+        "fecha_requerida": "7-jul",
+        "estatus": "Solicitado",
+        "importancia": "Media"
+      },
+      {
+        "concepto": "Material para instalaciones hidrosanitarias Lote 20",
+        "fecha_requerida": "7-jul",
+        "estatus": "Solicitado",
+        "importancia": "Media"
+      },
+      {
+        "concepto": "Viguetas para losa de entrepiso Lote 04",
+        "fecha_requerida": "7-jul",
+        "estatus": "En cotización",
+        "importancia": "Media"
+      }
+    ]
+  }
+}

@@ -157,6 +157,7 @@ function renderGraficas(data) {
       const { ctx, chartArea } = chart;
       const placed = [];
       chart.data.datasets.forEach((ds, di) => {
+        if (ds.hideLastLabel) return;
         const meta = chart.getDatasetMeta(di);
         let lastIdx = -1;
         for (let j = ds.data.length - 1; j >= 0; j--) {
@@ -201,14 +202,23 @@ function renderGraficas(data) {
     }
   };
 
+  // Reprogramación 01: si el reporte trae la serie "reprogramado", se muestran 3 líneas
+  // (línea base original punteada gris + programa actualizado + real). Si no, las 2 originales.
+  const tieneReprog = Array.isArray(cf.reprogramado) && cf.reprogramado.length > 0;
+  const datasets = [];
+  if (tieneReprog) {
+    datasets.push({ label: 'Línea base', data: cf.programado, borderColor: '#b7b4ac', backgroundColor: 'transparent', borderWidth: 1.5, borderDash: [5, 4], tension: 0.35, fill: false, pointRadius: 0, pointHoverRadius: 4, hideLastLabel: true });
+    datasets.push({ label: 'Programa actualizado', data: cf.reprogramado, borderColor: '#232726', backgroundColor: 'rgba(35,39,38,0.05)', borderWidth: 2, tension: 0.35, fill: true, pointRadius: 0, pointHoverRadius: 5 });
+  } else {
+    datasets.push({ label: 'Programado', data: cf.programado, borderColor: '#232726', backgroundColor: 'rgba(35,39,38,0.05)', borderWidth: 2, tension: 0.35, fill: true, pointRadius: 0, pointHoverRadius: 5 });
+  }
+  datasets.push({ label: 'Real', data: cf.real, borderColor: '#2f5d54', backgroundColor: 'transparent', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 4, pointBackgroundColor: '#2f5d54' });
+
   new Chart($('#curvaS').getContext('2d'), {
     type: 'line',
     data: {
       labels,
-      datasets: [
-        { label: 'Programado', data: cf.programado, borderColor: '#232726', backgroundColor: 'rgba(35,39,38,0.05)', borderWidth: 2, tension: 0.35, fill: true, pointRadius: 0, pointHoverRadius: 5 },
-        { label: 'Real', data: cf.real, borderColor: '#2f5d54', backgroundColor: 'transparent', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 4, pointBackgroundColor: '#2f5d54' }
-      ]
+      datasets
     },
     options: {
       responsive: true, maintainAspectRatio: false,
