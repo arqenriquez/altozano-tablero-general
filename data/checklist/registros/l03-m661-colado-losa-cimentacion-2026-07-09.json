@@ -1,0 +1,177 @@
+{
+  "archivo": "l03-m661-colado-losa-cimentacion-2026-07-09",
+  "lote": {
+    "id": "l03-m661",
+    "nombre": "Lote 03",
+    "manzana": "MZA 661",
+    "modelo": "Corsac A"
+  },
+  "proceso": {
+    "id": "colado-losa-cimentacion",
+    "nombre": "Colado de Losa de Cimentación",
+    "subtitulo": "Verificación previa y durante el colado",
+    "icono": "🏗️",
+    "archivo": "procesos/colado-losa-cimentacion.json",
+    "etapa": "Cimentación"
+  },
+  "fecha": "2026-07-09T23:19:11.900Z",
+  "residente": "",
+  "supervisor": "",
+  "items": {
+    "ejes-principales": {
+      "estado": "si"
+    },
+    "escuadras": {
+      "estado": "si"
+    },
+    "niveles-desplante": {
+      "estado": "si"
+    },
+    "profundidad": {
+      "estado": "si"
+    },
+    "ancho-cepas": {
+      "estado": "si"
+    },
+    "fondo-limpio": {
+      "estado": "si"
+    },
+    "sin-derrumbes": {
+      "estado": "si"
+    },
+    "tapones-salidas": {
+      "estado": "no",
+      "obs": "No se colocaron tapones adecuados (manguera cortada) como solicita la supervisión"
+    },
+    "diametros-hs": {
+      "estado": "si"
+    },
+    "tuberias-planos": {
+      "estado": "si"
+    },
+    "pendientes": {
+      "estado": "si"
+    },
+    "hermeticidad": {
+      "estado": "si"
+    },
+    "tuberias-fijadas": {
+      "estado": "si"
+    },
+    "canalizaciones": {
+      "estado": "si"
+    },
+    "curvas": {
+      "estado": "si"
+    },
+    "extremos-sellados": {
+      "estado": "si"
+    },
+    "acero-plano": {
+      "estado": "si"
+    },
+    "diametros-acero": {
+      "estado": "si"
+    },
+    "separacion-varillas": {
+      "estado": "si"
+    },
+    "traslapes": {
+      "estado": "si"
+    },
+    "amarres": {
+      "estado": "si"
+    },
+    "sin-oxido": {
+      "estado": "si"
+    },
+    "arranques-castillos": {
+      "estado": "si"
+    },
+    "malla-traslapes": {
+      "estado": "si"
+    },
+    "calzas-separadores": {
+      "estado": "si"
+    },
+    "recubrimiento": {
+      "estado": "si"
+    },
+    "juntas-cerradas": {
+      "estado": "na"
+    },
+    "cimbra-firme": {
+      "estado": "si"
+    },
+    "nivel-superior": {
+      "estado": "si"
+    },
+    "alineamiento": {
+      "estado": "si"
+    },
+    "plano-vigente": {
+      "estado": "si",
+      "obs": "Plano digital en celular"
+    },
+    "liberacion-supervisor": {
+      "estado": "si"
+    },
+    "concreto-especificacion": {
+      "estado": "si"
+    },
+    "laboratorio-sitio": {
+      "estado": "na",
+      "obs": "Se solicitó pero no acudió "
+    },
+    "moldes-cilindros": {
+      "estado": "na",
+      "obs": "no hubo laboratorio por parte de supervisión"
+    },
+    "vibradores": {
+      "estado": "si"
+    },
+    "herramienta-acabado": {
+      "estado": "si"
+    },
+    "agua-curado": {
+      "estado": "si"
+    },
+    "remision": {
+      "estado": "si"
+    },
+    "resistencia": {
+      "estado": "si"
+    },
+    "hora-carga": {
+      "estado": "si"
+    },
+    "hora-llegada": {
+      "estado": "si",
+      "obs": "30 mins desde la carga"
+    },
+    "revenimiento": {
+      "estado": "na",
+      "obs": "No estuvo presente el laboratorio"
+    },
+    "temperatura": {
+      "estado": "na",
+      "obs": "No estuvo presente el laboratorio"
+    }
+  },
+  "stats": {
+    "total": 44,
+    "si": 38,
+    "no": 1,
+    "na": 5,
+    "sin": 0,
+    "aplicables": 39,
+    "pendientes": 1,
+    "avance": 97,
+    "criticosTotal": 16,
+    "criticosOk": 13,
+    "criticosPend": 0,
+    "criticosNo": 0
+  },
+  "veredicto": "APTO",
+  "catalogoVersion": "2026-06-16"
+}
