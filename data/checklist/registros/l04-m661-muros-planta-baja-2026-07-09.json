@@ -1,0 +1,117 @@
+{
+  "archivo": "l04-m661-muros-planta-baja-2026-07-09",
+  "lote": {
+    "id": "l04-m661",
+    "nombre": "Lote 04",
+    "manzana": "MZA 661",
+    "modelo": "Ártico A"
+  },
+  "proceso": {
+    "id": "muros-planta-baja",
+    "nombre": "Muros Planta Baja",
+    "subtitulo": "Verificación de muros de tabique y block en planta baja",
+    "icono": "🧱",
+    "archivo": "procesos/muros-planta-baja.json",
+    "etapa": "Albañilería",
+    "requiere": "colado-losa-cimentacion"
+  },
+  "fecha": "2026-07-09T22:39:58.406Z",
+  "residente": "",
+  "supervisor": "",
+  "items": {
+    "trazo-muros": {
+      "estado": "si"
+    },
+    "espesor-muro": {
+      "estado": "si"
+    },
+    "boquillas-uniformes": {
+      "estado": "si"
+    },
+    "cuatrapeo": {
+      "estado": "si"
+    },
+    "piezas-humedecidas": {
+      "estado": "no",
+      "obs": "No se están humedeciendo"
+    },
+    "castillos-ubicacion": {
+      "estado": "si"
+    },
+    "armado-castillos": {
+      "estado": "si"
+    },
+    "dentado-muro-castillo": {
+      "estado": "si"
+    },
+    "bajantes-pluviales": {
+      "estado": "si",
+      "obs": "Falta reforzar correctamente con acero"
+    },
+    "escuadras-90": {
+      "estado": "si"
+    },
+    "vanos-trazados": {
+      "estado": "si"
+    },
+    "muro-plomo": {
+      "estado": "si"
+    },
+    "hiladas-niveladas": {
+      "estado": "si"
+    },
+    "mortero-dosificacion": {
+      "estado": "si"
+    },
+    "castillos-colados": {
+      "estado": "si"
+    },
+    "anclaje-castillos": {
+      "estado": "si"
+    },
+    "dala-cerramiento": {
+      "estado": "si",
+      "obs": "Hay un detalle en un bajante que interrumpió el continuidad de la dala. Hay que solucionar para siguientes lotes !!!"
+    },
+    "cerramientos-vanos": {
+      "estado": "si"
+    },
+    "armado-dalas": {
+      "estado": "si"
+    },
+    "dalas-coladas": {
+      "estado": "si"
+    },
+    "ranuras-cajas": {
+      "estado": "no"
+    },
+    "pasos-registros": {
+      "estado": "si"
+    },
+    "muros-limpios": {
+      "estado": "si"
+    },
+    "sin-grietas": {
+      "estado": "si"
+    },
+    "curado-elementos": {
+      "estado": "no"
+    }
+  },
+  "stats": {
+    "total": 25,
+    "si": 22,
+    "no": 3,
+    "na": 0,
+    "sin": 0,
+    "aplicables": 25,
+    "pendientes": 3,
+    "avance": 88,
+    "criticosTotal": 11,
+    "criticosOk": 11,
+    "criticosPend": 0,
+    "criticosNo": 0
+  },
+  "veredicto": "APTO",
+  "catalogoVersion": "2026-06-03"
+}
