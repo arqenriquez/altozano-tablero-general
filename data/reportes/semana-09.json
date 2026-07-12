@@ -1,0 +1,299 @@
+{
+  "proyecto": {
+    "nombre": "Altozano · 6 Viviendas",
+    "nombre_corto": "Altozano",
+    "ubicacion": "Hermosillo, Sonora",
+    "gerencia": "Metta Arquitectura y Construcción"
+  },
+  "semana": {
+    "numero": "09",
+    "periodo": "6 al 11 de julio, 2026",
+    "fecha_generacion": "11 julio 2026"
+  },
+  "avance_global": {
+    "programado_pct": 10.54,
+    "real_pct": 8.05,
+    "variacion_pct": -2.49,
+    "programado_mxn": 1372458.03,
+    "real_mxn": 1061482.4
+  },
+  "actividades": {
+    "realizadas": [
+      "Continuación de muros de tabique y block Lote 02 M-661",
+      "Inicio de colado de castillos Lote 02 M-661",
+      "Colado de losa de cimentación Lote 03 M-661",
+      "Suministro de tabique térmico Lote 03 M-661",
+      "Suministro de viguetas y bovedilla para losa de entrepiso Lote 04 M-661",
+      "Inicio de cimbra para losa de entrepiso Lote 04 M-661",
+      "Terminación de instalaciones hidrosanitarias Lote 22 M-663",
+      "Continuación de instalaciones hidrosanitarias Lote 21 M-663",
+      "Inicio de instalaciones hidrosanitarias Lote 20 M-663"
+    ],
+    "programadas": [
+      "Llevar muros a altura de cerramiento Lote 02 M-661",
+      "Inicio de colados de cerramiento Lote 02 M-661",
+      "Inicio de pegado de muros de tabique y block Lote 03 M-661",
+      "Instalaciones eléctricas en losa de entrepiso Lote 04 M-661",
+      "Instalaciones hidrosanitarias en losa de entrepiso Lote 04 M-661",
+      "Fumigación y colocación de hule negro Lote 22 M-663",
+      "Bajar acero en sitio Lote 22 M-663",
+      "Colado de losa de cimentación Lote 22 M-663",
+      "Colocación de cimbra perimetral Lote 22 M-663",
+      "Terminación de instalaciones hidrosanitarias Lote 21 M-663",
+      "Inicio de instalaciones hidrosanitarias Lote 20 M-663"
+    ]
+  },
+  "problemas": [
+    {
+      "descripcion": "El retraso de los pagos de semanas anteriores afectó el ritmo del proyecto, impactando en tiempo",
+      "estatus": "Importante",
+      "fecha_limite": "",
+      "responsable": "Altozano"
+    },
+    {
+      "descripcion": "Revisar programa y reprogramación por desfase en pagos con el cliente",
+      "estatus": "Importante",
+      "fecha_limite": "",
+      "responsable": "Metta"
+    }
+  ],
+  "orden_lotes": [
+    "04",
+    "02",
+    "03",
+    "22",
+    "21",
+    "20"
+  ],
+  "lotes": {
+    "04": {
+      "modelo": "Ártico A",
+      "mza": "661",
+      "programado": 20.58,
+      "real": 18.64,
+      "variacion": -1.95,
+      "actividades": [
+        "Inicio de colocación de viguetas y casetones",
+        "Cimbra para losa de entrepiso"
+      ],
+      "fotos": 4
+    },
+    "02": {
+      "modelo": "Corsac B",
+      "mza": "661",
+      "programado": 15.76,
+      "real": 11.14,
+      "variacion": -4.62,
+      "actividades": [
+        "Continuación de pegado de ladrillo",
+        "Colado de castillos intermedios"
+      ],
+      "fotos": 4
+    },
+    "03": {
+      "modelo": "Corsac A",
+      "mza": "661",
+      "programado": 15.39,
+      "real": 10.03,
+      "variacion": -5.36,
+      "actividades": [
+        "Colado de losa de cimentación"
+      ],
+      "fotos": 4
+    },
+    "22": {
+      "modelo": "Corsac B",
+      "mza": "663",
+      "programado": 9.58,
+      "real": 4.93,
+      "variacion": -4.66,
+      "actividades": [
+        "Terminación de instalaciones hidráulicas",
+        "Terminación de habilitado de acero"
+      ],
+      "fotos": 2
+    },
+    "21": {
+      "modelo": "Corsac A",
+      "mza": "663",
+      "programado": 0.66,
+      "real": 3.94,
+      "variacion": 3.28,
+      "actividades": [
+        "Continuación de instalaciones hidrosanitarias",
+        "Habilitado de acero de cimentación"
+      ],
+      "fotos": 2
+    },
+    "20": {
+      "modelo": "Ártico A",
+      "mza": "663",
+      "programado": 0.59,
+      "real": 0.54,
+      "variacion": -0.04,
+      "actividades": [
+        "Inicio de instalaciones hidrosanitarias"
+      ],
+      "fotos": 2
+    }
+  },
+  "curva_financiera": {
+    "valor_total_mxn": 13184120.92,
+    "programado": [
+      0.0,
+      0.0634,
+      0.4981,
+      1.1112,
+      1.8866,
+      3.193,
+      5.2422,
+      9.2478,
+      11.9265,
+      14.9412,
+      18.1745,
+      21.7706,
+      25.5411,
+      28.4836,
+      31.3267,
+      33.3899,
+      35.4956,
+      37.0854,
+      39.1824,
+      43.5302,
+      47.4187,
+      53.0763,
+      59.4254,
+      64.8224,
+      69.8373,
+      76.39,
+      82.6627,
+      87.2692,
+      91.2414,
+      94.6275,
+      96.7362,
+      97.9362,
+      98.825,
+      99.3884,
+      99.6796,
+      99.7617,
+      100.0
+    ],
+    "reprogramado": [
+      0.0,
+      0.0634,
+      0.4981,
+      1.1112,
+      1.8866,
+      3.193,
+      4.2194,
+      5.678,
+      7.8874,
+      10.9021,
+      14.6047,
+      18.2008,
+      21.9713,
+      24.9138,
+      27.7568,
+      29.8201,
+      32.7177,
+      35.0993,
+      39.4631,
+      43.1347,
+      47.8595,
+      53.2944,
+      59.6434,
+      65.0405,
+      70.0553,
+      76.608,
+      82.8807,
+      87.4872,
+      91.4594,
+      94.8455,
+      96.9542,
+      98.1543,
+      99.043,
+      99.6064,
+      99.8976,
+      99.9798,
+      100.0
+    ],
+    "real": [
+      0.0,
+      0.1407,
+      0.4216,
+      1.2456,
+      1.8963,
+      3.1736,
+      4.1667,
+      5.4943,
+      6.1414,
+      8.0512
+    ]
+  },
+  "abastecimientos": {
+    "entregados": [
+      {
+        "concepto": "Acero para Lote 21",
+        "fecha_requerida": "7-jul",
+        "estatus": "Suministrado",
+        "importancia": "Media"
+      },
+      {
+        "concepto": "Material para instalaciones hidrosanitarias Lote 21",
+        "fecha_requerida": "7-jul",
+        "estatus": "Suministrado",
+        "importancia": "Media"
+      },
+      {
+        "concepto": "Material para instalaciones hidrosanitarias Lote 20",
+        "fecha_requerida": "7-jul",
+        "estatus": "Suministrado",
+        "importancia": "Media"
+      },
+      {
+        "concepto": "Viguetas para losa de entrepiso Lote 04",
+        "fecha_requerida": "7-jul",
+        "estatus": "Suministrado",
+        "importancia": "Media"
+      }
+    ],
+    "programados": [
+      {
+        "concepto": "Ladrillo Lote 03",
+        "fecha_requerida": "14-jul",
+        "estatus": "Solicitado",
+        "importancia": "Alta"
+      },
+      {
+        "concepto": "Concreto Lote 22",
+        "fecha_requerida": "14-jul",
+        "estatus": "Solicitado",
+        "importancia": "Alta"
+      },
+      {
+        "concepto": "Armex cerramientos Lote 02",
+        "fecha_requerida": "14-jul",
+        "estatus": "Solicitado",
+        "importancia": "Media"
+      },
+      {
+        "concepto": "Material para instalaciones eléctricas en losa Lote 04",
+        "fecha_requerida": "14-jul",
+        "estatus": "Solicitado",
+        "importancia": "Media"
+      },
+      {
+        "concepto": "Material para instalaciones hidrosanitarias en losa Lote 04",
+        "fecha_requerida": "14-jul",
+        "estatus": "Solicitado",
+        "importancia": "Media"
+      },
+      {
+        "concepto": "Acero Lote 20",
+        "fecha_requerida": "14-jul",
+        "estatus": "Solicitado",
+        "importancia": "Baja"
+      }
+    ]
+  }
+}
