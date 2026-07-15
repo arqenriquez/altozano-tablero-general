@@ -33,10 +33,28 @@
     el importe estimado y el estado de trámite. Haz clic para ver el desglose por lote
     y por partida.
   </p>
-  <div class="estimaciones-summary fade-up delay-3" id="estimaciones-summary" hidden>
-    <div class="estimaciones-summary-lbl">Estimado acumulado</div>
-    <div class="estimaciones-summary-val" id="sum-acumulado">—</div>
-    <div class="estimaciones-summary-sub" id="sum-sub">—</div>
+  <div class="estimaciones-summary-row fade-up delay-3" id="estimaciones-summary" hidden>
+    <div class="est-stat est-stat-acum">
+      <div class="est-stat-lbl">Estimado acumulado</div>
+      <div class="est-stat-val" id="sum-acumulado">—</div>
+      <div class="est-stat-sub" id="sum-sub">—</div>
+    </div>
+    <div class="est-stat est-stat-pagado">
+      <div class="est-stat-lbl">
+        <svg class="est-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Pagado
+      </div>
+      <div class="est-stat-val" id="sum-pagado">—</div>
+      <div class="est-stat-sub" id="sum-pagado-sub">—</div>
+    </div>
+    <div class="est-stat est-stat-porpagar">
+      <div class="est-stat-lbl">
+        <svg class="est-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Por pagar
+      </div>
+      <div class="est-stat-val" id="sum-porpagar">—</div>
+      <div class="est-stat-sub" id="sum-porpagar-sub">—</div>
+    </div>
   </div>
 </section>
 
@@ -51,11 +69,29 @@
   </div>
 </section>
 
+<section class="cards-section" id="est-grafica-section" hidden>
+  <div class="cards-header">
+    <h2>Rendimiento histórico</h2>
+    <span class="count">Importe estimado semana a semana</span>
+  </div>
+  <div class="est-seg" id="est-seg" role="tablist">
+    <button class="est-seg-btn active" data-mode="actual" role="tab">Periodo actual</button>
+    <button class="est-seg-btn" data-mode="proyecto" role="tab">Todas las semanas del proyecto</button>
+  </div>
+  <div class="est-chart-card fade-up">
+    <h3 id="est-chart-title">Importe por estimación y acumulado</h3>
+    <div class="est-chart-sub" id="est-chart-sub">—</div>
+    <div class="est-chart-container"><canvas id="estChart"></canvas></div>
+    <div class="est-chart-legend" id="est-chart-legend"></div>
+  </div>
+</section>
+
 <footer>
   <div class="brand">Altozano <span>·</span> Estimaciones</div>
   <div>Metta Arquitectura y Construcción · Gerencia de Proyecto</div>
 </footer>
 
-<script src="js/estimaciones.js?v=20260618"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="js/estimaciones.js?v=20260715b"></script>
 </body>
 </html>

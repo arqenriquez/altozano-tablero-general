@@ -312,6 +312,65 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
   font-size: 0.82rem; color: var(--ink-soft); margin-top: 0.15rem;
 }
 
+/* ----- Fila de 3 recuadros (acumulado / pagado / por pagar) ----- */
+.estimaciones-summary-row {
+  display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.75rem;
+}
+.est-stat {
+  flex: 1 1 200px; min-width: 180px;
+  display: flex; flex-direction: column; gap: 0.15rem;
+  padding: 1.1rem 1.4rem; border-radius: 12px;
+  background: var(--bg-soft); border: 1px solid var(--line-soft);
+  border-left: 4px solid var(--line);
+}
+.est-stat-acum     { background: var(--accent-soft); border-left-color: var(--accent); }
+.est-stat-pagado   { border-left-color: var(--green); }
+.est-stat-porpagar { border-left-color: var(--gold); }
+.est-stat-lbl {
+  display: flex; align-items: center; gap: 0.4rem;
+  font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-mute); font-weight: 600;
+}
+.est-stat-acum .est-stat-lbl { color: var(--accent-dark); }
+.est-ico { width: 15px; height: 15px; flex-shrink: 0; }
+.est-stat-pagado   .est-ico { color: var(--green); }
+.est-stat-porpagar .est-ico { color: var(--gold-dark); }
+.est-stat-val {
+  font-family: var(--font-display); font-size: 1.85rem; font-weight: 500;
+  letter-spacing: -0.03em; line-height: 1.05; color: var(--ink);
+}
+.est-stat-acum .est-stat-val   { color: var(--accent-dark); }
+.est-stat-pagado .est-stat-val { color: var(--green); }
+.est-stat-sub { font-size: 0.78rem; color: var(--ink-soft); margin-top: 0.15rem; }
+
+/* ----- Toggle segmentado + gráfica histórica de estimaciones ----- */
+.est-seg {
+  display: inline-flex; gap: 0.25rem; padding: 0.25rem; flex-wrap: wrap;
+  background: var(--bg-soft-2); border-radius: 10px; margin-bottom: 1.25rem;
+}
+.est-seg-btn {
+  border: none; background: transparent; cursor: pointer;
+  font-family: var(--font-body); font-size: 0.85rem; font-weight: 600;
+  color: var(--ink-soft); padding: 0.5rem 1rem; border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+.est-seg-btn:hover { color: var(--accent); }
+.est-seg-btn.active { background: #fff; color: var(--accent); box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.est-chart-card {
+  background: var(--bg-soft); border: 1px solid var(--line-soft);
+  border-radius: 16px; padding: 1.6rem 1.6rem 1.4rem;
+}
+.est-chart-card h3 { font-size: 1.05rem; margin-bottom: 0.1rem; }
+.est-chart-sub { font-size: 0.85rem; color: var(--ink-mute); margin-bottom: 1rem; }
+.est-chart-container { position: relative; height: 360px; width: 100%; }
+.est-chart-legend {
+  display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; justify-content: center;
+  margin-top: 1.1rem; font-size: 0.8rem; color: var(--ink-soft);
+}
+.est-chart-legend .lg { display: inline-flex; align-items: center; gap: 0.45rem; }
+.est-chart-legend .sw { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.est-chart-legend .sw-line { width: 18px; height: 0; border-top: 2px dashed var(--ink); border-radius: 0; }
+
 /* ============================================================
    SECCIONES
    ============================================================ */

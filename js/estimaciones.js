@@ -117,6 +117,16 @@ async function initListado() {
     const pct = contrato ? (acum / contrato) * 100 : null;
     $('#sum-acumulado').textContent = fmtMXN(acum);
     $('#sum-sub').innerHTML = `Al corte de la <strong>estimación ${masReciente.numero}</strong>${pct != null ? ` · ${pct.toFixed(2)}% del contrato` : ''}`;
+
+    // Recuadros Pagado / Por pagar (según el estatus de cada estimación).
+    // Por pagar = acumulado − pagado, para que los tres cuadren con el acumulado.
+    const pagadas = datos.filter(d => d && d.caratula && d.estado === 'pagada');
+    const pagado = pagadas.reduce((s, d) => s + (d.caratula.importe_esta_estimacion_mxn || 0), 0);
+    $('#sum-pagado').textContent = fmtMXN(pagado);
+    $('#sum-pagado-sub').textContent = `${pagadas.length} ${pagadas.length === 1 ? 'estimación pagada' : 'estimaciones pagadas'}`;
+    $('#sum-porpagar').textContent = fmtMXN(acum - pagado);
+    $('#sum-porpagar-sub').textContent = 'Facturado + en revisión, pendiente de cobro';
+
     $('#estimaciones-summary').hidden = false;
   }
 
@@ -154,6 +164,138 @@ async function initListado() {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+  await initGraficaEstimaciones(datos);
+}
+
+/* ============ GRÁFICA HISTÓRICA (estimaciones.html) ============ */
+const COLOR_ESTADO = {
+  pagada:    '#2f5d54',  // verde (accent)
+  facturada: '#2a4d8a',  // azul
+  revision:  '#a6a95e',  // dorado
+  ingresada: '#8a8f8c'   // gris
+};
+const LABEL_ESTADO = {
+  pagada: 'Pagada', facturada: 'Facturada', revision: 'En revisión', ingresada: 'Ingresada'
+};
+
+let ESTADO_CHART = null;
+let ESTADO_ITEMS = [];
+let ESTADO_TOTAL_SEM = 0;
+
+function fmtMXNaxis(n) {
+  if (n == null) return '';
+  if (Math.abs(n) >= 1e6) return '$' + (n / 1e6).toFixed(2) + 'M';
+  if (Math.abs(n) >= 1e3) return '$' + Math.round(n / 1e3) + 'k';
+  return '$' + Math.round(n);
+}
+
+async function initGraficaEstimaciones(datos) {
+  const items = [...(datos || [])]
+    .filter(d => d && d.caratula)
+    .map(d => ({
+      num: parseInt(d.numero),
+      importe: d.caratula.importe_esta_estimacion_mxn || 0,
+      acumulado: d.caratula.total_estimado_mxn || 0,
+      estado: d.estado || 'revision'
+    }))
+    .sort((a, b) => a.num - b.num);
+  if (!items.length || typeof Chart === 'undefined') return;
+
+  // Total de semanas del proyecto (para la vista "Todas las semanas").
+  const idxRep = await cargarJSON('data/reportes/index.json');
+  const totalSem = (idxRep && idxRep.proyecto && idxRep.proyecto.total_semanas) || items.length;
+
+  ESTADO_ITEMS = items;
+  ESTADO_TOTAL_SEM = Math.max(totalSem, items.length);
+
+  $('#est-grafica-section').hidden = false;
+  document.querySelectorAll('#est-grafica-section .fade-up').forEach(el => el.classList.add('visible'));
+
+  const el = $('#est-chart-legend');
+  if (el) {
+    el.innerHTML = `
+      <span class="lg"><span class="sw" style="background:${COLOR_ESTADO.pagada}"></span>Pagada</span>
+      <span class="lg"><span class="sw" style="background:${COLOR_ESTADO.facturada}"></span>Facturada</span>
+      <span class="lg"><span class="sw" style="background:${COLOR_ESTADO.revision}"></span>En revisión</span>`;
+  }
+
+  pintarEstChart('actual');
+
+  const seg = $('#est-seg');
+  if (seg) {
+    seg.addEventListener('click', (e) => {
+      const btn = e.target.closest('.est-seg-btn');
+      if (!btn) return;
+      seg.querySelectorAll('.est-seg-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      pintarEstChart(btn.dataset.mode);
+    });
+  }
+}
+
+function pintarEstChart(modo) {
+  const items = ESTADO_ITEMS;
+  const slots = modo === 'proyecto' ? ESTADO_TOTAL_SEM : items.length;
+  const byNum = {};
+  items.forEach(it => { byNum[it.num] = it; });
+
+  const labels = [], importes = [], colores = [];
+  for (let i = 1; i <= slots; i++) {
+    labels.push('E' + String(i).padStart(2, '0'));
+    const it = byNum[i];
+    importes.push(it ? it.importe : null);
+    colores.push(it ? (COLOR_ESTADO[it.estado] || '#8a8f8c') : 'rgba(0,0,0,0)');
+  }
+
+  const ult = items[items.length - 1];
+  $('#est-chart-title').textContent = modo === 'proyecto'
+    ? 'Importe por estimación · proyecto completo'
+    : 'Importe por estimación';
+  $('#est-chart-sub').textContent = modo === 'proyecto'
+    ? `${slots} semanas de proyecto · ${items.length} con estimación · último ${fmtMXN(ult.importe)}`
+    : `${items.length} estimaciones registradas · último importe ${fmtMXN(ult.importe)}`;
+
+  if (ESTADO_CHART) { ESTADO_CHART.destroy(); ESTADO_CHART = null; }
+  const muchas = slots > 16;
+
+  ESTADO_CHART = new Chart($('#estChart').getContext('2d'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        { label: 'Importe por estimación', data: importes,
+          borderColor: '#2f5d54', backgroundColor: 'rgba(47,93,84,0.06)',
+          borderWidth: 2.5, tension: 0.3, fill: true, spanGaps: false,
+          pointRadius: muchas ? 3 : 5, pointHoverRadius: muchas ? 5 : 7,
+          pointBackgroundColor: colores, pointBorderColor: colores, pointBorderWidth: 2 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: { backgroundColor: '#232726', titleFont: { family: 'Inter', size: 12, weight: '600' },
+          bodyFont: { family: 'JetBrains Mono', size: 11 }, padding: 10, cornerRadius: 8,
+          callbacks: {
+            label: (ctx) => {
+              if (ctx.parsed.y == null) return null;
+              const it = byNum[ctx.dataIndex + 1];
+              const est = it ? (LABEL_ESTADO[it.estado] || it.estado) : '';
+              return 'Importe: ' + fmtMXN(ctx.parsed.y) + (est ? ' · ' + est : '');
+            }
+          } }
+      },
+      scales: {
+        y: { beginAtZero: true,
+          ticks: { callback: fmtMXNaxis, font: { family: 'JetBrains Mono', size: 10 }, color: '#8a8f8c' },
+          grid: { color: '#f0efeb' } },
+        x: { ticks: { font: { family: 'JetBrains Mono', size: muchas ? 9 : 10 }, color: '#8a8f8c', autoSkip: false, maxRotation: 0 },
+          grid: { display: false } }
+      }
+    }
+  });
 }
 
 /* ============ DETALLE (estimacion-detalle.html) ============ */
