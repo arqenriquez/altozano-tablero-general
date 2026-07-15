@@ -9,6 +9,7 @@ desktop.ini
 
 # Claude Code (permisos locales por usuario)
 .claude/settings.local.json
+.claude/launch.json
 
 # Superpowers (scratch de sesiones: brainstorm, sdd, PIDs de servidor)
 .superpowers/
