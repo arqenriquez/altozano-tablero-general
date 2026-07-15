@@ -40,6 +40,9 @@
   --font-display: 'Poppins', system-ui, -apple-system, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* ----- Easing (curva "de la casa", salida suave) ----- */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -95,7 +98,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
   color: var(--ink-soft); text-decoration: none;
   padding: 0.45rem 0.9rem; border-radius: 8px;
   margin-right: auto;
-  transition: all 0.18s ease;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
 }
 .topbar-inicio:hover { color: var(--accent); background: var(--accent-soft); }
 .back-link {
@@ -220,7 +223,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
   color: inherit;
   display: flex; flex-direction: column; gap: 1rem;
   position: relative; overflow: hidden;
-  transition: all 0.32s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: background-color 0.32s var(--ease-out), border-color 0.32s var(--ease-out), color 0.32s var(--ease-out), box-shadow 0.32s var(--ease-out), transform 0.32s var(--ease-out);
   min-height: 200px;
 }
 .module-card::before {
@@ -444,7 +447,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
   flex: 1; height: 18px; background: var(--bg-soft-2);
   border-radius: 9px; overflow: hidden; position: relative;
 }
-.bar-fill { height: 100%; border-radius: 9px; width: 0; transition: width 1.3s cubic-bezier(0.22,0.61,0.36,1); }
+.bar-fill { height: 100%; border-radius: 9px; width: 0; transition: width 1.3s var(--ease-out); }
 .bar-fill.prog { background: var(--ink); }
 .bar-fill.real { background: var(--accent); }
 .bar-value {
@@ -501,7 +504,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
   background: var(--bg-soft); border: 1px solid var(--line-soft);
   border-radius: 18px; padding: 1.6rem 1.5rem; cursor: pointer;
   text-align: left; font-family: inherit;
-  transition: all 0.3s cubic-bezier(0.22,0.61,0.36,1);
+  transition: background-color 0.3s var(--ease-out), border-color 0.3s var(--ease-out), color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), transform 0.3s var(--ease-out);
   display: flex; flex-direction: column; gap: 0.8rem;
   position: relative; overflow: hidden;
 }
@@ -539,7 +542,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
   position: absolute; bottom: 1.25rem; right: 1.5rem;
   width: 32px; height: 32px; background: var(--ink); color: #fff;
   border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  font-size: 1rem; opacity: 0; transform: translateX(-8px); transition: all 0.3s;
+  font-size: 1rem; opacity: 0; transform: translateX(-8px); transition: opacity 0.3s ease, transform 0.3s var(--ease-out), background-color 0.3s ease;
 }
 .lote-btn:hover .lote-btn-arrow { opacity: 1; transform: translateX(0); background: var(--accent); }
 
@@ -570,7 +573,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
 .panel-close {
   background: var(--bg-soft); border: none; width: 40px; height: 40px;
   border-radius: 50%; cursor: pointer; font-size: 1rem; color: var(--ink-soft);
-  transition: all 0.2s; display: flex; align-items: center; justify-content: center;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease; display: flex; align-items: center; justify-content: center;
 }
 .panel-close:hover { background: var(--ink); color: #fff; }
 .panel-body { padding: 1.5rem 2rem 3rem; }
@@ -665,7 +668,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
   background: var(--bg-soft); border: 1px solid var(--line-soft);
   border-radius: 16px; padding: 1.5rem; text-decoration: none; color: inherit;
   display: flex; flex-direction: column; gap: 0.8rem;
-  transition: all 0.3s cubic-bezier(0.22,0.61,0.36,1); position: relative; cursor: pointer;
+  transition: background-color 0.3s var(--ease-out), border-color 0.3s var(--ease-out), color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), transform 0.3s var(--ease-out); position: relative; cursor: pointer;
 }
 .week-card:hover {
   border-color: var(--accent); transform: translateY(-3px);
@@ -704,7 +707,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
   position: absolute; bottom: 1rem; right: 1.25rem;
   width: 28px; height: 28px; background: var(--ink); color: #fff;
   border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  font-size: 0.9rem; opacity: 0; transform: translateX(-8px); transition: all 0.3s;
+  font-size: 0.9rem; opacity: 0; transform: translateX(-8px); transition: opacity 0.3s ease, transform 0.3s var(--ease-out), background-color 0.3s ease;
 }
 .week-card:hover .week-card-arrow { opacity: 1; transform: translateX(0); background: var(--accent); }
 
@@ -753,7 +756,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
   align-items: start; background: var(--bg-soft);
   border: 1px solid var(--line-soft); border-radius: 16px;
   padding: 1.4rem 1.6rem; text-decoration: none; color: inherit;
-  transition: all 0.28s cubic-bezier(0.22,0.61,0.36,1); position: relative;
+  transition: background-color 0.28s var(--ease-out), border-color 0.28s var(--ease-out), color 0.28s var(--ease-out), box-shadow 0.28s var(--ease-out), transform 0.28s var(--ease-out); position: relative;
 }
 .bitacora-card:hover {
   border-color: var(--accent); transform: translateX(4px);
@@ -833,7 +836,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
   align-items: center; background: var(--bg-soft);
   border: 1px solid var(--line-soft); border-radius: 16px;
   padding: 1.4rem 1.6rem; text-decoration: none; color: inherit;
-  transition: all 0.28s cubic-bezier(0.22,0.61,0.36,1); position: relative;
+  transition: background-color 0.28s var(--ease-out), border-color 0.28s var(--ease-out), color 0.28s var(--ease-out), box-shadow 0.28s var(--ease-out), transform 0.28s var(--ease-out); position: relative;
 }
 .estimacion-card:hover {
   border-color: var(--accent); transform: translateX(4px);
@@ -916,7 +919,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
   padding: 0.6rem 1.1rem; border-radius: 30px;
   font-size: 0.82rem; font-weight: 600; text-decoration: none;
   border: 1px solid var(--accent);
-  transition: all 0.2s;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 .pdf-btn:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
 
@@ -994,7 +997,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
   background: var(--bg-soft); border: 1px solid var(--line);
   color: var(--ink-soft); padding: 0.5rem 1rem; border-radius: 30px;
   font-family: inherit; font-size: 0.82rem; font-weight: 600; cursor: pointer;
-  transition: all 0.2s;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 .chk-filter:hover { border-color: var(--accent); color: var(--accent); }
 .chk-filter.active { background: var(--accent); border-color: var(--accent); color: #fff; }
@@ -1002,7 +1005,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
 .checklist-card {
   background: var(--bg-soft); border: 1px solid var(--line-soft);
   border-radius: 16px; padding: 1.6rem; cursor: pointer; text-align: left;
-  font-family: inherit; transition: all 0.3s cubic-bezier(0.22,0.61,0.36,1);
+  font-family: inherit; transition: background-color 0.3s var(--ease-out), border-color 0.3s var(--ease-out), color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), transform 0.3s var(--ease-out);
   display: flex; flex-direction: column; gap: 0.7rem; position: relative;
 }
 .checklist-card:hover {
@@ -1064,7 +1067,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
 }
 .galeria-item img {
   width: 100%; height: 100%; object-fit: cover; display: block;
-  transition: transform 0.4s cubic-bezier(0.22,0.61,0.36,1);
+  transition: transform 0.4s var(--ease-out);
 }
 .galeria-item:hover img { transform: scale(1.06); }
 .galeria-item-overlay {
@@ -1114,8 +1117,8 @@ footer .brand span { color: var(--accent); }
    ANIMACIONES ON SCROLL
    ============================================================ */
 .fade-up {
-  opacity: 0; transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22,0.61,0.36,1);
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.45s ease, transform 0.45s var(--ease-out);
 }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 .fade-up.delay-1 { transition-delay: 0.07s; }
@@ -1199,7 +1202,7 @@ footer .brand span { color: var(--accent); }
   background: var(--bg-soft); border: 1px solid var(--line-soft);
   font-family: var(--font-body); font-size: 0.88rem; font-weight: 500;
   color: var(--ink-soft); cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 .proceso-chip:hover { border-color: var(--accent); color: var(--accent); }
 .proceso-chip.active {
@@ -1214,7 +1217,7 @@ footer .brand span { color: var(--accent); }
   border: 1px solid var(--line);
   background: transparent; cursor: pointer;
   font-family: var(--font-body);
-  transition: all 0.18s ease;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
 }
 .chk-link-editor:hover { color: var(--accent); border-color: var(--accent); }
 button.chk-link-editor#btn-borrar-actas:hover { color: var(--red); border-color: var(--red); }
@@ -1229,7 +1232,7 @@ button.chk-link-editor#btn-borrar-actas:hover { color: var(--red); border-color:
   border-radius: 20px;
   padding: 1.6rem;
   display: flex; flex-direction: column; gap: 1rem;
-  transition: all 0.32s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: background-color 0.32s var(--ease-out), border-color 0.32s var(--ease-out), color 0.32s var(--ease-out), box-shadow 0.32s var(--ease-out), transform 0.32s var(--ease-out);
 }
 .chk-lote-card:hover {
   border-color: var(--accent-soft);
@@ -1263,7 +1266,7 @@ button.chk-link-editor#btn-borrar-actas:hover { color: var(--red); border-color:
   padding: 0.9rem 1rem;
   background: #fff; border: 1px solid var(--line-soft);
   border-radius: 12px; text-decoration: none; color: inherit;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 .chk-proceso-row:hover {
   border-color: var(--accent); transform: translateX(2px);
@@ -1354,7 +1357,7 @@ button.chk-link-editor#btn-borrar-actas:hover { color: var(--red); border-color:
 .chk-progress-fill {
   height: 100%; background: linear-gradient(90deg, var(--accent), var(--gold));
   border-radius: 999px; width: 0;
-  transition: width 0.6s cubic-bezier(0.22,0.61,0.36,1);
+  transition: width 0.6s var(--ease-out);
 }
 
 /* Secciones colapsables */
@@ -1432,7 +1435,7 @@ button.chk-link-editor#btn-borrar-actas:hover { color: var(--red); border-color:
   background: var(--bg-soft); border: 1.5px solid var(--line-soft);
   font-size: 0.78rem; font-weight: 600; color: var(--ink-mute);
   letter-spacing: 0.04em;
-  transition: all 0.18s ease;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
   min-width: 50px; text-align: center;
 }
 .chk-radio input { position: absolute; opacity: 0; pointer-events: none; }
@@ -1461,7 +1464,7 @@ button.chk-link-editor#btn-borrar-actas:hover { color: var(--red); border-color:
 .chk-btn-primary, .chk-btn-secondary {
   font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
   padding: 0.8rem 1.4rem; border-radius: 10px; cursor: pointer;
-  border: 1.5px solid; transition: all 0.2s ease;
+  border: 1.5px solid; transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 .chk-btn-primary {
   background: var(--accent); color: #fff; border-color: var(--accent);
@@ -1475,7 +1478,7 @@ button.chk-link-editor#btn-borrar-actas:hover { color: var(--red); border-color:
   font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
   padding: 0.8rem 1.4rem; border-radius: 10px; cursor: pointer;
   border: 1.5px solid var(--red); background: var(--red); color: #fff;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 .chk-btn-danger:hover { background: #a13225; border-color: #a13225; }
 
@@ -1493,7 +1496,7 @@ button.chk-link-editor#btn-borrar-actas:hover { color: var(--red); border-color:
   background: #fff; border-radius: 16px;
   max-width: 540px; width: 100%; max-height: 90vh; overflow-y: auto;
   box-shadow: 0 40px 100px -30px rgba(20,30,28,0.45);
-  animation: chkPop 0.22s cubic-bezier(0.22,0.61,0.36,1);
+  animation: chkPop 0.22s var(--ease-out);
 }
 @keyframes chkPop { from { transform: translateY(12px) scale(0.98); opacity: 0; } to { transform: none; opacity: 1; } }
 .chk-modal-header {
@@ -1847,7 +1850,7 @@ button.chk-link-editor#btn-borrar-actas:hover { color: var(--red); border-color:
   cursor: pointer; padding: 0.35rem 0.5rem;
   background: var(--bg-soft); border: 1px solid var(--line);
   border-radius: 6px; user-select: none;
-  transition: all 0.18s ease;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
 }
 .editor-critico-toggle:hover { border-color: var(--red); color: var(--red); }
 .editor-critico-toggle input {
@@ -1934,7 +1937,7 @@ button.chk-link-editor#btn-borrar-actas:hover { color: var(--red); border-color:
   padding: 1.25rem 1.4rem; background: var(--bg-soft);
   border: 1px solid var(--line-soft); border-radius: 14px;
   text-decoration: none; color: inherit;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 .editor-proceso-card:hover { border-color: var(--accent); transform: translateY(-2px); }
 .editor-proceso-card .ico {
@@ -1982,4 +1985,20 @@ button.chk-link-editor#btn-borrar-actas:hover { color: var(--red); border-color:
   .editor-proceso-grid { grid-template-columns: 1fr; }
   .editor-toolbar-inner { padding: 0.75rem 1.25rem; }
   .editor-toolbar-actions { flex-direction: column; gap: 0.4rem; }
+}
+
+/* ============================================================
+   ACCESIBILIDAD — respetar "reducir movimiento" del sistema
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Los elementos que entran con fade-up deben quedar visibles, no ocultos */
+  .fade-up { opacity: 1 !important; transform: none !important; }
 }
