@@ -112,7 +112,7 @@
         "Continuación de habilitado de acero",
         "Inicio de instalaciones hidrosanitarias y de gas"
       ],
-      "fotos": 2
+      "fotos": 4
     },
     "21": {
       "modelo": "Corsac A",
@@ -123,7 +123,7 @@
       "actividades": [
         "Inicio de instalaciones hidrosanitarias"
       ],
-      "fotos": 2
+      "fotos": 4
     },
     "20": {
       "modelo": "Ártico A",
@@ -135,7 +135,7 @@
         "Terminación de excavaciones de cimentación",
         "Inicio de excavaciones para instalaciones hidrosanitarias"
       ],
-      "fotos": 2
+      "fotos": 4
     }
   },
   "curva_financiera": {
