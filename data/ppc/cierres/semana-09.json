@@ -1,0 +1,82 @@
+{
+  "semana": "09",
+  "periodo": "6 al 12 de julio 2026",
+  "fecha_cierre": "2026-07-17",
+  "responsable": "Arq. Jorge Enríquez",
+  "total": 10,
+  "cumplidas": 6,
+  "no_cumplidas": 4,
+  "ppc_pct": 60,
+  "metas": [
+    {
+      "actividad": "Suministro de Vigetas losa Entrepiso - L04",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L04",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Colocación de Acero en sitio - L03",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L03",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Colado de Losa de Cimentación - L03",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L03",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Llegar muros a nivel de cerramiento - L02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": false,
+      "motivo": "Aun no llegan a nivel Cerramiento - Se requieren mas ladrilleros"
+    },
+    {
+      "actividad": "Suministrar Armex para cadenas de cerramiento - L02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L02",
+      "cumplida": false,
+      "motivo": "Aun no se requiere"
+    },
+    {
+      "actividad": "Inicio de Zanjas de Plomería - L20",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L20",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Terminar instalaciones Hidro-Sanitarias Lote 22",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L22",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Colocación de Cimbra Perimetral - L22",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L22",
+      "cumplida": false,
+      "motivo": "No se colocó"
+    },
+    {
+      "actividad": "Inicio de colocación de Acero - L22",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L22",
+      "cumplida": false,
+      "motivo": "No se colocó en el sitio"
+    },
+    {
+      "actividad": "Pedido de Materiales adecuados para la semana DIA LUNES",
+      "responsable": "Ing. Marco De la Cruz",
+      "lote": "General",
+      "cumplida": true,
+      "motivo": ""
+    }
+  ]
+}
