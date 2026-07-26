@@ -1,0 +1,89 @@
+{
+  "semana": "10",
+  "periodo": "13 al 19 de julio 2026",
+  "fecha_cierre": "2026-07-20",
+  "responsable": "Arq. Jorge Enríquez",
+  "total": 11,
+  "cumplidas": 8,
+  "no_cumplidas": 3,
+  "ppc_pct": 73,
+  "metas": [
+    {
+      "actividad": "Muros de tabique a nivel cerramiento - L02",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L01",
+      "cumplida": false,
+      "motivo": "Casi se logra, pero faltaron unas cuantas hiladas y castillos"
+    },
+    {
+      "actividad": "Iniciar Muros de Tabique - L03",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L03",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Iniciar Colado de castillos - L03",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L03",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Definición de trabes de losa entrepiso - L04",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L04",
+      "cumplida": false,
+      "motivo": "No se definió pero depende de Altozano."
+    },
+    {
+      "actividad": "Colocación de Cimbra Perimetral - L22",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L22",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Inicio de colocación de Acero - L22",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L22",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Fumigación y Hule Negro - L22",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L22",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Colado de losa de cimentación - L22",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L22",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Terminación de Plomería - L21",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L21",
+      "cumplida": true,
+      "motivo": ""
+    },
+    {
+      "actividad": "Colocación de Cimbra Perimetral - L21",
+      "responsable": "Ing. Luis Santacruz",
+      "lote": "L21",
+      "cumplida": false,
+      "motivo": "No se colocó aún."
+    },
+    {
+      "actividad": "Pedido de Materiales adecuados para la semana DIA LUNES",
+      "responsable": "Ing. Marco De la Cruz",
+      "lote": "General",
+      "cumplida": true,
+      "motivo": ""
+    }
+  ]
+}

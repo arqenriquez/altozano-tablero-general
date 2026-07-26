@@ -1,0 +1,271 @@
+{
+  "proyecto": {
+    "nombre": "Altozano · 6 Viviendas",
+    "nombre_corto": "Altozano",
+    "ubicacion": "Hermosillo, Sonora",
+    "gerencia": "Metta Arquitectura y Construcción"
+  },
+  "semana": {
+    "numero": "11",
+    "periodo": "20 al 25 de julio, 2026",
+    "fecha_generacion": "25 julio 2026"
+  },
+  "avance_global": {
+    "programado_pct": 16.84,
+    "real_pct": 10.67,
+    "variacion_pct": -6.17,
+    "programado_mxn": 2192434.68,
+    "real_mxn": 1406797.46
+  },
+  "actividades": {
+    "realizadas": [
+      "Continuación de muros de tabique y block hasta cerramientos Lote 02 M-661",
+      "Continuación de muros de tabique y block hasta cerramientos Lote 03 M-661",
+      "Reanudación del armado de trabes en losa de entrepiso Lote 04 M-661",
+      "Terminación de instalaciones hidrosanitarias Lote 21 M-663",
+      "Fumigación de terreno Lote 21 M-663",
+      "Inicio de colocación de hule negro Lote 21 M-663",
+      "Terminación de instalaciones hidrosanitarias Lote 20 M-663"
+    ],
+    "programadas": [
+      "Inicio de colados de cerramiento Lote 02 M-661",
+      "Inicio de colados de cerramiento Lote 03 M-661",
+      "Instalaciones eléctricas en losa de entrepiso Lote 04 M-661",
+      "Instalaciones hidrosanitarias en losa de entrepiso Lote 04 M-661",
+      "Inicio de muros de tabique Lote 22 M-663",
+      "Colado de losa de cimentación Lote 22 M-663",
+      "Colocación de cimbra perimetral Lote 21 M-663",
+      "Colocación de acero en sitio Lote 21 M-663",
+      "Colado de losa de cimentación Lote 21 M-663",
+      "Terminación de instalaciones hidrosanitarias Lote 20 M-663",
+      "Fumigación y colocación de acero en sitio Lote 20 M-663",
+      "Colado de losa de cimentación Lote 20 M-663"
+    ]
+  },
+  "problemas": [],
+  "orden_lotes": [
+    "04",
+    "02",
+    "03",
+    "22",
+    "21",
+    "20"
+  ],
+  "lotes": {
+    "04": {
+      "modelo": "Ártico A",
+      "mza": "661",
+      "programado": 32.16,
+      "real": 19.73,
+      "variacion": -12.43,
+      "actividades": [
+        "Reanudación del armado de trabes en losa de entrepiso"
+      ],
+      "fotos": 4
+    },
+    "02": {
+      "modelo": "Corsac B",
+      "mza": "661",
+      "programado": 22.98,
+      "real": 13.76,
+      "variacion": -9.22,
+      "actividades": [
+        "Continuación de muros de tabique y block hasta cerramientos"
+      ],
+      "fotos": 4
+    },
+    "03": {
+      "modelo": "Corsac A",
+      "mza": "661",
+      "programado": 21.25,
+      "real": 13.82,
+      "variacion": -7.43,
+      "actividades": [
+        "Continuación de muros de tabique y block hasta cerramientos"
+      ],
+      "fotos": 4
+    },
+    "22": {
+      "modelo": "Corsac B",
+      "mza": "663",
+      "programado": 10.93,
+      "real": 8.84,
+      "variacion": -2.08,
+      "actividades": [],
+      "fotos": 3
+    },
+    "21": {
+      "modelo": "Corsac A",
+      "mza": "663",
+      "programado": 7.99,
+      "real": 6.14,
+      "variacion": -1.85,
+      "actividades": [
+        "Terminación de instalaciones hidrosanitarias",
+        "Fumigación de terreno",
+        "Inicio de colocación de hule negro"
+      ],
+      "fotos": 3
+    },
+    "20": {
+      "modelo": "Ártico A",
+      "mza": "663",
+      "programado": 4.25,
+      "real": 1.76,
+      "variacion": -2.49,
+      "actividades": [
+        "Terminación de instalaciones hidrosanitarias"
+      ],
+      "fotos": 3
+    }
+  },
+  "curva_financiera": {
+    "valor_total_mxn": 13184120.92,
+    "programado": [
+      0.0,
+      0.0634,
+      0.4981,
+      1.1112,
+      1.8866,
+      3.193,
+      5.2422,
+      9.2478,
+      11.9265,
+      14.9412,
+      18.1745,
+      21.7706,
+      25.5411,
+      28.4836,
+      31.3267,
+      33.3899,
+      35.4956,
+      37.0854,
+      39.1824,
+      43.5302,
+      47.4187,
+      53.0763,
+      59.4254,
+      64.8224,
+      69.8373,
+      76.39,
+      82.6627,
+      87.2692,
+      91.2414,
+      94.6275,
+      96.7362,
+      97.9362,
+      98.825,
+      99.3884,
+      99.6796,
+      99.7617,
+      100.0
+    ],
+    "reprogramado": [
+      0.0,
+      0.0634,
+      0.4981,
+      1.1112,
+      1.8866,
+      3.193,
+      4.2194,
+      5.678,
+      7.8874,
+      10.5417,
+      13.2437,
+      16.8399,
+      20.6103,
+      23.9132,
+      26.7563,
+      28.8195,
+      31.7171,
+      34.0987,
+      38.4625,
+      43.1347,
+      47.8595,
+      53.2944,
+      59.6434,
+      65.0405,
+      70.0553,
+      76.608,
+      82.8807,
+      87.4872,
+      91.4594,
+      94.8455,
+      96.9542,
+      98.1543,
+      99.043,
+      99.6064,
+      99.8976,
+      99.9798,
+      100.0
+    ],
+    "real": [
+      0.0,
+      0.1407,
+      0.4216,
+      1.2456,
+      1.8963,
+      3.1736,
+      4.1667,
+      5.4943,
+      6.1414,
+      8.0512,
+      9.5149,
+      10.6704
+    ]
+  },
+  "abastecimientos": {
+    "entregados": [
+      {
+        "concepto": "Concreto Lote 21",
+        "fecha_requerida": "22-jul",
+        "estatus": "Pagado / se cuela lunes",
+        "importancia": "Alta"
+      },
+      {
+        "concepto": "Material para instalaciones eléctricas en losa Lote 04",
+        "fecha_requerida": "21-jul",
+        "estatus": "Suministrado",
+        "importancia": "Alta"
+      },
+      {
+        "concepto": "Material para instalaciones hidrosanitarias en losa Lote 04",
+        "fecha_requerida": "21-jul",
+        "estatus": "Suministrado",
+        "importancia": "Alta"
+      }
+    ],
+    "programados": [
+      {
+        "concepto": "Acero Lote 20",
+        "fecha_requerida": "27-jul",
+        "estatus": "Solicitado",
+        "importancia": "Alta"
+      },
+      {
+        "concepto": "Ladrillo Lote 22",
+        "fecha_requerida": "27-jul",
+        "estatus": "Solicitado",
+        "importancia": "Alta"
+      },
+      {
+        "concepto": "Armex cerramientos Lote 02",
+        "fecha_requerida": "27-jul",
+        "estatus": "Solicitado",
+        "importancia": "Media"
+      },
+      {
+        "concepto": "Armex cerramientos Lote 03",
+        "fecha_requerida": "27-jul",
+        "estatus": "Solicitado",
+        "importancia": "Media"
+      },
+      {
+        "concepto": "Concreto entrepiso Lote 04",
+        "fecha_requerida": "",
+        "estatus": "Programar",
+        "importancia": "Media"
+      }
+    ]
+  }
+}
